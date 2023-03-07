@@ -1,0 +1,71 @@
+.button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  padding: 5px;
+
+  //Sizes
+  &__large {
+    width: 193px;
+    height: 60px;
+    font-size: 24px;
+  }
+  &__medium {
+    height: 40px;
+    width: 157px;
+    font-size: 16px;
+  }
+
+  &__small {
+    height: 32px;
+    width: 157px;
+    font-size: 12px;
+  }
+
+  //Background color
+  &__orange {
+    background: #ff6633;
+    color: #ffffff;
+  }
+  &__green {
+    background: #70c05b;
+    color: #ffffff;
+  }
+  &__gray {
+    background: #f3f2f1;
+    color: #606060;
+  }
+  &__red {
+    background: #d80000;
+    color: #f2f2f2;
+  }
+
+  //Border color
+  &__border {
+    &_orange {
+      background: none;
+      border: 1px solid #ff6633;
+      color: #ff6633;
+    }
+    &_green {
+      background: none;
+      border: 1px solid #70c05b;
+      color: #70c05b;
+    }
+    &_gray {
+      background: none;
+      border: 1px solid #8f8f8f;
+      color: #606060;
+    }
+    &_red {
+      background: none;
+      border: 1px solid #d80000;
+      color: #d80000;
+    }
+  }
+}
