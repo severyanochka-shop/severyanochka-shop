@@ -12,7 +12,9 @@ export const Header = () => {
   return (
     <>
       <div className={s.header}>
-        <Button text="Каталог" />
+        <Link to="/">
+          <Button text="Каталог" />{" "}
+        </Link>
       </div>
     </>
   );
