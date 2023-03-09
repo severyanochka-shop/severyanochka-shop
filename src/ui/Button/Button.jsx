@@ -2,9 +2,10 @@ import React from "react";
 import clsx from "clsx";
 import s from "./Button.module.scss";
 
-export const Button = ({ className, text, background, small, medium, large, border }) => {
+export const Button = ({ className, text, background, small, medium, large, border, handler }) => {
   return (
     <button
+      onClick={handler}
       className={clsx(s.button, className, {
         [s.button__large]: large,
         [s.button__medium]: medium,
