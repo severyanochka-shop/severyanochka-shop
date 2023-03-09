@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Container = () => {
-  return <div className={"container"}></div>;
+export const Container = ({ children }) => {
+  return <div className={"container"}>{children}</div>;
 };
