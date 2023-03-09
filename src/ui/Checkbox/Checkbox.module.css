@@ -1,0 +1,30 @@
+.label {
+  display: block;
+  margin: auto;
+}
+.status {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.new_status {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url(./regular.svg);
+  background-size: cover;
+}
+
+.status:checked + .new_status {
+  background-image: url(./checked.svg);
+}
+
+.status:disabled + .new_status {
+  background-image: url(./checked.svg);
+}
+
+
+
+
+
