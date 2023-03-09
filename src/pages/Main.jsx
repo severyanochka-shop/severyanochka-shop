@@ -3,8 +3,8 @@ import { Button } from "../ui/Button/Button";
 
 export const Main = () => {
   return (
-    <>
-      <Header />
-    </>
+    <div className={"container"}>
+      <h1>СЕВЕРЯНОЧКА</h1>
+    </div>
   );
 };
