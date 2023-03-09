@@ -3,6 +3,7 @@
     background-color: #F9F4E2;
     width: 1440px;
     height: 126px;
+    display: flex;
 }
 .footer__logo {
     margin: 0 auto;
@@ -12,6 +13,21 @@
     width: 100%;
     height: auto;
 }
+.footer__links {
+        margin: 37px 40px 71px 135px;
+        display: flex;
+}
 .footer__link {
+    margin: 0 40px 0;
+    display: block;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #414141;
+    text-decoration: none;
+}
+.footer__item {
     margin: 40px 20px 71px;
 }

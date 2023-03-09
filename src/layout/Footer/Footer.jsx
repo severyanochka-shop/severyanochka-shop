@@ -9,23 +9,33 @@ import Tel from "./images/Tel.svg";
 export const Footer = () => {
   return (
     <div className={s.footer}>
-      <a href="#" className={s.footer__link}>
-        О компании
-      </a>
-      <a href="#">Контакты</a>
-      <a href="#">Вакансии</a>
-      <a href="#">Статьи</a>
-      <a href="#">Политика обработки персональных данных</a>
-      <a className={s.footer__link} href="">
+      <div className={s.footer__links}>
+        <a href="#" className={s.footer__link}>
+          О компании
+        </a>
+        <a className={s.footer__link} href="#">
+          Контакты
+        </a>
+        <a className={s.footer__link} href="#">
+          Вакансии
+        </a>
+        <a className={s.footer__link} href="#">
+          Статьи
+        </a>
+        <a className={s.footer__link} href="#">
+          Политика обработки персональных данных
+        </a>
+      </div>
+      <a className={s.footer__item} href="">
         <img src={Instagram} alt="logo" width="20" height="20" />
       </a>
-      <a className={s.footer__link} href="">
+      <a className={s.footer__item} href="">
         <img src={VK} alt="logo" width="20" height="20" />
       </a>
-      <a className={s.footer__link} href="">
+      <a className={s.footer__item} href="">
         <img src={Facebook} alt="logo" width="20" height="20" />
       </a>
-      <a className={s.footer__link} href="">
+      <a className={s.footer__item} href="">
         <img src={Ok} alt="logo" width="20" height="20" />
       </a>
       <div>
