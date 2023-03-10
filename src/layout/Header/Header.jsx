@@ -1,21 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import s from "./Header.module.scss";
 import logo from "./images/logo.svg";
 import menu from "./images/menu.svg";
+import login from "./images/login.svg";
 import favorites from "./images/favorites.svg";
 import orders from "./images/orders.svg";
 import cart from "./images/cart.svg";
 import avatar from "./images/avatar.png";
-import { Button } from "../../ui/Button/Button";
+import name from "./images/name.svg";
+import { HeaderButton } from "./HeaderButton/HeaderButton";
 
-export const Header = () => {
+import { Container } from "../Container/Container";
+
+export const Header = ({ handler }) => {
   return (
-    <>
-      <div className={s.header}>
+    <div className={s.header}>
+      <Container>
         <Link to="/">
-          <Button text="Каталог" />{" "}
+          <img src={logo} alt="ЛОГО" className={s.img_logo} />
+          <img src={name} alt="Северяночка" className={s.img_name} />
         </Link>
-      </div>
-    </>
+        <Link to="/">
+          <HeaderButton handler background="green">
+            <div className={s.button__catalogue}>
+              <img src={menu} alt="|||" />
+              <p className={s.button__text}>Каталог</p>
+            </div>
+          </HeaderButton>
+        </Link>
+      </Container>
+    </div>
   );
 };
