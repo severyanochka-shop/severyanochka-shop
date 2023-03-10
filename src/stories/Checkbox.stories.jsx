@@ -1,35 +1,29 @@
 import React from "react";
-import '../ui/Checkbox/Checkbox.module.scss';
+import "../ui/Checkbox/Checkbox.module.scss";
 import { parameters } from "./preview";
-import { Checkbox } from "../ui/Checkbox/Checkbox";
+import { Checkbox as CheckboxComponent } from "../ui/Checkbox/Checkbox";
 
-export default {
+const obj = {
   title: "UI",
-  component: Checkbox,
+  component: CheckboxComponent,
   argTypes: {
-    background: {
-      options: [false, "gray", "red", "green", "orange"],
-      control: { type: "select" },
-    },
-    border: {
-      options: [false, "gray", "red", "green", "orange"],
-      control: { type: "select" },
-    },
     small: { control: "boolean", defaultValue: false },
     medium: { control: "boolean", defaultValue: false },
     large: { control: "boolean", defaultValue: false },
+    extrasmall: { control: "boolean", defaultValue: false },
+    disabled: { control: "boolean", defaultValue: false },
   },
   parameters,
 };
 
-const Template = (args) => <Checkbox {...args} />;
+export default obj;
 
-export const MyButton = Template.bind({});
-MyButton.args = {
-  text: "Text",
-  background: "gray",
-  border: "none",
-  small: true,
+const Template = (args) => <CheckboxComponent {...args} />;
+
+export const Checkbox = Template.bind({});
+Checkbox.args = {
+  extrasmall: false,
+  small: false,
   medium: false,
-  large: false,
+  large: true,
 };
