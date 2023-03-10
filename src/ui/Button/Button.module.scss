@@ -34,6 +34,7 @@
     &_disabled {
       background: #FCD5BA;
       color: #FF6633;
+      cursor: default;
     }
   }
   &__green {
@@ -43,6 +44,7 @@
     &_disabled {
       background: #E5FFDE;
       color: #70C05B;
+      cursor: default;
     }
   }
   &__gray {
@@ -52,6 +54,7 @@
     &_disabled {
       background: #FFFFFF;
       color: #BFBFBF;
+      cursor: default;
     }
   }
   &__red {
@@ -61,6 +64,7 @@
     &_disabled {
       background: #FFC7C7;
       color: #D80000;
+      cursor: default;
     }
   }
 }
@@ -76,6 +80,7 @@
       background: none;
       border: 1px solid #FCD5BA;
       color: #BFBFBF;
+      cursor: default;
     }
   }
   &__green {
@@ -87,6 +92,7 @@
       background: none;
       border: 1px solid #E5FFDE;
       color: #BFBFBF;
+      cursor: default;
     }
   }
   &__gray {
@@ -98,6 +104,7 @@
       background: none;
       border: 1px solid #BFBFBF;
       color: #BFBFBF;
+      cursor: default;
     }
   }
   &__red {
@@ -109,6 +116,7 @@
       background: none;
       border: 1px solid #FFC7C7;
       color: #BFBFBF;
+      cursor: default;
     }
   }
 }
