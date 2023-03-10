@@ -40,7 +40,7 @@
     background: #ff6633 !important;
     border-radius: 4px !important;
     margin: 0 !important;
-    // width: 77px;
+    width: 77px;
     height: 24px;
     &__label {
       font-size: 16px !important;
@@ -97,7 +97,6 @@
   }
   &__input {
     caret-color: #70c05b;
-    font-weight: bold !important;
   }
 }
 

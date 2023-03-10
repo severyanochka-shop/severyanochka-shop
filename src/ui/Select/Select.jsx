@@ -31,8 +31,6 @@ export const Select = ({ options, isMulti, label, disabled }) => {
     } else setValue(newValue);
   };
 
-  console.log(value);
-
   const DropdownIndicator = (props) => {
     return (
       <components.DropdownIndicator {...props}>
