@@ -5,6 +5,10 @@ import "../../Checkbox/Checkbox";
 import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
 import x from "../RegistrationForm/images/x.svg";
+// import { Select } from "../../Select/Select";
+import { Toggle } from "../../Toggle/Toggle";
+import { Select } from "../../Select/Select";
+// import { Select } from '../../Select/Select';
 
 export const RegistrationForm = () => {
   return (
@@ -18,8 +22,7 @@ export const RegistrationForm = () => {
         <input type="text" className="input" />
         <input type="text" className="input" />
         <input type="text" className="input" />
-        <input type="text" className="input" />
-        <input type="text" className="input" />
+        {/* <Select label="регион"></Select> */}
       </div>
       <h2 className="subtitle">Необязательные поля</h2>
       <div className="freeFieldsWrapper">
@@ -28,7 +31,7 @@ export const RegistrationForm = () => {
       </div>
       <div className="checkBoxWrapper">
         <div>
-        <Checkbox extrasmall className={"checkBox"} />
+          <Checkbox extrasmall className={"checkBox"} />
         </div>
         <p className={"checkbox__text"}>У меня нет карты лояльности</p>
       </div>
@@ -38,6 +41,25 @@ export const RegistrationForm = () => {
       <Button small background="orange" border="green" className={""}>
         Вход
       </Button>
+
+      <Select className="select"
+        label={"Регион"}
+        options={[
+          {
+            value: "chocolate",
+            label: "Chocolate",
+          },
+          {
+            value: "strawberry",
+            label: "Strawberry",
+          },
+          {
+            value: "vanilla",
+            label: "Vanilla",
+          },
+        ]}
+      ></Select>
+      <Toggle XL />
     </div>
   );
 };
