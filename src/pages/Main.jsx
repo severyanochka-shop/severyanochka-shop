@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../ui/Button/Button";
 import { Select } from "../ui/Select/Select";
 
 export const Main = () => {
@@ -9,9 +8,32 @@ export const Main = () => {
     { value: "vanilla", label: "Vanilla33" },
   ];
   return (
-    <div className={"container"}>
+    <div style={{ margin: 20 }} className={"container"}>
       <h1>СЕВЕРЯНОЧКА</h1>
-      <Select options={options} />
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} disabled />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} isMulti />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} isMulti disabled />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} label="Label" />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} label="Label" disabled />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} label="Label" isMulti />
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <Select options={options} label="Label" isMulti disabled />
+      </div>
     </div>
   );
 };
