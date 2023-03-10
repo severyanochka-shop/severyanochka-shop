@@ -1,76 +1,77 @@
-// import React, { useState } from "react";
-import ReactSelect from "react-select";
-// import clsx from "clsx";
-// import s from "./Select.module.scss";
-
-// export const Select = ({ options, handler, className }) => {
-//   const [selectedOption, setSelectedOption] = useState([]);
-//   console.log(selectedOption);
-//   return (
-//     <ReactSelect
-//       isMulti
-//       defaultValue={["11111", "22222222", 333333333]}
-//       onChange={(e) => setSelectedOption([...selectedOption, e.target.value])}
-//       // className={clsx(s.select, className)}
-//       options={options}
-//     />
-//   );
-// };
-
 import React, { useState } from "react";
-
-const colourOptions = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
-
-const styles = {
-  multiValue: (base, state) => {
-    return state.data.isFixed ? { ...base, backgroundColor: "#FF6633" } : base;
-  },
-  multiValueLabel: (base, state) => {
-    return state.data.isFixed ? { ...base, fontWeight: "bold", color: "white", paddingRight: 6 } : base;
-  },
-  multiValueRemove: (base, state) => {
-    return state.data.isFixed ? { ...base, display: "none" } : base;
-  },
-};
+import ReactSelect, { components } from "react-select";
+import dropdown from "./images/dropdown.svg";
+import cross from "./images/cross.svg";
+import "./Select.scss";
 
 const orderOptions = (values) => {
   return values.filter((v) => v.isFixed).concat(values.filter((v) => !v.isFixed));
 };
 
-export const Select = () => {
+export const Select = ({ options, isMulti, label, disabled }) => {
   const [value, setValue] = useState([]);
 
   const onChange = (newValue, actionMeta) => {
-    switch (actionMeta.action) {
-      case "remove-value":
-      case "pop-value":
-        if (actionMeta.removedValue.isFixed) {
-          return;
-        }
-        break;
-      case "clear":
-        newValue = colourOptions.filter((v) => v.isFixed);
-        break;
-    }
+    if (isMulti) {
+      switch (actionMeta.action) {
+        case "remove-value":
+        case "pop-value":
+          if (actionMeta.removedValue.isFixed) {
+            return;
+          }
+          break;
+        case "clear":
+          newValue = options.filter((v) => v.isFixed);
+          break;
+        default:
+          break;
+      }
 
-    setValue(orderOptions(newValue));
+      setValue(orderOptions(newValue));
+    } else setValue(newValue);
+  };
+
+  const DropdownIndicator = (props) => {
+    return (
+      <components.DropdownIndicator {...props}>
+        <img src={dropdown} alt={"⇓"} />
+      </components.DropdownIndicator>
+    );
+  };
+
+  const MultiValueRemove = (props) => {
+    return (
+      <components.MultiValueRemove {...props}>
+        <img src={cross} alt="X" />
+      </components.MultiValueRemove>
+    );
+  };
+
+  const ControlComponent = (props) => (
+    <div>
+      <p className="control-styles">{label}</p>
+      <components.Control {...props} />
+    </div>
+  );
+
+  const NoOptionsMessage = (props) => {
+    return (
+      <components.NoOptionsMessage {...props}>
+        <p className="no-option-message">-</p>
+      </components.NoOptionsMessage>
+    );
   };
 
   return (
     <ReactSelect
       value={value}
-      isMulti
-      styles={styles}
-      isClearable={value.some((v) => !v.isFixed)}
-      name="colors"
-      className="basic-multi-select"
-      classNamePrefix="select"
+      isMulti={isMulti}
       onChange={onChange}
-      options={colourOptions}
+      options={options}
+      classNamePrefix="custom-select"
+      components={{ DropdownIndicator, MultiValueRemove, Control: ControlComponent, NoOptionsMessage }}
+      isDisabled={disabled}
+      isClearable={false}
     />
   );
 };
