@@ -2,31 +2,14 @@
   box-sizing: border-box;
   background: none;
   border: none;
-  color: #ffffff;
   cursor: pointer;
   border-radius: 4px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
+  font-size: 16px;
   line-height: 150%;
   height: 40px;
   min-width: 40px;
-
-  //Sizes
-  &__large {
-    width: 193px;
-    height: 60px;
-    font-size: 24px;
-  }
-  &__medium {
-    height: 40px;
-    width: 157px;
-    font-size: 16px;
-  }
-  &__small {
-    height: 32px;
-    width: 157px;
-    font-size: 12px;
-  }
 
   //Background color
   &__orange {
