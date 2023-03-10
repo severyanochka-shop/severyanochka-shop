@@ -7,12 +7,11 @@ import login from "./images/login.svg";
 import favorites from "./images/favorites.svg";
 import orders from "./images/orders.svg";
 import cart from "./images/cart.svg";
-import avatar from "./images/avatar.png";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
 
-export const Header = ({ handler }) => {
+export const Header = () => {
   return (
     <div className={s.header}>
       <Container>
@@ -21,8 +20,8 @@ export const Header = ({ handler }) => {
             <img src={logo} alt="ЛОГО" className={s.logo} />
           </Link>
           <Link to="/catalogue">
-            <HeaderButton handler background="green">
-              <div className={s.button__inside}>
+            <HeaderButton background="green">
+              <div className={s.button__wrapper}>
                 <img src={menu} alt="|||" />
                 <span className={s.button__text}>Каталог</span>
               </div>
@@ -33,8 +32,8 @@ export const Header = ({ handler }) => {
           <PictoButton text={"Заказы"} img={orders} link="/orders" />
           <PictoButton text={"Корзина"} img={cart} link="/shopping-cart" />
           <Link to="/login">
-            <HeaderButton handler background="orange">
-              <div className={s.button__inside}>
+            <HeaderButton background="orange">
+              <div className={s.button__wrapper}>
                 <span className={s.button__text}>Войти</span>
                 <img src={login} alt="->" />
               </div>

@@ -12,10 +12,10 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
+  align-items: end;
 }
 
-.button__inside {
+.button__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,9 +31,10 @@
 }
 
 .header_input {
+  display: block;
   padding: 8px;
   box-sizing: border-box;
-  width: 375px;
+  width: 436px;
   height: 40px;
   background: #ffffff;
   border: 1px solid #70c05b;
@@ -45,4 +46,10 @@
   line-height: 150%;
   color: #8f8f8f;
   outline: none;
+  margin: 0 28px 16px 16px;
+}
+
+.logo {
+  display: block;
+  margin: 0 28px 20px;
 }

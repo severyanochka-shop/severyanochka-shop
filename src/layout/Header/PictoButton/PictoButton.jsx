@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import clsx from "clsx";
 import s from "./PictoButton.module.scss";
 
 export const PictoButton = ({ text, img, link }) => {
@@ -11,7 +10,7 @@ export const PictoButton = ({ text, img, link }) => {
           <img src={img} alt="" className={s.pictogram} />
           <span>{text}</span>
         </button>
-      </Link>{" "}
+      </Link>
     </>
   );
 };
