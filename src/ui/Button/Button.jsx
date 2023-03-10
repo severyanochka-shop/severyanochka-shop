@@ -3,7 +3,6 @@ import clsx from "clsx";
 import s from "./Button.module.scss";
 
 export const Button = ({ className, children, background, small, medium, large, border, handler }) => {
-
   const innerClassName = clsx(s.button, className, {
     [s.button__large]: large,
     [s.button__medium]: medium,

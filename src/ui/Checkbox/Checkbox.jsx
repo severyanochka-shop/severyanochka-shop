@@ -1,23 +1,18 @@
 import React from 'react'
 import clsx from "clsx";
-import cl from './Checkbox.module.css'
+import cl from './Checkbox.module.scss'
 
 
-export const Checkbox = () => {
-  // const innerClassName = clsx(s.checkbox, className, {
-        // [s.checkbox__large]: large,
-        // [s.checkbox__medium]: medium,
-        // [s.checkbox__small]: small,
-        // [s.checkbox__checked]: value,
-        // [s.checkbox__disabled]: disabled,
-      // });
+export const Checkbox = ({ large, medium, small, className, disabled}) => {
+  const innerClassName = clsx(cl.new_status, className, {
+    [cl.new_status__large]: large,
+    [cl.new_status__medium]: medium,
+    [cl.new_status__small]: small,
+     });
   return (
     <label className={cl.label}>
-      <input
-        className={cl.status}
-        type="checkbox"
-      />
-      <span className={cl.new_status}></span>
+      <input className={cl.status} type="checkbox" disabled={disabled} />
+      <span className={innerClassName}></span>
     </label>
   );
 };
