@@ -1,0 +1,256 @@
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  &__XL {
+    width: 75px;
+  }
+  &__L {
+    width: 64px;
+  }
+  &__M {
+    width: 46px;
+  }
+  &__S {
+    width: 34px;
+  }
+}
+
+.checkbox {
+  display: none;
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 32px;
+  border: 1px solid #e0e0e0;
+}
+
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  &__L:before,
+  &__L:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    box-sizing: border-box;
+  }
+  &__L:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__L:after {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  // XL
+  &__XL:before,
+  &__XL:after {
+    float: left;
+    width: 50%;
+    height: 35px;
+    box-sizing: border-box;
+  }
+  &__XL:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__XL:after {
+    content: "";
+    background-color: #f8f8f8;
+  }
+
+  // M
+  &__M:before,
+  &__M:after {
+    float: left;
+    width: 50%;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  &__M:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__M:after {
+    content: "";
+    background-color: #f8f8f8;
+  }
+
+  //S
+  &__S:before,
+  &__S:after {
+    float: left;
+    width: 50%;
+    height: 15px;
+    box-sizing: border-box;
+  }
+  &__S:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__S:after {
+    content: "";
+    background-color: #f8f8f8;
+  }
+
+  &__disable:before,
+  &__disable:after {
+    background-color: #f8f8f8;
+  }
+}
+
+.inner__checked {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  &__L:before,
+  &__L:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    box-sizing: border-box;
+  }
+  &__L:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__L:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #70c05b;
+    color: #fff;
+    text-align: right;
+  }
+
+  &__XL:before,
+  &__XL:after {
+    float: left;
+    width: 50%;
+    height: 35px;
+    box-sizing: border-box;
+  }
+  &__XL:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__XL:after {
+    content: "";
+    background-color: #70c05b;
+  }
+
+  //M
+  &__M:before,
+  &__M:after {
+    float: left;
+    width: 50%;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  &__M:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__M:after {
+    content: "";
+    background-color: #70c05b;
+  }
+
+  // S
+  &__S:before,
+  &__S:after {
+    float: left;
+    width: 50%;
+    height: 15px;
+    box-sizing: border-box;
+  }
+  &__S:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__S:after {
+    content: "";
+    background-color: #70c05b;
+  }
+
+  &__disable:before,
+  &__disable:after {
+    background-color: #f8f8f8;
+  }
+}
+
+.switch {
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; // toggle
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  transition: all 0.3s ease-in 0s;
+
+  &__L {
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+  }
+
+  &__XL {
+    width: 33px;
+    height: 33px;
+    margin: 2px;
+  }
+
+  &__M {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+  }
+
+  &__S {
+    width: 13px;
+    height: 13px;
+    margin: 2px;
+  }
+
+  &__disable {
+    background: #e0e0e0;
+  }
+  &:hover {
+    background-color: black;
+  }
+}
+
+.switch__checked {
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0; // toggle
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  transition: all 0.3s ease-in 0s;
+
+  &:hover {
+    background-color: #000;
+  }
+
+  &__disable {
+    background: #e0e0e0;
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  
+}
+
