@@ -28,12 +28,13 @@
 
   //Background color
   &__orange {
-    background: #ff6633;
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--primary-text);
 
     &_disabled {
       background: #FCD5BA;
-      color: #FF6633;
+      color: var(--primary-color);
+      cursor: default;
     }
   }
   &__green {
@@ -43,6 +44,7 @@
     &_disabled {
       background: #E5FFDE;
       color: #70C05B;
+      cursor: default;
     }
   }
   &__gray {
@@ -51,7 +53,8 @@
 
     &_disabled {
       background: #FFFFFF;
-      color: #BFBFBF;
+      color: var(--light);
+      cursor: default;
     }
   }
   &__red {
@@ -61,6 +64,7 @@
     &_disabled {
       background: #FFC7C7;
       color: #D80000;
+      cursor: default;
     }
   }
 }
@@ -69,13 +73,14 @@
 .border {
   &__orange {
     background: none;
-    border: 1px solid #ff6633;
-    color: #ff6633;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 
     &_disabled {
-      background: none;
+      background: #fff;
       border: 1px solid #FCD5BA;
-      color: #BFBFBF;
+      color: var(--light);
+      cursor: default;
     }
   }
   &__green {
@@ -84,9 +89,10 @@
     color: #70c05b;
 
     &_disabled {
-      background: none;
+      background: #fff;
       border: 1px solid #E5FFDE;
-      color: #BFBFBF;
+      color: var(--light);
+      cursor: default;
     }
   }
   &__gray {
@@ -95,9 +101,10 @@
     color: #606060;
 
     &_disabled {
-      background: none;
-      border: 1px solid #BFBFBF;
-      color: #BFBFBF;
+      background: #fff;
+      border: 1px solid var(--light);
+      color: var(--light);
+      cursor: default;
     }
   }
   &__red {
@@ -106,9 +113,10 @@
     color: #d80000;
 
     &_disabled {
-      background: none;
+      background: #fff;
       border: 1px solid #FFC7C7;
-      color: #BFBFBF;
+      color: var(--light);
+      cursor: default;
     }
   }
 }
