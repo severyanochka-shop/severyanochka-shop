@@ -1,0 +1,44 @@
+.label {
+  display: block;
+  margin: auto;
+}
+.status {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.new_status {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url(../Checkbox/images/regular.svg);
+  background-size: cover;
+
+  //Sizes
+  &__large {
+    width: 32px;
+    height: 32px;
+  }
+  &__medium {
+    height: 24px;
+    width: 24px;
+  }
+  &__small {
+    height: 20px;
+    width: 20px;
+  }
+
+  &__extrasmall {
+  height: 16px;
+  width: 16px;
+  }
+}
+
+.status:checked + .new_status {
+  background-image: url(../Checkbox/images/checked.svg);
+}
+
+.status:disabled + .new_status {
+  background-image: url(../Checkbox/images/disable.svg);
+}
