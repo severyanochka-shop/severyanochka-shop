@@ -6,11 +6,18 @@ import Ok from "./images/Ok.svg";
 import VK from "./images/VK.svg";
 import Tel from "./images/Tel.svg";
 import Zasovskiy from "./images/Zasovskiy.png"
+import zas4x from './images/zas4x.png'
+import logosev from './images/logosev.png'
 
 export const Footer = () => {
     return (
       <>
         <div className={s.footer}>
+          <img
+            src={logosev}
+            className={s.footer__logo}
+            alt="logo"
+          />
           <div className={s.footer__links}>
             <a href="#" className={s.footer__link}>
               О компании
@@ -48,10 +55,10 @@ export const Footer = () => {
             </a>
             <p className={s.footer__numbers}>8 800 777 33 33</p>
           </div>
-        </div>
-        <div className={s.footer__design}>
-          <p className={s.footer__des}>Дизайн</p>
-          <img src={Zasovskiy} alt="logo" width="100" height="10" />
+          <div className={s.footer__design}>
+            <p className={s.footer__des}>Дизайн</p>
+            <img src={zas4x} alt="logo" width="100" height="10" />
+          </div>
         </div>
       </>
     );
