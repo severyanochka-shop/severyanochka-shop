@@ -15,15 +15,19 @@
   align-items: center;
 }
 
-.button__catalogue {
+.button__inside {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 8px;
-  gap: 8px;
   width: 140px;
   height: 40px;
+}
+
+.button__text {
+  margin: 0 20px;
+  display: block;
 }
 
 .header_input {
@@ -40,4 +44,5 @@
   font-size: 16px;
   line-height: 150%;
   color: #8f8f8f;
+  outline: none;
 }

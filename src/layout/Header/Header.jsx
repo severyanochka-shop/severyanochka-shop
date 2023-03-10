@@ -22,9 +22,9 @@ export const Header = ({ handler }) => {
           </Link>
           <Link to="/catalogue">
             <HeaderButton handler background="green">
-              <div className={s.button__catalogue}>
+              <div className={s.button__inside}>
                 <img src={menu} alt="|||" />
-                <p className={s.button__text}>Каталог</p>
+                <span className={s.button__text}>Каталог</span>
               </div>
             </HeaderButton>
           </Link>
@@ -34,8 +34,8 @@ export const Header = ({ handler }) => {
           <PictoButton text={"Корзина"} img={cart} link="/shopping-cart" />
           <Link to="/login">
             <HeaderButton handler background="orange">
-              <div className={s.button__catalogue}>
-                <p className={s.button__text}>Войти</p>
+              <div className={s.button__inside}>
+                <span className={s.button__text}>Войти</span>
                 <img src={login} alt="->" />
               </div>
             </HeaderButton>

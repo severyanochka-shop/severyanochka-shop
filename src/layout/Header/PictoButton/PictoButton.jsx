@@ -8,8 +8,8 @@ export const PictoButton = ({ text, img, link }) => {
     <>
       <Link to={link}>
         <button className={s.button}>
-          <img src={img} alt="" />
-          {text}
+          <img src={img} alt="" className={s.pictogram} />
+          <span>{text}</span>
         </button>
       </Link>{" "}
     </>
