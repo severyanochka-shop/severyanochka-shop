@@ -2,11 +2,11 @@ import React from "react";
 import "../ui/Button/Button.module.scss";
 import { parameters } from "./preview";
 
-import { Button } from "../ui/Button/Button";
+import { Button as ButtonComponent } from "../ui/Button/Button";
 
-export default {
+const obj = {
   title: "UI",
-  component: Button,
+  component: ButtonComponent,
   argTypes: {
     background: {
       options: [false, "gray", "red", "green", "orange"],
@@ -20,11 +20,13 @@ export default {
   parameters,
 };
 
-const Template = (args) => <Button {...args} />;
+export default obj;
 
-export const MyButton = Template.bind({});
-MyButton.args = {
-  text: "Text",
+const Template = (args) => <ButtonComponent {...args} />;
+
+export const Button = Template.bind({});
+Button.args = {
+  children: "Text",
   background: "gray",
   border: "none",
   small: true,
