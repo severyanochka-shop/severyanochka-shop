@@ -30,41 +30,85 @@
   &__orange {
     background: #ff6633;
     color: #ffffff;
+
+    &_disabled {
+      background: #FCD5BA;
+      color: #FF6633;
+    }
   }
   &__green {
     background: #70c05b;
     color: #ffffff;
+
+    &_disabled {
+      background: #E5FFDE;
+      color: #70C05B;
+    }
   }
   &__gray {
     background: #f3f2f1;
     color: #606060;
+
+    &_disabled {
+      background: #FFFFFF;
+      color: #BFBFBF;
+    }
   }
   &__red {
     background: #d80000;
     color: #f2f2f2;
-  }
 
-  //Border color
-  &__border {
-    &_orange {
-      background: none;
-      border: 1px solid #ff6633;
-      color: #ff6633;
+    &_disabled {
+      background: #FFC7C7;
+      color: #D80000;
     }
-    &_green {
+  }
+}
+
+//Border color
+.border {
+  &__orange {
+    background: none;
+    border: 1px solid #ff6633;
+    color: #ff6633;
+
+    &_disabled {
       background: none;
-      border: 1px solid #70c05b;
-      color: #70c05b;
+      border: 1px solid #FCD5BA;
+      color: #BFBFBF;
     }
-    &_gray {
+  }
+  &__green {
+    background: none;
+    border: 1px solid #70c05b;
+    color: #70c05b;
+
+    &_disabled {
       background: none;
-      border: 1px solid #8f8f8f;
-      color: #606060;
+      border: 1px solid #E5FFDE;
+      color: #BFBFBF;
     }
-    &_red {
+  }
+  &__gray {
+    background: none;
+    border: 1px solid #8f8f8f;
+    color: #606060;
+
+    &_disabled {
       background: none;
-      border: 1px solid #d80000;
-      color: #d80000;
+      border: 1px solid #BFBFBF;
+      color: #BFBFBF;
+    }
+  }
+  &__red {
+    background: none;
+    border: 1px solid #d80000;
+    color: #d80000;
+
+    &_disabled {
+      background: none;
+      border: 1px solid #FFC7C7;
+      color: #BFBFBF;
     }
   }
 }
