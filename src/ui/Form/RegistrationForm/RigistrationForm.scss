@@ -1,5 +1,7 @@
-.container {
+.wrapper {
+  margin: 0 auto;
   display: block;
+  position: relative;
   width: 687px;
   height: 998px;
   box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
@@ -7,6 +9,13 @@
   background-color: #fff;
   padding: 72px 67.5px 44px 67.5px;
   color: #414141;
+}
+
+.closeForm {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .title {
@@ -49,12 +58,37 @@
   // padding: 70px 0 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(1, auto);
   gap: 19px;
   border: 1px solid black;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
   
   .input {
     background-color: red;
   }
+}
+
+.btnContinue {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.checkBoxWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.checkBox {
+  display: block;
+}
+
+.checkbox__text {
+  margin-left: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8F8F8F
 }
