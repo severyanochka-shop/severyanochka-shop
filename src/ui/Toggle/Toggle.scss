@@ -1,424 +1,256 @@
-// .container {
-//     text-align: center;
-//   }
 .toggle-switch {
-    position: relative;
+  position: relative;
+  display: inline-block;
+  &__XL {
     width: 75px;
-    display: inline-block;
-    text-align: left;
-    top: 8px;
-
-    &__XL {
-        position: relative;
-        // width: 75px;
-        display: inline-block;
-        text-align: left;
-        // top: 8px;
-        width: 75px;
-        // height: 32px;
-        // background-color: blue;
-    }
-
-    &__L {
-        position: relative;
-        display: inline-block;
-        text-align: left;
-        // top: 8px;
-        width: 64px;
-        // height: 15px;
-        // background-color: red;
-    }
+  }
+  &__L {
+    width: 64px;
+  }
+  &__M {
+    width: 46px;
+  }
+  &__S {
+    width: 34px;
+  }
 }
 
-  .checkbox {
-    display: none;
+.checkbox {
+  display: none;
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 32px;
+  border: 1px solid #e0e0e0;
+}
+
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  &__L:before,
+  &__L:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    box-sizing: border-box;
+  }
+  &__L:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__L:after {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  // XL
+  &__XL:before,
+  &__XL:after {
+    float: left;
+    width: 50%;
+    height: 35px;
+    box-sizing: border-box;
+  }
+  &__XL:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__XL:after {
+    content: "";
+    background-color: #f8f8f8;
   }
 
-  .checkbox__L {
-    display: none;
+  // M
+  &__M:before,
+  &__M:after {
+    float: left;
+    width: 50%;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  &__M:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__M:after {
+    content: "";
+    background-color: #f8f8f8;
   }
 
-
-//   .label {
-//     display: block;
-//     overflow: hidden;
-//     cursor: pointer;
-//     border: 0 solid #bbb;
-//     border-radius: 32px;
-//   }
-
-
-  .label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 0 solid red;
-    border-radius: 32px;
-    border: 1px solid #E0E0E0;
-    // background-color: red;
+  //S
+  &__S:before,
+  &__S:after {
+    float: left;
+    width: 50%;
+    height: 15px;
+    box-sizing: border-box;
+  }
+  &__S:before {
+    content: "";
+    background-color: #f8f8f8;
+  }
+  &__S:after {
+    content: "";
+    background-color: #f8f8f8;
   }
 
-  .label__L {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid #E0E0E0;
-    border-radius: 32px;
+  &__disable:before,
+  &__disable:after {
+    background-color: #f8f8f8;
+  }
+}
+
+.inner__checked {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  &__L:before,
+  &__L:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    box-sizing: border-box;
+  }
+  &__L:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__L:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #70c05b;
+    color: #fff;
+    text-align: right;
   }
 
-//   .inner {
-//     display: block;
-//     width: 200%;
-//     margin-left: -100%;
-//     transition: margin 0.3s ease-in 0s;
-    
-//   }
-
-//   .inner:before,
-//   .inner:after {
-//     float: left;
-//     width: 50%;
-//     height: 36px;
-//     padding: 0;
-//     line-height: 36px;
-//     color: #fff;
-//     font-weight: bold;
-//     box-sizing: border-box;
-//   }
-//   .inner:before {
-//     content: "";
-//     padding-left: 10px;
-//     background-color: red;
-//     color: #fff;
-//   }
-//   .inner:after {
-//     content: "";
-//     padding-right: 10px;
-//     background-color: #bbb;
-//     color: #fff;
-//     text-align: right;
-//   }
-
-  // inner L
-
-//   .inner__L {
-//     display: block;
-//     width: 200%;
-//     margin-left: -100%;
-//     transition: margin 0.3s ease-in 0s;
-//   }
-
-//   .inner__L:before,
-//   .inner__L:after {
-//     float: left;
-//     width: 50%;
-//     height: 32px;
-//     line-height: 32px;
-//     color: #fff;
-//     font-weight: bold;
-//     box-sizing: border-box;
-
-//   }
-//   .inner__L:before {
-//     content: "";
-//     padding-left: 10px;
-//     background-color: #060;
-//     color: #fff;
-//   }
-//   .inner__L:after {
-//     content: "";
-//     padding-right: 10px;
-//     background-color:#F8F8F8;
-//     color: #fff;
-//     text-align: right;
-//   }
-
-
-  .inner{
-    display: block;
-    width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-    // border: 3px solid black;
-    &__L:before,
-    &__L:after {
-      float: left;
-      width: 50%;
-      height: 32px;
-      // padding: 0;
-      line-height: 32px;
-      color: #fff;
-      font-weight: bold;
-      box-sizing: border-box;
-    }
-    &__L:before {
-      content: "";
-      padding-left: 10px;
-    //   background-color: #F8F8F8;
-     background-color: blue;
-      color: #fff;
-       border: 3px solid black;
-    }
-    &__L:after {
-      content: "";
-      padding-right: 10px;
-      background-color: #F8F8F8;
-      color: #fff;
-      text-align: right;
-    //   border: 1px solid black;
-    }
-
-
-    &__XL:before,
-    &__XL:after {
-      float: left;
-      width: 50%;
-      height: 36px;
-      // padding: 0;
-      line-height: 36px;
-      color: #fff;
-      font-weight: bold;
-      box-sizing: border-box;
-    }
-    &__XL:before {
-      content: "";
-      padding-left: 10px;
-      background-color: #F8F8F8;
-      color: red;
-    }
-    &__XL:after {
-      content: "";
-      padding-right: 10px;
-      background-color: #F8F8F8;
-      color: red;
-      text-align: right;
-    }
+  &__XL:before,
+  &__XL:after {
+    float: left;
+    width: 50%;
+    height: 35px;
+    box-sizing: border-box;
+  }
+  &__XL:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__XL:after {
+    content: "";
+    background-color: #70c05b;
   }
 
-  .inner__checked {
-    display: block;
-    width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-    background-color: green;
-    // border: 3px solid black;
-    &__L:before,
-    &__L:after {
-      float: left;
-      width: 50%;
-      height: 32px;
-      // padding: 0;
-      line-height: 32px;
-      color: #fff;
-      font-weight: bold;
-      box-sizing: border-box;
-    }
-    &__L:before {
-      content: "";
-      padding-left: 10px;
-      background-color: #060;
-      color: #fff;
-    }
-    &__L:after {
-      content: "";
-      padding-right: 10px;
-      background-color: #70C05B;
-      color: #fff;
-      text-align: right;
-    }
-
-
-    &__XL:before,
-    &__XL:after {
-      float: left;
-      width: 50%;
-      height: 36px;
-      // padding: 0;
-      line-height: 36px;
-      color: #fff;
-      font-weight: bold;
-      box-sizing: border-box;
-    }
-    &__XL:before {
-      content: "";
-      padding-left: 10px;
-    //   background-color: red;
-      color: #fff;
-    }
-    &__XL:after {
-      content: "";
-      padding-right: 10px;
-      background-color: #70C05B;
-      color: #fff;
-      text-align: right;
-    }
+  //M
+  &__M:before,
+  &__M:after {
+    float: left;
+    width: 50%;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  &__M:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__M:after {
+    content: "";
+    background-color: #70c05b;
   }
 
-  //
+  // S
+  &__S:before,
+  &__S:after {
+    float: left;
+    width: 50%;
+    height: 15px;
+    box-sizing: border-box;
+  }
+  &__S:before {
+    content: "";
+    background-color: #70c05b;
+  }
+  &__S:after {
+    content: "";
+    background-color: #70c05b;
+  }
 
-//   .switch {
-//     display: block;
-//     width: 24px;
-//     margin: 5px;
-//     background: #fff;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     right: 40px;
-//     border: 5px solid #bbb;
-//     border-radius: 20px;
-//     transition: all 0.3s ease-in 0s;
-//   }
-
-//   .switch__L_left {
-//     display: block;
-//     width: 28px;
-//     height: 28px;
-//     margin: 2px;
-//     background: #fff;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     right: 32px;
-//     border: 0.5px solid rgba(0, 0, 0, 0.04);
-//     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
-//     border-radius: 100px;
-//     transition: all 0.3s ease-in 0s;
-//   }
-
-
-//   .switch__L_checked {
-//     display: block;
-//     width: 28px;
-//     height: 28px;
-//     margin: 2px;
-//     background: #fff;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     right: 0px;
-//     border: 0.5px solid rgba(0, 0, 0, 0.04);
-//     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
-//     border-radius: 100px;
-//     transition: all 0.3s ease-in 0s;
-//   }
-
-//   .switch__L {
-//     display: block;
-//     width: 28px;
-//     height: 28px;
-//     margin: 2px;
-//     // margin-top: 2px;
-//     // margin-bottom: 2px;
-//     background: #fff;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     // right: 32px;
-//     border: 0.5px solid rgba(0, 0, 0, 0.04);
-//     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
-//     border-radius: 100px;
-//     transition: all 0.3s ease-in 0s;
-
-//     &__left {
-//         right: 32px;
-//     }
-//   }
+  &__disable:before,
+  &__disable:after {
+    background-color: #f8f8f8;
+  }
+}
 
 .switch {
-    display: block;
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; // toggle
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  transition: all 0.3s ease-in 0s;
 
-    // margin-top: 2px;
-    // margin-bottom: 2px;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0; // toggle
-    // right: 0;// toggle
-    border: 0.5px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
-    border-radius: 100px;
-    transition: all 0.3s ease-in 0s;
+  &__L {
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+  }
 
-    &__L{
-        width: 28px;
-        height: 28px;
-        margin: 2px;
-    }
+  &__XL {
+    width: 33px;
+    height: 33px;
+    margin: 2px;
+  }
 
-    &__XL{
-        width: 32px;
-        height: 32px;
-        margin: 2px;
-    }
+  &__M {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+  }
 
-    &:hover {
-        background-color: black;
-    }
+  &__S {
+    width: 13px;
+    height: 13px;
+    margin: 2px;
+  }
+
+  &__disable {
+    background: #e0e0e0;
+  }
+  &:hover {
+    background-color: black;
+  }
 }
 
 .switch__checked {
-    display: block;
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0; // toggle
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  transition: all 0.3s ease-in 0s;
 
-    // margin-top: 2px;
-    // margin-bottom: 2px;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    // left: 0; // toggle
-    right: 0;// toggle
-    border: 0.5px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
-    border-radius: 100px;
-    transition: all 0.3s ease-in 0s;
+  &:hover {
+    background-color: #000;
+  }
 
-    &__L{
-        width: 28px;
-        height: 28px;
-        margin: 2px;
-    }
-
-    &__XL{
-        width: 32px;
-        height: 32px;
-        margin: 2px;
-    }
-
+  &__disable {
+    background: #e0e0e0;
     &:hover {
-        background-color: black;
+      background-color: #e0e0e0;
     }
+  }
+
+  
 }
-
-
-// @mixin switch {
-//     display: block;
-//     width: 28px;
-//     height: 28px;
-//     margin: 2px;
-//     // margin-top: 2px;
-//     // margin-bottom: 2px;
-//     background: #fff;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0; // toggle
-//     border: 0.5px solid rgba(0, 0, 0, 0.04);
-//     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
-//     border-radius: 100px;
-//     transition: all 0.3s ease-in 0s;
-
-// }
-
-// .left {
-//     @include switch;
-//     left: 0;
-// }
-
-
-// .checked {
-//     @include switch;
-//     right: 0;
-// }
 
