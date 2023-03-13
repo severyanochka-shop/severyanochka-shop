@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import s from "./OnHoverMenu.module.scss";
+import s from "./DropdownMenu2.module.scss";
 import { Container } from "../../Container/Container";
 
-export const OnHoverMenu = () => {
+export const DropdownMenu2 = () => {
   return (
     <div className={s.menu}>
       <Container>
