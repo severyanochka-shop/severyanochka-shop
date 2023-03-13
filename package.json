@@ -34,8 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "precommit": "lint-staged"
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -65,8 +64,14 @@
     "prop-types": "^15.8.1",
     "webpack": "^5.76.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{js, jsx}": [
+    "*.{js,jsx}": [
+      "eslint --fix",
       "prettier --write",
       "git add"
     ]
