@@ -28,43 +28,95 @@
 
   //Background color
   &__orange {
-    background: #ff6633;
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--primary-text);
+
+    &_disabled {
+      background: #FCD5BA;
+      color: var(--primary-color);
+      cursor: default;
+    }
   }
   &__green {
     background: #70c05b;
     color: #ffffff;
+
+    &_disabled {
+      background: #E5FFDE;
+      color: #70C05B;
+      cursor: default;
+    }
   }
   &__gray {
     background: #f3f2f1;
     color: #606060;
+
+    &_disabled {
+      background: #FFFFFF;
+      color: var(--light);
+      cursor: default;
+    }
   }
   &__red {
     background: #d80000;
     color: #f2f2f2;
-  }
 
-  //Border color
-  &__border {
-    &_orange {
-      background: none;
-      border: 1px solid #ff6633;
-      color: #ff6633;
+    &_disabled {
+      background: #FFC7C7;
+      color: #D80000;
+      cursor: default;
     }
-    &_green {
-      background: none;
-      border: 1px solid #70c05b;
-      color: #70c05b;
+  }
+}
+
+//Border color
+.border {
+  &__orange {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &_disabled {
+      background: #fff;
+      border: 1px solid #FCD5BA;
+      color: var(--light);
+      cursor: default;
     }
-    &_gray {
-      background: none;
-      border: 1px solid #8f8f8f;
-      color: #606060;
+  }
+  &__green {
+    background: none;
+    border: 1px solid #70c05b;
+    color: #70c05b;
+
+    &_disabled {
+      background: #fff;
+      border: 1px solid #E5FFDE;
+      color: var(--light);
+      cursor: default;
     }
-    &_red {
-      background: none;
-      border: 1px solid #d80000;
-      color: #d80000;
+  }
+  &__gray {
+    background: none;
+    border: 1px solid #8f8f8f;
+    color: #606060;
+
+    &_disabled {
+      background: #fff;
+      border: 1px solid var(--light);
+      color: var(--light);
+      cursor: default;
+    }
+  }
+  &__red {
+    background: none;
+    border: 1px solid #d80000;
+    color: #d80000;
+
+    &_disabled {
+      background: #fff;
+      border: 1px solid #FFC7C7;
+      color: var(--light);
+      cursor: default;
     }
   }
 }

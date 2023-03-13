@@ -1,28 +1,28 @@
 import React from "react";
 import { parameters } from "./preview";
-import { Checkbox as CheckboxComponent } from "../ui/Checkbox/Checkbox";
+import { Toggle as ToggleComponent } from "../ui/Toggle/Toggle";
 
 const obj = {
   title: "UI",
-  component: CheckboxComponent,
+  component: ToggleComponent,
   argTypes: {
-    small: {
+    S: {
       control: "boolean",
       defaultValue: false,
     },
-    medium: {
+    M: {
       control: "boolean",
       defaultValue: false,
     },
-    large: {
+    L: {
       control: "boolean",
       defaultValue: false,
     },
-    extrasmall: {
+    XL: {
       control: "boolean",
       defaultValue: false,
     },
-    disabled: {
+    disable: {
       control: "boolean",
       defaultValue: false,
     },
@@ -32,12 +32,12 @@ const obj = {
 
 export default obj;
 
-const Template = (args) => <CheckboxComponent {...args} />;
+const Template = (args) => <ToggleComponent {...args} />;
 
-export const Checkbox = Template.bind({});
-Checkbox.args = {
-  extrasmall: false,
-  small: false,
-  medium: false,
-  large: true,
+export const Toggle = Template.bind({});
+Toggle.args = {
+  S: false,
+  M: false,
+  L: false,
+  XL: true,
 };
