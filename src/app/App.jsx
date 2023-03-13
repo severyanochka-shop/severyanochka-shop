@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Catalog } from "../pages/Catalog";
 import { Main } from "../pages/Main";
 import "./global/styles/global.scss";
+import './global/styles/variables.scss'
 
 export const App = () => {
   return (

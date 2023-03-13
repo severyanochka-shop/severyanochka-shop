@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import clsx from "clsx";
-import s from "./Textfield.module.scss";
-import eye from './eye.svg'
+import s from "./TextField.module.scss";
+import eye from "./eye.svg";
 
 export const Textfield = ({
   className,
@@ -35,4 +35,3 @@ export const Textfield = ({
     </div>
   );
 };
-

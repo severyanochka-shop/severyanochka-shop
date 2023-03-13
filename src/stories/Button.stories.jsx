@@ -1,30 +1,46 @@
 import React from "react";
-import "../ui/Button/Button.module.scss";
 import { parameters } from "./preview";
+import { Button as ButtonComponent } from "../ui/Button/Button";
 
-import { Button } from "../ui/Button/Button";
-
-export default {
+const obj = {
   title: "UI",
-  component: Button,
+  component: ButtonComponent,
   argTypes: {
     background: {
       options: [false, "gray", "red", "green", "orange"],
       control: { type: "select" },
     },
-    border: { options: [false, "gray", "red", "green", "orange"], control: { type: "select" } },
-    small: { control: "boolean", defaultValue: false },
-    medium: { control: "boolean", defaultValue: false },
-    large: { control: "boolean", defaultValue: false },
+    border: {
+      options: [false, "gray", "red", "green", "orange"],
+      control: { type: "select" },
+    },
+    small: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    medium: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    large: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    disabled: {
+      control: "boolean",
+      defaultValue: false,
+    },
   },
   parameters,
 };
 
-const Template = (args) => <Button {...args} />;
+export default obj;
 
-export const MyButton = Template.bind({});
-MyButton.args = {
-  text: "Text",
+const Template = (args) => <ButtonComponent {...args} />;
+
+export const Button = Template.bind({});
+Button.args = {
+  children: "Text",
   background: "gray",
   border: "none",
   small: true,
