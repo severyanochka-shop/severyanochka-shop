@@ -1,5 +1,5 @@
 .footer {
-    background-image: url("./images/pattern2.png");
+    background-image: url("./images/pattern2.svg");
     background-color: #F9F4E2;
     width: 100%;
     height: 126px;
@@ -15,7 +15,7 @@
     height: 44px;
 }
 &__links {
-        margin: 37px 35px 71px 40px;
+        margin: 36px 35px 71px 40px;
         display: flex;
         list-style: none;
 }
@@ -36,13 +36,19 @@
 }
 &__item {
     margin: 0 10px;
+}
+&__img {
     width: 20px;
     height: 20px;
 }
 
 &__contact{
+    position: absolute;
+    left: 80%;
+    right: 0%;
+    top: 4%;
     display: flex;
-    margin: 34px 116px 26px 0;
+    margin: 34px 0 26px 0;
 }
 &__tel{
     display: block;
@@ -56,7 +62,7 @@
     text-align: center;
     align-items: center;
     position: absolute;
-    left: 77%;
+    left: 80%;
     right: 0%;
     top: 55%;
     // background: #4A4A4A;
@@ -150,10 +156,14 @@
     width: 80px;
 }
 &__item {
-    margin: 0 10px;
+    margin: 10px 10px;
 }
 
 &__contact{
+    position: absolute;
+    left: 77%;
+    right: 0%;
+    top: 4%;
     display: flex;
     margin: 35px 16px 26px 0;
 }
@@ -189,6 +199,14 @@
 .footer__links {
         width: 285px;
 }
+.footer__contact{
+    position: absolute;
+    left: 77%;
+    right: 0%;
+    top: 4%;
+    display: flex;
+    margin: 34px 0 26px 0;
+}
 }
 
 @media (max-width: 680px) {
@@ -209,20 +227,25 @@
     margin: 40px 60px 24px 28px;
 }
 &__links {
-        margin: 0 0 0;
+        margin: 0 0 0 16px;
         height: 100px;
-        width: 190px;
+        width: 350px;
         display: flex;
         flex-wrap: wrap;
         text-align: left;
 }
 &__link {
-    margin: 0 16px 0;
+    margin: 0 12px 6px;
     display: block;
 }
 &__items {
     margin: 36px 20px 0 0;
     width: 160px;
+        position: absolute;
+    left: 52%;
+    right: 0%;
+    top: 3%;
+
 }
 &__item {
     margin: 0 10px;
@@ -231,6 +254,11 @@
 &__contact{
     display: flex;
     margin: 18px 16px 26px 0;
+    position: absolute;
+    left: 52%;
+    right: 0%;
+    top: 23%;
+    display: flex;
 }
 &__tel{
     display: block;
@@ -242,9 +270,9 @@
 &__design {
     display: flex;
     position: absolute;
-    left: 52%;
+    left: 8%;
     right: 0%;
-    top: 45%;
+    top: 80%;
     // background: #4A4A4A;
 }
 &__des {
