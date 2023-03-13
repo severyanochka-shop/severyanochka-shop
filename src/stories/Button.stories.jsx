@@ -16,6 +16,7 @@ const obj = {
     small: { control: "boolean", defaultValue: false },
     medium: { control: "boolean", defaultValue: false },
     large: { control: "boolean", defaultValue: false },
+    disabled: { control: "boolean", defaultValue: false },
   },
   parameters,
 };

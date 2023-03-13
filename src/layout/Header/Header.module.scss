@@ -1,10 +1,55 @@
 .header {
-  position: absolute;
-  height: 72px;
+  position: fixed;
   left: 0px;
-  right: 0px;
+  width: 100%;
   top: 0px;
   background: #ffffff;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  height: 72px;
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: end;
+}
+
+.button__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  width: 140px;
+  height: 40px;
+}
+
+.button__text {
+  margin: 0 20px;
+  display: block;
+}
+
+.header_input {
+  display: block;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 436px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8f8f8f;
+  outline: none;
+  margin: 0 28px 16px 16px;
+}
+
+.logo {
+  display: block;
+  margin: 0 28px 20px;
 }

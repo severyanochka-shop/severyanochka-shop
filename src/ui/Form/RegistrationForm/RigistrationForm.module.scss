@@ -1,0 +1,153 @@
+.wrapper {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  width: 687px;
+  height: 998px;
+  box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 72px 67.5px 44px 67.5px;
+  color: #414141;
+}
+
+.wrapper__input {
+  display: block;
+  position: relative;
+  padding-top: 30px;
+}
+
+.closeForm {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.title {
+  text-align: center;
+  width: 260px;
+  height: 36px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #414141;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  width: 552px;
+  height: 27px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.obligatoryFieldsWrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 16px 32px;
+  margin-bottom: 40px;
+
+  .Textfield {
+    width: 260px;
+    height: 40px;
+  }
+}
+
+.freeFieldsWrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
+  gap: 0px 32px;
+
+  .Textfield {
+    width: 260px;
+    height: 40px;
+  }
+}
+
+.toggleWrapper__label {
+  margin-top: 6px;
+  text-align: start;
+  color: #8f8f8f;
+}
+.toggleWrapper {
+  padding: 4px;
+  background-color: #f3f2f1;
+  width: 260px;
+  height: 40px;
+  border-radius: 4px;
+
+  &__button {
+    width: 126px;
+    height: 32px;
+    background-color: #f3f2f1;
+    color: #414141;
+    &__active {
+      width: 126px;
+      height: 32px;
+      background: #70c05b;
+      color: #fff;
+    }
+  }
+}
+
+.checkBoxWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+  color: #8f8f8f;
+  margin-bottom: 40px;
+
+  .checkBox {
+    display: block;
+  }
+
+    .checkbox__text {
+      margin-left: 8px;
+      font-size: 16px;
+      line-height: 150%;
+      color: #8f8f8f;
+    }
+
+}
+
+.btnContinue {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.select {
+  width: 260px;
+  height: 40px;
+}
+
+.messageError {
+  position: absolute;
+  left: 20px;
+  top: 20%;  
+  display: flex;
+  width: 192px;
+  height: 40px;
+  background: #d80000;
+  border-radius: 5px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  &_text {
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
