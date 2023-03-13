@@ -2,8 +2,6 @@ import React from "react";
 import { parameters } from "./preview";
 import { TextField as TextFieldComponent } from "../ui/TextField/TextField";
 
-const a = 5;
-
 const obj = {
   title: "UI",
   component: TextFieldComponent,
