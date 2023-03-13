@@ -1,20 +1,13 @@
 import React from "react";
 import clsx from "clsx";
-import s from "./TextField.module.scss";
+import s from "./Textfield.module.scss";
 import eye from "./eye.svg";
 
-export const Textfield = ({
-  className,
-  placeholder,
-  type,
-  disabled,
-  medium,
-  large,
-}) => {
+export const Textfield = ({ className, label, placeholder, type, disabled, medium, large }) => {
   return (
     <div className="textfield">
       <label className={s.textfield__label} htmlFor="input">
-        Label
+        {label}
         <input
           type={type}
           name="input"
