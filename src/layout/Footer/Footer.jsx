@@ -5,7 +5,7 @@ import Instagram from "./images/Instagram.svg";
 import Ok from "./images/Ok.svg";
 import VK from "./images/VK.svg";
 import Tel from "./images/Tel.svg";
-import zas4x from './images/zas4x.png'
+import Zasov from './images/Zasov.svg'
 import logosev from './images/logosev.png'
 
 export const Footer = () => {
@@ -15,6 +15,12 @@ export const Footer = () => {
     "Вакансии",
     "Статьи",
     "Политика обработки персональных данных",
+  ];
+  let src = [
+    Instagram,
+    VK,
+    Facebook,
+    Ok,
   ];
     return (
       <>
@@ -30,18 +36,11 @@ export const Footer = () => {
             ))}
           </ul>
           <div className={s.footer__items}>
-            <a className={s.footer__item} href="">
-              <img src={Instagram} alt="logo" />
-            </a>
-            <a className={s.footer__item} href="">
-              <img src={VK} alt="logo" />
-            </a>
-            <a className={s.footer__item} href="">
-              <img src={Facebook} alt="logo" />
-            </a>
-            <a className={s.footer__item} href="">
-              <img src={Ok} alt="logo" />
-            </a>
+            {src.map((el, ind) => (
+              <a className={s.footer__item} key={ind}>
+              <img src={el} alt="logo" />
+              </a>
+            ))}
           </div>
           <div className={s.footer__contact}>
             <a className={s.footer__tel} href="">
@@ -51,7 +50,7 @@ export const Footer = () => {
           </div>
           <div className={s.footer__design}>
             <p className={s.footer__des}>Дизайн</p>
-            <img src={zas4x} alt="logo" className={s.footer__deslogo} />
+            <img src={Zasov} alt="logo" className={s.footer__deslogo} />
           </div>
         </div>
       </>
