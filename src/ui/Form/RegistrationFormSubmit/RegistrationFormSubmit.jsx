@@ -33,7 +33,6 @@ export const RegistrationFormSubmit = () => {
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)} action="">
-      {/* <form className={s.wrapper} action=""> */}
       <h1 className={s.title}>Регистрация</h1>
       {errors?.input && (
         <div className={s.messageError}>

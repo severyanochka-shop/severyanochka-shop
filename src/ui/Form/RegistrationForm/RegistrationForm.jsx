@@ -4,23 +4,21 @@ import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
 import x from "../RegistrationForm/images/x.svg";
 import { Select } from "../../Select/Select";
-import { Textfield } from "../../Textfield/Textfield";
+import { TextField } from "../../Textfield/Textfield";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
-import { Input } from "./Input"
-
+import { Input } from "./Input";
 
 export const RegistrationForm = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
   } = useForm({
     mode: "onBlur",
   });
-
 
   const onSubmit = (data) => {
     console.log(data);
@@ -35,54 +33,55 @@ export const RegistrationForm = () => {
       <h1 className={s.title}>Регистрация</h1>
       <h2 className={s.subtitle}>Обязательные поля</h2>
       <div className={s.obligatoryFieldsWrapper}>
-
-
         <div className={s.wrapper__input}>
-        {errors?.tel && (
-          <div className={s.messageError}>
-            <p className={s.messageError_text}>Неверный формат</p>
-          </div>
-        )}
-        <ControlledTextfield
-          className={s.Textfield}
-          register={register}
-          name={"tel"}
-          required={true}
-          label={"Телефон"}
-          type="tel"
-          pattern="2[0-9]{3}-[0-9]{3}"
-        />
+          {errors?.tel && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"tel"}
+            required={true}
+            label={"Телефон"}
+            type="tel"
+            text="89999999999"
+          />
         </div>
 
-        <Input/>
+        <div className={s.wrapper__input}>
+          {errors?.date && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Обзятельное поле</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"date"}
+            required={true}
+            label={"Дата рождения"}
+            type="date"
+          />
+        </div>
 
-        <Textfield
-          className={s.Textfield}
-          type={"tel"}
-          text={"Телефон"}
-          medium
+        <div className={s.wrapper__input}>
+          {errors?.lastName && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"lastName"}
+            required={true}
+            label={"Фамилия"}
+            type="text"
+          />
+        </div>
 
-          // {...register()}
-        />
-        {/* <Textfield
-          className={s.Textfield}
-          type={"text"}
-          text={"календарь"}
-          medium
-        /> */}
-        {/* <ControlledTextfield
-          className={s.Textfield}
-          type={"text"}
-          text={"фамилия"}
-          medium
-          register={register}
-        /> */}
-        <Textfield
-          className={s.Textfield}
-          type={"text"}
-          text={"фамилия"}
-          medium
-        />
         <Select
           className={s.select}
           label={"Регион"}
@@ -102,19 +101,22 @@ export const RegistrationForm = () => {
           ]}
         ></Select>
 
-        <label>
-          {" "}
-          Имя
-          <Textfield
-            label={"Имя"}
+        <div className={s.wrapper__input}>
+          {errors?.firstName && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
             className={s.Textfield}
-            type={"text"}
-            text={"Имя"}
-            medium
+            register={register}
+            name={"firstName"}
+            required={true}
+            label={"Имя"}
+            type="text"
           />
-        </label>
+        </div>
 
-        <input type="submit" />
         <Select
           className={s.select}
           label={"Населенный пункт"}
@@ -134,22 +136,27 @@ export const RegistrationForm = () => {
           ]}
         ></Select>
 
-        <Textfield
-          className={s.Textfield}
-          type={"password"}
-          text={"пароль"}
-          medium
-        />
+        <div className={s.wrapper__input}>
+          {errors?.firstPassword && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"firstPassword"}
+            required={true}
+            label={"Пароль"}
+            type="password"
+            text={"пароль"}
+          />
+        </div>
 
         <label className={s.toggleWrapper__label}>
           Пол
           <div className={s.toggleWrapper}>
-            <Button
-              className={s.toggleWrapper__button__active}
-              // small
-              background="green"
-              // className={s.toggleWrapper__button__active}
-            >
+            <Button className={s.toggleWrapper__button__active} background="green">
               Мужской
             </Button>
             <Button
@@ -165,34 +172,57 @@ export const RegistrationForm = () => {
           </div>
         </label>
 
-        <Textfield
-          className={s.Textfield}
-          type={"password"}
-          text={"повторите пароль"}
-          medium
-          // disabled
-        />
+        <div className={s.wrapper__input}>
+          {errors?.secondPassword && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"secondPassword"}
+            required={true}
+            label={"Повторите пароль"}
+            type="password"
+            text={"пароль"}
+          />
+        </div>
       </div>
 
       <h2 className={s.subtitle}>Необязательные поля</h2>
       <div className={s.freeFieldsWrapper}>
-        <Textfield
-          className={s.Textfield}
-          type={"text"}
-          text={"Номер карты"}
-          medium
-        />
-        <Textfield
-          className={s.Textfield}
-          type={"text"}
-          text={"E-mail"}
-          medium
-        />
-
-        <label>
-          email
-          <input type="email" style={{ backgroundColor: "lightblue" }} />
-        </label>
+        <div className={s.wrapper__input}>
+          {errors?.cardNumber && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"cardNumber"}
+            required={true}
+            label={"Номер карты"}
+            type="text"
+            text={"введите номер карты"}
+          />
+        </div>
+        <div className={s.wrapper__input}>
+          {errors?.email && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>Неверный формат</p>
+            </div>
+          )}
+          <ControlledTextfield
+            className={s.Textfield}
+            register={register}
+            name={"email"}
+            required={true}
+            label={"E-mail"}
+            type="email"
+          />
+        </div>
       </div>
       <div className={s.checkBoxWrapper}>
         <div>
@@ -200,7 +230,7 @@ export const RegistrationForm = () => {
         </div>
         <p className={s.checkbox__text}>У меня нет карты лояльности</p>
       </div>
-      <Button large background="orange" disabled className={s.btnContinue}>
+      <Button large background="orange" disabled={!isValid} className={s.btnContinue}>
         Продолжить
       </Button>
       <Button small background="orange" border="green" className={""}>

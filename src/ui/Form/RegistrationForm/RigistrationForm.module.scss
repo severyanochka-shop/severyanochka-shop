@@ -14,7 +14,7 @@
 .wrapper__input {
   display: block;
   position: relative;
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 .closeForm {
@@ -134,11 +134,13 @@
 
 .messageError {
   position: absolute;
-  left: 20px;
-  top: 20%;  
+  right: 0;
+  top: 0;  
   display: flex;
-  width: 192px;
-  height: 40px;
+  // width: 192px;
+  // height: 40px;
+  width: 150px;
+  height: 20px;
   background: #d80000;
   border-radius: 5px;
   margin: 0 auto;
