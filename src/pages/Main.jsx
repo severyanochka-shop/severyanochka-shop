@@ -1,15 +1,10 @@
 import React from "react";
-import { RegistrationForm } from "../ui/Form/RegistrationForm/RegistrationForm";
-import { RegistrationFormSubmit } from "../ui/Form/RegistrationFormSubmit/RegistrationFormSubmit";
+import { Container } from "../layout/Container/Container";
 
 export const Main = () => {
   return (
-    <>
-     <div className={"container"}>
+    <Container>
       <h1>СЕВЕРЯНОЧКА</h1>
-        <RegistrationForm/>
-        {/* <RegistrationFormSubmit/> */}
-    </div>
-    </>
+    </Container>
   );
 };
