@@ -11,24 +11,12 @@
   line-height: 150%;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0 40px;
-  padding: 40px 0px;
-}
-
-.half {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 0 40px;
-}
-
 .list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 272px);
+  grid-template-areas: "1 2 3 4" "5 6 7 8" "9 10 11 12" "13 . . .";
+  column-gap: 40px;
+  row-gap: 24px;
   padding: 40px 0px;
   list-style-type: none;
 
@@ -39,83 +27,31 @@
       color: #ff6633;
     }
   }
-  &__item {
-    display: inline-block;
-    width: 272px;
-    margin-bottom: 24px;
+}
+
+@media (max-width: 1320px) {
+  .list {
+    padding-left: 16px;
+    column-gap: 20px;
   }
 }
 
-@media (max-width: 1300px) {
-  .half {
-    display: flex;
-    flex-direction: column;
-    gap: 0 40px;
-  }
-  .wrapper {
-    padding: 16px 40px 0 16px;
+@media (max-width: 1220px) {
+  .list {
+    padding-left: 36px;
+    column-gap: 0px;
   }
 }
-@media (max-width: 639px) {
+
+@media (max-width: 1120px) {
+  .list {
+    grid-template-columns: 322px 322px 322px;
+    grid-template-areas: "1 2 3 " "4 5 6" "7 8 9" "10 11 12";
+  }
+}
+
+@media (max-width: 439px) {
   .menu {
     font-weight: 400;
   }
 }
-
-// .menu {
-//   position: fixed;
-//   left: 0;
-//   width: 100%;
-//   top: 72px;
-//   background: #ffffff;
-//   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-//   min-height: 248px;
-//   text-align: left;
-//   font-weight: 700;
-//   line-height: 150%;
-// }
-
-// .wrapper {
-//   display: flex;
-//   flex-flow: row wrap;
-//   gap: 0 40px;
-//   padding: 40px 0px;
-// }
-
-// .half {
-//   display: flex;
-//   flex-flow: row wrap;
-//   gap: 0 40px;
-// }
-
-// .list {
-//   width: 272px;
-//   list-style-type: none;
-
-//   &__link {
-//     color: #414141;
-//     text-decoration: none;
-//     &:hover {
-//       color: #ff6633;
-//     }
-//   }
-//   &__item {
-//     margin-bottom: 24px;
-//   }
-// }
-
-// @media (max-width: 1300px) {
-//   .half {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0 40px;
-//   }
-//   .wrapper {
-//     padding: 16px 40px 0 16px;
-//   }
-// }
-// @media (max-width: 639px) {
-//   .menu {
-//     font-weight: 400;
-//   }
-// }
