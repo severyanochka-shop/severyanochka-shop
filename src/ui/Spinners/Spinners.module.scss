@@ -1,0 +1,415 @@
+.spinnerwrapper {
+  max-width: 381px;
+  height: 100px;
+  border: 1px solid #ececef;
+  border-radius: 26px;
+  padding: 38px 0 38px;
+  background-color: white;
+  margin-top: 24px;
+}
+
+.spinnerarea {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  position: relative;
+}
+/* Fill */
+.spinnerfill {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #8289a3;
+  border-top: 2px solid #70c05b;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Right */
+.loaderright {
+  position: relative;
+  display: flex;
+  width: 25.5px;
+  height: 25.5px;
+  --height: 7px;
+  --width: 1.5px;
+  --color: gray;
+  --activeColor: black;
+  --speed: 3s;
+}
+
+.loaderright div {
+  background: var(--color);
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 1px;
+}
+
+@keyframes stinlarge1 {
+  0%,
+  12.5%,
+  100% {
+    background: var(--color);
+  }
+  6.25% {
+    background: var(--activeColor);
+  }
+}
+
+.stick1 {
+  top: 0px;
+  left: 12px;
+  animation: var(--speed) ease-in-out 0s infinite stinlarge1;
+}
+
+@keyframes stinlarge2 {
+  0%,
+  12.5%,
+  25%,
+  100% {
+    background: var(--color);
+  }
+  18.75% {
+    background: var(--activeColor);
+  }
+}
+
+.stick2 {
+  top: 3px;
+  left: 19px;
+  transform: rotate(45deg);
+  animation: var(--speed) ease-in-out 0s infinite stinlarge2;
+}
+
+@keyframes stinlarge3 {
+  0%,
+  25%,
+  37.5%,
+  100% {
+    background: var(--color);
+  }
+  31.25% {
+    background: var(--activeColor);
+  }
+}
+
+.stick3 {
+  top: 10px;
+  left: 21px;
+  transform: rotate(90deg);
+  animation: var(--speed) ease-in-out 0s infinite stinlarge3;
+}
+
+@keyframes stinlarge4 {
+  0%,
+  37.5%,
+  50%,
+  100% {
+    background: var(--color);
+  }
+  43.75% {
+    background: var(--activeColor);
+  }
+}
+
+.stick4 {
+  top: 16px;
+  left: 18px;
+  transform: rotate(135deg);
+  animation: var(--speed) ease-in-out 0s infinite stinlarge4;
+}
+
+@keyframes stinlarge5 {
+  0%,
+  50%,
+  62.5%,
+  100% {
+    background: var(--color);
+  }
+  56.25% {
+    background: var(--activeColor);
+  }
+}
+
+.stick5 {
+  top: 18.5px;
+  left: 12px;
+  animation: var(--speed) ease-in-out 0s infinite stinlarge5;
+}
+
+@keyframes stinlarge6 {
+  0%,
+  62.5%,
+  75%,
+  100% {
+    background: var(--color);
+  }
+  68.75% {
+    background: var(--activeColor);
+  }
+}
+
+.stick6 {
+  top: 16px;
+  left: 6px;
+  transform: rotate(225deg);
+  animation: var(--speed) ease-in-out 0s infinite stinlarge6;
+}
+
+@keyframes stinlarge7 {
+  0%,
+  75%,
+  87.5%,
+  100% {
+    background: var(--color);
+  }
+  81.25% {
+    background: var(--activeColor);
+  }
+}
+
+.stick7 {
+  top: 10px;
+  left: 3px;
+  transform: rotate(270deg);
+  animation: var(--speed) ease-in-out 0s infinite stinlarge7;
+}
+
+@keyframes stinlarge8 {
+  0%,
+  87.5%,
+  100% {
+    background: var(--color);
+  }
+  93.75% {
+    background: var(--activeColor);
+  }
+}
+
+.stick8 {
+  top: 3px;
+  left: 5.5px;
+  transform: rotate(315deg);
+  animation: var(--speed) ease-in-out 0s infinite stinlarge8;
+}
+
+/* Circle */
+.loadercircle {
+  position: relative;
+  display: flex;
+  width: 25.5px;
+  height: 25.5px;
+  --height: 4px;
+  --width: 4px;
+  --color: gray;
+  --activeColor: #70c05b;
+  --speed: 3s;
+}
+
+.loadercircle div {
+  background: var(--color);
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 100%;
+}
+
+@keyframes inlarge1 {
+  0%,
+  12.5%,
+  100% {
+    background: var(--color);
+  }
+  6.25% {
+    background: var(--activeColor);
+  }
+}
+
+.circle1 {
+  top: 0px;
+  left: 12px;
+  animation: var(--speed) ease-in-out 0s infinite inlarge1;
+}
+
+@keyframes inlarge2 {
+  0%,
+  12.5%,
+  25%,
+  100% {
+    background: var(--color);
+  }
+  18.75% {
+    background: var(--activeColor);
+  }
+}
+
+.circle2 {
+  top: 3.5px;
+  left: 18.5px;
+  transform: rotate(45deg);
+  animation: var(--speed) ease-in-out 0s infinite inlarge2;
+}
+
+@keyframes inlarge3 {
+  0%,
+  25%,
+  37.5%,
+  100% {
+    background: var(--color);
+  }
+  31.25% {
+    background: var(--activeColor);
+  }
+}
+
+.circle3 {
+  top: 10px;
+  left: 21px;
+  transform: rotate(90deg);
+  animation: var(--speed) ease-in-out 0s infinite inlarge3;
+}
+
+@keyframes inlarge4 {
+  0%,
+  37.5%,
+  50%,
+  100% {
+    background: var(--color);
+  }
+  43.75% {
+    background: var(--activeColor);
+  }
+}
+
+.circle4 {
+  top: 16px;
+  left: 18px;
+  transform: rotate(135deg);
+  animation: var(--speed) ease-in-out 0s infinite inlarge4;
+}
+
+@keyframes inlarge5 {
+  0%,
+  50%,
+  62.5%,
+  100% {
+    background: var(--color);
+  }
+  56.25% {
+    background: var(--activeColor);
+  }
+}
+
+.circle5 {
+  top: 18.5px;
+  left: 12px;
+  animation: var(--speed) ease-in-out 0s infinite inlarge5;
+}
+
+@keyframes inlarge6 {
+  0%,
+  62.5%,
+  75%,
+  100% {
+    background: var(--color);
+  }
+  68.75% {
+    background: var(--activeColor);
+  }
+}
+
+.circle6 {
+  top: 16px;
+  left: 6px;
+  transform: rotate(225deg);
+  animation: var(--speed) ease-in-out 0s infinite inlarge6;
+}
+
+@keyframes inlarge7 {
+  0%,
+  75%,
+  87.5%,
+  100% {
+    background: var(--color);
+  }
+  81.25% {
+    background: var(--activeColor);
+  }
+}
+
+.circle7 {
+  top: 10px;
+  left: 3px;
+  transform: rotate(270deg);
+  animation: var(--speed) ease-in-out 0s infinite inlarge7;
+}
+
+@keyframes inlarge8 {
+  0%,
+  87.5%,
+  100% {
+    background: var(--color);
+  }
+  93.75% {
+    background: var(--activeColor);
+  }
+}
+
+.circle8 {
+  top: 3.5px;
+  left: 5.5px;
+  transform: rotate(315deg);
+  animation: var(--speed) ease-in-out 0s infinite inlarge8;
+}
+
+/* Border */
+.spinnerborder {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  left: -6%;
+  width: 24px;
+  height: 24px;
+}
+
+.path {
+  stroke: #70c05b;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
