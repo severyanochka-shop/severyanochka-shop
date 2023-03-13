@@ -1,9 +1,12 @@
 import React from "react";
+import { Container } from "../layout/Container/Container";
+import { Tooltips } from "../ui/Tooltips/Tooltips";
 
 export const Main = () => {
   return (
-    <div className={"container"}>
+    <Container>
       <h1>СЕВЕРЯНОЧКА</h1>
-    </div>
+      <Tooltips gray text="123" />
+    </Container>
   );
 };

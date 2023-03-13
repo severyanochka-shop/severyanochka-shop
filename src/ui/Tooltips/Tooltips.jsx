@@ -12,12 +12,7 @@ export const Tooltips = ({ red, gray, important, className, text }) => {
         [s.gray]: gray,
       })}
     >
-      {important &&
-        (red ? (
-          <img className={s.img} src={importantWhite} alt="!" />
-        ) : (
-          <img className={s.img} src={importantBlack} alt="!" />
-        ))}
+      {important && <img className={s.img} src={red ? importantWhite : importantBlack} alt="!" />}
       <p className={s.text}>{text}</p>
     </div>
   );
