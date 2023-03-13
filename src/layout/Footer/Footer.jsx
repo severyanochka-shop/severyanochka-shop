@@ -20,7 +20,6 @@ export const Footer = () => {
       <>
         <div className={s.footer}>
           <img src={logosev} className={s.footer__logo} alt="logo" />
-          {/* <div className={s.footer__links}> */}
           <ul className={s.footer__links}>
             {data.map((el, ind) => (
               <li key={ind}>
@@ -30,22 +29,6 @@ export const Footer = () => {
               </li>
             ))}
           </ul>
-          {/* <a href="#" className={s.footer__link}>
-              О компании
-            </a>
-            <a className={s.footer__link} href="#">
-              Контакты
-            </a>
-            <a className={s.footer__link} href="#">
-              Вакансии
-            </a>
-            <a className={s.footer__link} href="#">
-              Статьи
-            </a>
-            <a className={s.footer__link} href="#">
-              Политика обработки персональных данных
-            </a> */}
-          {/* </div> */}
           <div className={s.footer__items}>
             <a className={s.footer__item} href="">
               <img src={Instagram} alt="logo" />
