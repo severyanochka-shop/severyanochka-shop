@@ -70,7 +70,12 @@ export const Select = ({ options, isMulti, label, disabled, className }) => {
       options={options}
       className={className}
       classNamePrefix="custom-select"
-      components={{ DropdownIndicator, MultiValueRemove, Control: ControlComponent, NoOptionsMessage }}
+      components={{
+        DropdownIndicator,
+        MultiValueRemove,
+        Control: ControlComponent,
+        NoOptionsMessage,
+      }}
       isDisabled={disabled}
       isClearable={false}
     />
