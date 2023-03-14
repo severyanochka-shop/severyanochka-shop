@@ -1,0 +1,18 @@
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .category {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .category {
+    gap: 12px;
+  }
+}
