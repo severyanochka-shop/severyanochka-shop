@@ -74,7 +74,7 @@ export const ControlledTextfield = ({
             })} // нужно дополнительно прокидывать
             type={type}
             name={name}
-            id="input"
+                        id='input'
             placeholder={text}
             disabled={disabled}
             className={clsx(s.textfield__input, className, {
