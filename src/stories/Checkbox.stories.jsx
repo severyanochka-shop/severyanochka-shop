@@ -1,5 +1,4 @@
 import React from "react";
-import "../ui/Checkbox/Checkbox.module.scss";
 import { parameters } from "./preview";
 import { Checkbox as CheckboxComponent } from "../ui/Checkbox/Checkbox";
 
@@ -7,11 +6,26 @@ const obj = {
   title: "UI",
   component: CheckboxComponent,
   argTypes: {
-    small: { control: "boolean", defaultValue: false },
-    medium: { control: "boolean", defaultValue: false },
-    large: { control: "boolean", defaultValue: false },
-    extrasmall: { control: "boolean", defaultValue: false },
-    disabled: { control: "boolean", defaultValue: false },
+    small: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    medium: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    large: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    extrasmall: {
+      control: "boolean",
+      defaultValue: false,
+    },
+    disabled: {
+      control: "boolean",
+      defaultValue: false,
+    },
   },
   parameters,
 };

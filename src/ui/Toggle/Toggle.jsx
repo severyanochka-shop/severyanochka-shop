@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Toggle.scss";
 import clsx from "clsx";
 
-export const Toggle = ({ L, XL, M, S, checked, disable, handler }) => {
+export const Toggle = ({ L, XL, M, S, disable, handler }) => {
+  const [checked, setChecked] = useState(false);
 
   const innerClassNameToggle = clsx("toggle-switch", {
     "toggle-switch__XL": XL,
@@ -12,7 +13,7 @@ export const Toggle = ({ L, XL, M, S, checked, disable, handler }) => {
   });
 
   const innerClassNameInner = clsx(
-    checked === false
+    !checked
       ? ("inner",
         {
           inner__XL: XL,
@@ -29,26 +30,23 @@ export const Toggle = ({ L, XL, M, S, checked, disable, handler }) => {
           inner__checked__M: M,
           inner__checked__S: S,
           inner__checked__disable: disable === true,
-        })
+        }),
   );
 
-  const innerClassNameSwitch = clsx(
-    checked == false ? "switch" : "switch__checked",
-    {
-      switch__XL: XL,
-      switch__L: L,
-      switch__M: M,
-      switch__S: S,
+  const innerClassNameSwitch = clsx(!checked ? "switch" : "switch__checked", {
+    switch__XL: XL,
+    switch__L: L,
+    switch__M: M,
+    switch__S: S,
 
-      switch__disable: disable === true,
-      switch__checked__disable: disable === true,
-    }
-  );
+    switch__disable: disable === true,
+    switch__checked__disable: disable === true,
+  });
 
   return (
-    <div className={innerClassNameToggle} onClick={() => handler()}>
-      <input type="checkbox" className="checkbox" />
+    <div className={innerClassNameToggle} onClick={handler}>
       <label className="label">
+        <input onChange={() => setChecked(!checked)} type="checkbox" className="checkbox" />
         <span className={innerClassNameInner} />
         <span className={innerClassNameSwitch} />
       </label>
