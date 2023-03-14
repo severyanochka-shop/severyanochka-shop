@@ -1,20 +1,14 @@
 import React from "react";
 import cl from "./CardCatalog.module.scss";
-import product from "./300x300.jpeg";
 import stargrey from "./img/stargrey.svg";
 import starorange from "./img/starorange.svg";
 import { Button } from "../../ui/Button/Button";
 
 
-export const CardCatalog = ({ product_photo, handler }) => {
-  let price_usual = 160.99;
-  let product_describe =
-    "Молоко ПРОСТОКВАШИНО паст. питьевое цельное отборное ...";
-    let price_discount = 159.99;
-    let discount = 50;
-  return (
+export const CardCatalog = ({ product_img, price_usual, handler, product_describe,discount, handler,handler2 }) => {
+   return (
     <div className={cl.card}>
-      <img src={product} alt="" className={cl.image} />
+      <img src={product_img} alt="" className={cl.image} />
       <div className={cl.like_block}>
         <button onClick={handler} className={cl.heart}>
           ❤
@@ -26,7 +20,9 @@ export const CardCatalog = ({ product_photo, handler }) => {
       <div className={cl.info}>
         <div className={cl.price}>
           <div>
-            <p className={cl.price_discount}>{price_discount} ₽</p>
+            <p className={cl.price_discount}>
+              {(price_usual * discount) / 100} ₽
+            </p>
             <p className={cl.withcard}>С картой</p>
           </div>
           <div>
@@ -44,7 +40,7 @@ export const CardCatalog = ({ product_photo, handler }) => {
           <img src={stargrey} alt="" className={cl.star} />
           <img src={stargrey} alt="" className={cl.star} />
         </div>
-        <Button border="green" className={cl.cardcatalog_button}>
+        <Button border="green" className={cl.cardcatalog_button} onClick={handler2}>
           В корзину
         </Button>
       </div>
