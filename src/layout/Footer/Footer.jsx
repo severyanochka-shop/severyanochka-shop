@@ -20,9 +20,9 @@ export const Footer = () => {
   return (
     <>
       <div className={s.footer}>
-        <img src={logosev} className={s.footer__logo} alt="logo" />
+        <img src={logosev} className={s.footer__logo_grid} alt="logo" />
         {/* <div className={s.footer__center}> */}
-        <ul className={s.footer__links}>
+        <ul className={s.footer__links_grid}>
           {data.map((el, ind) => (
             <li key={ind}>
               <a href="#" className={s.footer__link}>
@@ -31,7 +31,7 @@ export const Footer = () => {
             </li>
           ))}
         </ul>
-        <div className={s.footer__items}>
+        <div className={s.footer__items_grid}>
           {src.map((el, ind) => (
             <a className={s.footer__item} key={ind}>
               <img src={el} alt="logo" className={s.footer__img} />
@@ -39,13 +39,13 @@ export const Footer = () => {
           ))}
         </div>
         {/* </div> */}
-        <div className={s.footer__contact}>
+        <div className={s.footer__contact_grid}>
           <a className={s.footer__tel} href="">
             <img src={Tel} alt="logo" />
           </a>
           <p className={s.footer__numbers}>8 800 777 33 33</p>
         </div>
-        <div className={s.footer__design}>
+        <div className={s.footer__design_grid}>
           <p className={s.footer__des}>Дизайн</p>
           <img src={Zasov} alt="logo" className={s.footer__deslogo} />
         </div>
