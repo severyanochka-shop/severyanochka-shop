@@ -12,6 +12,11 @@ import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
 import { Input } from "./Input";
 
 export const RegistrationForm = () => {
+  //пароль
+  const [visible, setVisible] = useState(false);
+  const [visibleSecond, setvisibleSecond] = useState(false);
+  const makeVisible = () => setVisible(!visible);
+
   const {
     register,
     formState: { errors, isValid },
@@ -27,21 +32,12 @@ export const RegistrationForm = () => {
     console.log(data);
   };
 
-  console.log(errors);
-  console.log(getValues('date'))
-  console.log('values', new Date (getValues('date')))
-  const birthDay = new Date (getValues('date'))
-  console.log(birthDay.getMilliseconds())
+  console.log("field", getFieldState("email"));
+  console.log('paswordVlue', getValues("password"))
+  console.log(getFieldState("email"));
 
-  const eighteenYears = new Date ("2005-01-01")
-  console.log(eighteenYears)
-  console.log('dif', birthDay < eighteenYears)
-
-  console.log('field', getFieldState('email'))
-  console.log(getFieldState('email'))
-
-  let obj = getFieldState('email').error?.message // сообщения для ошбики
-  console.log(obj)
+  let obj = getFieldState("email").error?.message; // сообщения для ошбики
+  console.log(obj);
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -68,7 +64,7 @@ export const RegistrationForm = () => {
 
         <div className={s.wrapper__input}>
           {errors?.date && (
-            <div className={s.messageError}>
+            <div className={s.messageError_small}>
               <p className={s.messageError_small}>Меньше 18 лет</p>
             </div>
           )}
@@ -86,7 +82,7 @@ export const RegistrationForm = () => {
         <div className={s.wrapper__input}>
           {errors?.lastName && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
+              <p className={s.messageError_text}>Только буквы</p>
             </div>
           )}
           <ControlledTextfield
@@ -121,7 +117,7 @@ export const RegistrationForm = () => {
         <div className={s.wrapper__input}>
           {errors?.firstName && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
+              <p className={s.messageError_text}>Только буквы</p>
             </div>
           )}
           <ControlledTextfield
@@ -153,22 +149,45 @@ export const RegistrationForm = () => {
           ]}
         ></Select>
 
-        <div className={s.wrapper__input}>
-          {errors?.firstPassword && (
-            <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
-            </div>
-          )}
-          <ControlledTextfield
-            className={s.Textfield}
-            register={register}
-            name={"firstPassword"}
-            required={true}
-            label={"Пароль"}
-            type="password"
-            text={"пароль"}
-          />
-        </div>
+        {!visible && (
+          <div className={s.wrapper__input}>
+            {errors?.firstPassword && (
+              <div className={s.messageError}>
+                <p className={s.messageError_text}>Не менее 6 символов</p>
+              </div>
+            )}
+            <ControlledTextfield
+              className={s.Textfield}
+              register={register}
+              name={"firstPassword"}
+              required={true}
+              label={"Пароль"}
+              type="password"
+              text={"невидно"}
+            />
+            <div className={s.button} onClick={() => setVisible(!visible)}></div>
+          </div>
+        )}
+
+        {visible && (
+          <div className={s.wrapper__input}>
+            {errors?.firstPassword && (
+              <div className={s.messageError}>
+                <p className={s.messageError_text}>Не менее 6 символов</p>
+              </div>
+            )}
+            <ControlledTextfield
+              className={s.Textfield}
+              register={register}
+              name={"firstPassword"}
+              required={true}
+              label={"Пароль"}
+              type="password"
+              text={"видно"}
+            />
+            <div className={s.button} onClick={() => setVisible(!visible)}></div>
+          </div>
+        )}
 
         <label className={s.toggleWrapper__label}>
           Пол
@@ -189,22 +208,45 @@ export const RegistrationForm = () => {
           </div>
         </label>
 
-        <div className={s.wrapper__input}>
-          {errors?.secondPassword && (
-            <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
-            </div>
-          )}
-          <ControlledTextfield
-            className={s.Textfield}
-            register={register}
-            name={"secondPassword"}
-            required={true}
-            label={"Повторите пароль"}
-            type="password"
-            text={"пароль"}
-          />
-        </div>
+        {!visibleSecond && (
+          <div className={s.wrapper__input}>
+            {errors?.secondPassword && (
+              <div className={s.messageError}>
+                <p className={s.messageError_text}>Не менее 6 символов</p>
+              </div>
+            )}
+            <ControlledTextfield
+              className={s.Textfield}
+              register={register}
+              name={"secondPassword"}
+              required={true}
+              label={"Повторите пароль"}
+              type="password"
+              text={"невидно"}
+            />
+            <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
+          </div>
+        )}
+
+        {visibleSecond && (
+          <div className={s.wrapper__input}>
+            {errors?.secondPassword && (
+              <div className={s.messageError}>
+                <p className={s.messageError_text}>Не менее 6 символов</p>
+              </div>
+            )}
+            <ControlledTextfield
+              className={s.Textfield}
+              register={register}
+              name={"secondPassword"}
+              required={true}
+              label={"Повторите пароль"}
+              type="text"
+              text={"видно"}
+            />
+            <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
+          </div>
+        )}
       </div>
 
       <h2 className={s.subtitle}>Необязательные поля</h2>
@@ -230,7 +272,7 @@ export const RegistrationForm = () => {
         <div className={s.wrapper__input}>
           {errors?.email && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>{getFieldState('email').error?.message}</p>
+              <p className={s.messageError_text}>{getFieldState("email").error?.message}</p>
             </div>
           )}
           <ControlledTextfield
@@ -241,7 +283,7 @@ export const RegistrationForm = () => {
             label={"E-mail"}
             type="email"
             text="expample@gmail.com"
-            message = "expample@gmail.com"
+            message="expample@gmail.com"
           />
         </div>
       </div>

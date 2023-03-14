@@ -175,6 +175,7 @@ export const ControlledTextfield = ({
             <img src={eye} alt="eye" width="24" height="24" className="password__img" />
           </a>
         )}
+        
       </label>
     </div>
   );
