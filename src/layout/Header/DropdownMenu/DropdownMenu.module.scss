@@ -1,0 +1,140 @@
+.menu {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 72px;
+  background: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  min-height: 248px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.area0 {
+  grid-area: milk-0;
+}
+
+.area1 {
+  grid-area: bread-1;
+}
+
+.area2 {
+  grid-area: veg-2;
+}
+
+.area3 {
+  grid-area: freez-3;
+}
+
+.area4 {
+  grid-area: drinks-4;
+}
+
+.area5 {
+  grid-area: cakes-5;
+}
+
+.area6 {
+  grid-area: coffee-6;
+}
+
+.area7 {
+  grid-area: bakaleya-7;
+}
+
+.area8 {
+  grid-area: health-8;
+}
+
+.area9 {
+  grid-area: zoo-9;
+}
+
+.area10 {
+  grid-area: children-10;
+}
+
+.area11 {
+  grid-area: meat-11;
+}
+
+.area12 {
+  grid-area: unproducts-12;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 272px));
+  grid-template-areas:
+    "milk-0 drinks-4 bakaleya-7 unproducts-12"
+    "bread-1 cakes-5 health-8 children-10"
+    "veg-2 coffee-6 zoo-9 meat-11"
+    "freez-3 . . .";
+  column-gap: 40px;
+  row-gap: 24px;
+  padding: 40px 0px;
+  list-style-type: none;
+  text-align: left;
+
+  &__link {
+    color: #414141;
+    text-decoration: none;
+    &:hover {
+      color: #ff6633;
+    }
+  }
+}
+
+@media (max-width: 1290px) {
+  .list {
+    padding: 40px 80px;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 380px));
+    grid-template-areas:
+      "milk-0 cakes-5 zoo-9"
+      "bread-1 coffee-6 unproducts-12"
+      "veg-2 bakaleya-7 children-10"
+      "freez-3 health-8 meat-11"
+      "drinks-4 . .";
+  }
+}
+
+@media (max-width: 1009px) {
+  .list {
+    padding: 16px 10% 16px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 460px));
+    column-gap: 32px;
+    grid-template-areas:
+      "milk-0 bakaleya-7 "
+      "bread-1 health-8 "
+      "veg-2 zoo-9"
+      "freez-3 children-10 "
+      "drinks-4 meat-11"
+      "cakes-5 unproducts-12"
+      "coffee-6 .";
+  }
+}
+
+@media (max-width: 690px) {
+  .list {
+    font-weight: 400;
+    grid-template-columns: 382px;
+    grid-template-areas:
+      "milk-0"
+      "bread-1"
+      "veg-2"
+      "freez-3"
+      "drinks-4"
+      "cakes-5"
+      "coffee-6"
+      "bakaleya-7"
+      "health-8"
+      "zoo-9"
+      "children-10 "
+      "meat-11"
+      "unproducts-12";
+    padding: 32px;
+  }
+  .menu {
+    width: 302px;
+  }
+}
