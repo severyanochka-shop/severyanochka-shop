@@ -6,75 +6,75 @@
   background: #ffffff;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
   min-height: 248px;
-  text-align: left;
   font-weight: 700;
   line-height: 150%;
 }
 
 .area0 {
-  grid-area: 0-milk;
+  grid-area: milk-0;
 }
+
 .area1 {
-  grid-area: 1-bread;
+  grid-area: bread-1;
 }
 
 .area2 {
-  grid-area: 2-veg;
+  grid-area: veg-2;
 }
 
 .area3 {
-  grid-area: 3-freez;
+  grid-area: freez-3;
 }
 
 .area4 {
-  grid-area: 4-drinks;
+  grid-area: drinks-4;
 }
 
 .area5 {
-  grid-area: 5-bakes;
+  grid-area: cakes-5;
 }
 
 .area6 {
-  grid-area: 6-coffe;
+  grid-area: coffee-6;
 }
 
 .area7 {
-  grid-area: 7-bakaleya;
+  grid-area: bakaleya-7;
 }
 
 .area8 {
-  grid-area: 8-health;
+  grid-area: health-8;
 }
 
 .area9 {
-  grid-area: 9-zoo;
+  grid-area: zoo-9;
 }
 
 .area10 {
-  grid-area: 10-children;
+  grid-area: children-10;
 }
 
 .area11 {
-  grid-area: 11-meat;
+  grid-area: meat-11;
 }
 
 .area12 {
-  grid-area: f12-unproducts;
+  grid-area: unproducts-12;
 }
 
 .list {
   display: grid;
-  // grid-template-columns: repeat(auto-fit, 272px);
   grid-template-columns: 272px 272px 272px 272px;
   grid-template-areas:
-    "milk drinks bakaleya unproducts"
-    "bread bake health children"
-    "veg coffe zoo meat"
-    "freezee . . .";
+    "milk-0 drinks-4 bakaleya-7 unproducts-12"
+    "bread-1 cakes-5 health-8 children-10"
+    "veg-2 coffee-6 zoo-9 meat-11"
+    "freez-3 . . .";
   column-gap: 40px;
   row-gap: 24px;
   padding: 40px 0px;
   list-style-type: none;
+  text-align: left;
 
   &__link {
     color: #414141;
@@ -96,16 +96,34 @@
   .list {
     padding-left: 70px;
     grid-template-columns: 322px 322px 322px;
-    grid-template-areas: "a b c " "d e f" "g h i" "j k l" "m . .";
+    grid-template-areas:
+      "milk-0 cakes-5 zoo-9"
+      "bread-1 coffee-6 unproducts-12"
+      "veg-2 bakaleya-7 children-10"
+      "freez-3 health-8 meat-11"
+      "drinks-4 . .";
   }
 }
 
 @media (max-width: 1085px) {
   .list {
+    grid-template-columns: 260px 260px 260px;
+  }
+}
+
+@media (max-width: 960px) {
+  .list {
     padding: 16px;
-    column-gap: 32px;
     grid-template-columns: 352px 352px;
-    grid-template-areas: "a b" "c d" "e f" "g h" "i j" "k l" "m . ";
+    column-gap: 32px;
+    grid-template-areas:
+      "milk-0 bakaleya-7 "
+      "bread-1 health-8 "
+      "veg-2 zoo-9"
+      "freez-3 children-10 "
+      "drinks-4 meat-11"
+      "cakes-5 unproducts-12"
+      "coffee-6 .";
   }
 }
 
@@ -113,7 +131,20 @@
   .list {
     font-weight: 400;
     grid-template-columns: 382px;
-    grid-template-areas: "a b c d e f g h i j k l m";
+    grid-template-areas:
+      "milk-0"
+      "bread-1"
+      "veg-2"
+      "freez-3"
+      "drinks-4"
+      "cakes-5"
+      "coffee-6"
+      "bakaleya-7"
+      "health-8"
+      "zoo-9"
+      "children-10 "
+      "meat-11"
+      "unproducts-12";
     padding: 32px;
   }
 }

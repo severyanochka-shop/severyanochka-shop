@@ -1,11 +1,11 @@
 import React from "react";
-import { Header } from "../layout/Header/Header";
+import { RegistrationForm } from "../ui/Form/RegistrationForm/RegistrationForm";
 
 export const Main = () => {
   return (
-    <div className={"container"}>
+    <>
       <h1>СЕВЕРЯНОЧКА</h1>
-      <Header />
-    </div>
+      <RegistrationForm />
+    </>
   );
 };
