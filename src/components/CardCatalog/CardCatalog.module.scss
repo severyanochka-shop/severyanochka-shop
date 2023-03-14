@@ -1,0 +1,166 @@
+.card {
+  position: relative;
+  width: 272px;
+  height: 349px;
+  background-color: white;
+  align-items: center;
+}
+
+.image {
+  object-fit: contain;
+  width: 95%;
+  height: 160px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.like_block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: #f3f2f1;
+  opacity: 0.5;
+  border-radius: 4px;
+  
+  top: 8px;
+  right: 8px;
+}
+
+.heart {
+  line-height: 0;
+  margin: auto;
+  border: none;
+  width: 21px;
+  height: 19px;
+  color: #f3f2f1;
+  -webkit-text-stroke: 1px #414141;
+  opacity: 0.5;
+  font-size: 23px;
+  
+}
+
+.heart_like {
+  line-height: 0;
+  margin: auto;
+  border: none;
+  width: 21px;
+  height: 19px;
+  color: red;
+  -webkit-text-stroke: 1px red;
+  font-size: 23px;
+}
+
+.discount_block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 56px;
+  height: 32px;
+  background-color: #ff6633;
+  left: 10px;
+  top: 118px;
+  border-radius: 4px;
+}
+
+.discount {
+  font-size: 16px;
+  color: white;
+  margin: auto;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.price_discount {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.price_usual {
+  color: #606060;
+}
+.product_describe {
+  text-align: left;
+  overflow: hidden;
+  max-height: 48px;
+  color: #414141;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.info {
+  padding: 8px;
+}
+.withcard {
+  font-size: 12px;
+  color: #bfbfbf;
+  font-weight: 400;
+  line-height: 12px;
+  float: left;
+}
+.withoutcard {
+  font-size: 12px;
+  color: #bfbfbf;
+  font-weight: 400;
+  line-height: 12px;
+  float: right;
+}
+
+.footer_card {
+  position: absolute;
+  padding: 0 8px 8px 8px;
+  bottom: 0;
+  width: 100%;
+}
+
+.rating {
+  display: grid;
+  grid-template-columns: 16px 16px 16px 16px 16px;
+  align-items: center;
+  
+  gap: 4px;
+  height: 16px;
+  margin: 8px 0 8px 0;
+}
+
+.star {
+  margin: auto;
+  
+}
+.cardcatalog_button {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 224px;
+    height: 349px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    width: 160px;
+    height: 343px;
+  }
+
+  .product_describe {
+    font-size: 12px;
+  }
+.price_discount {
+  font-size: 14px;
+  
+}
+
+.price_usual {
+  font-size: 12px;
+  margin-bottom: 3px;
+  
+}
+
+}
