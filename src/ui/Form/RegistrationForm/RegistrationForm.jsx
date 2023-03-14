@@ -4,7 +4,7 @@ import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
 import x from "../RegistrationForm/images/x.svg";
 import { Select } from "../../Select/Select";
-import { TextField } from "../../Textfield/Textfield";
+import { Textfield } from "../../TextField/Textfield";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -29,13 +29,10 @@ export const RegistrationForm = () => {
     mode: "onBlur",
   });
 
-  const onSubmit = (data) => {
-
-  };
+  const onSubmit = (data) => {};
 
   const watchFirstPassword = watch("firstPassword");
   const watchSecondPassword = watch("secondPassword");
-
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -162,7 +159,7 @@ export const RegistrationForm = () => {
               label={"Пароль"}
               type="password"
               text={"невидно"}
-              watchFirstPassword = {watchFirstPassword}
+              watchFirstPassword={watchFirstPassword}
             />
             <div className={s.button} onClick={() => setVisible(!visible)}></div>
           </div>
@@ -184,7 +181,7 @@ export const RegistrationForm = () => {
               // type="password"
               text={"видно"}
               passwordVisible
-              watchFirstPassword = {watchFirstPassword}
+              watchFirstPassword={watchFirstPassword}
             />
             <div className={s.button} onClick={() => setVisible(!visible)}></div>
           </div>
@@ -224,7 +221,7 @@ export const RegistrationForm = () => {
               label={"Повторите пароль"}
               type="password"
               text={"невидно"}
-              watchSecondPassword = {watchSecondPassword}
+              watchSecondPassword={watchSecondPassword}
             />
             <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
           </div>
@@ -245,7 +242,7 @@ export const RegistrationForm = () => {
               label={"Повторите пароль"}
               type="text"
               text={"видно"}
-              watchSecondPassword = {watchSecondPassword}
+              watchSecondPassword={watchSecondPassword}
             />
             <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
           </div>

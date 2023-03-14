@@ -1,11 +1,11 @@
 import React from "react";
-import { RegistrationForm } from "../ui/Form/RegistrationForm/RegistrationForm";
+import { Category } from "../components/Category/Category/Category";
 
 export const Main = () => {
   return (
     <>
       <h1>СЕВЕРЯНОЧКА</h1>
-      <RegistrationForm/>
+      <Category />
     </>
   );
 };

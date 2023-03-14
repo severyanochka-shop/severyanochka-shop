@@ -1,0 +1,93 @@
+export let data = [
+  {
+    "id": "clf873aye00003572w4s3zzfg",
+    "name": "Молочные продукты и яйцо",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/milk.jpg",
+    "order": 1
+  },
+  {
+    "id": "clf873aye00013572bre1w046",
+    "name": "Хлеб и выпечка",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/bread.jpg",
+    "order": 2
+  },
+  {
+    "id": "clf873aye00033572voyqzmp4",
+    "name": "Овощи и фрукты",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/fruits.jpg",
+    "order": 3
+  },
+  {
+    "id": "clf873ayf002r3572xnqxwj06",
+    "name": "Замороженные продукты",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/frozen.jpg",
+    "order": 4
+  },
+  {
+    "id": "clf873aye002f35726sn7c9bi",
+    "name": "Любимые напитки и снеки",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/drinks.jpg",
+    "order": 5
+  },
+  {
+    "id": "clf873aye002c3572ggqoxd0o",
+    "name": "Торты и пирожные",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/candy.jpg",
+    "order": 6
+  },
+  {
+    "id": "clf873aye002a3572sztc7o9h",
+    "name": "Чай, кофе",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/tea.jpg",
+    "order": 7
+  },
+  {
+    "id": "clf873aye0029357261w2xlvl",
+    "name": "Бакалея",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/grocery.jpg",
+    "order": 8
+  },
+  {
+    "id": "clf873aye00283572iroskiec",
+    "name": "Здоровое питание",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/healthy.jpg",
+    "order": 9
+  },
+  {
+    "id": "clf873aye0027357286kjxx7a",
+    "name": "Зоотовары",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/pets.jpg",
+    "order": 10
+  },
+  {
+    "id": "clf873aye001g3572uxljtj1d",
+    "name": "Детское питание",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/children.jpg",
+    "order": 11
+  },
+  {
+    "id": "clf873aye001f3572oo5ch6gm",
+    "name": "Мясо и птица",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/meat.jpg",
+    "order": 12
+  },
+  {
+    "id": "clf873aye00053572mfwlrdl6",
+    "name": "Непродовольственные товары",
+    "type": "category",
+    "image": "https://codeine.tech/images/category/non-food.jpg",
+    "order": 13
+  }
+]
