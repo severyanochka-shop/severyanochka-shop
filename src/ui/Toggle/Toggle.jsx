@@ -30,7 +30,7 @@ export const Toggle = ({ L, XL, M, S, disable, handler }) => {
           inner__checked__M: M,
           inner__checked__S: S,
           inner__checked__disable: disable === true,
-        })
+        }),
   );
 
   const innerClassNameSwitch = clsx(!checked ? "switch" : "switch__checked", {
@@ -46,11 +46,7 @@ export const Toggle = ({ L, XL, M, S, disable, handler }) => {
   return (
     <div className={innerClassNameToggle} onClick={handler}>
       <label className="label">
-        <input
-          onChange={() => setChecked(!checked)}
-          type="checkbox"
-          className="checkbox"
-        />
+        <input onChange={() => setChecked(!checked)} type="checkbox" className="checkbox" />
         <span className={innerClassNameInner} />
         <span className={innerClassNameSwitch} />
       </label>
