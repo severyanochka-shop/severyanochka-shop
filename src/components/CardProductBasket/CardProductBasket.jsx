@@ -1,5 +1,6 @@
 import React from 'react'
 import { Checkbox } from '../../stories/Checkbox.stories';
+import { Counter } from '../../ui/Counter/Counter';
 import { Discount } from '../../ui/Discount/Discount';
 import product_img from './64x64.jpeg'
 import cl from './CardProductBasket.module.scss'
@@ -28,9 +29,12 @@ export const CardProductBasket = () => {
             <p className={cl.withoutcard}>Обычная</p>
           </div>
                   <p className={cl.one}>за шт.</p>
-                  <Discount orange />
-        </div>
-      </div>
+                  <Discount orange className={cl.discount}/>
+                 
+              </div>
+              
+          </div>
+          <Counter large />
     </div>
   );
 }
