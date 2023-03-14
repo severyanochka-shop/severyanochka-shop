@@ -31,6 +31,7 @@ export const Button = (props) => {
     [s.border__red]: border === "red",
     [s.border__green]: border === "green",
     [s.border__gray]: border === "gray",
+    [s.border__orange]: border === "orange",
     [s.border__orange_disabled]: border === "orange" && disabled,
     [s.border__red_disabled]: border === "red" && disabled,
     [s.border__green_disabled]: border === "green" && disabled,
