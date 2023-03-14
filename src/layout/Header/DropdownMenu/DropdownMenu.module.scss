@@ -10,20 +10,67 @@
   font-weight: 700;
   line-height: 150%;
 }
+
 .area0 {
-  background: #ff6633;
-  color: green;
+  grid-area: 0-milk;
 }
 .area1 {
-  background: #414141;
-  color: green;
+  grid-area: 1-bread;
+}
+
+.area2 {
+  grid-area: 2-veg;
+}
+
+.area3 {
+  grid-area: 3-freez;
+}
+
+.area4 {
+  grid-area: 4-drinks;
+}
+
+.area5 {
+  grid-area: 5-bakes;
+}
+
+.area6 {
+  grid-area: 6-coffe;
+}
+
+.area7 {
+  grid-area: 7-bakaleya;
+}
+
+.area8 {
+  grid-area: 8-health;
+}
+
+.area9 {
+  grid-area: 9-zoo;
+}
+
+.area10 {
+  grid-area: 10-children;
+}
+
+.area11 {
+  grid-area: 11-meat;
+}
+
+.area12 {
+  grid-area: f12-unproducts;
 }
 
 .list {
   display: grid;
   // grid-template-columns: repeat(auto-fit, 272px);
   grid-template-columns: 272px 272px 272px 272px;
-  // grid-template-areas: "1 5 8 11" "2 6 9 12" "3 7 10 13" "4 . . .";
+  grid-template-areas:
+    "milk drinks bakaleya unproducts"
+    "bread bake health children"
+    "veg coffe zoo meat"
+    "freezee . . .";
   column-gap: 40px;
   row-gap: 24px;
   padding: 40px 0px;
@@ -49,7 +96,7 @@
   .list {
     padding-left: 70px;
     grid-template-columns: 322px 322px 322px;
-    // grid-template-areas: "3 3 3" "3 3 3" "3 3 3" "3 3 3";
+    grid-template-areas: "a b c " "d e f" "g h i" "j k l" "m . .";
   }
 }
 
@@ -58,7 +105,7 @@
     padding: 16px;
     column-gap: 32px;
     grid-template-columns: 352px 352px;
-    // grid-template-areas: "3 3" "3 3" "3 3" "3 3" "3 3" "3 3" "3 ";
+    grid-template-areas: "a b" "c d" "e f" "g h" "i j" "k l" "m . ";
   }
 }
 
@@ -66,6 +113,7 @@
   .list {
     font-weight: 400;
     grid-template-columns: 382px;
+    grid-template-areas: "a b c d e f g h i j k l m";
     padding: 32px;
   }
 }
