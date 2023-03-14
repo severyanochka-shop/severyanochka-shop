@@ -8,6 +8,7 @@
   font-weight: 400;
   line-height: 150%;
   padding: 5px;
+  transition: 0.2s;
 
   //Sizes
   &__large {
@@ -32,9 +33,16 @@
     color: var(--primary-text);
 
     &_disabled {
-      background: #FCD5BA;
+      background: #fcd5ba;
       color: var(--primary-color);
       cursor: default;
+    }
+    &:hover {
+      box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+      transition: 0.2s;
+    }
+    &:active {
+      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
     }
   }
   &__green {
@@ -42,9 +50,16 @@
     color: #ffffff;
 
     &_disabled {
-      background: #E5FFDE;
-      color: #70C05B;
+      background: #e5ffde;
+      color: #70c05b;
       cursor: default;
+    }
+    &:hover {
+      box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+      transition: 0.2s;
+    }
+    &:active {
+      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
     }
   }
   &__gray {
@@ -52,9 +67,16 @@
     color: #606060;
 
     &_disabled {
-      background: #FFFFFF;
+      background: #ffffff;
       color: var(--light);
       cursor: default;
+    }
+    &:hover {
+      box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+    &:active {
+      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
     }
   }
   &__red {
@@ -62,9 +84,16 @@
     color: #f2f2f2;
 
     &_disabled {
-      background: #FFC7C7;
-      color: #D80000;
+      background: #ffc7c7;
+      color: #d80000;
       cursor: default;
+    }
+    &:hover {
+      box-shadow: 4px 8px 16px rgba(216, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+    &:active {
+      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -76,9 +105,19 @@
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
 
+    &:hover {
+      border: none;
+      background: var(--primary-color);
+      color: #fff;
+      transition: 0.5s;
+    }
+    &:active {
+      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+
     &_disabled {
       background: #fff;
-      border: 1px solid #FCD5BA;
+      border: 1px solid #fcd5ba;
       color: var(--light);
       cursor: default;
     }
@@ -90,9 +129,19 @@
 
     &_disabled {
       background: #fff;
-      border: 1px solid #E5FFDE;
+      border: 1px solid #e5ffde;
       color: var(--light);
       cursor: default;
+    }
+
+    &:hover {
+      border: none;
+      background: var(--primary-color);
+      color: #fff;
+      transition: 0.5s;
+    }
+    &:active {
+      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
     }
   }
   &__gray {
@@ -114,7 +163,7 @@
 
     &_disabled {
       background: #fff;
-      border: 1px solid #FFC7C7;
+      border: 1px solid #ffc7c7;
       color: var(--light);
       cursor: default;
     }
