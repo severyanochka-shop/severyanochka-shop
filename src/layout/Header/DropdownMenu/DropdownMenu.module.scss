@@ -64,7 +64,7 @@
 
 .list {
   display: grid;
-  grid-template-columns: 272px 272px 272px 272px;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 272px));
   grid-template-areas:
     "milk-0 drinks-4 bakaleya-7 unproducts-12"
     "bread-1 cakes-5 health-8 children-10"
@@ -85,17 +85,10 @@
   }
 }
 
-@media (max-width: 1320px) {
+@media (max-width: 1290px) {
   .list {
-    padding-left: 36px;
-    column-gap: 20px;
-  }
-}
-
-@media (max-width: 1220px) {
-  .list {
-    padding-left: 70px;
-    grid-template-columns: 322px 322px 322px;
+    padding: 40px 80px;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 380px));
     grid-template-areas:
       "milk-0 cakes-5 zoo-9"
       "bread-1 coffee-6 unproducts-12"
@@ -105,16 +98,10 @@
   }
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1009px) {
   .list {
-    grid-template-columns: 260px 260px 260px;
-  }
-}
-
-@media (max-width: 960px) {
-  .list {
-    padding: 16px;
-    grid-template-columns: 352px 352px;
+    padding: 16px 10% 16px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 460px));
     column-gap: 32px;
     grid-template-areas:
       "milk-0 bakaleya-7 "
@@ -127,7 +114,7 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 690px) {
   .list {
     font-weight: 400;
     grid-template-columns: 382px;
@@ -146,5 +133,8 @@
       "meat-11"
       "unproducts-12";
     padding: 32px;
+  }
+  .menu {
+    width: 302px;
   }
 }
