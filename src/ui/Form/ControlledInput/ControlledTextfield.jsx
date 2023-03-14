@@ -5,7 +5,7 @@ import eye from "./eye.svg";
 
 export const ControlledTextfield = ({
   className,
-  text,
+  text, // placeholder,
   type,
   disabled,
   medium,
@@ -15,13 +15,11 @@ export const ControlledTextfield = ({
   required, // нужно для обязательного поля
   label, //  текст
   sms, // для модификации под смс для авторизации
-  pattern, // паттерн для телефона
-  placeholder,
+  // patternValue, // паттерн
+  message,
+  cardNumber
 }) => {
-  console.log(required);
-  console.log(type);
-  console.log(name);
-  console.log(pattern);
+  console.log(cardNumber);
 
   return (
     <div className="textfield">
@@ -48,15 +46,15 @@ export const ControlledTextfield = ({
         )}
         {type === "tel" && (
           <input
+            maxLength="12"
             {...register(name, {
               required: required,
               maxLength: 12,
               minLength: 12,
               pattern: {
-                value: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
+                value: /[\d]/,
               },
-            })} // нужно дополнительно прокидывать
-            // pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+            })} 
             type={type}
             name={name}
             id="input"
@@ -72,12 +70,7 @@ export const ControlledTextfield = ({
         {type === "date" && (
           <input
             {...register(name, {
-              required: required,
-              // maxLength: 12,
-              // minLength: 12,
-              // pattern: {
-              //   value: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-              // },
+              validate: (value, formValues) => new Date(value) < new Date("2005-03-14"),
             })} // нужно дополнительно прокидывать
             type={type}
             name={name}
@@ -94,14 +87,12 @@ export const ControlledTextfield = ({
         {type === "text" && (
           <input
             {...register(name, {
-              // required: required,
-              // maxLength: 12,
-              // minLength: 12,
-              pattern: /[A-Za-zА-Яа-яЁё]/,
+              required: required,
+              pattern: /^[а-яА-Яa-zA-Z]+$/,
             })} // нужно дополнительно прокидывать
             type={type}
             name={name}
-            id="input"
+            id="text"
             placeholder={text}
             disabled={disabled}
             className={clsx(s.textfield__input, className, {
@@ -114,10 +105,11 @@ export const ControlledTextfield = ({
         {type === "email" && (
           <input
             {...register(name, {
-              // required: required,
-              // maxLength: 12,
-              // minLength: 12,
-              pattern: /[A-Za-zА-Яа-яЁё]/,
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: message,
+              },
             })} // нужно дополнительно прокидывать
             type={type}
             name={name}
@@ -130,6 +122,30 @@ export const ControlledTextfield = ({
               [s.textfield__input_sms]: sms,
             })}
           ></input>
+          
+        )}
+        {cardNumber &&  (
+          <input
+          maxLength="6"
+            {...register(name, {
+              maxLength: 6,
+              minLength: 6,
+              pattern: {
+                value: /[\d]/,
+              },
+            })} // нужно дополнительно прокидывать
+            type={text}
+            name={name}
+            id="cardNumber"
+            placeholder={text}
+            disabled={disabled}
+            className={clsx(s.textfield__input, className, {
+              // [s.textfield__input_large]: large,
+              // [s.textfield__input_medium]: medium,
+              // [s.textfield__input_sms]: sms,
+            })}
+          ></input>
+          
         )}
         {type === "password" && (
           <input
@@ -137,7 +153,10 @@ export const ControlledTextfield = ({
               // required: required,
               // maxLength: 12,
               // minLength: 12,
-              pattern: /[A-Za-zА-Яа-яЁё]/,
+              pattern: {
+                value: /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/,
+                message: { message },
+              },
             })} // нужно дополнительно прокидывать
             type={type}
             name={name}

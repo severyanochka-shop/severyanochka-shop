@@ -152,4 +152,29 @@
     font-size: 14px;
     line-height: 24px;
   }
+  // &_small {
+  //   text-align: center;
+  //   color: #f2f2f2;
+  //   color: black;
+  //   font-size: 14px;
+  //   line-height: 24px;
+  //   width: 120px;
+  // }
+
+}
+
+.messageError_small  {
+  position: absolute;
+  right: 0;
+  top: 0;  
+  display: flex;
+  // width: 192px;
+  // height: 40px;
+  width: 10px;
+  height: 20px;
+  background: #d80000;
+  border-radius: 5px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }

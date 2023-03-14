@@ -15,6 +15,9 @@ export const RegistrationForm = () => {
   const {
     register,
     formState: { errors, isValid },
+    reset,
+    getFieldState,
+    getValues,
     handleSubmit,
   } = useForm({
     mode: "onBlur",
@@ -25,7 +28,20 @@ export const RegistrationForm = () => {
   };
 
   console.log(errors);
-  console.log(errors.tel);
+  console.log(getValues('date'))
+  console.log('values', new Date (getValues('date')))
+  const birthDay = new Date (getValues('date'))
+  console.log(birthDay.getMilliseconds())
+
+  const eighteenYears = new Date ("2005-01-01")
+  console.log(eighteenYears)
+  console.log('dif', birthDay < eighteenYears)
+
+  console.log('field', getFieldState('email'))
+  console.log(getFieldState('email'))
+
+  let obj = getFieldState('email').error?.message // сообщения для ошбики
+  console.log(obj)
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -53,7 +69,7 @@ export const RegistrationForm = () => {
         <div className={s.wrapper__input}>
           {errors?.date && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Обзятельное поле</p>
+              <p className={s.messageError_small}>Меньше 18 лет</p>
             </div>
           )}
           <ControlledTextfield
@@ -63,6 +79,7 @@ export const RegistrationForm = () => {
             required={true}
             label={"Дата рождения"}
             type="date"
+            text="2005-01-01"
           />
         </div>
 
@@ -195,7 +212,7 @@ export const RegistrationForm = () => {
         <div className={s.wrapper__input}>
           {errors?.cardNumber && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
+              <p className={s.messageError_text}>Пример: 123456</p>
             </div>
           )}
           <ControlledTextfield
@@ -204,14 +221,16 @@ export const RegistrationForm = () => {
             name={"cardNumber"}
             required={true}
             label={"Номер карты"}
-            type="text"
+            // type="text"
             text={"введите номер карты"}
+            cardNumber
           />
         </div>
+
         <div className={s.wrapper__input}>
           {errors?.email && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
+              <p className={s.messageError_text}>{getFieldState('email').error?.message}</p>
             </div>
           )}
           <ControlledTextfield
@@ -221,9 +240,12 @@ export const RegistrationForm = () => {
             required={true}
             label={"E-mail"}
             type="email"
+            text="expample@gmail.com"
+            message = "expample@gmail.com"
           />
         </div>
       </div>
+
       <div className={s.checkBoxWrapper}>
         <div>
           <Checkbox extrasmall className={s.checkBox} />
