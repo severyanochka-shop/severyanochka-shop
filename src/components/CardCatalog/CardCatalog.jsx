@@ -5,12 +5,19 @@ import starorange from "./img/starorange.svg";
 import { Button } from "../../ui/Button/Button";
 
 
-export const CardCatalog = ({ product_img, price_usual, handler, product_describe,discount, handler,handler2 }) => {
-   return (
+export const CardCatalog = ({
+  product_img,
+  price_usual,
+  product_describe,
+  discount,
+  handlerLike,
+  handlerBasket,
+}) => {
+  return (
     <div className={cl.card}>
       <img src={product_img} alt="" className={cl.image} />
       <div className={cl.like_block}>
-        <button onClick={handler} className={cl.heart}>
+        <button onClick={handlerLike} className={cl.heart}>
           ❤
         </button>
       </div>
@@ -40,7 +47,11 @@ export const CardCatalog = ({ product_img, price_usual, handler, product_describ
           <img src={stargrey} alt="" className={cl.star} />
           <img src={stargrey} alt="" className={cl.star} />
         </div>
-        <Button border="green" className={cl.cardcatalog_button} onClick={handler2}>
+        <Button
+          border="green"
+          className={cl.cardcatalog_button}
+          onClick={handlerBasket}
+        >
           В корзину
         </Button>
       </div>
