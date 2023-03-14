@@ -1,0 +1,27 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 17.5px;
+  height: 40px;
+  padding: 8px 16px;
+  background: #ffffff;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.red {
+  background: #d80000;
+  color: #f2f2f2;
+}
+
+.gray {
+  background: #f4f6fb;
+  color: #151515;
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.img {
+  width: 21px;
+  height: 21px;
+}

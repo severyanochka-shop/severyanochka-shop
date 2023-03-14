@@ -9,8 +9,8 @@ export const DropdownMenu = () => {
     <div className={s.menu}>
       <Container>
         <ul className={s.list}>
-          {data.map((el) => (
-            <li className={s.list__item} key={el.id}>
+          {data.map((el, i) => (
+            <li key={el.id}>
               <Link to="/" className={s.list__link}>
                 {el.name}
               </Link>

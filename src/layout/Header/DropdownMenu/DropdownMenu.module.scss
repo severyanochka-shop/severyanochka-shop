@@ -10,11 +10,20 @@
   font-weight: 700;
   line-height: 150%;
 }
+.area0 {
+  background: #ff6633;
+  color: green;
+}
+.area1 {
+  background: #414141;
+  color: green;
+}
 
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 272px);
-  grid-template-areas: "1 2 3 4" "5 6 7 8" "9 10 11 12" "13 . . .";
+  // grid-template-columns: repeat(auto-fit, 272px);
+  grid-template-columns: 272px 272px 272px 272px;
+  // grid-template-areas: "1 5 8 11" "2 6 9 12" "3 7 10 13" "4 . . .";
   column-gap: 40px;
   row-gap: 24px;
   padding: 40px 0px;
@@ -31,27 +40,32 @@
 
 @media (max-width: 1320px) {
   .list {
-    padding-left: 16px;
+    padding-left: 36px;
     column-gap: 20px;
   }
 }
 
 @media (max-width: 1220px) {
   .list {
-    padding-left: 36px;
-    column-gap: 0px;
-  }
-}
-
-@media (max-width: 1120px) {
-  .list {
+    padding-left: 70px;
     grid-template-columns: 322px 322px 322px;
-    grid-template-areas: "1 2 3 " "4 5 6" "7 8 9" "10 11 12";
+    // grid-template-areas: "3 3 3" "3 3 3" "3 3 3" "3 3 3";
   }
 }
 
-@media (max-width: 439px) {
-  .menu {
+@media (max-width: 1085px) {
+  .list {
+    padding: 16px;
+    column-gap: 32px;
+    grid-template-columns: 352px 352px;
+    // grid-template-areas: "3 3" "3 3" "3 3" "3 3" "3 3" "3 3" "3 ";
+  }
+}
+
+@media (max-width: 680px) {
+  .list {
     font-weight: 400;
+    grid-template-columns: 382px;
+    padding: 32px;
   }
 }

@@ -10,37 +10,41 @@ import cart from "./images/cart.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
+import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
   return (
-    <div className={s.header}>
-      <Container>
-        <div className={s.nav}>
-          <Link to="/">
-            <img src={logo} alt="ЛОГО" className={s.logo} />
-          </Link>
-          <Link to="/catalogue">
-            <HeaderButton background="green">
-              <div className={s.button__wrapper}>
-                <img src={menu} alt="|||" />
-                <span className={s.button__text}>Каталог</span>
-              </div>
-            </HeaderButton>
-          </Link>
-          <input className={s.header_input} placeholder="Найти товар" />
-          <PictoButton text={"Избранное"} img={favorites} link="/favorites" />
-          <PictoButton text={"Заказы"} img={orders} link="/orders" />
-          <PictoButton text={"Корзина"} img={cart} link="/shopping-cart" />
-          <Link to="/login">
-            <HeaderButton background="orange">
-              <div className={s.button__wrapper}>
-                <span className={s.button__text}>Войти</span>
-                <img src={login} alt="->" />
-              </div>
-            </HeaderButton>
-          </Link>
-        </div>
-      </Container>
-    </div>
+    <>
+      <DropdownMenu />
+      <div className={s.header}>
+        <Container>
+          <div className={s.nav}>
+            <Link to="/">
+              <img src={logo} alt="ЛОГО" className={s.logo} />
+            </Link>
+            <Link to="/catalogue">
+              <HeaderButton background="green">
+                <div className={s.button__wrapper}>
+                  <img src={menu} alt="|||" />
+                  <span className={s.button__text}>Каталог</span>
+                </div>
+              </HeaderButton>
+            </Link>
+            <input className={s.header_input} placeholder="Найти товар" />
+            <PictoButton text={"Избранное"} img={favorites} link="/favorites" />
+            <PictoButton text={"Заказы"} img={orders} link="/orders" />
+            <PictoButton text={"Корзина"} img={cart} link="/shopping-cart" />
+            <Link to="/login">
+              <HeaderButton background="orange">
+                <div className={s.button__wrapper}>
+                  <span className={s.button__text}>Войти</span>
+                  <img src={login} alt="->" />
+                </div>
+              </HeaderButton>
+            </Link>
+          </div>
+        </Container>
+      </div>
+    </>
   );
 };
