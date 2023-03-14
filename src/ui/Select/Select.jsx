@@ -8,7 +8,7 @@ const orderOptions = (values) => {
   return values.filter((v) => v.isFixed).concat(values.filter((v) => !v.isFixed));
 };
 
-export const Select = ({ options, isMulti, label, disabled }) => {
+export const Select = ({ options, isMulti, label, disabled, className }) => {
   const [value, setValue] = useState([]);
 
   const onChange = (newValue, actionMeta) => {
@@ -68,8 +68,14 @@ export const Select = ({ options, isMulti, label, disabled }) => {
       isMulti={isMulti}
       onChange={onChange}
       options={options}
+      className={className}
       classNamePrefix="custom-select"
-      components={{ DropdownIndicator, MultiValueRemove, Control: ControlComponent, NoOptionsMessage }}
+      components={{
+        DropdownIndicator,
+        MultiValueRemove,
+        Control: ControlComponent,
+        NoOptionsMessage,
+      }}
       isDisabled={disabled}
       isClearable={false}
     />
