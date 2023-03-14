@@ -10,8 +10,8 @@
     display: grid;
     padding: 24px;
     grid-template-columns: 180px 700px 160px 180px ;
-    grid-template-rows: 44px 24px;
-    gap: 10px 40px;
+    grid-template-rows: 54px 24px;
+    gap: 0 40px;
     justify-content: center;
     align-items: center;
 
@@ -37,7 +37,7 @@
     list-style: none;
 }
     &__item {
-    margin: 0 10px;
+        padding: 5px;
 }
     &__img {
     width: 20px;
@@ -81,15 +81,18 @@
     left: 0;
     bottom: 0;
     display: grid;
-    grid-template-columns: 100px 700px 90px 180px ;
+    grid-template-columns: 100px 700px 70px 180px ;
     grid-template-rows: 44px 24px;
     gap: 0 20px;
+    align-items: start;
 
     &__logo_grid {
     margin-left: 0;
 }
-    &__item {
-    margin: 0 10px;
+    &__items_grid {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
 }
 }
 }
@@ -101,9 +104,10 @@
     left: 0;
     bottom: 0;
     display: grid;
-    grid-template-columns: 80px 310px 90px 180px ;
+    grid-template-columns: 80px 350px 70px 180px ;
     grid-template-rows: 44px 24px;
     gap: 0 20px;
+    align-items: start;
 
     &__logo_grid {
     margin-left: 0;
@@ -126,9 +130,6 @@
     flex-wrap: wrap;
     text-align: start;
 }
-    &__item {
-    margin: 0 10px;
-}
     &__tel{
     display: block;
     margin-right: 5px;
@@ -146,7 +147,7 @@
     left: 0;
     bottom: 0;
     display: grid;
-    grid-template-columns: 80px 310px 90px 180px ;
+    grid-template-columns: 80px 310px 70px 180px ;
     grid-template-rows: 44px 24px;
     gap: 0 20px;
 
@@ -171,9 +172,6 @@
     flex-wrap: wrap;
     text-align: start;
 }
-    &__item {
-    margin: 0 10px;
-}
     &__design_grid {
     grid-column: 4;
 }
@@ -190,6 +188,8 @@
     grid-template-columns: 150px 150px ;
     grid-template-rows: 44px 24px 44px 24px;
     gap: 20px 20px;
+    justify-content: center;
+    align-items: center;
 
     &__logo_grid {
     margin-left: 0;
@@ -216,12 +216,9 @@
     &__items_grid {
     display: flex;
     flex-wrap: wrap;
-    text-align: start;
+    text-align: center;
     grid-row: 1;
     grid-column: 2;
-    }
-    &__item {
-    margin: 0 8px;
     }
     &__contact_grid{
     grid-row: 2;

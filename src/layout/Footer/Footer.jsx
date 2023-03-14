@@ -6,7 +6,7 @@ import Ok from "./images/Ok.svg";
 import VK from "./images/VK.svg";
 import Tel from "./images/Tel.svg";
 import Zasov from "./images/Zasov.svg";
-import logosev from "./images/logosev.png";
+import logosev from "./images/logosev.svg";
 
 export const Footer = () => {
   let data = [
@@ -21,7 +21,6 @@ export const Footer = () => {
     <>
       <div className={s.footer}>
         <img src={logosev} className={s.footer__logo_grid} alt="logo" />
-        {/* <div className={s.footer__center}> */}
         <ul className={s.footer__links_grid}>
           {data.map((el, ind) => (
             <li key={ind}>
@@ -38,7 +37,6 @@ export const Footer = () => {
             </a>
           ))}
         </div>
-        {/* </div> */}
         <div className={s.footer__contact_grid}>
           <a className={s.footer__tel} href="">
             <img src={Tel} alt="logo" />
