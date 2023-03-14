@@ -7,12 +7,10 @@ export const Discount = ({
   large,
   orange,
   gray,
-
   red,
   lightGreen,
   darkGreen,
   className,
-
   text,
 }) => {
   return (
