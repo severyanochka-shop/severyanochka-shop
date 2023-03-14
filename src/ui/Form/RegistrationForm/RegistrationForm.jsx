@@ -24,20 +24,18 @@ export const RegistrationForm = () => {
     getFieldState,
     getValues,
     handleSubmit,
+    watch,
   } = useForm({
     mode: "onBlur",
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+
   };
 
-  console.log("field", getFieldState("email"));
-  console.log('paswordVlue', getValues("password"))
-  console.log(getFieldState("email"));
+  const watchFirstPassword = watch("firstPassword");
+  const watchSecondPassword = watch("secondPassword");
 
-  let obj = getFieldState("email").error?.message; // сообщения для ошбики
-  console.log(obj);
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -164,6 +162,7 @@ export const RegistrationForm = () => {
               label={"Пароль"}
               type="password"
               text={"невидно"}
+              watchFirstPassword = {watchFirstPassword}
             />
             <div className={s.button} onClick={() => setVisible(!visible)}></div>
           </div>
@@ -182,8 +181,10 @@ export const RegistrationForm = () => {
               name={"firstPassword"}
               required={true}
               label={"Пароль"}
-              type="password"
+              // type="password"
               text={"видно"}
+              passwordVisible
+              watchFirstPassword = {watchFirstPassword}
             />
             <div className={s.button} onClick={() => setVisible(!visible)}></div>
           </div>
@@ -223,6 +224,7 @@ export const RegistrationForm = () => {
               label={"Повторите пароль"}
               type="password"
               text={"невидно"}
+              watchSecondPassword = {watchSecondPassword}
             />
             <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
           </div>
@@ -243,6 +245,7 @@ export const RegistrationForm = () => {
               label={"Повторите пароль"}
               type="text"
               text={"видно"}
+              watchSecondPassword = {watchSecondPassword}
             />
             <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
           </div>

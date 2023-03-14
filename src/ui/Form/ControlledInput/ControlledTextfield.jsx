@@ -17,20 +17,25 @@ export const ControlledTextfield = ({
   sms, // для модификации под смс для авторизации
   // patternValue, // паттерн
   message,
-  cardNumber
+  cardNumber,
+  passwordVisible,
+  watchFirstPassword,
+  watchSecondPassword,
 }) => {
-  console.log(cardNumber);
+
+  console.log(watchFirstPassword);
+  console.log(watchSecondPassword)
+
+
 
   return (
     <div className="textfield">
-      {/* <label className={s.textfield__label} htmlFor="input"> */}
       <label className={sms ? s.textfield__label_submit : s.textfield__label} htmlFor="input">
         {label}
 
         {sms === true && (
           <input
-            // {...register(name, { required: required, minLength: 4, validate: (value) => value === '1234' })} // нужно дополнительно прокидывать как сделать две поочередные вилдации
-            {...register(name, { required: required, minLength: 4 })} // нужно дополнительно прокидывать как сделать две поочередные вилдации
+            {...register(name, { required: required, minLength: 4 })} //
             type={"password"}
             maxLength="4"
             name={name}
@@ -54,7 +59,7 @@ export const ControlledTextfield = ({
               pattern: {
                 value: /[\d]/,
               },
-            })} 
+            })}
             type={type}
             name={name}
             id="input"
@@ -71,10 +76,10 @@ export const ControlledTextfield = ({
           <input
             {...register(name, {
               validate: (value, formValues) => new Date(value) < new Date("2005-03-14"),
-            })} // нужно дополнительно прокидывать
+            })} 
             type={type}
             name={name}
-                        id='input'
+            id="input"
             placeholder={text}
             disabled={disabled}
             className={clsx(s.textfield__input, className, {
@@ -89,7 +94,7 @@ export const ControlledTextfield = ({
             {...register(name, {
               required: required,
               pattern: /^[а-яА-Яa-zA-Z]+$/,
-            })} // нужно дополнительно прокидывать
+            })} 
             type={type}
             name={name}
             id="text"
@@ -110,7 +115,7 @@ export const ControlledTextfield = ({
                   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                 message: message,
               },
-            })} // нужно дополнительно прокидывать
+            })} 
             type={type}
             name={name}
             id="input"
@@ -122,11 +127,10 @@ export const ControlledTextfield = ({
               [s.textfield__input_sms]: sms,
             })}
           ></input>
-          
         )}
-        {cardNumber &&  (
+        {cardNumber && (
           <input
-          maxLength="6"
+            maxLength="6"
             {...register(name, {
               maxLength: 6,
               minLength: 6,
@@ -140,19 +144,12 @@ export const ControlledTextfield = ({
             placeholder={text}
             disabled={disabled}
             className={clsx(s.textfield__input, className, {
-              // [s.textfield__input_large]: large,
-              // [s.textfield__input_medium]: medium,
-              // [s.textfield__input_sms]: sms,
             })}
           ></input>
-          
         )}
         {type === "password" && (
           <input
             {...register(name, {
-              // required: required,
-              // maxLength: 12,
-              // minLength: 12,
               pattern: {
                 value: /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/,
                 message: { message },
@@ -175,7 +172,34 @@ export const ControlledTextfield = ({
             <img src={eye} alt="eye" width="24" height="24" className="password__img" />
           </a>
         )}
-        
+
+        {passwordVisible && (
+          <input
+            {...register(name, {
+              pattern: {
+                value: /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/,
+                message: { message },
+              },
+            })} // нужно дополнительно прокидывать
+            type="text"
+            name={name}
+            id="passwordVisible"
+            placeholder={text}
+            disabled={disabled}
+            className={clsx(s.textfield__input, className, {
+              [s.textfield__input_large]: large,
+              [s.textfield__input_medium]: medium,
+              [s.textfield__input_sms]: sms,
+            })}
+          ></input>
+        )}
+        {type === "password" && (
+          <a href="#" className={s.textfield__password}>
+            <img src={eye} alt="eye" width="24" height="24" className="password__img" />
+          </a>
+        )}
+
+
       </label>
     </div>
   );
