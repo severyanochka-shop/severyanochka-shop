@@ -11,16 +11,30 @@ input {
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
+  height: 100%;
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   background: #fbf8ec;
-  text-align: center;
 }
 .container {
-  max-width: 1208px;
+  width: 1208px;
   margin: 0 auto;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
 }

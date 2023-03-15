@@ -1,17 +1,26 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Catalog } from "../pages/Catalog";
-import { Main } from "../pages/Main";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
+import { Catalog } from "../pages/Catalog/Catalog";
+import { Main } from "../pages/Main/Main";
 import "./global/styles/global.scss";
-import './global/styles/variables.scss'
+import "./global/styles/variables.scss";
 
 export const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/2" element={<Catalog />}></Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main />,
+      handle: {
+        crumb: () => <Link to="/">Главная</Link>,
+      },
+    },
+    {
+      path: "category",
+      element: <Catalog />,
+      handle: {
+        crumb: () => <Link to="/category">Каталог</Link>,
+      },
+    },
+  ]);
+  return <RouterProvider router={router} />;
 };
