@@ -3,7 +3,7 @@ import s from "./Vacancy.module.scss";
 import { Paragraph } from "./Paragraph/Paragraph";
 import telephone from "./telephone.svg";
 
-export const Vacancy = ({ post }) => {
+export const Vacancy = ({ post = "Должность" }) => {
   return (
     <div className={s.vacancy}>
       <h3 className={s.title}>{post}</h3>
@@ -12,12 +12,12 @@ export const Vacancy = ({ post }) => {
         text="Текст про требования текст про требования текст про требования текст про требования текст про требования"
       />
       <Paragraph
-        post="Требования"
-        text="Текст про требования текст про требования текст про требования текст про требования текст про требования"
+        post="Обязанности"
+        text="Текст про обязаности текст про обязаности текст про обязаности текст про обязаности текст про обязаности"
       />
       <Paragraph
-        post="Требования"
-        text="Текст про требования текст про требования текст про требования текст про требования текст про требования"
+        post="Условия"
+        text="Текст про условия текст про условия текст про условия текст про условия текст про условия текст про условия"
       />
       <p className={s.text}>Звоните</p>
       <div className={s.wrapper}>
