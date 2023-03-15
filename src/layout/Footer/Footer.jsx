@@ -7,49 +7,50 @@ import VK from "./images/VK.svg";
 import Tel from "./images/Tel.svg";
 import Zasov from "./images/Zasov.svg";
 import logosev from "./images/logosev.png";
+import { Container } from "../Container/Container";
 
 export const Footer = () => {
   let data = [
     "О компании",
     "Контакты",
-    "Вакансии",
     "Статьи",
+    "Вакансии",
     "Политика обработки персональных данных",
   ];
   let src = [Instagram, VK, Facebook, Ok];
   return (
-    <>
-      <div className={s.footer}>
-        <img src={logosev} className={s.footer__logo_grid} alt="logo" />
-        {/* <div className={s.footer__center}> */}
-        <ul className={s.footer__links_grid}>
-          {data.map((el, ind) => (
-            <li key={ind}>
-              <a href="#" className={s.footer__link}>
-                {el}
+    <div className={s.wrapper}>
+      <Container>
+        <div className={s.footer}>
+          <img src={logosev} className={s.footer__logo_grid} alt="logo" />
+          <ul className={s.footer__links_grid}>
+            {data.map((el, ind) => (
+              <li key={ind}>
+                <a href="#" className={s.footer__link}>
+                  {el}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className={s.footer__items_grid}>
+            {src.map((el, ind) => (
+              <a className={s.footer__item} key={ind}>
+                <img src={el} alt="logo" className={s.footer__img} />
               </a>
-            </li>
-          ))}
-        </ul>
-        <div className={s.footer__items_grid}>
-          {src.map((el, ind) => (
-            <a className={s.footer__item} key={ind}>
-              <img src={el} alt="logo" className={s.footer__img} />
+            ))}
+          </div>
+          <div className={s.footer__contact_grid}>
+            <a className={s.footer__tel} href="">
+              <img src={Tel} alt="logo" />
             </a>
-          ))}
+            <p className={s.footer__numbers}>8 800 777 33 33</p>
+          </div>
+          <div className={s.footer__design_grid}>
+            <p className={s.footer__des}>Дизайн</p>
+            <img src={Zasov} alt="logo" className={s.footer__deslogo} />
+          </div>
         </div>
-        {/* </div> */}
-        <div className={s.footer__contact_grid}>
-          <a className={s.footer__tel} href="">
-            <img src={Tel} alt="logo" />
-          </a>
-          <p className={s.footer__numbers}>8 800 777 33 33</p>
-        </div>
-        <div className={s.footer__design_grid}>
-          <p className={s.footer__des}>Дизайн</p>
-          <img src={Zasov} alt="logo" className={s.footer__deslogo} />
-        </div>
-      </div>
-    </>
+      </Container>
+    </div>
   );
 };
