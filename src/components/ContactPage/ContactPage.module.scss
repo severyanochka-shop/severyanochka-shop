@@ -1,0 +1,138 @@
+.contacts {
+  margin: 0 auto;
+  max-width: 1208px;
+  &__title {
+    margin-bottom: 40px;
+    font-size: 64px;
+    text-align: left;
+    height: 96px;
+    padding-top: 10px;
+  }
+  &__subtitle {
+    text-align: left;
+    font-size: 36px;
+    margin-top: 120px;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.item1 {
+  display: flex;
+  height: 88px;
+  gap: 85px;
+}
+
+.box {
+  font-size: 24px;
+  display: grid;
+  &__img {
+    height: 32px;
+    width: 32px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  &__text {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    height: 36px;
+    padding-top: 4.5px;
+  }
+  &__tel {
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: left;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 36px;
+  }
+}
+
+.item2 {
+  display: flex;
+  width: 556px;
+  gap: 24px;
+  margin: 40px 0 32px;
+}
+
+.location__btn {
+  font-family: "Rubik", sans-serif;
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgba(243, 242, 241, 1);
+  color: rgba(96, 96, 96, 1);
+  font-size: 16px;
+  &:hover {
+    background-color: #70c05b;
+  }
+}
+
+.item3 {
+  display: flex;
+  gap: 80px;
+  height: 96px;
+  margin-bottom: 33px;
+}
+
+.item4 {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@media (max-width: 1230px) {
+  .contacts {
+    max-width: 95%;
+  }
+  .item1 {
+    gap: 40px;
+  }
+  .item2 {
+    gap: 16px;
+  }
+  .item3 {
+    gap: 26px;
+  }
+  .item4 > img {
+    width: 95%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1030px) {
+  .contacts {
+    max-width: 95%;
+    &__title {
+      margin-bottom: 32px;
+      font-size: 48px;
+      height: 72px;
+      padding-top: 5px;
+    }
+    &__subtitle {
+      font-size: 24px;
+      margin-top: 100px;
+    }
+  }
+  .box {
+    font-size: 18px;
+    &__img {
+      height: 16px;
+      width: 16px;
+    }
+    &__text {
+      height: 27px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .item3 {
+    height: 84px;
+  }
+  .item3 > img {
+    width: 160px;
+  }
+}
