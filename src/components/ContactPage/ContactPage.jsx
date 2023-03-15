@@ -14,20 +14,12 @@ export const ContactPage = () => {
       <div className={s.contact}>
         <div className={s.item1}>
           <div className={s.box}>
-            <img
-              className={s.box__img}
-              src={require("./Image/home.png")}
-              alt="home"
-            />{" "}
+            <img className={s.box__img} src={require("./Image/home.png")} alt="home" />{" "}
             <span className={s.box__text}>Бухгалтерия, склад</span>
             <p className={s.box__tel}>+7 82140 92619</p>
           </div>
           <div className={s.box}>
-            <img
-              className={s.box__img}
-              src={require("./Image/percent.png")}
-              alt="%"
-            />{" "}
+            <img className={s.box__img} src={require("./Image/percent.png")} alt="%" />{" "}
             <span className={s.box__text}>Вопросы по системе лояльности</span>
             <p className={s.box__tel}>+7 908 716 33 97</p>
           </div>
@@ -47,8 +39,8 @@ export const ContactPage = () => {
         </div>
         <div className={s.item4}>
           <picture>
-            <source media="(max-width: 880)" srcset={adopmap} />
-            <source media="(min-width: 881)" srcset={map} />
+            <source media="(max-width: 880px)" srcSet={adopmap} />
+            <source media="(min-width: 881px)" srcSet={map} />
             <img src={map} alt="Карта" />
           </picture>
         </div>
