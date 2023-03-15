@@ -8,7 +8,7 @@ import s from "./Basket.module.scss";
 export const Basket = (props) => {
   const {
     set = [],
-    persentOfDiscount,
+    persentOfDiscount = 5,
     accumPoints,
     minOrderSum = 1000,
     bonusPersent = 10,
@@ -37,7 +37,7 @@ export const Basket = (props) => {
 
   let bonus = (finalCost * bonusPersent) / 100;
 
-  let discount = (finalCost * { persentOfDiscount }) / 100;
+  let discount = (finalCost * persentOfDiscount) / 100;
   let discountPrice = finalCost - discount;
 
   return (
@@ -71,32 +71,22 @@ export const Basket = (props) => {
         <div className={s.item2}>
           <div className={s.item2__debit}>
             <div className={s.toggle}></div>
-            <p className={s.item2__p}>
-              Списать {accumPoints ? accumPoints : 0} ₽
-            </p>
+            <p className={s.item2__p}>Списать {accumPoints ? accumPoints : 0} ₽</p>
           </div>
-          <p className={s.item2__text}>
-            На карте накоплено {accumPoints ? accumPoints : 0} ₽{" "}
-          </p>
+          <p className={s.item2__text}>На карте накоплено {accumPoints ? accumPoints : 0} ₽ </p>
           <table className={s.table}>
             <tbody className={s.table__body}>
               <tr className={s.table__tr}>
                 <td>
                   {numOfProducts ? numOfProducts : "нет"} товар{end}
                 </td>
-                <td
-                  style={{ color: "rgba(65, 65, 65, 1)" }}
-                  className={s.table__td}
-                >
+                <td style={{ color: "rgba(65, 65, 65, 1)" }} className={s.table__td}>
                   {finalCost} ₽
                 </td>
               </tr>
               <tr>
                 <td>Скидка</td>
-                <td
-                  style={{ color: "rgba(255, 102, 51, 1)" }}
-                  className={s.table__td}
-                >
+                <td style={{ color: "rgba(255, 102, 51, 1)" }} className={s.table__td}>
                   - {discount ? discount : 0} ₽
                 </td>
               </tr>
