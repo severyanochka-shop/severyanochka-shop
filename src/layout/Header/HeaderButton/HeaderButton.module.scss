@@ -22,3 +22,9 @@
     color: #ffffff;
   }
 }
+
+@media (max-width: 769px) {
+  .button {
+    margin-left: 8px;
+  }
+}
