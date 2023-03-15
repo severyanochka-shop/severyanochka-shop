@@ -13,6 +13,7 @@
     line-height: 150%;
     color: #8F8F8F;
     position: relative;
+
     }
     &__input {
     padding-left: 16px;
@@ -21,6 +22,7 @@
     border-radius: 4px;
     color: #414141;
     display: block;
+    // position: relative;
     }
     &__input_medium {
     width: 250px;
@@ -41,10 +43,10 @@
     line-height: 150%;
     }
     &__password {
-	position: absolute;
-	top: 50%;
-	right: 6px;
-	display: inline-block;
+	  position: absolute;
+	  right: 6px;
+    bottom: 0;
+	  display: inline-block;
     }
     &__input:focus {
     background: #FFFFFF;
