@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Basket.module.scss";
-// import { BasketItem } from "./BasketItem/BasketItem";
+// import { CardProductBasket } from "./CardProductBasket/CardProductBasket";
 // import { Toggle } from "./Toggle/Toggle";
 // import { Checkbox } from "./Checkbox/Checkbox";
 // import { Button } from "./Button/Button"
@@ -57,16 +57,13 @@ export const Basket = (props) => {
               set.map((item) => {
                 return (
                   <li className={s.product}>
-                    <div className={s.checkbox}>
-                      <Checkbox />
-                    </div>
-                    <BasketItem key={item.id} {...item} />
+                    <CardProductBasket key={item.id} {...item} />
                   </li>
                 );
               })
             ) : (
               <li className={s.basketitem}>Вы ничего не выбрали</li>
-            ul)} */}
+            )} */}
         </ul>
         <div className={s.item2}>
           <div className={s.item2__debit}>
