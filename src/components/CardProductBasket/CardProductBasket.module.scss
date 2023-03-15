@@ -1,3 +1,8 @@
+.wrapper {
+    background-color: #ffffff;
+    max-width: 876px;
+}
+
 .card_basket {
   position: relative;
   display: flex;
@@ -11,6 +16,9 @@
   }
 }
 
+.not_avail {
+    opacity: 0.5;
+}
 
 .check {
   position: relative;
@@ -39,14 +47,12 @@
 .card_text {
   display: flex;
   flex-direction: column;
+  max-width: 536px;
 }
+
 .product_describe {
   text-align: start;
   margin: 10px 0 10px;
-//   overflow: hidden;
-// -webkit-line-clamp: 2;
-// display: -webkit-box;
-//   -webkit-box-orient: vertical;
 }
 
 .price {
@@ -95,6 +101,7 @@
   position: absolute;
   right: 8px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .total_price {
@@ -114,6 +121,9 @@
 }
 
 @media (max-width: 768px) {
+    .wrapper {
+    max-width: 449px;
+}
   .card_basket {
     max-width: 449px;
     height: 114px;
@@ -122,8 +132,10 @@
     flex-direction: column;
     position: relative;
     right: 4px;
+    // margin: 8px;
   }
 .card_text {
+    max-width: 217px;
     display: block;
 }
   .total_price {
@@ -131,9 +143,15 @@
     margin-top: 4px;
     text-align: end;
   }
+.not_avail {
+    text-align: end;
+}
 }
 
 @media (max-width: 440px) {
+        .wrapper {
+    max-width: 336px;
+}
   .card_basket {
     display: block;
     max-width: 336px;
@@ -146,6 +164,7 @@
     float: left;
   }
   .card_text {
+    max-width: 208px;
     display: inline;
   }
 
@@ -167,6 +186,7 @@
   .total_price {
     font-size: 14px;
     line-height: 21px;
+    margin-top: 0;
   }
 
   .total_cross {

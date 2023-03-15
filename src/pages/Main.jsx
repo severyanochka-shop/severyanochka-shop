@@ -5,7 +5,7 @@ export const Main = () => {
   return (
     <>
       <h1>СЕВЕРЯНОЧКА</h1>
-<CardProductBasket/>
+      <CardProductBasket inStock={false} />
     </>
   );
 };
