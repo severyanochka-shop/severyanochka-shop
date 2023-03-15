@@ -1,0 +1,120 @@
+.about {
+  background-color: #fbf8ec;
+  background-image: url("./images/group7105.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+.abouttitle {
+//   width: 1208px;
+  height: 400px;
+  display: flex;
+  margin-bottom: 120px;
+}
+.titles {
+  // margin-top: 47px;
+  margin-left: 0;
+}
+.title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 150%;
+  color: #414141;
+  text-align: left;
+}
+.subtitle {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  color: #ff6633;
+  text-align: left;
+}
+.about__img {
+  background-image: url("./images/groupAround.svg");
+    background-repeat: no-repeat;
+    width: 621px;
+    height: 274px;
+    align-self: flex-end;
+}
+.checkboxes {
+    // margin-left: 116px;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    // justify-content:space-between;
+    // align-items: center;
+    display: grid;
+    // padding: 24px;
+    grid-template-columns: 300px 400px 500px;
+    grid-template-rows: 44px;
+    gap: 10px 20px;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 240px;
+}
+.texts {
+    text-align: left;
+    margin-left: 55px;
+    // max-width: 405px;
+    position: relative;
+}
+.check__img {
+    position: absolute;
+    left: -36px;
+    // bottom: 0;
+	display: block;
+
+}
+.textOne {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #414141;
+    margin-bottom: 10px;
+}
+// .textOne::before {
+//     content: url("./images/checksev.svg");
+//     display: block;
+//     height: 2px;
+//     left: -10%;
+// }
+
+.textTwo {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #414141;
+}
+.thanks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.thanks__img {
+    width: 127px;
+    height: 103px;
+}
+.thanks__text {
+    margin-left: 90px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #70C05B;
+    padding: 30px 40px;
+    gap: 10px;
+    width: 805px;
+    height: 96px;
+    background: #E5FFDE;
+    border-radius: 16px;
+}
