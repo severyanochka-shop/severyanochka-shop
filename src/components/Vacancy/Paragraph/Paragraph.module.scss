@@ -14,3 +14,12 @@
   line-height: 150%;
   text-align: left;
 }
+
+@media (max-width: 1100px) {
+  .text {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 16px;
+  }
+}

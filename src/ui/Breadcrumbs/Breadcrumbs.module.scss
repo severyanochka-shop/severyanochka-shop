@@ -1,0 +1,19 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  column-gap: 24.5px;
+  margin-bottom: 27px;
+  list-style: none;
+}
+
+.crumb {
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+  text-decoration: none;
+}
+
+.arrow {
+  width: 7px;
+  height: 13px;
+}

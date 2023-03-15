@@ -10,13 +10,24 @@
   line-height: 150%;
   margin: 0 12px 11px;
 
+  &:hover {
+    color: #ff6633;
+    .button__image_hover {
+      display: block;
+    }
+    .button__image {
+      display: none;
+    }
+  }
+
   &__image {
     margin: 0 auto 8px;
     display: block;
   }
 
-  &__text:hover {
-    color: #ff6633;
+  &__image_hover {
+    margin: 0 auto 8px;
+    display: none;
   }
 }
 
