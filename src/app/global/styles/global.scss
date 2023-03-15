@@ -11,9 +11,13 @@ input {
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;

@@ -15,14 +15,14 @@ import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 export const Header = () => {
   return (
     <>
-      <DropdownMenu />
+      {/* <DropdownMenu /> */}
       <div className={s.header}>
         <Container>
           <div className={s.nav}>
             <Link to="/">
               <img src={logo} alt="ЛОГО" className={s.logo} />
             </Link>
-            <Link to="/catalogue">
+            <Link to="/category">
               <HeaderButton background="green">
                 <div className={s.button__wrapper}>
                   <img src={menu} alt="|||" />
