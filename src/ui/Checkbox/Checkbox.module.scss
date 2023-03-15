@@ -42,3 +42,7 @@
 .status:disabled + .new_status {
   background-image: url(../Checkbox/images/disable.svg);
 }
+
+.status:checked + .another_status {
+  background-image: url(../Checkbox/images/minus.svg);
+}
