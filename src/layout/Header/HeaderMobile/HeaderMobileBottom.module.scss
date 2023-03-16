@@ -1,0 +1,30 @@
+.header_bottom {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: end;
+  padding: 0 9px 0 0px;
+}
+
+.button__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 701px) {
+  .header_bottom {
+    display: none;
+  }
+}
