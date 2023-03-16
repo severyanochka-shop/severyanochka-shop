@@ -40,14 +40,11 @@ export const Header = () => {
               </HeaderButton>
             </Link>
             <input className={s.header_input} placeholder="Найти товар" />
-            <PictoButton
-              text={"Избранное"}
-              img={favorites}
-              img_hover={favorites_hover}
-              link="/favorites"
-            />
+
+            <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} link="/favourites" />
             <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} link="/orders" />
-            <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} link="/shopping-cart" />
+            <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} link="/cart" />
+
             <Link to="/login">
               <HeaderButton background="orange">
                 <div className={s.button__wrapper}>

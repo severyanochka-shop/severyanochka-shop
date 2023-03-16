@@ -11,17 +11,23 @@ export const Breadcrumbs = () => {
     .map((match) => match.handle.crumb(match.data));
   console.log(crumbs);
   return (
-    <Container>
-      <nav>
-        <ul className={s.breadcrumbs}>
-          {crumbs.map((crumb, index) => (
-            <li className={s.crumb} key={index}>
-              {crumb}
-              {!!index + 1 && <img className={s.arrow} src={arrow} alt=">" />}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </Container>
+    crumbs.length > 1 && (
+      <Container>
+        <nav>
+          <ul className={s.breadcrumbs}>
+            {crumbs.map((crumb, index) => (
+              <>
+                <li className={s.list_item} key={crumb.props.to}>
+                  {!!index && <img className={s.arrow} src={arrow} alt=">" />}
+                  <Link to={crumb.props.to} className={s.link}>
+                    {crumb.props.children}
+                  </Link>
+                </li>
+              </>
+            ))}
+          </ul>
+        </nav>
+      </Container>
+    )
   );
 };
