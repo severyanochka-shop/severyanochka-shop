@@ -36,3 +36,13 @@
     margin: 0 8px 11px;
   }
 }
+
+@media (max-width: 701px) {
+  .button {
+    margin: 0 8px 6px;
+    font-size: 8px;
+    &__image {
+      margin: 0 auto 5px;
+    }
+  }
+}

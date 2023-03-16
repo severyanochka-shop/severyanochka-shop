@@ -15,6 +15,7 @@ import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
+import { HeaderMobile } from "./HeaderMobile/HeaderMobile";
 
 export const Header = () => {
   return (
@@ -58,6 +59,7 @@ export const Header = () => {
           </div>
         </Container>
       </div>
+      <HeaderMobile />
     </>
   );
 };
