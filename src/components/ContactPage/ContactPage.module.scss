@@ -35,7 +35,8 @@
     grid-column: 1/2;
     grid-row: 1/2;
   }
-  &__text {
+  &__text,
+  .first {
     grid-column: 2/3;
     grid-row: 1/2;
     height: 36px;
@@ -66,8 +67,10 @@
   background-color: rgba(243, 242, 241, 1);
   color: rgba(96, 96, 96, 1);
   font-size: 16px;
+  transition: 0.7s;
   &:hover {
     background-color: #70c05b;
+    transition: 0.7s;
   }
 }
 
@@ -81,9 +84,30 @@
 .item4 {
   border-radius: 4px;
   overflow: hidden;
+  position: relative;
+  &__voshod {
+    position: absolute;
+    top: 116px;
+    left: 126px;
+  }
+  &__parus {
+    position: absolute;
+    top: 191px;
+    left: 484px;
+  }
+  &__rjaba {
+    position: absolute;
+    top: 130px;
+    left: 784px;
+  }
+  &__pelis {
+    position: absolute;
+    top: 224px;
+    left: 953px;
+  }
 }
 
-@media (max-width: 1230px) {
+@media (max-width: 1245px) {
   .contacts {
     max-width: 95%;
   }
@@ -93,12 +117,19 @@
   .item2 {
     gap: 16px;
   }
-  .item3 {
-    gap: 26px;
+  .item4 {
+    width: 99%;
+    height: auto;
   }
   .item4 > img {
-    width: 95%;
+    width: auto;
     height: auto;
+  }
+}
+
+@media (max-width: 1135px) {
+  .item4__pelis {
+    display: none;
   }
 }
 
@@ -116,15 +147,28 @@
       margin-top: 100px;
     }
   }
+
+  .item3 {
+    gap: 26px;
+  }
   .box {
     font-size: 18px;
     &__img {
-      height: 16px;
-      width: 16px;
+      height: 19px;
+      width: 19px;
+      margin-right: 10px;
     }
-    &__text {
+    &__text,
+    .first {
       height: 27px;
+      padding-top: 0;
     }
+  }
+}
+
+@media (max-width: 995px) {
+  .item4__rjaba {
+    display: none;
   }
 }
 
@@ -134,5 +178,65 @@
   }
   .item3 > img {
     width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  .item1 {
+    flex-direction: column;
+    width: 300px;
+    height: 186px;
+    gap: 16px;
+  }
+
+  .box {
+    width: 210px;
+    &__img {
+      margin-right: 9px;
+    }
+    &__text {
+      height: 60px;
+      text-align: left;
+      padding-top: 0;
+    }
+    .first {
+      padding-top: 0;
+    }
+
+    &__tel {
+      font-size: 22px;
+    }
+  }
+
+  .contacts__subtitle {
+    margin-top: 80px;
+    font-size: 36px;
+  }
+
+  .item3 {
+    flex-wrap: wrap;
+    width: 336px;
+    height: 176px;
+    gap: 16px;
+  }
+
+  .item3 > img {
+    height: 80px;
+  }
+
+  .item4 {
+    margin-top: 17px;
+  }
+}
+
+@media (max-width: 670px) {
+  .item4__parus {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .item4__voshod {
+    display: none;
   }
 }
