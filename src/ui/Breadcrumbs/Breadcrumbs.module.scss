@@ -6,7 +6,16 @@
   list-style: none;
 }
 
-.crumb {
+.list_item {
+  display: flex;
+  align-items: center;
+  gap: 24.5px;
+  &:last-of-type > .link {
+    color: #8f8f8f;
+  }
+}
+
+.link {
   font-size: 12px;
   line-height: 150%;
   color: #414141;
