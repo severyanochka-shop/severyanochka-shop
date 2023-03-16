@@ -21,9 +21,14 @@ body {
   font-weight: 400;
   background: #fbf8ec;
 }
+
 .container {
   width: 1208px;
   margin: 0 auto;
+}
+
+#root {
+  height: 100%;
 }
 
 @media (max-width: 1240px) {

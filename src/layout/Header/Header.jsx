@@ -31,9 +31,9 @@ export const Header = () => {
               </HeaderButton>
             </Link>
             <input className={s.header_input} placeholder="Найти товар" />
-            <PictoButton text={"Избранное"} img={favorites} link="/favorites" />
+            <PictoButton text={"Избранное"} img={favorites} link="/favourites" />
             <PictoButton text={"Заказы"} img={orders} link="/orders" />
-            <PictoButton text={"Корзина"} img={cart} link="/shopping-cart" />
+            <PictoButton text={"Корзина"} img={cart} link="/cart" />
             <Link to="/login">
               <HeaderButton background="orange">
                 <div className={s.button__wrapper}>

@@ -8,27 +8,45 @@ import Tel from "./images/Tel.svg";
 import Zasov from "./images/Zasov.svg";
 import logosev from "./images/logosev.png";
 import { Container } from "../Container/Container";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   let data = [
-    "О компании",
-    "Контакты",
-    "Статьи",
-    "Вакансии",
-    "Политика обработки персональных данных",
+    {
+      to: "/about",
+      name: "О компании",
+    },
+    {
+      to: "/contacts",
+      name: "Контакты",
+    },
+    {
+      to: "/articles",
+      name: "Статьи",
+    },
+    {
+      to: "/vacancies",
+      name: "Вакансии",
+    },
+    {
+      to: "/policy",
+      name: "Политика обработки персональных данных",
+    },
   ];
   let src = [Instagram, VK, Facebook, Ok];
   return (
     <div className={s.wrapper}>
       <Container>
         <div className={s.footer}>
-          <img src={logosev} className={s.footer__logo_grid} alt="logo" />
+          <Link to="/">
+            <img src={logosev} className={s.footer__logo_grid} alt="logo" />
+          </Link>
           <ul className={s.footer__links_grid}>
             {data.map((el, ind) => (
               <li key={ind}>
-                <a href="#" className={s.footer__link}>
-                  {el}
-                </a>
+                <Link to={el.to} className={s.footer__link}>
+                  {el.name}
+                </Link>
               </li>
             ))}
           </ul>
