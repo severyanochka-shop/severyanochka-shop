@@ -1,4 +1,4 @@
-.header {
+.header_bottom {
   width: 100%;
   margin-bottom: 27px;
   background: #ffffff;
@@ -52,29 +52,29 @@
   margin: 0 28px 20px 0;
 }
 
-@media (max-width: 1280px) {
-  .logo {
-    margin: 0 16px 16px 0;
-  }
-  .nav {
-    padding: 0 16px 0 24px;
-  }
+// @media (max-width: 1280px) {
+//   .logo {
+//     margin: 0 16px 16px 0;
+//   }
+//   .nav {
+//     padding: 0 16px 0 24px;
+//   }
 
-  .header_input {
-    margin: 0 12px 16px 20px;
-  }
-}
+//   .header_input {
+//     margin: 0 12px 16px 20px;
+//   }
+// }
 
-@media (max-width: 1009px) {
-  .button__text {
-    display: none;
-  }
-  .button__wrapper {
-    width: 40px;
-  }
-}
+// @media (max-width: 1009px) {
+//   .button__text {
+//     display: none;
+//   }
+//   .button__wrapper {
+//     width: 40px;
+//   }
+// }
 
-@media (max-width: 700px) {
+@media (min-width: 700px) {
   .header {
     display: none;
   }
