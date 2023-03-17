@@ -26,8 +26,8 @@ export const Header = () => {
           <div className={s.nav}>
             <Link to="/">
               <picture>
-                <source media="(max-width: 1279px)" srcset={logo_tablet} sizes="1279px" />
-                <source media="(min-width: 1280px)" srcset={logo_desktop} sizes="1280px" />
+                <source media="(max-width: 1279px)" srcSet={logo_tablet} sizes="1279px" />
+                <source media="(min-width: 1280px)" srcSet={logo_desktop} sizes="1280px" />
                 <img src={logo_desktop} alt="ЛОГО" className={s.logo} />
               </picture>
             </Link>
@@ -41,7 +41,12 @@ export const Header = () => {
             </Link>
             <input className={s.header_input} placeholder="Найти товар" />
 
-            <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} link="/favourites" />
+            <PictoButton
+              text={"Избранное"}
+              img={favorites}
+              img_hover={favorites_hover}
+              link="/favourites"
+            />
             <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} link="/orders" />
             <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} link="/cart" />
 

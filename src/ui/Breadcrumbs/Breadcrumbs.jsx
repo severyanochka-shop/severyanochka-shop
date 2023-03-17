@@ -9,21 +9,19 @@ export const Breadcrumbs = () => {
   let crumbs = matches
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.data));
-  console.log(crumbs);
+  console.log(matches);
   return (
     crumbs.length > 1 && (
       <Container>
         <nav>
           <ul className={s.breadcrumbs}>
             {crumbs.map((crumb, index) => (
-              <>
-                <li className={s.list_item} key={crumb.props.to}>
-                  {!!index && <img className={s.arrow} src={arrow} alt=">" />}
-                  <Link to={crumb.props.to} className={s.link}>
-                    {crumb.props.children}
-                  </Link>
-                </li>
-              </>
+              <li className={s.list_item} key={crumb.props.to}>
+                {!!index && <img className={s.arrow} src={arrow} alt=">" />}
+                <Link to={crumb.props.to} className={s.link}>
+                  {crumb.props.children}
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>

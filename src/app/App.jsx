@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import { Layout } from "../layout/Layout";
 import { AboutAsync as About } from "../pages/About/About.async";
@@ -11,15 +12,29 @@ import { Main } from "../pages/Main/Main";
 import { OrdersAsync as Orders } from "../pages/Orders/Orders.async";
 import { PolicyAsync as Policy } from "../pages/Policy/Policy.async";
 import { VacanciesAsync as Vacancies } from "../pages/Vacancies/Vacancies.async";
-import { ContactsAsync as Contacts } from "../pages/Сontacts/Contacts.async";
+import { ContactsAsync as Contacts } from "../pages/Contacts/Contacts.async";
+import { categoriesFetch } from "../store/reducers/ActionCreators";
 import "./global/styles/global.scss";
 import "./global/styles/variables.scss";
+import { ScrollToTop } from "./ScrollToTop";
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const { categories } = useSelector((state) => state.categoriesReducer);
+
+  useEffect(() => {
+    dispatch(categoriesFetch());
+  }, []);
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: (
+        <>
+          <ScrollToTop />
+          <Layout />
+        </>
+      ),
       handle: {
         crumb: () => <Link to="/">Главная</Link>,
       },
@@ -76,14 +91,15 @@ export const App = () => {
               ),
             },
             {
-              path: "/category/milk",
+              path: "/category/:category",
               element: (
                 <React.Suspense>
                   <CategoryCatalog />
                 </React.Suspense>
               ),
+              loader: ({ params }) => params.category,
               handle: {
-                crumb: () => <Link to="/category/milk">Молоко</Link>,
+                crumb: (categories) => <Link to="/category/:category">{categories}</Link>,
               },
             },
           ],
