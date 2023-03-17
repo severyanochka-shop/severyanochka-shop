@@ -1,42 +1,61 @@
-.card_basket {
-    position: relative;
-    display: flex;
+.wrapper {
+    background-color: #ffffff;
     max-width: 876px;
-    height: 90px;
-    background-color: #FFFFFF;
+}
+
+.card_basket {
+  position: relative;
+  display: flex;
+  max-width: 876px;
+  height: 90px;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__empty {
+    opacity: 0.5;
+  }
+}
+
+.not_avail {
+     opacity: 0.5;
+    top: 8px;
+    right: 8px;
+    max-width: 112px;
+}
+
+.check {
+  position: relative;
 }
 
 .product_checkbox {
-position: absolute;
-width: 24px;
-height: 24px;
-left: 8px;
-top: -8px;
-z-index: 1;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 8px;
+  top: -8px;
+  z-index: 1;
 }
 
 .product_image {
-    // position: relative;
-    display: block;
-    width: 80px;
-    height: 60px;
-    margin-right: 8px;
-    top: 0;
-    left: 0;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-border-radius: 4px;
+  display: block;
+  width: 80px;
+  height: 60px;
+  margin-right: 8px;
+  top: 0;
+  left: 0;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
 .card_text {
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
 }
+
 .product_describe {
-    text-align: start;
-    margin: 10px 0 10px;
-    width: 576px;
+  text-align: start;
+  margin: 10px 0 10px;
 }
 
 .price {
@@ -56,7 +75,6 @@ border-radius: 4px;
   font-size: 12px;
   line-height: 18px;
   margin-right: 8px;
-  
 }
 
 .withcard {
@@ -67,6 +85,7 @@ border-radius: 4px;
   float: left;
   margin-right: 8px;
 }
+
 .withoutcard {
   font-size: 12px;
   color: #bfbfbf;
@@ -76,10 +95,117 @@ border-radius: 4px;
 }
 
 .one {
-    font-size: 12px;
-    margin-right: 8px;
+  font-size: 12px;
+  margin-right: 8px;
 }
 
-.discount {
-    ;
+.end {
+  display: flex;
+  position: absolute;
+  right: 8px;
+  margin-top: 10px;
+  
+}
+
+.total_price {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 50px;
+  text-align: end;
+  line-height: 27px;
+}
+
+.total_cross {
+  text-decoration: line-through;
+  color: #8f8f8f;
+  display: block;
+  text-align: end;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+    max-width: 449px;
+}
+  .card_basket {
+    max-width: 449px;
+    height: 114px;
+  }
+  .end {
+    flex-direction: column;
+    position: absolute;
+    right: 4px;
+    
+  }
+
+  .withoutcard {
+margin-right: 4px;
+}
+.card_text {
+    max-width: 217px;
+    display: block;
+}
+.price_discount {
+  margin-right: 8px;
+ }
+  .total_price {
+    margin-left: 0;
+    margin-top: 4px;
+    text-align: end;
+  }
+.not_avail {
+    text-align: end;
+}
+}
+
+@media (max-width: 440px) {
+        .wrapper {
+    max-width: 336px;
+}
+  .card_basket {
+    display: block;
+    max-width: 336px;
+    height: 146px;
+  }
+  .product_image {
+    width: 104px;
+    height: 90px;
+    display: inline;
+    float: left;
+  }
+  .card_text {
+     display: inline;
+  }
+
+  .product_describe {
+    padding-top: 10px;
+    font-size: 12px;
+  }
+
+  .end {
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px;
+    margin: 0;
+    right: 0;
+  }
+
+  .total_price {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 0;
+  }
+
+  .total_cross {
+    font-size: 12px;
+  }
+  .not_avail {
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 auto;
+    width: 100%;
+    white-space: nowrap;
+  }
 }

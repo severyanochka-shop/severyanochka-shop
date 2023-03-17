@@ -16,6 +16,7 @@
   color: #ffffff;
   width: 20px;
   height: 24x;
+  text-align: center;
 }
 .minus {
   background-color: #70c05b;
@@ -39,7 +40,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 440px) {
   .counter {
     width: 141px;
   }

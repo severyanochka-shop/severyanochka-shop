@@ -9,9 +9,40 @@
   font-size: 12px;
   line-height: 150%;
   margin: 0 12px 11px;
+
+  &:hover {
+    color: #ff6633;
+    .button__image_hover {
+      display: block;
+    }
+    .button__image {
+      display: none;
+    }
+  }
+
+  &__image {
+    margin: 0 auto 8px;
+    display: block;
+  }
+
+  &__image_hover {
+    margin: 0 auto 8px;
+    display: none;
+  }
 }
 
-.pictogram {
-  margin: 0 auto 8px;
-  display: block;
+@media (max-width: 769px) {
+  .button {
+    margin: 0 8px 11px;
+  }
+}
+
+@media (max-width: 701px) {
+  .button {
+    margin: 0 8px 6px;
+    font-size: 8px;
+    &__image {
+      margin: 0 auto 5px;
+    }
+  }
 }
