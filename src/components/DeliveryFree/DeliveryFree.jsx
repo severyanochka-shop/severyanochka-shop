@@ -1,0 +1,18 @@
+import React from "react";
+import s from "./DeliveryFree.module.scss";
+import basket_big from "./images/basket_big.png";
+import basket_small from "./images/basket_small.png";
+
+export const DeliveryFree = () => {
+  return (
+    <div className={s.wrapper}>
+      <div className={s.wrapper__filter}></div>
+      <picture>
+        <source media="(max-width: 1207px)" srcset={basket_small} />
+        <source media="(min-width: 1208px)" srcset={basket_big} />
+        <img src={basket_big} alt="" className={s.wrapper__image} />
+      </picture>
+      <h1 className={s.wrapper__title}>Доставка бесплатно от 1000 ₽</h1>
+    </div>
+  );
+};
