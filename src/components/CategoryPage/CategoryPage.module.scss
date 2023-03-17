@@ -4,3 +4,110 @@ h2 {
     line-height: 72px;
     margin-bottom: 60px;
 }
+.category_page{
+    display: flex;
+}
+
+.filter {
+  position: relative;
+  width: 272px;
+  margin: 0 40px;
+
+}
+
+.deletebtn_block {
+display: flex;
+height: 32px;
+gap: 24px;
+}
+
+.button_filter {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.text_filter {
+  font-weight: 700;
+  color: black;
+  text-align: start;
+  padding-left: 5px;
+  line-height: 0;
+}
+
+.cross_green {
+  font-size: 15px;
+  color: white;
+  background-color: #70c05b;
+  padding: 3px;
+  line-height: 0;
+  float: right;
+  cursor: pointer;
+}
+
+.cross_gray {
+  font-size: 15px;
+  color: #414141;
+  background-color: #f3f2f1;
+  padding: 3px;
+  line-height: 0;
+  float: right;
+  cursor: pointer;
+}
+
+.text_green {
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+.text_gray {
+  font-size: 12px;
+  color: #606060;
+  margin: 0 auto;
+}
+.green_block {
+  display: flex;
+}
+
+.btn_quantity {
+  width: 118px;
+  cursor: default;
+}
+
+.btn_price {
+  width: 184px;
+  cursor: default;
+}
+
+.btn_delete {
+  cursor: default;
+  color: #414141;
+}
+
+.list_block {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: #414141;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.stock {
+  display: flex;
+  gap: 12px;
+  line-height: 24px;
+  color: #414141;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.btn_apply {
+  width: 100%;
+}
