@@ -99,7 +99,7 @@ export const App = () => {
               ),
               loader: ({ params }) => params.category,
               handle: {
-                crumb: (categories) => <Link to="/category/:category">{categories}</Link>,
+                crumb: (numb) => <Link to="/category/:category">{categories[numb - 1].name}</Link>,
               },
             },
           ],

@@ -1,5 +1,7 @@
 .header_bottom {
-  width: 100%;
+  position: sticky;
+  z-index: 1;
+  bottom: 0;
   background: #ffffff;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }

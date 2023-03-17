@@ -15,7 +15,6 @@ import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
-import { HeaderMobile } from "./HeaderMobile/HeaderMobile";
 
 export const Header = () => {
   return (
@@ -40,16 +39,15 @@ export const Header = () => {
               </HeaderButton>
             </Link>
             <input className={s.header_input} placeholder="Найти товар" />
-
-            <PictoButton
-              text={"Избранное"}
-              img={favorites}
-              img_hover={favorites_hover}
-              link="/favourites"
-            />
-            <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} link="/orders" />
-            <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} link="/cart" />
-
+            <Link to="/favourites">
+              <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
+            </Link>
+            <Link to="/orders">
+              <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} />
+            </Link>
+            <Link to="/cart">
+              <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} />
+            </Link>
             <Link to="/login">
               <HeaderButton background="orange">
                 <div className={s.button__wrapper}>
@@ -61,7 +59,6 @@ export const Header = () => {
           </div>
         </Container>
       </div>
-      <HeaderMobile />
     </>
   );
 };
