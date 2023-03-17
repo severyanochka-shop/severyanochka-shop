@@ -1,21 +1,55 @@
 import React from "react";
+import '../../Select/Select.scss'
 import s from "./RigistrationForm.module.scss";
 import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
 import x from "../RegistrationForm/images/x.svg";
-import { Select } from "../../Select/Select";
 import { TextField } from "../../Textfield/Textfield";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
 import { Input } from "./Input";
+import * as yup from "yup";
+import { Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Select from "react-select";
+
 
 export const RegistrationForm = () => {
+  //временно для селекта
+  const options1 = [
+    { label: "test1", value: "test1" },
+    { label: "test2", value: "test2" },
+  ];
+
+  const options2 = [
+    { label: "test3", value: "test3" },
+    { label: "test4", value: "test4" },
+  ];
+
   //пароль
   const [visible, setVisible] = useState(false);
   const [visibleSecond, setvisibleSecond] = useState(false);
   const makeVisible = () => setVisible(!visible);
+
+  const schema = yup.object().shape({
+    status: yup
+      .object()
+      .shape({
+        label: yup.string().required("Заполните поле"),
+        value: yup.string().required("Заполните поле"),
+      })
+      .required("Заполните поле"),
+
+    status2: yup
+      .object()
+      .shape({
+        label: yup.string().required("Заполните поле"),
+        value: yup.string().required("Заполните поле"),
+      })
+      .required("Заполните поле"),
+  });
 
   const {
     register,
@@ -25,17 +59,20 @@ export const RegistrationForm = () => {
     getValues,
     handleSubmit,
     watch,
+    control,
   } = useForm({
+    resolver: yupResolver(schema),
     mode: "onBlur",
   });
 
   const onSubmit = (data) => {
-
+    console.log(data);
   };
 
   const watchFirstPassword = watch("firstPassword");
   const watchSecondPassword = watch("secondPassword");
 
+  console.log(errors);
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -93,24 +130,26 @@ export const RegistrationForm = () => {
           />
         </div>
 
-        <Select
-          className={s.select}
-          label={"Регион"}
-          options={[
-            {
-              value: "Коми",
-              label: "Коми",
-            },
-            {
-              value: "Коми",
-              label: "Коми",
-            },
-            {
-              value: "Коми",
-              label: "Коми",
-            },
-          ]}
-        ></Select>
+        <label className={s.select_label}>
+          <p>Select 1</p>
+          <Controller
+          name="status"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              isClearable
+              isSearchable={false}
+              className={s.select}
+              classNamePrefix='custom-select'
+              options={options1}
+            />
+          )}
+        />
+        <p className={s.select_tooltip}>{errors.status?.message || errors.status?.label.message}</p>
+        </label>
+
+        
 
         <div className={s.wrapper__input}>
           {errors?.firstName && (
@@ -128,24 +167,26 @@ export const RegistrationForm = () => {
           />
         </div>
 
-        <Select
-          className={s.select}
-          label={"Населенный пункт"}
-          options={[
-            {
-              value: "Усть-Ижма",
-              label: "Усть-Ижма",
-            },
-            {
-              value: "Усть-Ижма",
-              label: "Усть-Ижма",
-            },
-            {
-              value: "Усть-Ижма",
-              label: "Усть-Ижма",
-            },
-          ]}
-        ></Select>
+        <label className={s.select_label}>
+          <p>Select 2</p>
+
+          <Controller
+            name="status2"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                isClearable
+                isSearchable={false}
+                className={s.select}
+                classNamePrefix='custom-select'
+                options={options2}
+              />
+            )}
+          />
+
+          <p className={s.select_tooltip}>{errors.status2?.message || errors.status2?.label.message}</p>
+        </label>
 
         {!visible && (
           <div className={s.wrapper__input}>
@@ -162,7 +203,7 @@ export const RegistrationForm = () => {
               label={"Пароль"}
               type="password"
               text={"невидно"}
-              watchFirstPassword = {watchFirstPassword}
+              watchFirstPassword={watchFirstPassword}
             />
             <div className={s.button} onClick={() => setVisible(!visible)}></div>
           </div>
@@ -184,7 +225,7 @@ export const RegistrationForm = () => {
               // type="password"
               text={"видно"}
               passwordVisible
-              watchFirstPassword = {watchFirstPassword}
+              watchFirstPassword={watchFirstPassword}
             />
             <div className={s.button} onClick={() => setVisible(!visible)}></div>
           </div>
@@ -224,7 +265,7 @@ export const RegistrationForm = () => {
               label={"Повторите пароль"}
               type="password"
               text={"невидно"}
-              watchSecondPassword = {watchSecondPassword}
+              watchSecondPassword={watchSecondPassword}
             />
             <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
           </div>
@@ -245,7 +286,7 @@ export const RegistrationForm = () => {
               label={"Повторите пароль"}
               type="text"
               text={"видно"}
-              watchSecondPassword = {watchSecondPassword}
+              watchSecondPassword={watchSecondPassword}
             />
             <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
           </div>

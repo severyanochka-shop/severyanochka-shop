@@ -1,0 +1,51 @@
+.counter {
+  background-color: #70c05b;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 4px;
+  width: 100px;
+  height: 40px;
+}
+
+.count {
+  font-size: 16px;
+  color: #ffffff;
+  width: 20px;
+  height: 24x;
+  text-align: center;
+}
+.minus {
+  background-color: #70c05b;
+  font-size: 15px;
+
+  color: #ffffff;
+}
+
+.plus {
+  background-color: #70c05b;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .counter {
+    width: 120px;
+  }
+  .count {
+    width: 40px;
+  }
+}
+
+@media (max-width: 440px) {
+  .counter {
+    width: 141px;
+  }
+
+  .count {
+    width: 61px;
+  }
+}

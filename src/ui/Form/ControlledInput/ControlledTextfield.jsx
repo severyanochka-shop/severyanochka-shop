@@ -23,8 +23,7 @@ export const ControlledTextfield = ({
   watchSecondPassword,
 }) => {
 
-  console.log(watchFirstPassword);
-  console.log(watchSecondPassword)
+  
 
 
 

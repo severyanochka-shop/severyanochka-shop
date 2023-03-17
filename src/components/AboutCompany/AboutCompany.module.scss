@@ -1,0 +1,349 @@
+.about {
+  background-color: #fbf8ec;
+  background-image: url("./images/group7105.svg");
+  background-repeat: no-repeat;
+  background-position: 25% 25%;
+  background-size: contain;
+  background-origin: content-box;
+  height: 372px;
+  margin: 0 auto;
+
+  &__head {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 120px;
+  }
+  &__titles {
+    margin-left: 0;
+  }
+  &__title {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 150%;
+    color: #414141;
+    text-align: left;
+  }
+  &__subtitle {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #ff6633;
+    text-align: left;
+  }
+  &__img {
+    background-image: url("./images/groupAround.svg");
+    background-repeat: no-repeat;
+    width: 621px;
+    height: 380px;
+    align-self: flex-end;
+  }
+  &__checkboxes {
+    display: grid;
+    grid-template-columns: 300px 400px 500px;
+    gap: 10px;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 240px;
+  }
+  &__texts {
+    text-align: left;
+    margin-left: 55px;
+    position: relative;
+  }
+  &__check_img {
+    position: absolute;
+    left: -36px;
+    display: block;
+  }
+  &__textOne {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #414141;
+    margin-bottom: 10px;
+  }
+  &__textTwo {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #414141;
+  }
+  &__thanks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  &__thanks_img {
+    width: 127px;
+    height: 103px;
+  }
+  &__thanks_triangle {
+    width: 41px;
+    height: 40px;
+    border-top: 40px solid #e5ffde;
+    border-left: 40px solid transparent;
+  }
+  &__thanks_text {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #70c05b;
+    padding: 30px 40px;
+    gap: 10px;
+    width: 805px;
+    height: 96px;
+    background: #e5ffde;
+    border-radius: 16px;
+  }
+  &__thanks_text::before {
+    content: "";
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .about {
+    background-color: #fbf8ec;
+    background-origin: content-box;
+    margin: 0 auto;
+
+    &__head {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 100px;
+      margin-left: 40px;
+    }
+    &__titles {
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 150%;
+      color: #414141;
+      text-align: left;
+    }
+    &__subtitle {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      color: #ff6633;
+      text-align: left;
+    }
+    &__subtitle_br {
+      display: none;
+    }
+    &__img {
+      background-image: url("./images/groupAround.svg");
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 380px;
+      align-self: center;
+    }
+    &__checkboxes {
+      display: grid;
+      grid-template-columns: 300px 450px;
+      gap: 10px;
+      justify-content: start;
+      align-items: start;
+      margin-bottom: 120px;
+    }
+    &__textsthree {
+      grid-row: 2;
+      grid-column: span 2;
+    }
+    &__texts {
+      text-align: left;
+      margin-left: 55px;
+      position: relative;
+    }
+    &__check_img {
+      position: absolute;
+      left: -36px;
+      display: block;
+    }
+    &__textOne {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #414141;
+      margin-bottom: 10px;
+    }
+    &__textTwo {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      color: #414141;
+    }
+    &__thanks {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 60px;
+    }
+    &__thanks_img {
+      width: 113px;
+      height: 92px;
+    }
+    &__thanks_triangle {
+      margin-left: 30px;
+      width: 41px;
+      height: 40px;
+    }
+    &__thanks_text {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      color: #70c05b;
+      padding: 20px 40px;
+      gap: 10px;
+      width: 351px;
+      height: 94px;
+      background: #e5ffde;
+      border-radius: 16px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .about {
+    background-color: #fbf8ec;
+    margin: 0 auto;
+
+    &__head {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 15px;
+      margin-bottom: 100px;
+      margin-left: 12px;
+    }
+    &__titles {
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 150%;
+      color: #414141;
+      text-align: left;
+    }
+    &__subtitle {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      color: #ff6633;
+      text-align: left;
+    }
+    &__img {
+      background-image: url("./images/groupAround.svg");
+      background-repeat: no-repeat;
+      align-self: center;
+    }
+    &__checkboxes {
+      display: grid;
+      grid-template-columns: 300px;
+      gap: 20px;
+      justify-content: start;
+      align-items: start;
+      margin-bottom: 100px;
+    }
+    &__textssecond {
+      grid-row: 2;
+    }
+    &__textsthree {
+      grid-row: 3;
+    }
+    &__texts {
+      text-align: left;
+      margin-left: 55px;
+      position: relative;
+    }
+    &__check_img {
+      position: absolute;
+      left: -36px;
+      display: block;
+    }
+    &__textOne {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #414141;
+      margin-bottom: 10px;
+    }
+    &__textTwo {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      color: #414141;
+    }
+    &__thanks {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      margin: 0 auto 60px;
+    }
+    &__thanks__img {
+      width: 68px;
+      height: 56px;
+    }
+    &__thanks__triangle {
+      margin-left: 30px;
+      width: 41px;
+      height: 40px;
+      transform: rotate(90deg);
+    }
+    &__thanks__text {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      color: #70c05b;
+      padding: 20px 40px;
+      gap: 10px;
+      width: 290px;
+      height: 80px;
+      background: #e5ffde;
+      border-radius: 16px;
+    }
+  }
+}

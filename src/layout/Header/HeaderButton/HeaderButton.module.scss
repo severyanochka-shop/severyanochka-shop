@@ -22,3 +22,15 @@
     color: #ffffff;
   }
 }
+
+@media (max-width: 769px) {
+  .button {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 701px) {
+  .button {
+    margin: 0 0 8px 12px;
+  }
+}

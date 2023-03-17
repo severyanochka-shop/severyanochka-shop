@@ -1,0 +1,57 @@
+.vacancy_page {
+  max-width: 1168px;
+  // min-height: calc(100vh - 144px - 126px);
+  margin: 0 auto;
+  &_title {
+    color: rgba(65, 65, 65, 1);
+    height: 96px;
+    font-size: 64px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 60px;
+    padding-top: 16px;
+  }
+}
+
+.vacancy {
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 1168px;
+}
+
+.item_empty {
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .vacancy_page {
+    max-width: 100%;
+  }
+  .vacancy {
+    max-width: 100%;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vacancy {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .vacancy_page_title {
+    height: 54px;
+    margin-bottom: 32px;
+    font-size: 36px;
+    padding-top: 9px;
+  }
+  .vacancy {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

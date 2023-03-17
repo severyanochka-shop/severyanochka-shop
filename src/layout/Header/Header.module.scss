@@ -1,8 +1,6 @@
 .header {
-  position: fixed;
-  left: 0px;
   width: 100%;
-  top: 0px;
+  margin-bottom: 27px;
   background: #ffffff;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -33,15 +31,11 @@
 .header_input {
   display: block;
   padding: 8px;
-  box-sizing: border-box;
   width: 436px;
   height: 40px;
   background: #ffffff;
   border: 1px solid #70c05b;
   border-radius: 4px;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   color: #8f8f8f;
@@ -51,5 +45,30 @@
 
 .logo {
   display: block;
-  margin: 0 28px 20px;
+  margin: 0 28px 20px 0;
+}
+
+@media (max-width: 1280px) {
+  .logo {
+    margin: 0 16px 16px 0;
+  }
+
+  .header_input {
+    margin: 0 12px 16px 20px;
+  }
+}
+
+@media (max-width: 1009px) {
+  .button__text {
+    display: none;
+  }
+  .button__wrapper {
+    width: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: none;
+  }
 }
