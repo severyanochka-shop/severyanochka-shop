@@ -1,0 +1,53 @@
+.yourscore {
+  display: flex;
+  flex-direction: column;
+  max-width: 688px;
+  float: right;
+  &__stars {
+    width: 136px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+  }
+  &__text {
+    border: 1px solid rgba(191, 191, 191, 1);
+    border-radius: 4px;
+    background-color: white;
+    overflow: hidden;
+    padding: 8px 16px;
+    margin: 20px 0 16px;
+    outline: none;
+    resize: none;
+  }
+  &__subtitle {
+    padding-top: 3px;
+    font-weight: 700;
+  }
+}
+
+.divstar {
+  height: 24px;
+  width: 24px;
+  background: url("../Images/star.svg") no-repeat center/cover;
+  cursor: pointer;
+  &:hover {
+    background-image: url("../Images/starfull.svg");
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1010px) {
+  .yourscore {
+    max-width: 544px;
+  }
+}
+
+@media (max-width: 780px) {
+  .yourscore {
+    max-width: 100%;
+  }
+}
