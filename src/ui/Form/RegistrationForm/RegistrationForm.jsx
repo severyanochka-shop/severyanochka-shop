@@ -1,55 +1,28 @@
-import React from "react";
-import '../../Select/Select.scss'
+import React, { useEffect } from "react";
 import s from "./RigistrationForm.module.scss";
 import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
 import x from "../RegistrationForm/images/x.svg";
-import { TextField } from "../../Textfield/Textfield";
+import { Select } from "../../Select/Select";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
-import { Input } from "./Input";
-import * as yup from "yup";
-import { Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Select from "react-select";
-
+import { Textfield } from "../exapmleInput/Textfield";
+import { rules } from "./rules.js";
 
 export const RegistrationForm = () => {
-  //временно для селекта
-  const options1 = [
-    { label: "test1", value: "test1" },
-    { label: "test2", value: "test2" },
-  ];
+  // дизейбл инпута по чекбокусу
+  const [check, setCheck] = useState(false);
 
-  const options2 = [
-    { label: "test3", value: "test3" },
-    { label: "test4", value: "test4" },
-  ];
+  // тогл кнопки пола
+  const [genderButton, setGenderButton] = useState(false);
+  const changeGender = () => setGenderButton(!genderButton);
 
-  //пароль
+  // видимый пароль
   const [visible, setVisible] = useState(false);
   const [visibleSecond, setvisibleSecond] = useState(false);
   const makeVisible = () => setVisible(!visible);
-
-  const schema = yup.object().shape({
-    status: yup
-      .object()
-      .shape({
-        label: yup.string().required("Заполните поле"),
-        value: yup.string().required("Заполните поле"),
-      })
-      .required("Заполните поле"),
-
-    status2: yup
-      .object()
-      .shape({
-        label: yup.string().required("Заполните поле"),
-        value: yup.string().required("Заполните поле"),
-      })
-      .required("Заполните поле"),
-  });
+  console.log(visible);
 
   const {
     register,
@@ -59,20 +32,95 @@ export const RegistrationForm = () => {
     getValues,
     handleSubmit,
     watch,
-    control,
   } = useForm({
-    resolver: yupResolver(schema),
     mode: "onBlur",
   });
 
-  const onSubmit = (data) => {
+  //валидация пароля
+  const watchFirstPassword = watch("password");
+  const watchSecondPassword = watch("secondPassword");
+  const [equalPassword, setequalPassword] = useState(false);
+
+  useEffect(() => {
+    if (watchSecondPassword === watchFirstPassword && watchSecondPassword != undefined) {
+      setequalPassword(!equalPassword);
+    } else {
+      setequalPassword(false);
+    }
+  }, [watchSecondPassword, watchFirstPassword]);
+
+  const onSubmit = async (data) => {
     console.log(data);
+    const user = { ...data };
+    user.dateOfBirth = new Date(user.dateOfBirth);
+    user.gender = genderButton ? "female" : "male";
+    console.log(user);
+    delete user.secondPassword;
+    console.log(user);
+    const body = JSON.stringify(user);
+    console.log(body);
+
+    const response = await fetch("http://google.com/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
   };
 
-  const watchFirstPassword = watch("firstPassword");
-  const watchSecondPassword = watch("secondPassword");
+  // const rulePhone = {
+  //   required: "обязательное поле",
+  //   minLength: {
+  //     value: 11,
+  //     message: "формат 89999999999",
+  //   },
+  //   pattern: {
+  //     value: /[\d]/,
+  //     message: "формат 89999999999",
+  //   },
+  // };
 
-  console.log(errors);
+  // const ruleDate = {
+  //   required: "обязательное поле",
+  // };
+
+  // const ruleLastName = {
+  //   required: "обязательное поле",
+  //   pattern: {
+  //     value: /^[а-яА-Яa-zA-Z]+$/,
+  //     message: "только буквы",
+  //   },
+  // };
+
+  // const rulePassword = {
+  //   required: "обязательное поле",
+  //   pattern: {
+  //     value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
+  //     message: "Не менее 8 букв лат. алфавита, прописные и заглавные, цифры",
+  //   },
+  // };
+  // const ruleCardNumber = {
+  //   required: false,
+  //   maxLength: 6,
+  //   minLength: 6,
+  //   pattern: {
+  //     value: /[\d]/,
+  //     message: "пример: 123456",
+  //   },
+  // };
+
+  // const ruleEmail = {
+  //   required: false,
+  //   pattern: {
+  //     value:
+  //       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  //     message: "expample@gmail.com",
+  //   },
+  // };
+
+  console.log(errors.example);
+  console.log(rules);
 
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -81,267 +129,229 @@ export const RegistrationForm = () => {
       <h2 className={s.subtitle}>Обязательные поля</h2>
       <div className={s.obligatoryFieldsWrapper}>
         <div className={s.wrapper__input}>
-          {errors?.tel && (
+          {errors?.phoneNumber && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Неверный формат</p>
+              <p className={s.messageError_text}>{errors?.phoneNumber.message}</p>
             </div>
           )}
-          <ControlledTextfield
+
+          <Textfield
             className={s.Textfield}
             register={register}
-            name={"tel"}
-            required={true}
+            name={"phoneNumber"}
             label={"Телефон"}
             type="tel"
-            text="89999999999"
+            placeholder="89999999999"
+            rule={rules.rulePhone}
+            // labelClass={"labelClass"}
+            // labelClass={true}
+            // classNameLabel = {s.textfield__labelsms}
           />
         </div>
-
         <div className={s.wrapper__input}>
-          {errors?.date && (
-            <div className={s.messageError_small}>
-              <p className={s.messageError_small}>Меньше 18 лет</p>
+          {errors?.phoneNumber && (
+            <div className={s.messageError}>
+              <p className={s.messageError_text}>{errors?.phoneNumber.message}</p>
             </div>
           )}
-          <ControlledTextfield
+
+          <Textfield
             className={s.Textfield}
             register={register}
-            name={"date"}
-            required={true}
+            name={"dateOfBirth"}
             label={"Дата рождения"}
             type="date"
-            text="2005-01-01"
+            rule={rules.ruleDate}
           />
         </div>
-
         <div className={s.wrapper__input}>
           {errors?.lastName && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Только буквы</p>
+              <p className={s.messageError_text}>{errors?.lastName.message}</p>
             </div>
           )}
-          <ControlledTextfield
+
+          <Textfield
             className={s.Textfield}
             register={register}
             name={"lastName"}
-            required={true}
             label={"Фамилия"}
             type="text"
+            rule={rules.ruleLastName}
           />
         </div>
-
-        <label className={s.select_label}>
-          <p>Select 1</p>
-          <Controller
-          name="status"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              isClearable
-              isSearchable={false}
-              className={s.select}
-              classNamePrefix='custom-select'
-              options={options1}
-            />
-          )}
-        />
-        <p className={s.select_tooltip}>{errors.status?.message || errors.status?.label.message}</p>
-        </label>
-
-        
-
+        <Select
+          className={s.select}
+          label={"Регион"}
+          options={[
+            {
+              value: "Коми",
+              label: "Коми",
+            },
+            {
+              value: "Коми",
+              label: "Коми",
+            },
+            {
+              value: "Коми",
+              label: "Коми",
+            },
+          ]}
+        ></Select>
         <div className={s.wrapper__input}>
           {errors?.firstName && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>Только буквы</p>
+              <p className={s.messageError_text}>{errors?.firstName.message}</p>
             </div>
           )}
-          <ControlledTextfield
+          <Textfield
             className={s.Textfield}
             register={register}
             name={"firstName"}
-            required={true}
             label={"Имя"}
             type="text"
+            rule={rules.ruleLastName}
           />
         </div>
+        <Select
+          className={s.select}
+          label={"Населенный пункт"}
+          options={[
+            {
+              value: "Усть-Ижма",
+              label: "Усть-Ижма",
+            },
+            {
+              value: "Усть-Ижма",
+              label: "Усть-Ижма",
+            },
+            {
+              value: "Усть-Ижма",
+              label: "Усть-Ижма",
+            },
+          ]}
+        ></Select>
 
-        <label className={s.select_label}>
-          <p>Select 2</p>
-
-          <Controller
-            name="status2"
-            control={control}
-            render={({ field }) => (
-              <Select
-                {...field}
-                isClearable
-                isSearchable={false}
-                className={s.select}
-                classNamePrefix='custom-select'
-                options={options2}
-              />
-            )}
+        <div className={s.wrapper__input}>
+          {errors?.password && (
+            <p className={clsx(s.messageError, s.messageError_password)}>
+              Не менее 8 букв лат. алфавита, прописные и заглавные, цифры
+            </p>
+          )}
+          <Textfield
+            className={s.Textfield}
+            register={register}
+            name={"password"}
+            label={"Пароль"}
+            type={visible ? "text" : "password"}
+            placeholder={"Введите пароль"}
+            visible={visible ? 1 : 0}
+            rule={rules.rulePassword}
           />
-
-          <p className={s.select_tooltip}>{errors.status2?.message || errors.status2?.label.message}</p>
-        </label>
-
-        {!visible && (
-          <div className={s.wrapper__input}>
-            {errors?.firstPassword && (
-              <div className={s.messageError}>
-                <p className={s.messageError_text}>Не менее 6 символов</p>
-              </div>
-            )}
-            <ControlledTextfield
-              className={s.Textfield}
-              register={register}
-              name={"firstPassword"}
-              required={true}
-              label={"Пароль"}
-              type="password"
-              text={"невидно"}
-              watchFirstPassword={watchFirstPassword}
-            />
-            <div className={s.button} onClick={() => setVisible(!visible)}></div>
-          </div>
-        )}
-
-        {visible && (
-          <div className={s.wrapper__input}>
-            {errors?.firstPassword && (
-              <div className={s.messageError}>
-                <p className={s.messageError_text}>Не менее 6 символов</p>
-              </div>
-            )}
-            <ControlledTextfield
-              className={s.Textfield}
-              register={register}
-              name={"firstPassword"}
-              required={true}
-              label={"Пароль"}
-              // type="password"
-              text={"видно"}
-              passwordVisible
-              watchFirstPassword={watchFirstPassword}
-            />
-            <div className={s.button} onClick={() => setVisible(!visible)}></div>
-          </div>
-        )}
+          <div className={s.visibleChanger} onClick={() => setVisible(!visible)}></div>
+        </div>
 
         <label className={s.toggleWrapper__label}>
           Пол
           <div className={s.toggleWrapper}>
-            <Button className={s.toggleWrapper__button__active} background="green">
+            <Button
+              className={s.toggleWrapper__button__active}
+              background={!genderButton ? "green" : ""}
+              handler={() => changeGender()}
+              disabled={genderButton}
+              type={"button"}
+            >
               Мужской
             </Button>
             <Button
-              //  className={s.toggleWrapper__button}
-              // small
-              // background="orange"
-              disabled
-              // className={s.toggleWrapper__button}
               className={s.toggleWrapper__button__active}
+              background={genderButton ? "green" : ""}
+              handler={() => changeGender()}
+              disabled={!genderButton}
+              type={"button"}
             >
               Женский
             </Button>
           </div>
         </label>
 
-        {!visibleSecond && (
+        (
           <div className={s.wrapper__input}>
             {errors?.secondPassword && (
-              <div className={s.messageError}>
-                <p className={s.messageError_text}>Не менее 6 символов</p>
-              </div>
+              <p className={clsx(s.messageError, s.messageError_password)}>
+                Не менее 8 букв лат. алфавита, прописные и заглавные, цифры
+              </p>
             )}
-            <ControlledTextfield
+            {!equalPassword && watchSecondPassword != undefined && watchSecondPassword != "" && (
+              <p className={clsx(s.messageError, s.messageError_equal)}>Пароли не совпадают</p>
+            )}
+            <Textfield
               className={s.Textfield}
               register={register}
               name={"secondPassword"}
-              required={true}
-              label={"Повторите пароль"}
-              type="password"
-              text={"невидно"}
-              watchSecondPassword={watchSecondPassword}
+              label={"Пароль"}
+              type={visibleSecond ? "text" : "password"}
+              placeholder={"Повторите пароль"}
+              visible={visibleSecond ? 1 : 0}
+              rule={rules.rulePassword}
             />
-            <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
+            <div
+              className={s.visibleChanger}
+              onClick={() => setvisibleSecond(!visibleSecond)}
+            ></div>
           </div>
-        )}
-
-        {visibleSecond && (
-          <div className={s.wrapper__input}>
-            {errors?.secondPassword && (
-              <div className={s.messageError}>
-                <p className={s.messageError_text}>Не менее 6 символов</p>
-              </div>
-            )}
-            <ControlledTextfield
-              className={s.Textfield}
-              register={register}
-              name={"secondPassword"}
-              required={true}
-              label={"Повторите пароль"}
-              type="text"
-              text={"видно"}
-              watchSecondPassword={watchSecondPassword}
-            />
-            <div className={s.button} onClick={() => setvisibleSecond(!visibleSecond)}></div>
-          </div>
-        )}
+        )
       </div>
 
       <h2 className={s.subtitle}>Необязательные поля</h2>
       <div className={s.freeFieldsWrapper}>
         <div className={s.wrapper__input}>
           {errors?.cardNumber && (
-            <div className={s.messageError}>
-              <p className={s.messageError_text}>Пример: 123456</p>
-            </div>
+            <p className={clsx(s.messageError, s.messageError_text)}>Пример: 123456</p>
           )}
-          <ControlledTextfield
+          <Textfield
             className={s.Textfield}
             register={register}
             name={"cardNumber"}
-            required={true}
+            type={"text"}
             label={"Номер карты"}
-            // type="text"
-            text={"введите номер карты"}
-            cardNumber
+            placeholder={"введите номер карты"}
+            rule={rules.ruleCardNumber}
+            disabled={check}
           />
         </div>
 
         <div className={s.wrapper__input}>
           {errors?.email && (
             <div className={s.messageError}>
-              <p className={s.messageError_text}>{getFieldState("email").error?.message}</p>
+              <p className={s.messageError_text}>{errors?.email.message}</p>
             </div>
           )}
-          <ControlledTextfield
+          <Textfield
             className={s.Textfield}
             register={register}
             name={"email"}
-            required={true}
             label={"E-mail"}
             type="email"
-            text="expample@gmail.com"
-            message="expample@gmail.com"
+            placeholder="expample@gmail.com"
+            disabled={check}
+            rule={rules.ruleEmail}
           />
         </div>
       </div>
 
       <div className={s.checkBoxWrapper}>
         <div>
-          <Checkbox extrasmall className={s.checkBox} />
+          <Checkbox extrasmall className={s.checkBox} setCheck={setCheck} check={check} />
         </div>
         <p className={s.checkbox__text}>У меня нет карты лояльности</p>
       </div>
-      <Button large background="orange" disabled={!isValid} className={s.btnContinue}>
+
+      <Button large background="orange" disabled={!isValid} className={s.btnCenter}>
         Продолжить
       </Button>
-      <Button small background="orange" border="green" className={""}>
+
+      <Button small background="orange" border="green" className={s.btnCenter}>
         Вход
       </Button>
     </form>

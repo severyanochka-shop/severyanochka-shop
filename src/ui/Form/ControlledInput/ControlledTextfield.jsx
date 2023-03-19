@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import s from "./Textfield.module.scss";
 import eye from "./eye.svg";
+import eyeOff from "./eyeOff.svg";
 
 export const ControlledTextfield = ({
   className,
@@ -15,18 +16,10 @@ export const ControlledTextfield = ({
   required, // нужно для обязательного поля
   label, //  текст
   sms, // для модификации под смс для авторизации
-  // patternValue, // паттерн
   message,
   cardNumber,
   passwordVisible,
-  watchFirstPassword,
-  watchSecondPassword,
 }) => {
-
-  
-
-
-
   return (
     <div className="textfield">
       <label className={sms ? s.textfield__label_submit : s.textfield__label} htmlFor="input">
@@ -34,7 +27,8 @@ export const ControlledTextfield = ({
 
         {sms === true && (
           <input
-            {...register(name, { required: required, minLength: 4 })} //
+            {...register(name, { required: true, minLength: 4 })} 
+            
             type={"password"}
             maxLength="4"
             name={name}
@@ -50,13 +44,16 @@ export const ControlledTextfield = ({
         )}
         {type === "tel" && (
           <input
-            maxLength="12"
+            maxLength="11"
             {...register(name, {
-              required: required,
-              maxLength: 12,
-              minLength: 12,
+              required: "обязательное поле",
+              minLength: {
+                value: 11,
+                message: "формат 89999999999",
+              },
               pattern: {
                 value: /[\d]/,
+                message: "формат 89999999999",
               },
             })}
             type={type}
@@ -74,8 +71,11 @@ export const ControlledTextfield = ({
         {type === "date" && (
           <input
             {...register(name, {
-              validate: (value, formValues) => new Date(value) < new Date("2005-03-14"),
-            })} 
+              required: "обязательное поле",
+              validate: {
+                postitve: (value) => new Date(value) < new Date("2005-03-14"),
+              },
+            })}
             type={type}
             name={name}
             id="input"
@@ -91,9 +91,12 @@ export const ControlledTextfield = ({
         {type === "text" && (
           <input
             {...register(name, {
-              required: required,
-              pattern: /^[а-яА-Яa-zA-Z]+$/,
-            })} 
+              required: "обязательное поле",
+              pattern: {
+                value: /^[а-яА-Яa-zA-Z]+$/,
+                message: "только буквы",
+              },
+            })}
             type={type}
             name={name}
             id="text"
@@ -114,17 +117,13 @@ export const ControlledTextfield = ({
                   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                 message: message,
               },
-            })} 
+            })}
             type={type}
             name={name}
             id="input"
             placeholder={text}
             disabled={disabled}
-            className={clsx(s.textfield__input, className, {
-              [s.textfield__input_large]: large,
-              [s.textfield__input_medium]: medium,
-              [s.textfield__input_sms]: sms,
-            })}
+            className={clsx(s.textfield__input, className, {})}
           ></input>
         )}
         {cardNumber && (
@@ -142,28 +141,24 @@ export const ControlledTextfield = ({
             id="cardNumber"
             placeholder={text}
             disabled={disabled}
-            className={clsx(s.textfield__input, className, {
-            })}
+            className={clsx(s.textfield__input, className, {})}
           ></input>
         )}
         {type === "password" && (
           <input
             {...register(name, {
+              required: "обязательное поле",
               pattern: {
-                value: /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/,
-                message: { message },
+                value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
+                message: "Не менее 8 букв лат. алфавита, прописные и заглавные, цифры",
               },
-            })} // нужно дополнительно прокидывать
+            })}
             type={type}
             name={name}
             id="input"
             placeholder={text}
             disabled={disabled}
-            className={clsx(s.textfield__input, className, {
-              [s.textfield__input_large]: large,
-              [s.textfield__input_medium]: medium,
-              [s.textfield__input_sms]: sms,
-            })}
+            className={clsx(s.textfield__input, className, {})}
           ></input>
         )}
         {type === "password" && (
@@ -175,8 +170,9 @@ export const ControlledTextfield = ({
         {passwordVisible && (
           <input
             {...register(name, {
+              required: required,
               pattern: {
-                value: /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/,
+                value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
                 message: { message },
               },
             })} // нужно дополнительно прокидывать
@@ -192,13 +188,11 @@ export const ControlledTextfield = ({
             })}
           ></input>
         )}
-        {type === "password" && (
+        {passwordVisible && (
           <a href="#" className={s.textfield__password}>
-            <img src={eye} alt="eye" width="24" height="24" className="password__img" />
+            <img src={eyeOff} alt="eyeOff" width="24" height="24" className="password__img" />
           </a>
         )}
-
-
       </label>
     </div>
   );

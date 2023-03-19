@@ -1,0 +1,218 @@
+.wrapper {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  width: 420px;
+  height: 420px;
+  box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 72px 80px 40px 80px;
+  color: #414141;
+
+  &__SMS {
+    height: 480px;
+  }
+
+  &__Step4 {
+    height: 580px;
+  }
+}
+
+.wrapperSMS {
+  display: block;
+  width: 110px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  width: 260px;
+  height: 36px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #414141;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.inputField {
+  margin-bottom: 32px;
+}
+
+.visibleToggler {
+  top: 45%;
+  right: 21%;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__Step4Password {
+    top: 32%;
+    right: 21%;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__Step4SecondPassword {
+    top: 52%;
+    right: 21%;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.repeat {
+  color: #606060;
+  font-size: 12px;
+  margin-bottom: 32px;
+
+  &__again {
+    text-decoration: underline;
+    color: #ff6633;
+    margin-bottom: 32px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.backWrapper {
+  display: flex;
+  width: 111px;
+  height: 32px;
+  font-size: 12px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 8px 8px 8px 12.5px;
+  color: #606060;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.backWrapper__arrow {
+  display: block;
+}
+
+.messageError {
+  position: absolute;
+  left: 27%;
+  top: 24%;
+  display: flex;
+  width: 192px;
+  height: 40px;
+  background: #d80000;
+  border-radius: 5px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  &_text {
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.closeForm {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.bottomWrapper {
+  margin: 0 auto;
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  font-size: 12px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  &__text {
+    font-size: 12px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.bottomBack {
+  display: flex;
+  width: 100px;
+  text-align: justify;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.bottomBack__center {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonReg {
+  line-height: 150%;
+  color: #70c05b;
+  font-size: 12px;
+  width: 121px;
+}
+
+.button {
+  margin: 0 auto;
+  width: 260px;
+  height: 68px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 24px;
+}
+
+.sms {
+  padding: 12px 6px 12px 16px;
+  width: 110px;
+  height: 60px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+.repeat {
+  text-align: center;
+  &__again {
+    text-decoration: underline;
+    color: #ff6633;
+    margin-bottom: 32px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
