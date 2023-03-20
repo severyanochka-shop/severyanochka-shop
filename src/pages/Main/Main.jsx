@@ -1,7 +1,8 @@
 import React from "react";
 import { CategoryPage } from "../../components/CategoryPage/CategoryPage";
+import { FilterCategory } from "../../components/FilterCategory/FilterCategory";
+import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 
-import { Layout } from "../../layout/Layout";
 
 export const Main = () => {
   return (

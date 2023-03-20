@@ -4,6 +4,11 @@ h2 {
     line-height: 72px;
     margin-bottom: 60px;
 }
+
+.input {
+background-color: red;
+}
+
 .category_page{
     display: flex;
 }
@@ -11,7 +16,7 @@ h2 {
 .filter {
   position: relative;
   width: 272px;
-  margin: 0 40px;
+  margin-right: 40px;
 
 }
 
@@ -19,6 +24,7 @@ h2 {
 display: flex;
 height: 32px;
 gap: 24px;
+margin-bottom: 40px;
 }
 
 .button_filter {
@@ -110,4 +116,37 @@ li {
 
 .btn_apply {
   width: 100%;
+}
+
+.btn_show {
+  margin-top: 40px;
+}
+
+@media (max-width: 769px) {
+  h2 {
+    font-size: 36px;
+    line-height: 150%;
+    margin-bottom: 40px;
+  }
+  .category_page{
+    display: block;
+}
+.filter_none {
+  display: none;
+}
+
+.button_filter {
+  background-color: #70c05b;
+  width: 128px;
+  margin-bottom: 32px;
+  
+}
+.text_filter {
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
+}
+.deletebtn_block {
+  display: none;
+}
 }

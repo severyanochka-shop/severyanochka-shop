@@ -1,6 +1,6 @@
 import React from "react";
-import { Category } from "../../components/Category/Category/Category";
-import s from "./Catalog.module.scss";
+import { Category } from "../../components/Category/Category";
+import s from "../Pages.module.scss";
 import { Container } from "../../layout/Container/Container";
 
 const Catalog = () => {

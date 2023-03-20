@@ -19,20 +19,18 @@ export const HeaderMobileBottom = () => {
       <div className={s.header_bottom}>
         <Container>
           <div className={s.nav}>
-            <PictoButton
-              text={"Каталог"}
-              img={catalog}
-              img_hover={catalog_hover}
-              link="/category"
-            />
-            <PictoButton
-              text={"Избранное"}
-              img={favorites}
-              img_hover={favorites_hover}
-              link="/favorites"
-            />
-            <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} link="/orders" />
-            <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} link="/shopping-cart" />
+            <Link to="/category">
+              <PictoButton text={"Каталог"} img={catalog} img_hover={catalog_hover} />
+            </Link>
+            <Link to="/favourites">
+              <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
+            </Link>
+            <Link to="/orders">
+              <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} />
+            </Link>
+            <Link to="/cart">
+              <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} />
+            </Link>
             <Link to="/login">
               <HeaderButton background="orange">
                 <div className={s.button__wrapper}>
