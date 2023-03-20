@@ -1,7 +1,6 @@
 .wrapper {
   background-image: url("./images/pattern2.svg");
   background-color: #f9f4e2;
-  margin-top: 80px;
 }
 
 .footer {
@@ -80,7 +79,9 @@
     &__logo_grid {
       width: 93px;
       height: 64px;
-      grid-row: span 2;
+      &_wrapper {
+        grid-row: span 2;
+      }
     }
     &__links_grid {
       gap: 16px;

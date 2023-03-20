@@ -1,0 +1,21 @@
+.title {
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 150%;
+  color: #414141;
+}
+
+@media (max-width: 1068px) {
+  .title {
+    margin-bottom: 40px;
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 660px) {
+  .title {
+    margin-bottom: 32px;
+    font-size: 36px;
+  }
+}

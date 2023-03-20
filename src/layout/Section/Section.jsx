@@ -1,5 +1,11 @@
 import React from "react";
+import { Container } from "../Container/Container";
+import s from "./Section.module.scss";
 
-export const Section = ({ children, className }) => {
-  return <section className={className}>{children}</section>;
+export const Section = ({ children }) => {
+  return (
+    <section className={s.section}>
+      <Container>{children}</Container>
+    </section>
+  );
 };
