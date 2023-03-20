@@ -12,20 +12,26 @@
   }
   &__btn {
     width: 85px;
+    font-family: "Rubik", sans-serif;
     font-size: 12px;
     border-radius: 4px;
     height: 32px;
+    color: rgba(96, 96, 96, 1);
+    background-color: #f3f2f1;
     cursor: pointer;
   }
   &__text {
-    padding-top: 7px;
+    padding-top: 4px;
     width: 40px;
+    height: 24px;
     font-size: 16px;
+    color: rgba(0, 0, 0, 1);
   }
   &__price {
     display: flex;
     justify-content: space-between;
     &__cell {
+      color: rgba(65, 65, 65, 1);
       width: 124px;
       height: 40px;
       border: 1px solid rgba(191, 191, 191, 1);
@@ -40,6 +46,7 @@
     }
   }
   &__input {
+    background-color: inherit;
     pointer-events: none;
     position: absolute;
     height: 24px;

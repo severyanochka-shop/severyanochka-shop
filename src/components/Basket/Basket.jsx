@@ -1,9 +1,8 @@
 import React from "react";
 import s from "./Basket.module.scss";
 // import { CardProductBasket } from "./CardProductBasket/CardProductBasket";
-// import { Toggle } from "./Toggle/Toggle";
-// import { Checkbox } from "./Checkbox/Checkbox";
-// import { Button } from "./Button/Button"
+import { Toggle } from "../../ui/Toggle/Toggle";
+import { Checkbox } from "../../ui/Checkbox/Checkbox";
 
 export const Basket = (props) => {
   const {
@@ -15,7 +14,6 @@ export const Basket = (props) => {
   } = props;
 
   let numOfProducts = set.lenght ? set.lenght : 0;
-
   let end = "ов";
 
   // редактирует окончание в зависимости от кол-ва товаров
@@ -47,7 +45,9 @@ export const Basket = (props) => {
         <p className={s.basket__quantity}>{numOfProducts}</p>
       </div>
       <div className={s.basket__buttons}>
-        <div className={s.checkbox__main}></div>
+        <div className={s.checkbox__main}>
+          <Checkbox medium />
+        </div>
         <button className={s.btn_select__all}>Выделить все</button>
         <button className={s.btn_delete__all}>Удалить все</button>
       </div>
@@ -67,7 +67,9 @@ export const Basket = (props) => {
         </ul>
         <div className={s.item2}>
           <div className={s.item2__debit}>
-            <div className={s.toggle}></div>
+            <div className={s.toggle}>
+              <Toggle M />
+            </div>
             <p className={s.item2__p}>Списать {accumPoints ? accumPoints : 0} ₽</p>
           </div>
           <p className={s.item2__text}>На карте накоплено {accumPoints ? accumPoints : 0} ₽ </p>
@@ -112,7 +114,8 @@ export const Basket = (props) => {
             </p>
           </div>
           <p className={s.minprice}>Минимальная сумма заказа {minOrderSum} ₽</p>
-          <div className={s.button}></div>
+
+          <button className={s.basket_btn}>Оформить заказ</button>
         </div>
       </div>
     </div>
