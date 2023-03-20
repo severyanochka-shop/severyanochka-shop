@@ -1,0 +1,15 @@
+.link {
+  width: 170px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: none;
+  color: #606060;
+  text-align: right;
+  &::after {
+    margin-left: 16.5px;
+    width: 7px;
+    height: 13px;
+    content: url("./assets/arrow.svg");
+  }
+}
