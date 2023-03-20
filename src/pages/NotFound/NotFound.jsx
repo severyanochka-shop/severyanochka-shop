@@ -7,7 +7,7 @@ import { Button } from "../../ui/Button/Button";
 import s from "./NotFound.module.scss";
 import logo from "./assets/logo.svg";
 
-export const NotFound = () => {
+const NotFound = () => {
   const [counter, setCounter] = useState(0);
 
   const easterEgg = () => {
@@ -40,3 +40,4 @@ export const NotFound = () => {
     </Section>
   );
 };
+export default NotFound
