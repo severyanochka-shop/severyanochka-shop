@@ -1,7 +1,7 @@
 import React from "react";
-import s from "./Banners.module.scss";
-import cardofloyalty from "./cardofloyalty.png";
-import korzina from "./korzina.svg";
+import s from "./BannerSpecialOffer.module.scss";
+import cardofloyalty from "./images/cardofloyalty.png";
+import korzina from "./images/korzina.svg";
 
 export const Banners = () => {
   return (
