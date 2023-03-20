@@ -1,0 +1,126 @@
+.reviews {
+  font-size: 16px;
+  color: rgba(65, 65, 65, 1);
+}
+
+.reviews__all {
+  display: flex;
+  gap: 144px;
+}
+
+.title {
+  text-align: left;
+  height: 54px;
+  margin-bottom: 48px;
+}
+
+.item1 {
+  height: 208px;
+  width: 168px;
+}
+
+.total_score {
+  margin-bottom: 28px;
+  display: flex;
+  &__stars {
+    margin-right: 16px;
+  }
+  &__num {
+    font-weight: 700;
+    width: 54px;
+  }
+}
+.allstars {
+  display: grid;
+  height: 160px;
+  width: 168px;
+  grid-template-columns: 36px auto 36px;
+  grid-template-rows: repeat(5, 1fr);
+  align-items: center;
+}
+.allstars > img {
+  height: 16px;
+  width: 16px;
+}
+
+.score_stars {
+  width: 96px;
+  height: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.span {
+  text-align: left;
+}
+[id="point"] {
+  text-align: right;
+}
+
+.item2 {
+  max-width: 688px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  text-align: left;
+}
+
+.rewievbox {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  max-width: 688px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  &__pic {
+    height: 36px;
+    width: 36px;
+    margin-right: 15px;
+  }
+  &__name {
+    font-size: 18px;
+    padding-top: 9px;
+  }
+  &__stars {
+    display: flex;
+    height: 16px;
+    width: 96px;
+    margin-right: 16px;
+    justify-content: space-between;
+  }
+  &__date {
+    padding-top: 2px;
+    color: rgba(143, 143, 143, 1);
+    font-size: 12px;
+  }
+  &__text {
+    font-size: 16px;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 1010px) {
+  .item2,
+  .rewievbox {
+    max-width: 544px;
+  }
+  .reviews__all {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 780px) {
+  .reviews__all {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .rewievbox {
+    max-width: 100%;
+  }
+}

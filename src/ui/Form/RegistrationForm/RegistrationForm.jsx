@@ -1,5 +1,4 @@
 import React from "react";
-import '../../Select/Select.scss'
 import s from "./RigistrationForm.module.scss";
 import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
@@ -13,8 +12,7 @@ import { Input } from "./Input";
 import * as yup from "yup";
 import { Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Select from "react-select";
-
+import { Select } from "../../Select/Select";
 
 export const RegistrationForm = () => {
   //временно для селекта
@@ -133,23 +131,23 @@ export const RegistrationForm = () => {
         <label className={s.select_label}>
           <p>Select 1</p>
           <Controller
-          name="status"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              isClearable
-              isSearchable={false}
-              className={s.select}
-              classNamePrefix='custom-select'
-              options={options1}
-            />
-          )}
-        />
-        <p className={s.select_tooltip}>{errors.status?.message || errors.status?.label.message}</p>
+            name="status"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                isClearable
+                isSearchable={false}
+                className={s.select}
+                classNamePrefix="custom-select"
+                options={options1}
+              />
+            )}
+          />
+          <p className={s.select_tooltip}>
+            {errors.status?.message || errors.status?.label.message}
+          </p>
         </label>
-
-        
 
         <div className={s.wrapper__input}>
           {errors?.firstName && (
@@ -179,13 +177,15 @@ export const RegistrationForm = () => {
                 isClearable
                 isSearchable={false}
                 className={s.select}
-                classNamePrefix='custom-select'
+                classNamePrefix="custom-select"
                 options={options2}
               />
             )}
           />
 
-          <p className={s.select_tooltip}>{errors.status2?.message || errors.status2?.label.message}</p>
+          <p className={s.select_tooltip}>
+            {errors.status2?.message || errors.status2?.label.message}
+          </p>
         </label>
 
         {!visible && (
