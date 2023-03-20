@@ -1,0 +1,13 @@
+.title {
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #414141;
+}
+
+@media (max-width: 1068px) {
+  .title {
+    font-size: 24px;
+  }
+}
