@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BannerPromo } from "../../components/BannerPromo/BannerPromo";
 import { MainWrapperCard } from "../../components/MainWrapperCard/MainWrapperCard";
 import { Section } from "../../layout/Section/Section";
@@ -10,6 +11,7 @@ import { Banners } from "../Banners/Banners";
 export const Main = () => {
   return (
     <>
+
       <BannerPromo />
       <Section>
         <SectionTitleWrapper>
@@ -33,6 +35,7 @@ export const Main = () => {
         <MainWrapperCard title="Покупали раньше" />
       </Section>
       {/* <Banners /> */}
+
     </>
   );
 };

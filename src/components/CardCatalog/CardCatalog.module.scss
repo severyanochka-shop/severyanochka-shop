@@ -3,7 +3,27 @@
   width: 272px;
   height: 349px;
   background-color: white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 4px;
   align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+.basket_block {
+display: flex;
+font-size: 18px;
+font-weight: 700;
+position: absolute;
+margin: 8px;
+align-items: center;
+gap: 4.5px;
+background: rgba(255, 255, 255, 0.8);
+border-radius: 4px;
+justify-content: space-between;
+padding:4px;
 }
 
 .image {
@@ -134,6 +154,7 @@
 .cardcatalog_button {
   width: 100%;
 }
+
 @media (max-width: 912px) {
   .card {
     width: 224px;

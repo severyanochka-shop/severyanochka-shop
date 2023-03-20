@@ -1,0 +1,21 @@
+.grid_wrapper {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, 272px);
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 913px) {
+  .grid_wrapper {
+    gap: 32px;
+    grid-template-columns: repeat(auto-fill, 224px);
+  }
+}
+
+@media (max-width: 504px) {
+  .grid_wrapper {
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, 160px);
+  }
+}

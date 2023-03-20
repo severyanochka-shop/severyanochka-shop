@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '../../ui/Button/Button'
 import cl from "./FilterCategory.module.scss";
 import {Toggle} from '../../ui/Toggle/Toggle'
+import { InputRange } from '../../ui/InputRange/InputRange';
 
 export const FilterCategory = ({
   subcategory,
@@ -44,7 +45,7 @@ export const FilterCategory = ({
           <button className={cl.cross_gray}>✕</button>
         </div>
       </Button>
-      {/* здесь идет компонент, который делает Женя */}
+      <InputRange/>
       <div className={cl.list_block}>
         <ul>
           <li>{subcategory}</li>
