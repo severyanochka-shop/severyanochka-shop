@@ -1,6 +1,6 @@
 .range {
-  min-width: 272px;
-  max-width: 272px;
+  // min-width: 272px;
+  width: 272px;
   height: 122px;
   display: flex;
   flex-direction: column;
@@ -21,8 +21,9 @@
     cursor: pointer;
   }
   &__text {
-    padding-top: 7px;
+    padding-top: 4px;
     width: 40px;
+    height: 24px;
     font-size: 16px;
     color: rgba(0, 0, 0, 1);
   }
