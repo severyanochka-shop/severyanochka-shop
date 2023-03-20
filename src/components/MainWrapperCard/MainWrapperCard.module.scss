@@ -3,6 +3,12 @@
   grid-template-columns: repeat(4, 1fr);
   overflow: scroll;
   column-gap: 40px;
+  margin-bottom: 120px;
+  scrollbar-width: none;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
