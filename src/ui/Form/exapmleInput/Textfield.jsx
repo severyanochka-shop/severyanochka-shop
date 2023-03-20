@@ -14,23 +14,32 @@ export const Textfield = ({
   medium,
   large,
   huge,
+  handler,
   ...restprops
 }) => {
-  console.log(restprops);
-  console.log(restprops.visible);
+
 
   return (
     <div className="textfield">
-      <label className={s.textfield__label} htmlFor="input">
+      <label
+        className={
+          !restprops.labelClass
+            ? s.textfield__label
+            : clsx(s.textfield__label, s.textfield__label_sms)
+        }
+        htmlFor="input"
+      >
         {label}
         <input
           {...restprops.register?.(restprops.name, restprops.rule)}
           type={type}
           name="input"
           id="input"
+          onChange={handler}
           maxLength={restprops.maxLength}
           placeholder={placeholder}
           disabled={disabled}
+          value={restprops.value}
           className={clsx(s.textfield__input, className, {
             [s.textfield__input_large]: large,
             [s.textfield__input_medium]: medium,
@@ -38,7 +47,7 @@ export const Textfield = ({
           })}
           {...restprops}
         ></input>
-        {(restprops.visible === 0 || type === "password") && restprops.maxLength !== '4' && (
+        {(restprops.visible === 0 || type === "password") && restprops.maxLength !== "4" && (
           <a href="#" className={!huge ? s.textfield__password : s.textfield__password_huge}>
             <img src={eye} alt="eye" className="textfield__eye" />
           </a>

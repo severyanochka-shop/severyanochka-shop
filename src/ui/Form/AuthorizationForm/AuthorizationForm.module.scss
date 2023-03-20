@@ -47,6 +47,7 @@
   position: absolute;
   height: 25px;
   width: 25px;
+  background-color: blue;
   &:hover {
     cursor: pointer;
   }
@@ -57,6 +58,7 @@
     position: absolute;
     height: 25px;
     width: 25px;
+    background-color: red;
     &:hover {
       cursor: pointer;
     }
@@ -68,6 +70,7 @@
     position: absolute;
     height: 25px;
     width: 25px;
+    background-color: yellow;
     &:hover {
       cursor: pointer;
     }
@@ -215,4 +218,16 @@
       cursor: pointer;
     }
   }
+}
+
+.wrapper__input {
+  position: relative;
+}
+
+.messageError_wrapper {
+  position: absolute;
+  left: 120%;
+  width: 298px;
+  height: 160px;
+  background-color: #FFFFFF;
 }

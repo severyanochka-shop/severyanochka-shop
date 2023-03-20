@@ -19,7 +19,7 @@ export const AuthorizationForm = () => {
     formState: { errors, isValid },
     handleSubmit,
   } = useForm({
-    mode: "onChange",
+    mode: "onBlur",
   });
 
   // переход по формам
@@ -66,6 +66,14 @@ export const AuthorizationForm = () => {
 
   // выслали смс
 
+  console.log(rules.rulePassword);
+
+  // контролируемый ввод пароля
+  const [value, setValue] = useState("");
+  const passwordHandler = (e) => {
+    setValue(e.target.value);
+  };
+
   return (
     <form
       className={
@@ -89,6 +97,7 @@ export const AuthorizationForm = () => {
       {(step === 1 || forgetPassword) && step !== 3 && step !== 4 && (
         <Textfield
           huge
+          maxLength="11"
           // className={s.inputField}
           register={register}
           name={"phoneNumber"}
@@ -101,19 +110,27 @@ export const AuthorizationForm = () => {
 
       {((step === 2 && !forgetPassword) || step === 4) && (
         <div className={s.wrapper__input}>
-          {/* {errors?.password && (
-                <p className={s.messageError_password}>{errors?.password.message}</p>
-            )} */}
+          {errors?.password && (
+            <div className={s.messageError_wrapper}>
+              <p className={s.messageError_password}>{(value.length < 8)? "менее 8 символов" : ''}</p>
+              <p className={s.messageError_password}>{errors?.password.message}</p>
+              <p className={s.messageError_password}>{errors?.password.message}</p>
+              <p className={s.messageError_password}>{errors?.password.message}</p>
+              <p className={s.messageError_password}>{"менее 8 символов"}</p>
+            </div>
+          )}
           <Textfield
             huge
             className={step === 4 ? s.inputField : ""}
-            // register={register}
+            register={register}
             name={"password"}
             label={"Пароль"}
             type={visible ? "text" : "password"}
             placeholder={"Введите пароль"}
             visible={visible ? 1 : 0}
-            // rule={rules.rulePassword}
+            rule={rules.rulePassword}
+            handler={passwordHandler}
+            value={value}
           />
           <div
             className={step != 4 ? s.visibleToggler : s.visibleToggler__Step4Password}
@@ -137,9 +154,9 @@ export const AuthorizationForm = () => {
 
       {((step !== 1 && step !== 2 && !forgetPassword) || step === 4) && (
         <div className={s.wrapper__input}>
-          {/* {errors?.password && (
+          {/* {errors?.secondPassword && (
             <div className={s.messageError_password}>
-              <p className={s.messageError_password}>{errors?.password.message}</p>
+              <p className={s.messageError_password}>{errors?.secondPassword.message}</p>
             </div>
           )} */}
 

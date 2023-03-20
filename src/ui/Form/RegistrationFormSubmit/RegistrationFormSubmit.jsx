@@ -3,8 +3,10 @@ import arrow from "../RegistrationFormSubmit/images/arrow.svg";
 import s from "./RegistrationFormSubmit.module.scss";
 import { Button } from "../../Button/Button";
 import { useForm } from "react-hook-form";
-import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Textfield } from "../exapmleInput/Textfield";
+import { rules } from "../RegistrationForm/rules";
+import clsx from "clsx";
 
 export const RegistrationFormSubmit = () => {
   const [timer, setTimer] = useState(3);
@@ -27,34 +29,34 @@ export const RegistrationFormSubmit = () => {
     mode: "onChange",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    await fetch("http://google.com/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
   };
 
   return (
-    <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)} action="">
+    <form className={clsx(s.wrapper, s.wrapper__SMS)} onSubmit={handleSubmit(onSubmit)} action="">
       <h1 className={s.title}>Регистрация</h1>
-      {errors?.input && (
-        <div className={s.messageError}>
-          <p className={s.messageError_text}>Не менее 4 символов</p>
+      <div className={s.wrapper__input}>
+        <div className={s.wrapperSMS}>
+          <Textfield
+            className={s.sms}
+            register={register}
+            name={"sms"}
+            type={"password"}
+            maxLength="4"
+            label={"Код из СМС"}
+            rule={rules.ruleSMS}
+            labelClass = {s.labelClass}
+          />
         </div>
-      )}
-      {/* </div> */}
-      <ControlledTextfield
-        className={s.inputField}
-        register={register}
-        name={"input"}
-        required={true}
-        label={"Введите пароль"}
-        type="password"
-        sms
-      />
-      <Button
-        background="orange"
-        className={s.button}
-        disabled={!isValid}
-        // onSubmit={handleSubmit(onSubmit)}
-      >
+      </div>
+      <Button background="orange" className={s.button} disabled={!isValid}>
         Подтвердить
       </Button>
       {timer > 0 && (
@@ -62,7 +64,7 @@ export const RegistrationFormSubmit = () => {
           Запросить код повторно можно через <b>{timer} секунд</b>
         </p>
       )}
-      {timer <= 0 && <p className={s.repeat__again}>Отправить ещё раз</p>}
+      {timer <= 0 && <p className={clsx(s.repeat, s.repeat__again)}>Отправить ещё раз</p>}
 
       <div className={s.backWrapper}>
         <img className={s.backWrapper__arrow} src={arrow} alt="<<" />

@@ -64,11 +64,12 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, auto);
   gap: 0px 32px;
+}
 
-  .Textfield {
-    width: 260px;
-    height: 40px;
-  }
+.textField {
+  width: 260px;
+  height: 40px;
+  font-size: 16px;
 }
 
 .toggleWrapper {
@@ -92,7 +93,7 @@
       width: 126px;
       height: 32px;
       background: #70c05b;
-      color: #fff;
+      color: #f3f2f1;
     }
   }
 }
