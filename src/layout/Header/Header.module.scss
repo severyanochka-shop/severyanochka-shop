@@ -31,15 +31,11 @@
 .header_input {
   display: block;
   padding: 8px;
-  box-sizing: border-box;
   width: 436px;
   height: 40px;
   background: #ffffff;
   border: 1px solid #70c05b;
   border-radius: 4px;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   color: #8f8f8f;
@@ -55,9 +51,6 @@
 @media (max-width: 1280px) {
   .logo {
     margin: 0 16px 16px 0;
-  }
-  .nav {
-    padding: 0 16px 0 24px;
   }
 
   .header_input {

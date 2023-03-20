@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "../../layout/Container/Container";
+import { VacancyPage } from "../../components/VacancyPage/VacancyPage";
 
 export const Vacancies = () => {
   return (
     <Container>
-      <h1>Вакансии</h1>
+      <VacancyPage />
     </Container>
   );
 };

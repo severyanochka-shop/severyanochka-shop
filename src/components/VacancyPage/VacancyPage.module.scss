@@ -3,6 +3,7 @@
   // min-height: calc(100vh - 144px - 126px);
   margin: 0 auto;
   &_title {
+    color: rgba(65, 65, 65, 1);
     height: 96px;
     font-size: 64px;
     font-weight: 700;
@@ -28,10 +29,29 @@
 
 @media (max-width: 1200px) {
   .vacancy_page {
-    max-width: 98%;
+    max-width: 100%;
   }
   .vacancy {
-    max-width: 99%;
+    max-width: 100%;
     gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vacancy {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .vacancy_page_title {
+    height: 54px;
+    margin-bottom: 32px;
+    font-size: 36px;
+    padding-top: 9px;
+  }
+  .vacancy {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
