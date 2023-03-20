@@ -1,10 +1,8 @@
 .wrapper {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 76px;
+  position: relative;
   height: 200px;
   background: #ffffff;
+  margin-bottom: 80px;
 
   &__filter {
     width: 100%;
@@ -36,6 +34,7 @@
 
 @media (max-width: 1207px) {
   .wrapper {
+    margin-bottom: 64px;
     height: 160px;
     &__filter {
       height: 160px;
@@ -61,8 +60,8 @@
 
 @media (max-width: 701px) {
   .wrapper {
+    margin-bottom: 44px;
     height: 80px;
-    top: 56px;
     &__filter {
       height: 80px;
       background-image: url("./images/pattern2small.svg");
