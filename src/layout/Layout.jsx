@@ -6,6 +6,7 @@ import { Breadcrumbs } from "../ui/Breadcrumbs/Breadcrumbs";
 import { Outlet } from "react-router-dom";
 import { HeaderMobileTop } from "./Header/HeaderMobile/HeaderMobileTop";
 import { HeaderMobileBottom } from "./Header/HeaderMobile/HeaderMobileBottom";
+import { InputRange } from "../ui/InputRange/InputRange";
 
 export const Layout = () => {
   return (
@@ -15,6 +16,7 @@ export const Layout = () => {
       <Breadcrumbs />
       <main className={s.main}>
         <Outlet />
+        <InputRange />
       </main>
       <Footer />
       <HeaderMobileBottom />

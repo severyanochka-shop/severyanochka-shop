@@ -1,5 +1,4 @@
 .range {
-  background-color: white;
   width: 272px;
   height: 122px;
   display: flex;
@@ -40,6 +39,7 @@
     }
   }
   &__input {
+    background-color: inherit;
     pointer-events: none;
     position: absolute;
     height: 24px;
