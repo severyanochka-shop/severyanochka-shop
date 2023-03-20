@@ -2,7 +2,7 @@
   width: 584px;
   height: 200px;
   background-color: #fcd5ba;
-  margin: 0 auto 50px;
+  margin: 50px auto 50px;
   border-radius: 4px;
   display: flex;
   justify-content: space-around;
@@ -39,7 +39,7 @@
   width: 584px;
   height: 200px;
   background-color: #e5ffde;
-  margin: 0 auto 50px;
+  margin: 50px auto 50px;
   border-radius: 4px;
   display: flex;
   justify-content: space-around;
@@ -64,7 +64,37 @@
     line-height: 150%;
     color: #414141;
   }
+    &__img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
 }
 .bannerkorzina:hover {
   box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+}
+
+
+@media (max-width: 592px) {
+  .bannercard {
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &__img {
+    width: 310px;
+  }
+
+}
+.bannerkorzina {
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 }
