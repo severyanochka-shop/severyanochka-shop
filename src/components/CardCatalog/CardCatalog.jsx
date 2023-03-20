@@ -2,21 +2,29 @@ import React from "react";
 import cl from "./CardCatalog.module.scss";
 import stargrey from "./img/stargrey.svg";
 import starorange from "./img/starorange.svg";
+import basket from './img/shoppingcart.svg'
 import { Button } from "../../ui/Button/Button";
 
 
 export const CardCatalog = ({
   image,
   price_usual,
-  product_describe,
   discount,
   handlerLike,
   handlerBasket,
   price_discount,
-  name
+  name,
+  counter
 }) => {
+  counter = 11;
+  // const [counter, setCount] = useState(0);
+
   return (
     <div className={cl.card}>
+      <div className={counter ? cl.basket_block : cl.none}>
+        <img src={basket} alt="basket" />
+        <p>{counter}</p>
+      </div>
       <img src={image} alt="" className={cl.image} />
       <div className={cl.like_block}>
         <button onClick={handlerLike} className={cl.heart}>
