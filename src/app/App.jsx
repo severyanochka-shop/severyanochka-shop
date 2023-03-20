@@ -9,6 +9,7 @@ import { CatalogAsync as Catalog } from "../pages/Catalog/Catalog.async";
 import { CategoryCatalogAsync as CategoryCatalog } from "../pages/CategoryCatalog/CategoryCatalog.async";
 import { FavouritesAsync as Favourites } from "../pages/Favourites/Favourites.async";
 import { Main } from "../pages/Main/Main";
+import { NotFound } from "../pages/NotFound/NotFound";
 import { OrdersAsync as Orders } from "../pages/Orders/Orders.async";
 import { PolicyAsync as Policy } from "../pages/Policy/Policy.async";
 import { VacanciesAsync as Vacancies } from "../pages/Vacancies/Vacancies.async";
@@ -194,6 +195,14 @@ export const App = () => {
           handle: {
             crumb: () => <Link to="/bought_before">Покупали раньше</Link>,
           },
+        },
+        {
+          path: "*",
+          element: (
+            <React.Suspense>
+              <NotFound />
+            </React.Suspense>
+          ),
         },
       ],
     },
