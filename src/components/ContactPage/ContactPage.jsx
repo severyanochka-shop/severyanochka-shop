@@ -31,7 +31,9 @@ export const ContactPage = () => {
               alt="home"
             />{" "}
             <span className={(s.box__text, s.first)}>Бухгалтерия, склад</span>
-            <p className={s.box__tel}>+7 82140 92619</p>
+            <a className={s.box__tel} href="tel:88214092619">
+              +7 8214092619
+            </a>
           </div>
           <div className={s.box}>
             <img
@@ -40,7 +42,9 @@ export const ContactPage = () => {
               alt="%"
             />{" "}
             <span className={s.box__text}>Вопросы по системе лояльности</span>
-            <p className={s.box__tel}>+7 908 716 33 97</p>
+            <a className={s.box__tel} href="tel:89087163397">
+              +7 908 716 33 97
+            </a>
           </div>
         </div>
         <h3 className={s.contacts__subtitle}>Наши магазины</h3>
