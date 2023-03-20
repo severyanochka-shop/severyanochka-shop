@@ -37,7 +37,6 @@ export const AddReview = ({ review, setReview }) => {
         <p className={s.yourscore__subtitle}>Ваша оценка</p>
         <div className={s.yourscore__stars}>
           <div
-            id="star"
             onClick={() => {
               setScore("1");
             }}
@@ -45,7 +44,6 @@ export const AddReview = ({ review, setReview }) => {
             className={s.divstar}
           ></div>
           <div
-            id="star"
             onClick={() => {
               setScore("2");
             }}
