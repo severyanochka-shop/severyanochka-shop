@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { v1 } from "uuid";
 import s from "./AddReview.module.scss";
+import star from "../Images/starfull.svg";
+import emptystar from "../Images/star.svg";
 
 export const AddReview = ({ review, setReview }) => {
   const [value, setValue] = useState("");
@@ -22,39 +24,53 @@ export const AddReview = ({ review, setReview }) => {
       setScore("");
     }
   };
+
+  const color = (id) => {
+    return {
+      backgroundImage: score === id ? `url(${star})` : `url(${emptystar})`,
+    };
+  };
+
   return (
     <div className={s.yourscore}>
       <div style={{ display: "flex" }}>
         <p className={s.yourscore__subtitle}>Ваша оценка</p>
         <div className={s.yourscore__stars}>
           <div
+            id="star"
             onClick={() => {
               setScore("1");
             }}
+            style={color("1")}
             className={s.divstar}
           ></div>
           <div
+            id="star"
             onClick={() => {
               setScore("2");
             }}
+            style={color("2")}
             className={s.divstar}
           ></div>
           <div
             onClick={() => {
               setScore("3");
             }}
+            style={color("3")}
             className={s.divstar}
           ></div>
           <div
             onClick={() => {
               setScore("4");
             }}
+            style={color("4")}
             className={s.divstar}
           ></div>
           <div
             onClick={() => {
               setScore("5");
             }}
+            style={color("5")}
             className={s.divstar}
           ></div>
         </div>

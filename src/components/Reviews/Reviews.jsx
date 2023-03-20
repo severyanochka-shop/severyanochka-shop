@@ -19,7 +19,7 @@ export const Reviews = (props) => {
   const totalScore = Math.round(
     review.reduce((sum, el) => {
       return sum + Number(el.score) / [...review].length;
-    }, 0),
+    }, 0)
   ).toString();
 
   const fives = review.filter((el) => {
@@ -74,7 +74,12 @@ export const Reviews = (props) => {
         </div>
         <div className={s.rewievbox}>
           <div className={s.item2}>
-            <ReviewItem name={"Татьяна"} type={"4"} date={"22.02.2022"} text={"приятный вкус"} />
+            <ReviewItem
+              name={"Татьяна"}
+              type={"4"}
+              date={"22.02.2022"}
+              text={"приятный вкус"}
+            />
             <ReviewItem
               name={"Мария"}
               type={"5"}
