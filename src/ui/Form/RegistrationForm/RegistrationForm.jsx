@@ -9,6 +9,12 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Textfield } from "../exapmleInput/Textfield";
 import { rules } from "./rules.js";
+import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
+import { Input } from "./Input";
+import * as yup from "yup";
+import { Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Select } from "../../Select/Select";
 
 export const RegistrationForm = () => {
   // дизейбл инпута по чекбокусу
@@ -128,24 +134,28 @@ export const RegistrationForm = () => {
             rule={rules.ruleLastName}
           />
         </div>
-        <Select
-          className={s.select}
-          label={"Регион"}
-          options={[
-            {
-              value: "Коми",
-              label: "Коми",
-            },
-            {
-              value: "Коми",
-              label: "Коми",
-            },
-            {
-              value: "Коми",
-              label: "Коми",
-            },
-          ]}
-        ></Select>
+
+        <label className={s.select_label}>
+          <p>Select 1</p>
+          <Controller
+            name="status"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                isClearable
+                isSearchable={false}
+                className={s.select}
+                classNamePrefix="custom-select"
+                options={options1}
+              />
+            )}
+          />
+          <p className={s.select_tooltip}>
+            {errors.status?.message || errors.status?.label.message}
+          </p>
+        </label>
+
         <div className={s.wrapper__input}>
           {errors?.firstName && (
             <div className={s.messageError}>
@@ -161,24 +171,7 @@ export const RegistrationForm = () => {
             rule={rules.ruleLastName}
           />
         </div>
-        <Select
-          className={s.select}
-          label={"Населенный пункт"}
-          options={[
-            {
-              value: "Усть-Ижма",
-              label: "Усть-Ижма",
-            },
-            {
-              value: "Усть-Ижма",
-              label: "Усть-Ижма",
-            },
-            {
-              value: "Усть-Ижма",
-              label: "Усть-Ижма",
-            },
-          ]}
-        ></Select>
+
         <div className={s.wrapper__input}>
           {errors?.password && (
             <p className={clsx(s.messageError, s.messageError_password)}>
@@ -197,6 +190,29 @@ export const RegistrationForm = () => {
           />
           <div className={s.visibleChanger} onClick={() => setVisible(!visible)}></div>
         </div>
+
+        <label className={s.select_label}>
+          <p>Select 2</p>
+
+          <Controller
+            name="status2"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                isClearable
+                isSearchable={false}
+                className={s.select}
+                classNamePrefix="custom-select"
+                options={options2}
+              />
+            )}
+          />
+
+          <p className={s.select_tooltip}>
+            {errors.status2?.message || errors.status2?.label.message}
+          </p>
+        </label>
         <label className={s.toggleWrapper__label}>
           Пол
           <div className={s.toggleWrapper}>
