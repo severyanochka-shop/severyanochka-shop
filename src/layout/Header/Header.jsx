@@ -14,7 +14,6 @@ import cart_hover from "./images/pictograms/cart_hover.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
-import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
   return (

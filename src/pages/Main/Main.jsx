@@ -6,7 +6,7 @@ import { Section } from "../../layout/Section/Section";
 import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
-import { Banners } from "../Banners/Banners";
+// import { Banners } from "../Banners/Banners";
 
 export const Main = () => {
   return (
