@@ -1,5 +1,5 @@
 import React from "react";
-import { Vacancy } from "../Vacancy/Vacancy";
+import { Vacancy } from "./Vacancy/Vacancy";
 import s from "./VacancyPage.module.scss";
 
 export const VacancyPage = (props) => {
