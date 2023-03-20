@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ReactSelect, { components } from "react-select";
 import dropdown from "./images/dropdown.svg";
 import cross from "./images/cross.svg";
@@ -8,9 +7,9 @@ const orderOptions = (values) => {
   return values.filter((v) => v.isFixed).concat(values.filter((v) => !v.isFixed));
 };
 
-export const Select = ({ options, isMulti, label, disabled, className }) => {
-  const [value, setValue] = useState([]);
-
+export const Select = ({
+  options, value, onChange: baseOnChange, isMulti, label, disabled, className, ...restProps
+}) => {
   const onChange = (newValue, actionMeta) => {
     if (isMulti) {
       switch (actionMeta.action) {
@@ -27,8 +26,8 @@ export const Select = ({ options, isMulti, label, disabled, className }) => {
           break;
       }
 
-      setValue(orderOptions(newValue));
-    } else setValue(newValue);
+      baseOnChange(orderOptions(newValue));
+    } else baseOnChange(newValue);
   };
 
   const DropdownIndicator = (props) => {
@@ -64,6 +63,7 @@ export const Select = ({ options, isMulti, label, disabled, className }) => {
 
   return (
     <ReactSelect
+      {...restProps}
       value={value}
       isMulti={isMulti}
       onChange={onChange}

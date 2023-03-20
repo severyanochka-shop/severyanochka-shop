@@ -3,7 +3,6 @@ import { CategoryPage } from "../../components/CategoryPage/CategoryPage";
 import { FilterCategory } from "../../components/FilterCategory/FilterCategory";
 import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 
-
 export const Main = () => {
   return (
     <>
