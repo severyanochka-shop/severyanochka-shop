@@ -1,4 +1,5 @@
 .contacts {
+  color: rgba(65, 65, 65, 1);
   margin: 0 auto;
   max-width: 1208px;
   &__title {
@@ -60,6 +61,7 @@
 }
 
 .location__btn {
+  cursor: pointer;
   font-family: "Rubik", sans-serif;
   height: 40px;
   padding: 8px;
@@ -67,10 +69,10 @@
   background-color: rgba(243, 242, 241, 1);
   color: rgba(96, 96, 96, 1);
   font-size: 16px;
-  transition: 0.7s;
+  transition: 0.3s;
   &:hover {
     background-color: #70c05b;
-    transition: 0.7s;
+    transition: 0.3s;
   }
 }
 
@@ -79,6 +81,7 @@
   gap: 80px;
   height: 96px;
   margin-bottom: 33px;
+  font-size: 18px;
 }
 
 .item4 {
@@ -175,8 +178,9 @@
 @media (max-width: 850px) {
   .item3 {
     height: 84px;
+    font-size: 16px;
   }
-  .item3 > img {
+  .item3__el {
     width: 160px;
   }
 }
@@ -214,14 +218,11 @@
   }
 
   .item3 {
+    font-size: 14px;
     flex-wrap: wrap;
     width: 336px;
     height: 176px;
     gap: 16px;
-  }
-
-  .item3 > img {
-    height: 80px;
   }
 
   .item4 {

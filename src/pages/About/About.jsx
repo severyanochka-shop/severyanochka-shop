@@ -1,10 +1,11 @@
 import React from "react";
+import { AboutCompany } from "../../components/AboutCompany/AboutCompany";
 import { Container } from "../../layout/Container/Container";
 
 export const About = () => {
   return (
     <Container>
-      <h1>О компании</h1>
+      <AboutCompany />
     </Container>
   );
 };

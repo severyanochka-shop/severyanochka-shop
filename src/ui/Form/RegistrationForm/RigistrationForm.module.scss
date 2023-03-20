@@ -127,10 +127,35 @@
   margin-bottom: 40px;
 }
 
+.select_label {
+  position: relative;
+  text-align: left;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8f8f8f;
+}
+
 .select {
   width: 260px;
   height: 40px;
 }
+
+.select_tooltip {
+  position: absolute;
+  background-color: rgba(216, 0, 0, 0.5);
+  right: 0;
+  top: 0;
+}
+
+
+
+
+
+
+
 
 .messageError {
   position: absolute;

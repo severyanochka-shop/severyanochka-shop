@@ -1,5 +1,7 @@
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 14px;
   align-items: center;
   column-gap: 24.5px;
   margin-bottom: 27px;
