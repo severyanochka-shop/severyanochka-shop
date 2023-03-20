@@ -1,9 +1,9 @@
 import React from "react";
-import s from "./DeliveryFree.module.scss";
+import s from "./BannerPromo.module.scss";
 import basket_big from "./images/basket_big.png";
 import basket_small from "./images/basket_small.png";
 
-export const DeliveryFree = () => {
+export const BannerPromo = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.wrapper__filter}></div>
