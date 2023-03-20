@@ -24,6 +24,20 @@
     padding-top: 3px;
     font-weight: 700;
   }
+  &_btn {
+    width: 188px;
+    height: 40px;
+    font-size: 16px;
+    background-color: rgba(252, 213, 186, 1);
+    color: rgba(255, 102, 51, 1);
+    border-radius: 4px;
+    transition: 0.2s;
+    &:hover {
+      background-color: rgba(255, 102, 51, 1);
+      color: rgba(252, 213, 186, 1);
+      transition: 0.2s;
+    }
+  }
 }
 
 .divstar {

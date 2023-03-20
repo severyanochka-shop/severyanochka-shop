@@ -83,7 +83,9 @@ export const AddReview = ({ review, setReview }) => {
         cols="30"
         rows="8"
       ></textarea>
-      <button onClick={saveReview}>Отправить отзыв</button>
+      <button onClick={saveReview} className={s.yourscore_btn}>
+        Отправить отзыв
+      </button>
     </div>
   );
 };
