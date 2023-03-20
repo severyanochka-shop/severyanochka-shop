@@ -6,12 +6,10 @@ import { Section } from "../../layout/Section/Section";
 import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
-// import { Banners } from "../Banners/Banners";
 
 export const Main = () => {
   return (
     <>
-
       <BannerPromo />
       <Section>
         <SectionTitleWrapper>
@@ -34,8 +32,6 @@ export const Main = () => {
         </SectionTitleWrapper>
         <MainWrapperCard title="Покупали раньше" />
       </Section>
-      {/* <Banners /> */}
-
     </>
   );
 };
