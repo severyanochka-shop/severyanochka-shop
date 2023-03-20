@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import cl from "./CardCatalog.module.scss";
 import stargrey from "./img/stargrey.svg";
 import starorange from "./img/starorange.svg";
@@ -6,17 +6,30 @@ import basket from './img/shoppingcart.svg'
 import { Button } from "../../ui/Button/Button";
 
 
+let savedBasket = JSON.parse(localStorage.getItem("arrCart")) ?? [];
+
 export const CardCatalog = ({
   image,
   price_usual,
   discount,
   handlerLike,
-  handlerBasket,
+  
   price_discount,
   name,
-  counter
+  counter,
 }) => {
   counter = 11;
+
+  const [productBasket, setBasket] = useState(savedBasket);
+
+  function addInBasket(name) {
+    if (!productBasket.includes(name)) {
+      const newArr = [...productBasket, name];
+      setBasket(newArr);
+      localStorage.setItem("arrCart", JSON.stringify(newArr));
+    }
+  }
+
   // const [counter, setCount] = useState(0);
 
   return (
@@ -37,7 +50,9 @@ export const CardCatalog = ({
       <div className={cl.info}>
         <div className={cl.price}>
           <div>
-            <p className={cl.price_discount}>{discount ? (price_usual * discount) / 100 : price_discount} ₽</p>
+            <p className={cl.price_discount}>
+              {discount ? (price_usual * discount) / 100 : price_discount} ₽
+            </p>
             <p className={cl.withcard}>С картой</p>
           </div>
           <div>
@@ -55,7 +70,7 @@ export const CardCatalog = ({
           <img src={stargrey} alt="" className={cl.star} />
           <img src={stargrey} alt="" className={cl.star} />
         </div>
-        <Button border="green" className={cl.cardcatalog_button} onClick={handlerBasket}>
+        <Button border="green" className={cl.cardcatalog_button} onClick={addInBasket}>
           В корзину
         </Button>
       </div>
