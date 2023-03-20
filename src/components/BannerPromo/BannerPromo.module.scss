@@ -9,7 +9,7 @@
     height: 200px;
     mix-blend-mode: multiply;
     opacity: 0.3;
-    background-image: url("./images/pattern2.svg");
+    background-image: url("./assets/pattern2.svg");
   }
 
   &__image {
@@ -38,7 +38,7 @@
     height: 160px;
     &__filter {
       height: 160px;
-      background-image: url("./images/pattern2mid.svg");
+      background-image: url("./assets/pattern2mid.svg");
     }
 
     &__title {
@@ -64,7 +64,7 @@
     height: 80px;
     &__filter {
       height: 80px;
-      background-image: url("./images/pattern2small.svg");
+      background-image: url("./assets/pattern2small.svg");
     }
     &__image {
       display: none;

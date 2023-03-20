@@ -1,12 +1,14 @@
 import React from "react";
 import { AboutCompany } from "../../components/AboutCompany/AboutCompany";
-import { Container } from "../../layout/Container/Container";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 export const About = () => {
   return (
-    <Container>
+    <Section>
+      <Title>О компании</Title>
       <AboutCompany />
-    </Container>
+    </Section>
   );
 };
 

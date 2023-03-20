@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "../../layout/Container/Container";
 import s from "../OrdersDates/OrdersDates.module.scss";
-import calendar from "./calendar.svg";
-import calendarWhite from "./calendarwhite.svg";
+import calendar from "./assets/calendar.svg";
+import calendarWhite from "./assets/calendarwhite.svg";
 
 export const OrdersDates = ({ text, price, time }) => {
   let options = { year: "numeric", month: "numeric", day: "numeric" };

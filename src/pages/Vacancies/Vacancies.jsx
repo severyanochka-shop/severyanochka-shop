@@ -1,12 +1,14 @@
 import React from "react";
-import { Container } from "../../layout/Container/Container";
-import { VacancyPage } from "../../components/VacancyPage/VacancyPage";
+import { Vacancies as VacanciesComponent } from "../../components/Vacancies/Vacancies";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 export const Vacancies = () => {
   return (
-    <Container>
-      <VacancyPage />
-    </Container>
+    <Section>
+      <Title>Вакансии</Title>
+      <VacanciesComponent />
+    </Section>
   );
 };
 

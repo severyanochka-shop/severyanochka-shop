@@ -1,23 +1,4 @@
 .basket {
-
-  &__title {
-    text-align: left;
-    font-size: 36px;
-    font-weight: 700;
-    width: 158px;
-  }
-  &__quantity {
-    background-color: rgba(255, 102, 51, 1);
-    color: white;
-    height: 32px;
-    width: 26px;
-    border-radius: 4px;
-    text-align: center;
-    position: absolute;
-    top: 0px;
-    left: 178px;
-    padding: 4px;
-  }
   &__buttons {
     margin-bottom: 20px;
     width: 260px;

@@ -40,10 +40,6 @@ export const Basket = (props) => {
 
   return (
     <div className={s.basket}>
-      <div className={s.title__box}>
-        <h2 className={s.basket__title}>Корзина</h2>
-        <p className={s.basket__quantity}>{numOfProducts}</p>
-      </div>
       <div className={s.basket__buttons}>
         <div className={s.checkbox__main}>
           <Checkbox medium />
@@ -105,7 +101,7 @@ export const Basket = (props) => {
             </tbody>
           </table>
           <div className={s.points}>
-            <img src={require("./Images/somegreen.png")} alt="green" />
+            <img src={require("./assets/somegreen.png")} alt="green" />
             <p>
               Вы получаете{" "}
               <strong>

@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./BannerPromo.module.scss";
-import basket_big from "./images/basket_big.png";
-import basket_small from "./images/basket_small.png";
+import basket_big from "./assets/basket_big.png";
+import basket_small from "./assets/basket_small.png";
 
 export const BannerPromo = () => {
   return (
