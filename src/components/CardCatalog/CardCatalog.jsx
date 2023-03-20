@@ -12,6 +12,8 @@ export const CardCatalog = ({
   discount,
   handlerLike,
   handlerBasket,
+  price_discount,
+  name
 }) => {
   return (
     <div className={cl.card}>
@@ -27,7 +29,7 @@ export const CardCatalog = ({
       <div className={cl.info}>
         <div className={cl.price}>
           <div>
-            <p className={cl.price_discount}>{(price_usual * discount) / 100} ₽</p>
+            <p className={cl.price_discount}>{discount ? (price_usual * discount) / 100 : price_discount} ₽</p>
             <p className={cl.withcard}>С картой</p>
           </div>
           <div>
@@ -35,7 +37,7 @@ export const CardCatalog = ({
             <p className={cl.withoutcard}>Обычная</p>
           </div>
         </div>
-        <p className={cl.product_describe}>{product_describe}</p>
+        <p className={cl.product_describe}>{name}</p>
       </div>
       <div className={cl.footer_card}>
         <div className={cl.rating}>

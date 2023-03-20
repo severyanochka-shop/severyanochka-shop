@@ -14,6 +14,7 @@ export const GridWrapper = ({likesArr, addLike, removeLike}) => {
           addLike={addLike}
           removeLike={removeLike}
           price_usual={el.priceRegular}
+          price_discount={el.priceWithCard}
         />
       ))}
     </div>
