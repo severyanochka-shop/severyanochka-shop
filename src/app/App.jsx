@@ -14,7 +14,7 @@ import { OrdersAsync as Orders } from "../pages/Orders/Orders.async";
 import { PolicyAsync as Policy } from "../pages/Policy/Policy.async";
 import { VacanciesAsync as Vacancies } from "../pages/Vacancies/Vacancies.async";
 import { ContactsAsync as Contacts } from "../pages/Contacts/Contacts.async";
-import { categoriesFetch } from "../store/reducers/ActionCreators";
+import { categoriesFetch, dataFetch } from "../store/reducers/ActionCreators";
 import "./global/styles/global.scss";
 import "./global/styles/variables.scss";
 import { ScrollToTop } from "./ScrollToTop";
@@ -28,6 +28,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(categoriesFetch());
+    dispatch(dataFetch());
   }, []);
 
   const router = createBrowserRouter([

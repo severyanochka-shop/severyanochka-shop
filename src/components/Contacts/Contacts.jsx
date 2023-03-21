@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import s from "./ContactPage.module.scss";
-import map from "./Image/map.svg";
-import minmap from "./Image/minmap.jpg";
-import voshod from "./Image/voshod.svg";
-import voshodonmap from "./Image/voshodonmap.svg";
-import parus from "./Image/parus.svg";
-import rjaba from "./Image/rjabina.svg";
-import los from "./Image/pellis.svg";
-import parusonmap from "./Image/parusonmap.svg";
-import rjabaonmap from "./Image/rjabaonmap.svg";
-import pelisonmap from "./Image/pelisonmap.svg";
+import s from "./Contacts.module.scss";
+import map from "./assets/map.svg";
+import minmap from "./assets/minmap.jpg";
+import voshod from "./assets/voshod.svg";
+import voshodonmap from "./assets/voshodonmap.svg";
+import parus from "./assets/parus.svg";
+import rjaba from "./assets/rjabina.svg";
+import los from "./assets/pellis.svg";
+import parusonmap from "./assets/parusonmap.svg";
+import rjabaonmap from "./assets/rjabaonmap.svg";
+import pelisonmap from "./assets/pelisonmap.svg";
 import { ContactItem } from "../ContactItem/ContactItem";
 
-export const ContactPage = () => {
+export const Contacts = () => {
   const [active, setActive] = useState("shel");
 
   const handleClick = (e) => {
@@ -21,26 +21,17 @@ export const ContactPage = () => {
 
   return (
     <div className={s.contacts}>
-      <h2 className={s.contacts__title}>Контакты</h2>
       <div className={s.contact}>
         <div className={s.item1}>
           <div className={s.box}>
-            <img
-              className={s.box__img}
-              src={require("./Image/home.png")}
-              alt="home"
-            />{" "}
+            <img className={s.box__img} src={require("./assets/home.png")} alt="home" />
             <span className={(s.box__text, s.first)}>Бухгалтерия, склад</span>
             <a className={s.box__tel} href="tel:88214092619">
               +7 8214092619
             </a>
           </div>
           <div className={s.box}>
-            <img
-              className={s.box__img}
-              src={require("./Image/percent.png")}
-              alt="%"
-            />{" "}
+            <img className={s.box__img} src={require("./assets/percent.png")} alt="%" />
             <span className={s.box__text}>Вопросы по системе лояльности</span>
             <a className={s.box__tel} href="tel:89087163397">
               +7 908 716 33 97
@@ -53,8 +44,7 @@ export const ContactPage = () => {
             id={"shel"}
             onClick={handleClick}
             style={{
-              backgroundColor:
-                active === "shel" ? "#70c05b" : "rgba(243, 242, 241, 1)",
+              backgroundColor: active === "shel" ? "#70c05b" : "rgba(243, 242, 241, 1)",
             }}
             className={s.location__btn}
           >
@@ -64,8 +54,7 @@ export const ContactPage = () => {
             id={"vert"}
             onClick={handleClick}
             style={{
-              backgroundColor:
-                active === "vert" ? "#70c05b" : "rgba(243, 242, 241, 1)",
+              backgroundColor: active === "vert" ? "#70c05b" : "rgba(243, 242, 241, 1)",
             }}
             className={s.location__btn}
           >
@@ -75,8 +64,7 @@ export const ContactPage = () => {
             id={"kras"}
             onClick={handleClick}
             style={{
-              backgroundColor:
-                active === "kras" ? "#70c05b" : "rgba(243, 242, 241, 1)",
+              backgroundColor: active === "kras" ? "#70c05b" : "rgba(243, 242, 241, 1)",
             }}
             className={s.location__btn}
           >
@@ -86,8 +74,7 @@ export const ContactPage = () => {
             id={"diur"}
             onClick={handleClick}
             style={{
-              backgroundColor:
-                active === "diur" ? "#70c05b" : "rgba(243, 242, 241, 1)",
+              backgroundColor: active === "diur" ? "#70c05b" : "rgba(243, 242, 241, 1)",
             }}
             className={s.location__btn}
           >
@@ -95,26 +82,10 @@ export const ContactPage = () => {
           </button>
         </div>
         <div className={s.item3}>
-          <ContactItem
-            adress={"ул.Дорожная"}
-            phone={"+79042713590"}
-            img={voshod}
-          />
-          <ContactItem
-            adress={"ул. Советская 87"}
-            phone={"+7 8214091330"}
-            img={parus}
-          />
-          <ContactItem
-            adress={"ул. Заводская 16"}
-            phone={"+7 8214091101"}
-            img={rjaba}
-          />
-          <ContactItem
-            adress={"ул. Рабочая 1"}
-            phone={"+7 8214091300"}
-            img={los}
-          />
+          <ContactItem adress={"ул.Дорожная"} phone={"+79042713590"} img={voshod} />
+          <ContactItem adress={"ул. Советская 87"} phone={"+7 8214091330"} img={parus} />
+          <ContactItem adress={"ул. Заводская 16"} phone={"+7 8214091101"} img={rjaba} />
+          <ContactItem adress={"ул. Рабочая 1"} phone={"+7 8214091300"} img={los} />
         </div>
         <div className={s.item4}>
           <picture className={s.item4__picture}>

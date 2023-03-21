@@ -1,11 +1,14 @@
 import React from "react";
-import { Container } from "../../layout/Container/Container";
+import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 export const NewProducts = () => {
   return (
-    <Container>
-      <h1>Новинки</h1>
-    </Container>
+    <Section>
+      <Title>Новинки</Title>
+      <GridWrapper />
+    </Section>
   );
 };
 

@@ -14,13 +14,11 @@ export const CategoryPage = ({
   inStock,
   subcategory,
 }) => {
-  let category_name = "Молоко, сыр, яйцо";
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
   return (
     <Container>
-      <h2>{category_name}</h2>
       <div className={cl.category_page}>
         <div className={cl.filter}>
           <Button medium background="gray" className={cl.button_filter} onClick={hideFilter}>

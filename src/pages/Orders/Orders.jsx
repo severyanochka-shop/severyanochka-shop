@@ -1,13 +1,12 @@
 import React from "react";
-import { Container } from "../../layout/Container/Container";
-import { InputRange } from "../../ui/InputRange/InputRange";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 export const Orders = () => {
   return (
-    <Container>
-      <h1>Заказы</h1>
-      <InputRange />
-    </Container>
+    <Section>
+      <Title>Заказы</Title>
+    </Section>
   );
 };
 
