@@ -12,7 +12,7 @@ import Cart from "../Cart/Cart";
 export const Main = () => {
   return (
     <>
-      {/* <BannerPromo />
+      <BannerPromo />
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Акции</SectionTitle>
@@ -33,9 +33,7 @@ export const Main = () => {
           <SectionLink to="/bought_before">Все покупки</SectionLink>
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
-      </Section> */}
-      
-      <Cart/>
+      </Section>
     </>
   );
 };
