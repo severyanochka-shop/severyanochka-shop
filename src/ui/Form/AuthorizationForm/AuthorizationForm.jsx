@@ -19,7 +19,7 @@ export const AuthorizationForm = () => {
     formState: { errors, isValid },
     handleSubmit,
   } = useForm({
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   // переход по формам
@@ -66,13 +66,24 @@ export const AuthorizationForm = () => {
 
   // выслали смс
 
-  console.log(rules.rulePassword);
+
 
   // контролируемый ввод пароля
   const [value, setValue] = useState("");
+  // const [checkPassword, setCheckPassword]=useState(false)
+
   const passwordHandler = (e) => {
+    console.log(e.target)
     setValue(e.target.value);
   };
+
+  // const checkPasswordHandler = (e) => {
+  //   console.log(e.target.name)
+    
+  //   setCheckPassword(true)
+  //   console.log(checkPassword)
+  // }
+
 
   return (
     <form
@@ -110,13 +121,27 @@ export const AuthorizationForm = () => {
 
       {((step === 2 && !forgetPassword) || step === 4) && (
         <div className={s.wrapper__input}>
-          {errors?.password && (
+          {/* {errors?.password && ( */}
+          {errors?.password   && ( 
             <div className={s.messageError_wrapper}>
-              <p className={s.messageError_password}>{(value.length < 8)? "менее 8 символов" : ''}</p>
-              <p className={s.messageError_password}>{errors?.password.message}</p>
-              <p className={s.messageError_password}>{errors?.password.message}</p>
-              <p className={s.messageError_password}>{errors?.password.message}</p>
-              <p className={s.messageError_password}>{"менее 8 символов"}</p>
+              <p
+                className={
+                  value.length > 8 ? s.messageError_wrapper_textTrue : s.messageError_wrapper_textFalse
+                }
+              >
+                Больше 8 символов
+              </p>
+              <p  className={
+                  value.match(/[ 0-9]/) ? s.messageError_wrapper_textTrue : s.messageError_wrapper_textFalse
+                }>
+                Цифра
+              </p>
+              <p className={value.match(/[a-z]/) ? s.messageError_wrapper_textTrue : s.messageError_wrapper_textFalse}>
+                Прописная буква
+              </p>
+              <p className={value.match(/[A-Z]/)? s.messageError_wrapper_textTrue : s.messageError_wrapper_textFalse}>
+                Заглавная буква
+              </p>
             </div>
           )}
           <Textfield
@@ -131,6 +156,8 @@ export const AuthorizationForm = () => {
             rule={rules.rulePassword}
             handler={passwordHandler}
             value={value}
+            // onBlur={(e)=>checkPasswordHandler(e)}
+            
           />
           <div
             className={step != 4 ? s.visibleToggler : s.visibleToggler__Step4Password}

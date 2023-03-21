@@ -3,20 +3,35 @@ import s from "./RigistrationForm.module.scss";
 import { Checkbox } from "../../Checkbox/Checkbox";
 import { Button } from "../../Button/Button";
 import x from "../RegistrationForm/images/x.svg";
-import { Select } from "../../Select/Select";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Textfield } from "../exapmleInput/Textfield";
 import { rules } from "./rules.js";
-import { ControlledTextfield } from "../ControlledInput/ControlledTextfield";
-import { Input } from "./Input";
 import * as yup from "yup";
 import { Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Select } from "../../Select/Select";
 
 export const RegistrationForm = () => {
+  const schema = yup.object().shape({
+    status: yup
+      .object()
+      .shape({
+        label: yup.string().required("Заполните поле"),
+        value: yup.string().required("Заполните поле"),
+      })
+      .required("Заполните поле"),
+
+    status2: yup
+      .object()
+      .shape({
+        label: yup.string().required("Заполните поле"),
+        value: yup.string().required("Заполните поле"),
+      })
+      .required("Заполните поле"),
+  });
+
   // дизейбл инпута по чекбокусу
   const [check, setCheck] = useState(false);
 
@@ -36,9 +51,21 @@ export const RegistrationForm = () => {
     getValues,
     handleSubmit,
     watch,
+    control,
   } = useForm({
+    // resolver: yupResolver(schema),
     mode: "onBlur",
   });
+
+  const options1 = [
+    { label: "test1", value: "test1" },
+    { label: "test2", value: "test2" },
+  ];
+
+  const options2 = [
+    { label: "test3", value: "test3" },
+    { label: "test4", value: "test4" },
+  ];
 
   //валидация пароля
   const watchFirstPassword = watch("password");
@@ -68,20 +95,12 @@ export const RegistrationForm = () => {
     });
   };
 
-  // const [value, setValue] = useState('');
-  // const phoneNumberHandler = (e) => {
-  //   if (e.target.value.match(/^[ 0-9]+$/) != null){
-  //     setValue(e.target.value)
-  //   }
-  // }
-
   return (
     <form className={s.wrapper} onSubmit={handleSubmit(onSubmit)}>
       <img className={s.closeForm} src={x} alt="x" onClick={() => {}} />
       <h1 className={s.title}>Регистрация</h1>
       <h2 className={s.subtitle}>Обязательные поля</h2>
       <div className={s.obligatoryFieldsWrapper}>
-        
         <div className={s.wrapper__input}>
           {errors?.phoneNumber && (
             <div className={s.messageError}>
@@ -92,14 +111,12 @@ export const RegistrationForm = () => {
           <Textfield
             className={s.textField}
             register={register}
-            maxLength='11'
+            maxLength="11"
             name={"phoneNumber"}
             label={"Телефон"}
             type="tel"
             placeholder="89999999999"
             rule={rules.rulePhone}
-            // handler={phoneNumberHandler}
-            // value = {value}
           />
         </div>
 
@@ -130,12 +147,13 @@ export const RegistrationForm = () => {
             register={register}
             name={"lastName"}
             label={"Фамилия"}
+            sele
             type="text"
             rule={rules.ruleLastName}
           />
         </div>
 
-        <label className={s.select_label}>
+        {/* <label className={s.select_label}>
           <p>Select 1</p>
           <Controller
             name="status"
@@ -154,7 +172,26 @@ export const RegistrationForm = () => {
           <p className={s.select_tooltip}>
             {errors.status?.message || errors.status?.label.message}
           </p>
-        </label>
+        </label> */}
+
+        <div className={s.select__wrapper}>
+          {errors?.region && <p className={s.messageErrorSelect}>{errors.region.message}</p>}
+          <label className={s.selectLabel}> Регион </label>
+
+          <select
+            name="region"
+            defaulValue=""
+            id=""
+            className={s.select}
+            {...register("region", { required: "обязательное поле" })}
+          >
+            <option value="">Регион</option>
+            <option value="test2">test2</option>
+            <option value="test1">test1</option>
+            <option value="test2">test2</option>
+          </select>
+          
+        </div>
 
         <div className={s.wrapper__input}>
           {errors?.firstName && (
@@ -170,25 +207,6 @@ export const RegistrationForm = () => {
             type="text"
             rule={rules.ruleLastName}
           />
-        </div>
-
-        <div className={s.wrapper__input}>
-          {errors?.password && (
-            <p className={clsx(s.messageError, s.messageError_password)}>
-              Не менее 8 букв лат. алфавита, прописные и заглавные, цифры
-            </p>
-          )}
-          <Textfield
-            className={s.textField}
-            register={register}
-            name={"password"}
-            label={"Пароль"}
-            type={visible ? "text" : "password"}
-            placeholder={"Введите пароль"}
-            visible={visible ? 1 : 0}
-            rule={rules.rulePassword}
-          />
-          <div className={s.visibleChanger} onClick={() => setVisible(!visible)}></div>
         </div>
 
         <label className={s.select_label}>
@@ -213,11 +231,32 @@ export const RegistrationForm = () => {
             {errors.status2?.message || errors.status2?.label.message}
           </p>
         </label>
+
+        <div className={s.wrapper__input}>
+          {errors?.password && (
+            <p className={clsx(s.messageError, s.messageError_password)}>
+              Не менее 8 букв лат. алфавита, прописные и заглавные, цифры
+            </p>
+          )}
+          <Textfield
+            className={s.textField}
+            register={register}
+            name={"password"}
+            label={"Пароль"}
+            type={visible ? "text" : "password"}
+            placeholder={"Введите пароль"}
+            visible={visible ? 1 : 0}
+            rule={rules.rulePassword}
+          />
+          <div className={s.visibleChanger} onClick={() => setVisible(!visible)}></div>
+        </div>
+
         <label className={s.toggleWrapper__label}>
           Пол
           <div className={s.toggleWrapper}>
             <Button
-              className={!genderButton ? s.toggleWrapper__button__active : s.toggleWrapper__button}
+              background={genderButton ? "" : "green"}
+              className={s.toggleWrapper__button}
               handler={() => changeGender()}
               disabled={genderButton}
               type={"button"}
@@ -225,7 +264,8 @@ export const RegistrationForm = () => {
               Мужской
             </Button>
             <Button
-              className={genderButton ? s.toggleWrapper__button__active : s.toggleWrapper__button}
+              className={s.toggleWrapper__button}
+              background={!genderButton ? "" : "green"}
               handler={() => changeGender()}
               disabled={!genderButton}
               type={"button"}
@@ -234,7 +274,7 @@ export const RegistrationForm = () => {
             </Button>
           </div>
         </label>
-        
+
         <div className={s.wrapper__input}>
           {errors?.secondPassword && (
             <p className={clsx(s.messageError, s.messageError_password)}>
@@ -256,7 +296,6 @@ export const RegistrationForm = () => {
           />
           <div className={s.visibleChanger} onClick={() => setvisibleSecond(!visibleSecond)}></div>
         </div>
-        
       </div>
 
       <h2 className={s.subtitle}>Необязательные поля</h2>
