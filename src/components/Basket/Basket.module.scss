@@ -1,7 +1,7 @@
 .basket {
   &__buttons {
     margin-bottom: 20px;
-    width: 260px;
+    width: 255px;
     display: flex;
     gap: 56px;
     position: relative;
@@ -130,6 +130,7 @@
   border-spacing: 16px;
   padding-left: 0;
   width: 255px;
+  text-align: left;
 
   &__total {
     border-top: 2px solid rgba(243, 242, 241, 1);
@@ -192,11 +193,9 @@
   }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 440px) {
   .basket__flex {
     flex-direction: column;
-  }
-  .item2 {
-    width: 336px;
+    // align-items: center;
   }
 }

@@ -12,6 +12,7 @@ export const Cart = () => {
         <Title>Корзина</Title>
         <Discount orange large className={s.count_product} text={0} />
       </div>
+
       <Basket />
     </Section>
   );
