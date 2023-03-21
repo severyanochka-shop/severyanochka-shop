@@ -14,16 +14,18 @@ export const Textfield = ({
   medium,
   large,
   huge,
+  header,
+  mobile,
   handler,
   ...restprops
 }) => {
-
-
   return (
-    <div className="textfield">
+    <div className={header ? s.textfield__header : mobile ? s.textfield__mobile : "textfield"}>
       <label
         className={
-          !restprops.labelClass
+          mobile
+            ? s.textfield__label_mobile
+            : !restprops.labelClass
             ? s.textfield__label
             : clsx(s.textfield__label, s.textfield__label_sms)
         }
@@ -44,6 +46,8 @@ export const Textfield = ({
             [s.textfield__input_large]: large,
             [s.textfield__input_medium]: medium,
             [s.textfield__input_huge]: huge,
+            [s.textfield__input_header]: header,
+            [s.textfield__input_mobile]: mobile,
           })}
           {...restprops}
         ></input>

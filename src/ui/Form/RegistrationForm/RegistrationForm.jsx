@@ -233,7 +233,7 @@ export const RegistrationForm = () => {
 
         <div className={s.select__wrapper}>
           {errors?.city && <p className={s.messageErrorSelect}>{errors.city.message}</p>}
-          <label className={s.selectLabel}> Регион </label>
+          <label className={s.selectLabel}> Город </label>
 
           <select
             name="city"
@@ -241,7 +241,7 @@ export const RegistrationForm = () => {
             placeholder="Город"
             {...register("city", { required: "обязательное поле" })}
           >
-            <option value="">Регион</option>
+            <option value="">Город</option>
             <option value="test2">test1</option>
             <option value="test1">test2</option>
             <option value="test2">test3</option>
