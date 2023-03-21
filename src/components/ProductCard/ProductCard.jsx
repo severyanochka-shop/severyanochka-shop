@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "./ProductCard.module.scss";
+import { Stars } from "../Reviews/Starts/Stars";
 
 export const ProductCard = (props) => {
   const {
@@ -9,7 +10,7 @@ export const ProductCard = (props) => {
     image,
     price = 100,
     discount = 5,
-    numOfReviews = 0,
+    numOfReviews = 2,
     country = "Россия",
     weight = 100,
     imagesOfProduct = [],
@@ -20,26 +21,14 @@ export const ProductCard = (props) => {
   let end = "ов";
   // редактирует окончание в зависимости от кол-ва отзывов
   if (numOfReviews) {
-    if (numOfReviews === 1) {
-      end = "";
-    }
-    if (numOfReviews > 1 && numOfReviews < 5) {
-      end = "a";
-    }
-    if (numOfReviews > 5) {
-      end = "ов";
-    }
+    if (numOfReviews === 1) end = "";
+    if (numOfReviews > 1 && numOfReviews < 5) end = "a";
+    if (numOfReviews > 5) end = "ов";
     if (numOfReviews > 20) {
       let num = numOfReviews % 10;
-      if (num === 1) {
-        end = "";
-      }
-      if (num > 1 && num < 5) {
-        end = "a";
-      }
-      if (num > 5) {
-        end = "ов";
-      }
+      if (num === 1) end = "";
+      if (num > 1 && num < 5) end = "a";
+      if (num > 5) end = "ов";
     }
   }
 
@@ -53,17 +42,13 @@ export const ProductCard = (props) => {
       <div className={s.wrapper__nav}>
         <p>art.371431</p>
         <div className={s.nav__stars}>
-          <img src={require("./Images/starfull.png")} alt="★" />
-          <img src={require("./Images/starfull.png")} alt="★" />
-          <img src={require("./Images/stargrey.png")} alt="☆" />
-          <img src={require("./Images/stargrey.png")} alt="☆" />
-          <img src={require("./Images/stargrey.png")} alt="☆" />
+          <Stars type="2" />
           <p className={s.nav__stars__rewiew}>
             {numOfReviews ? numOfReviews : "нет"} отзыв{end}
           </p>
         </div>
         <button className={s.btn_favorites}>
-          <img src={require("./Images/share.png")} alt="=>" />
+          <img src={require("./assets/share.png")} alt="=>" />
           Поделиться
         </button>
         <button
@@ -75,19 +60,17 @@ export const ProductCard = (props) => {
             color: active ? "rgba(255, 102, 51, 1)" : "rgba(96, 96, 96, 1)",
           }}
         >
-          <img src={require("./Images/heart.png")} alt="♡" />В избранное
+          <img src={require("./assets/heart.png")} alt="♡" />В избранное
         </button>
       </div>
       <div className={s.card__flex}>
         <div className={s.item1}>
           {imagesOfProduct.lenght ? (
             imagesOfProduct.map((item) => {
-              return (
-                <img key={item.id} src={item.image} alt="product" {...item} />
-              );
+              return <img key={item.id} src={item.image} alt="product" {...item} />;
             })
           ) : (
-            <img src={require("./Images/imageofprodact.png")} alt="product" />
+            <img src={require("./assets/imageofprodact.png")} alt="product" />
           )}
         </div>
         <div className={s.item2}>
@@ -98,36 +81,30 @@ export const ProductCard = (props) => {
             <tbody className={s.table1__body}>
               <tr>
                 <td>{price} ₽</td>
-                <td className={s.table1__price}>
-                  {discountPrice ? discountPrice : 0} ₽
-                </td>
+                <td className={s.table1__price}>{discountPrice ? discountPrice : 0} ₽</td>
               </tr>
               <tr>
                 <td>Обычная цена</td>
                 <td>
                   <button className={s.btn_info}>
                     С картой Северяночки
-                    <img
-                      className={s.table1__info}
-                      src={require("./Images/info.png")}
-                      alt="ⓘ"
-                    />
+                    <img className={s.table1__info} src={require("./assets/info.png")} alt="ⓘ" />
                   </button>
                 </td>
               </tr>
             </tbody>
           </table>
           <button className={s.btn_basket}>
-            <img src={require("./Images/basket.png")} alt="basket" /> В корзину
+            <img src={require("./assets/basket.png")} alt="basket" /> В корзину
           </button>
           <div className={s.points}>
-            <img src={require("./Images/somegreen.png")} alt="green" />
+            <img src={require("./assets/somegreen.png")} alt="green" />
             <p>
               Вы получаете <strong>10 бонусов</strong>{" "}
             </p>
           </div>
           <div className={s.notice}>
-            <img src={require("./Images/bell-off.png")} alt="🔕" />
+            <img src={require("./assets/bell-off.png")} alt="🔕" />
             <button className={s.btn_notice}>Уведомить о снижении цены</button>
           </div>
           <table className={s.table2}>
@@ -161,7 +138,7 @@ export const ProductCard = (props) => {
               })
             ) : (
               <div>
-                <img src={require("./Images/imageofsimilar.png")} alt="foto" />
+                <img src={require("./assets/imageofsimilar.png")} alt="foto" />
                 <p>157,50 ₽</p>
               </div>
             )}

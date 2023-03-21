@@ -1,12 +1,12 @@
 import React from "react";
 import s from "../Footer/Footer.module.scss";
-import Facebook from "./images/Facebook.svg";
-import Instagram from "./images/Instagram.svg";
-import Ok from "./images/Ok.svg";
-import VK from "./images/VK.svg";
-import Tel from "./images/Tel.svg";
-import Zasov from "./images/Zasov.svg";
-import logosev from "./images/logosev.png";
+import Facebook from "./assets/Facebook.svg";
+import Instagram from "./assets/Instagram.svg";
+import Ok from "./assets/Ok.svg";
+import VK from "./assets/VK.svg";
+import Tel from "./assets/Tel.svg";
+import Zasov from "./assets/Zasov.svg";
+import logosev from "./assets/logosev.png";
 import { Container } from "../Container/Container";
 import { Link } from "react-router-dom";
 
@@ -38,7 +38,7 @@ export const Footer = () => {
     <div className={s.wrapper}>
       <Container>
         <div className={s.footer}>
-          <Link to="/">
+          <Link className={s.footer__logo_grid_wrapper} to="/">
             <img src={logosev} className={s.footer__logo_grid} alt="logo" />
           </Link>
           <ul className={s.footer__links_grid}>

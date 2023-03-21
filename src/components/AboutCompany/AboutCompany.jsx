@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "../../layout/Container/Container.jsx";
 import s from "./AboutCompany.module.scss";
-import groupPeople from "./images/groupPeople.svg";
-import сhecksev from "./images/checksev.svg";
-import logosevabout from "./images/logosevabout.svg";
+import groupPeople from "./assets/groupPeople.svg";
+import сhecksev from "./assets/checksev.svg";
+import logosevabout from "./assets/logosevabout.svg";
 
 export const AboutCompany = () => {
   return (
@@ -11,7 +11,6 @@ export const AboutCompany = () => {
       <Container>
         <div className={s.about__head}>
           <div className={s.about__titles}>
-            <h1 className={s.about__title}>О компании</h1>
             <h3 className={s.about__subtitle}>
               Мы непрерывно развиваемся и <nbsp />
               <br className={s.about__subtitle_br} />

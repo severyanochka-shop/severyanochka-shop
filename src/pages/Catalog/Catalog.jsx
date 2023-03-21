@@ -1,14 +1,14 @@
 import React from "react";
 import { Category } from "../../components/Category/Category";
-import s from "../Pages.module.scss";
-import { Container } from "../../layout/Container/Container";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 const Catalog = () => {
   return (
-    <Container>
-      <h2 className={s.title}>Каталог</h2>
+    <Section>
+      <Title>Каталог</Title>
       <Category />
-    </Container>
+    </Section>
   );
 };
 

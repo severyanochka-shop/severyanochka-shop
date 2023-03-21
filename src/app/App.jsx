@@ -9,14 +9,18 @@ import { CatalogAsync as Catalog } from "../pages/Catalog/Catalog.async";
 import { CategoryCatalogAsync as CategoryCatalog } from "../pages/CategoryCatalog/CategoryCatalog.async";
 import { FavouritesAsync as Favourites } from "../pages/Favourites/Favourites.async";
 import { Main } from "../pages/Main/Main";
+import { NotFoundAsync as NotFound } from "../pages/NotFound/NotFound.async";
 import { OrdersAsync as Orders } from "../pages/Orders/Orders.async";
 import { PolicyAsync as Policy } from "../pages/Policy/Policy.async";
 import { VacanciesAsync as Vacancies } from "../pages/Vacancies/Vacancies.async";
 import { ContactsAsync as Contacts } from "../pages/Contacts/Contacts.async";
-import { categoriesFetch } from "../store/reducers/ActionCreators";
+import { categoriesFetch, dataFetch } from "../store/reducers/ActionCreators";
 import "./global/styles/global.scss";
 import "./global/styles/variables.scss";
 import { ScrollToTop } from "./ScrollToTop";
+import { StocksAsync as Stocks } from "../pages/Stocks/Stcoks.async";
+import { NewProductsAsync as NewProducts } from "../pages/NewProducts/NewProducts.async";
+import { BoughtBeforeAsync as BoughtBefore } from "../pages/BoughtBefore/BoughtBefore.async";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,6 +28,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(categoriesFetch());
+    dispatch(dataFetch());
   }, []);
 
   const router = createBrowserRouter([
@@ -158,6 +163,47 @@ export const App = () => {
           handle: {
             crumb: () => <Link to="/policy">Политика обработки персональных данных</Link>,
           },
+        },
+        {
+          path: "/stocks",
+          element: (
+            <React.Suspense>
+              <Stocks />
+            </React.Suspense>
+          ),
+          handle: {
+            crumb: () => <Link to="/stocks">Акции</Link>,
+          },
+        },
+        {
+          path: "/new_products",
+          element: (
+            <React.Suspense>
+              <NewProducts />
+            </React.Suspense>
+          ),
+          handle: {
+            crumb: () => <Link to="/new_products">Новинки</Link>,
+          },
+        },
+        {
+          path: "/bought_before",
+          element: (
+            <React.Suspense>
+              <BoughtBefore />
+            </React.Suspense>
+          ),
+          handle: {
+            crumb: () => <Link to="/bought_before">Покупали раньше</Link>,
+          },
+        },
+        {
+          path: "*",
+          element: (
+            <React.Suspense>
+              <NotFound />
+            </React.Suspense>
+          ),
         },
       ],
     },

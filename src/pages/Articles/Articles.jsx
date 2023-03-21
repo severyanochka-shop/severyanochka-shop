@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "../../layout/Container/Container";
+import { Title } from "../../layout/Title/Title";
 
 export const Articles = () => {
   return (
     <Container>
-      <h1>Статьи</h1>
+      <Title>Статьи</Title>
     </Container>
   );
 };
