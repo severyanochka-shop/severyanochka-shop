@@ -5,7 +5,6 @@
   background-position: 25% 25%;
   background-size: contain;
   background-origin: content-box;
-  height: 372px;
   margin: 0 auto;
 
   &__head {
@@ -87,10 +86,10 @@
     height: 103px;
   }
   &__thanks_triangle {
-    width: 41px;
-    height: 40px;
+    border-top: 40px solid #e5ffde;
     border-top: 40px solid #e5ffde;
     border-left: 40px solid transparent;
+    margin-left: 40px;
   }
   &__thanks_text {
     font-family: "Rubik";
@@ -101,16 +100,8 @@
     color: #70c05b;
     padding: 30px 40px;
     gap: 10px;
-    width: 805px;
-    height: 96px;
     background: #e5ffde;
     border-radius: 16px;
-  }
-  &__thanks_text::before {
-    content: "";
-    display: block;
-    height: 40px;
-    width: 40px;
   }
 }
 
@@ -322,17 +313,18 @@
       margin-bottom: 20px;
       margin: 0 auto 60px;
     }
-    &__thanks__img {
+    &__thanks_img {
       width: 68px;
       height: 56px;
+      margin-bottom: 15px;
     }
-    &__thanks__triangle {
-      margin-left: 30px;
-      width: 41px;
-      height: 40px;
-      transform: rotate(90deg);
+    &__thanks_triangle {
+      margin-left: 0;
+      border-top: none;
+      border-bottom: 40px solid #e5ffde; 
+	    border-left: 40px solid transparent;
     }
-    &__thanks__text {
+    &__thanks_text {
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
@@ -344,6 +336,7 @@
       height: 80px;
       background: #e5ffde;
       border-radius: 16px;
+      text-align: center;
     }
   }
 }

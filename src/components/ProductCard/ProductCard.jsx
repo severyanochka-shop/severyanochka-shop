@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "./ProductCard.module.scss";
+import { Stars } from "../Reviews/Starts/Stars";
 
 export const ProductCard = (props) => {
   const {
@@ -9,7 +10,7 @@ export const ProductCard = (props) => {
     image,
     price = 100,
     discount = 5,
-    numOfReviews = 0,
+    numOfReviews = 2,
     country = "Россия",
     weight = 100,
     imagesOfProduct = [],
@@ -20,26 +21,14 @@ export const ProductCard = (props) => {
   let end = "ов";
   // редактирует окончание в зависимости от кол-ва отзывов
   if (numOfReviews) {
-    if (numOfReviews === 1) {
-      end = "";
-    }
-    if (numOfReviews > 1 && numOfReviews < 5) {
-      end = "a";
-    }
-    if (numOfReviews > 5) {
-      end = "ов";
-    }
+    if (numOfReviews === 1) end = "";
+    if (numOfReviews > 1 && numOfReviews < 5) end = "a";
+    if (numOfReviews > 5) end = "ов";
     if (numOfReviews > 20) {
       let num = numOfReviews % 10;
-      if (num === 1) {
-        end = "";
-      }
-      if (num > 1 && num < 5) {
-        end = "a";
-      }
-      if (num > 5) {
-        end = "ов";
-      }
+      if (num === 1) end = "";
+      if (num > 1 && num < 5) end = "a";
+      if (num > 5) end = "ов";
     }
   }
 
@@ -53,11 +42,7 @@ export const ProductCard = (props) => {
       <div className={s.wrapper__nav}>
         <p>art.371431</p>
         <div className={s.nav__stars}>
-          <img src={require("./Images/starfull.png")} alt="★" />
-          <img src={require("./Images/starfull.png")} alt="★" />
-          <img src={require("./Images/stargrey.png")} alt="☆" />
-          <img src={require("./Images/stargrey.png")} alt="☆" />
-          <img src={require("./Images/stargrey.png")} alt="☆" />
+          <Stars type="2" />
           <p className={s.nav__stars__rewiew}>
             {numOfReviews ? numOfReviews : "нет"} отзыв{end}
           </p>
@@ -82,9 +67,7 @@ export const ProductCard = (props) => {
         <div className={s.item1}>
           {imagesOfProduct.lenght ? (
             imagesOfProduct.map((item) => {
-              return (
-                <img key={item.id} src={item.image} alt="product" {...item} />
-              );
+              return <img key={item.id} src={item.image} alt="product" {...item} />;
             })
           ) : (
             <img src={require("./Images/imageofprodact.png")} alt="product" />
@@ -98,20 +81,14 @@ export const ProductCard = (props) => {
             <tbody className={s.table1__body}>
               <tr>
                 <td>{price} ₽</td>
-                <td className={s.table1__price}>
-                  {discountPrice ? discountPrice : 0} ₽
-                </td>
+                <td className={s.table1__price}>{discountPrice ? discountPrice : 0} ₽</td>
               </tr>
               <tr>
                 <td>Обычная цена</td>
                 <td>
                   <button className={s.btn_info}>
                     С картой Северяночки
-                    <img
-                      className={s.table1__info}
-                      src={require("./Images/info.png")}
-                      alt="ⓘ"
-                    />
+                    <img className={s.table1__info} src={require("./Images/info.png")} alt="ⓘ" />
                   </button>
                 </td>
               </tr>

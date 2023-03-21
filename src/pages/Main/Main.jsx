@@ -1,15 +1,37 @@
 import React from "react";
-import { Basket } from "../../components/Basket/Basket";
-import { CategoryPage } from "../../components/CategoryPage/CategoryPage";
-import { FilterCategory } from "../../components/FilterCategory/FilterCategory";
-import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
+
+import { BannerPromo } from "../../components/BannerPromo/BannerPromo";
+import { MainWrapperCard } from "../../components/MainWrapperCard/MainWrapperCard";
+import { Section } from "../../layout/Section/Section";
+import { SectionLink } from "../../layout/SectionLink/SectionLink";
+import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
+import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 
 export const Main = () => {
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>СЕВЕРЯНОЧКА</h1>
-      <CategoryPage />
-      <Basket/>
+      <BannerPromo />
+      <Section>
+        <SectionTitleWrapper>
+          <SectionTitle>Акции</SectionTitle>
+          <SectionLink to="/stocks">Все акции</SectionLink>
+        </SectionTitleWrapper>
+        <MainWrapperCard title="Акции" />
+      </Section>
+      <Section>
+        <SectionTitleWrapper>
+          <SectionTitle>Новинки</SectionTitle>
+          <SectionLink to="/new_products">Все новинки</SectionLink>
+        </SectionTitleWrapper>
+        <MainWrapperCard title="Новинки" />
+      </Section>
+      <Section>
+        <SectionTitleWrapper>
+          <SectionTitle>Покупали раньше</SectionTitle>
+          <SectionLink to="/bought_before">Все покупки</SectionLink>
+        </SectionTitleWrapper>
+        <MainWrapperCard title="Покупали раньше" />
+      </Section>
     </>
   );
 };

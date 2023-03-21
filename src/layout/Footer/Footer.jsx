@@ -38,7 +38,7 @@ export const Footer = () => {
     <div className={s.wrapper}>
       <Container>
         <div className={s.footer}>
-          <Link to="/">
+          <Link className={s.footer__logo_grid_wrapper} to="/">
             <img src={logosev} className={s.footer__logo_grid} alt="logo" />
           </Link>
           <ul className={s.footer__links_grid}>
