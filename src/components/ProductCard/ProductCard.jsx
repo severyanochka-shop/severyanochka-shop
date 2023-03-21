@@ -48,7 +48,7 @@ export const ProductCard = (props) => {
           </p>
         </div>
         <button className={s.btn_favorites}>
-          <img src={require("./Images/share.png")} alt="=>" />
+          <img src={require("./assets/share.png")} alt="=>" />
           Поделиться
         </button>
         <button
@@ -60,7 +60,7 @@ export const ProductCard = (props) => {
             color: active ? "rgba(255, 102, 51, 1)" : "rgba(96, 96, 96, 1)",
           }}
         >
-          <img src={require("./Images/heart.png")} alt="♡" />В избранное
+          <img src={require("./assets/heart.png")} alt="♡" />В избранное
         </button>
       </div>
       <div className={s.card__flex}>
@@ -70,7 +70,7 @@ export const ProductCard = (props) => {
               return <img key={item.id} src={item.image} alt="product" {...item} />;
             })
           ) : (
-            <img src={require("./Images/imageofprodact.png")} alt="product" />
+            <img src={require("./assets/imageofprodact.png")} alt="product" />
           )}
         </div>
         <div className={s.item2}>
@@ -88,23 +88,23 @@ export const ProductCard = (props) => {
                 <td>
                   <button className={s.btn_info}>
                     С картой Северяночки
-                    <img className={s.table1__info} src={require("./Images/info.png")} alt="ⓘ" />
+                    <img className={s.table1__info} src={require("./assets/info.png")} alt="ⓘ" />
                   </button>
                 </td>
               </tr>
             </tbody>
           </table>
           <button className={s.btn_basket}>
-            <img src={require("./Images/basket.png")} alt="basket" /> В корзину
+            <img src={require("./assets/basket.png")} alt="basket" /> В корзину
           </button>
           <div className={s.points}>
-            <img src={require("./Images/somegreen.png")} alt="green" />
+            <img src={require("./assets/somegreen.png")} alt="green" />
             <p>
               Вы получаете <strong>10 бонусов</strong>{" "}
             </p>
           </div>
           <div className={s.notice}>
-            <img src={require("./Images/bell-off.png")} alt="🔕" />
+            <img src={require("./assets/bell-off.png")} alt="🔕" />
             <button className={s.btn_notice}>Уведомить о снижении цены</button>
           </div>
           <table className={s.table2}>
@@ -138,7 +138,7 @@ export const ProductCard = (props) => {
               })
             ) : (
               <div>
-                <img src={require("./Images/imageofsimilar.png")} alt="foto" />
+                <img src={require("./assets/imageofsimilar.png")} alt="foto" />
                 <p>157,50 ₽</p>
               </div>
             )}

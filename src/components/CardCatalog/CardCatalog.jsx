@@ -1,10 +1,9 @@
 import React from "react";
 import cl from "./CardCatalog.module.scss";
-import stargrey from "./img/stargrey.svg";
-import starorange from "./img/starorange.svg";
-import basket from './img/shoppingcart.svg'
+import stargrey from "./assets/stargrey.svg";
+import starorange from "./assets/starorange.svg";
+import basket from "./assets/shoppingcart.svg";
 import { Button } from "../../ui/Button/Button";
-
 
 export const CardCatalog = ({
   image,
@@ -14,17 +13,19 @@ export const CardCatalog = ({
   handlerBasket,
   price_discount,
   name,
-  counter
+  counter,
 }) => {
-  counter = 11;
   // const [counter, setCount] = useState(0);
 
   return (
     <div className={cl.card}>
-      <div className={counter ? cl.basket_block : cl.none}>
-        <img src={basket} alt="basket" />
-        <p>{counter}</p>
-      </div>
+      {counter && (
+        <div className={cl.basket_block}>
+          <img src={basket} alt="basket" />
+          <p>{counter}</p>
+        </div>
+      )}
+
       <img src={image} alt="" className={cl.image} />
       <div className={cl.like_block}>
         <button onClick={handlerLike} className={cl.heart}>
@@ -37,7 +38,9 @@ export const CardCatalog = ({
       <div className={cl.info}>
         <div className={cl.price}>
           <div>
-            <p className={cl.price_discount}>{discount ? (price_usual * discount) / 100 : price_discount} ₽</p>
+            <p className={cl.price_discount}>
+              {discount ? (price_usual * discount) / 100 : price_discount} ₽
+            </p>
             <p className={cl.withcard}>С картой</p>
           </div>
           <div>

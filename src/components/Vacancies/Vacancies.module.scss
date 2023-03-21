@@ -1,18 +1,3 @@
-.vacancy_page {
-  max-width: 1168px;
-  // min-height: calc(100vh - 144px - 126px);
-  margin: 0 auto;
-  &_title {
-    color: rgba(65, 65, 65, 1);
-    height: 96px;
-    font-size: 64px;
-    font-weight: 700;
-    text-align: left;
-    margin-bottom: 60px;
-    padding-top: 16px;
-  }
-}
-
 .vacancy {
   margin: 0 auto;
   display: grid;

@@ -5,7 +5,6 @@
   height: 100%;
 }
 
-
 .wrapper {
   display: flex;
   flex-direction: row-reverse;
@@ -17,6 +16,7 @@
   font-size: 36px;
   line-height: 150%;
   margin-bottom: 40px;
+  color: #414141;
 }
 
 .img__wrapper {
@@ -28,8 +28,6 @@
   height: 450px;
   display: block;
 }
-
-
 
 //Rotating animation
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -76,11 +74,11 @@
   animation: rotating 5s linear infinite;
 }
 .nitro {
-  -webkit-animation: rotating .1s linear infinite;
-  -moz-animation: rotating .1s linear infinite;
-  -ms-animation: rotating .1s linear infinite;
-  -o-animation: rotating .1s linear infinite;
-  animation: rotating .1s linear infinite;
+  -webkit-animation: rotating 0.1s linear infinite;
+  -moz-animation: rotating 0.1s linear infinite;
+  -ms-animation: rotating 0.1s linear infinite;
+  -o-animation: rotating 0.1s linear infinite;
+  animation: rotating 0.1s linear infinite;
 }
 
 @media (max-width: 1140px) {
