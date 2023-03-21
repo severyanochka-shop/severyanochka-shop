@@ -6,7 +6,7 @@ import x from "../RegistrationForm/images/x.svg";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { Textfield } from "../exapmleInput/Textfield";
+import { Textfield } from "../../../ui/Textfield/Textfield";
 import { rules } from "./rules.js";
 import * as yup from "yup";
 import { Controller } from "react-hook-form";
@@ -34,6 +34,8 @@ export const RegistrationForm = () => {
 
   // дизейбл инпута по чекбокусу
   const [check, setCheck] = useState(false);
+  const checkHandler = () => {setCheck(!check)}
+
 
   // тогл кнопки пола
   const [genderButton, setGenderButton] = useState(false);
@@ -147,7 +149,6 @@ export const RegistrationForm = () => {
             register={register}
             name={"lastName"}
             label={"Фамилия"}
-            sele
             type="text"
             rule={rules.ruleLastName}
           />
@@ -180,17 +181,15 @@ export const RegistrationForm = () => {
 
           <select
             name="region"
-            defaulValue=""
-            id=""
             className={s.select}
+            placeholder="Регион"
             {...register("region", { required: "обязательное поле" })}
           >
             <option value="">Регион</option>
-            <option value="test2">test2</option>
-            <option value="test1">test1</option>
-            <option value="test2">test2</option>
+            <option value="test2">test1</option>
+            <option value="test1">test2</option>
+            <option value="test2">test3</option>
           </select>
-          
         </div>
 
         <div className={s.wrapper__input}>
@@ -209,7 +208,7 @@ export const RegistrationForm = () => {
           />
         </div>
 
-        <label className={s.select_label}>
+        {/* <label className={s.select_label}>
           <p>Select 2</p>
 
           <Controller
@@ -230,7 +229,24 @@ export const RegistrationForm = () => {
           <p className={s.select_tooltip}>
             {errors.status2?.message || errors.status2?.label.message}
           </p>
-        </label>
+        </label> */}
+
+        <div className={s.select__wrapper}>
+          {errors?.city && <p className={s.messageErrorSelect}>{errors.city.message}</p>}
+          <label className={s.selectLabel}> Регион </label>
+
+          <select
+            name="city"
+            className={s.select}
+            placeholder="Город"
+            {...register("city", { required: "обязательное поле" })}
+          >
+            <option value="">Регион</option>
+            <option value="test2">test1</option>
+            <option value="test1">test2</option>
+            <option value="test2">test3</option>
+          </select>
+        </div>
 
         <div className={s.wrapper__input}>
           {errors?.password && (
@@ -336,8 +352,8 @@ export const RegistrationForm = () => {
       </div>
 
       <div className={s.checkBoxWrapper}>
-        <div>
-          <Checkbox extrasmall className={s.checkBox} setCheck={setCheck} check={check} />
+        <div onChange={checkHandler}>
+          <Checkbox extrasmall className={s.checkBox}  check={check} />
         </div>
         <p className={s.checkbox__text}>У меня нет карты лояльности</p>
       </div>

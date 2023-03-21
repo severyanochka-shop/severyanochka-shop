@@ -4,7 +4,7 @@ import s from "./RegistrationFormSubmit.module.scss";
 import { Button } from "../../Button/Button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { Textfield } from "../exapmleInput/Textfield";
+import { Textfield } from "../../../ui/Textfield/Textfield";
 import { rules } from "../RegistrationForm/rules";
 import clsx from "clsx";
 

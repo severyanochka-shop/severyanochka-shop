@@ -182,35 +182,29 @@
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   font-size: 16px;
+}
 
+.select__wrapper {
+  position: relative;
 }
 
 .selectLabel {
-  display: block;
+
   color: #8f8f8f;
   font-size: 16px;
   line-height: 150%;
 }
 
-.select__wrapper {
-  display: block;
-}
-
 .messageErrorSelect {
-  display: absolute ;
+  position: absolute;
   right: 0;
   top: 0;
-  display: flex;
   width: 150px;
   height: 20px;
   font-size: 14px;
-  line-height: 14px;
   background: #d80000;
   color: #f2f2f2;
   border-radius: 5px;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   z-index: 1;
 }

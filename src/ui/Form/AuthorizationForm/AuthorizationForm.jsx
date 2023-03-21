@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Textfield } from "../exapmleInput/Textfield";
+import { Textfield } from "../../../ui/Textfield/Textfield";
 import { Button } from "../../Button/Button";
 import { rules } from "../RegistrationForm/rules";
 import arrow from "../RegistrationFormSubmit/images/arrow.svg";
