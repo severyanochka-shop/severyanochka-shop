@@ -1,12 +1,14 @@
 import React from "react";
-import { ContactPage } from "../../components/ContactPage/ContactPage";
-import { Container } from "../../layout/Container/Container";
+import { Contacts as ContactsComponent } from "../../components/Contacts/Contacts";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 export const Contacts = () => {
   return (
-    <Container>
-      <ContactPage />
-    </Container>
+    <Section>
+      <Title>Контакты</Title>
+      <ContactsComponent />
+    </Section>
   );
 };
 

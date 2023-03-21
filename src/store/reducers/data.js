@@ -1,93 +1,67 @@
 export let data = [
   {
-    "id": "clf873aye00003572w4s3zzfg",
-    "name": "Молочные продукты и яйцо",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/milk.jpg",
-    "order": 1
+    id: "9559c344-29e5-4576-942c-9f1a08d64c14",
+    name: "Салфетки влажные Pupi для интимной гигиены 15шт",
+    image_small: "https://photos.okolo.app/product/1161023-main/320x320.jpeg",
+    priceRegular: 100.5,
+    priceWithCard: 99.5,
+    promo: {
+      discountedPriceRegular: 50.25,
+      discountedPriceWithCard: 44.75,
+      discountPercent: 50.0,
+      isActive: true,
+    },
+    unitsOfMeasurement: "шт",
+    step: "1.0",
+    averageRating: 4.94,
   },
+
   {
-    "id": "clf873aye00013572bre1w046",
-    "name": "Хлеб и выпечка",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/bread.jpg",
-    "order": 2
+    name: "Батончик шоколадный Bounty Трио 82.5г",
+    image_small: "https://photos.okolo.app/product/1160591-main/320x320.jpeg",
+    priceRegular: 111.5,
+    priceWithCard: 99.5,
   },
+
   {
-    "id": "clf873aye00033572voyqzmp4",
-    "name": "Овощи и фрукты",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/fruits.jpg",
-    "order": 3
+    name: "Смесь для выпечки Русский Продукт кекс апельсиновый, 300г",
+    image_small: "https://photos.okolo.app/product/1211379-main/320x320.jpeg",
+    priceRegular: 103.0,
+    priceWithCard: 89.5,
   },
+
   {
-    "id": "clf873ayf002r3572xnqxwj06",
-    "name": "Замороженные продукты",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/frozen.jpg",
-    "order": 4
+    name: "Носки Pompeabito женские в ассортименте р.38-40 1шт.",
+    image_small: "https://photos.okolo.app/product/1490749-main/320x320.jpeg",
+    priceRegular: 78.5,
+    priceWithCard: 45.5,
   },
+
   {
-    "id": "clf873aye002f35726sn7c9bi",
-    "name": "Любимые напитки и снеки",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/drinks.jpg",
-    "order": 5
+    name: "Холодный чай Lipton Зеленый 1л",
+    image_small: "https://photos.okolo.app/product/1176068-main/320x320.jpeg",
+    priceRegular: 100.5,
+    priceWithCard: 99.5,
   },
+
   {
-    "id": "clf873aye002c3572ggqoxd0o",
-    "name": "Торты и пирожные",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/candy.jpg",
-    "order": 6
+    name: "Чай Beta tea Golden quality черный байховый цейлонский мелколистовой 100х1.5г",
+    image_small: "https://photos.okolo.app/product/1495298-main/320x320.jpeg",
+    priceRegular: 100.5,
+    priceWithCard: 99.5,
   },
+
   {
-    "id": "clf873aye002a3572sztc7o9h",
-    "name": "Чай, кофе",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/tea.jpg",
-    "order": 7
+    name: "Майонез Слобода Провансаль 67%, 400мл",
+    image_small: "https://photos.okolo.app/product/1189731-main/320x320.jpeg",
+    priceRegular: 45.5,
+    priceWithCard: 40.5,
   },
+
   {
-    "id": "clf873aye0029357261w2xlvl",
-    "name": "Бакалея",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/grocery.jpg",
-    "order": 8
+    name: "Лапша быстрого приготовления Роллтон По-домашнему с курицей 85г",
+    image_small: "https://photos.okolo.app/product/1195895-main/320x320.jpeg",
+    priceRegular: 46.5,
+    priceWithCard: 9.5,
   },
-  {
-    "id": "clf873aye00283572iroskiec",
-    "name": "Здоровое питание",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/healthy.jpg",
-    "order": 9
-  },
-  {
-    "id": "clf873aye0027357286kjxx7a",
-    "name": "Зоотовары",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/pets.jpg",
-    "order": 10
-  },
-  {
-    "id": "clf873aye001g3572uxljtj1d",
-    "name": "Детское питание",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/children.jpg",
-    "order": 11
-  },
-  {
-    "id": "clf873aye001f3572oo5ch6gm",
-    "name": "Мясо и птица",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/meat.jpg",
-    "order": 12
-  },
-  {
-    "id": "clf873aye00053572mfwlrdl6",
-    "name": "Непродовольственные товары",
-    "type": "category",
-    "image": "https://codeine.tech/images/category/non-food.jpg",
-    "order": 13
-  }
-]
+];

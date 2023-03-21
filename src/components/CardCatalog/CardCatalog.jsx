@@ -1,21 +1,32 @@
 import React from "react";
 import cl from "./CardCatalog.module.scss";
-import stargrey from "./img/stargrey.svg";
-import starorange from "./img/starorange.svg";
+import stargrey from "./assets/stargrey.svg";
+import starorange from "./assets/starorange.svg";
+import basket from "./assets/shoppingcart.svg";
 import { Button } from "../../ui/Button/Button";
 
-
 export const CardCatalog = ({
-  product_img,
+  image,
   price_usual,
-  product_describe,
   discount,
   handlerLike,
   handlerBasket,
+  price_discount,
+  name,
+  counter,
 }) => {
+  // const [counter, setCount] = useState(0);
+
   return (
     <div className={cl.card}>
-      <img src={product_img} alt="" className={cl.image} />
+      {counter && (
+        <div className={cl.basket_block}>
+          <img src={basket} alt="basket" />
+          <p>{counter}</p>
+        </div>
+      )}
+
+      <img src={image} alt="" className={cl.image} />
       <div className={cl.like_block}>
         <button onClick={handlerLike} className={cl.heart}>
           ❤
@@ -28,7 +39,7 @@ export const CardCatalog = ({
         <div className={cl.price}>
           <div>
             <p className={cl.price_discount}>
-              {(price_usual * discount) / 100} ₽
+              {discount ? (price_usual * discount) / 100 : price_discount} ₽
             </p>
             <p className={cl.withcard}>С картой</p>
           </div>
@@ -37,7 +48,7 @@ export const CardCatalog = ({
             <p className={cl.withoutcard}>Обычная</p>
           </div>
         </div>
-        <p className={cl.product_describe}>{product_describe}</p>
+        <p className={cl.product_describe}>{name}</p>
       </div>
       <div className={cl.footer_card}>
         <div className={cl.rating}>
@@ -47,11 +58,7 @@ export const CardCatalog = ({
           <img src={stargrey} alt="" className={cl.star} />
           <img src={stargrey} alt="" className={cl.star} />
         </div>
-        <Button
-          border="green"
-          className={cl.cardcatalog_button}
-          onClick={handlerBasket}
-        >
+        <Button border="green" className={cl.cardcatalog_button} onClick={handlerBasket}>
           В корзину
         </Button>
       </div>

@@ -2,13 +2,14 @@
   position: relative;
   height: 200px;
   background: #ffffff;
+  margin-bottom: 80px;
 
   &__filter {
     width: 100%;
     height: 200px;
     mix-blend-mode: multiply;
     opacity: 0.3;
-    background-image: url("./images/pattern2.svg");
+    background-image: url("./assets/pattern2.svg");
   }
 
   &__image {
@@ -33,10 +34,11 @@
 
 @media (max-width: 1207px) {
   .wrapper {
+    margin-bottom: 64px;
     height: 160px;
     &__filter {
       height: 160px;
-      background-image: url("./images/pattern2mid.svg");
+      background-image: url("./assets/pattern2mid.svg");
     }
 
     &__title {
@@ -58,11 +60,11 @@
 
 @media (max-width: 701px) {
   .wrapper {
+    margin-bottom: 44px;
     height: 80px;
-    top: 56px;
     &__filter {
       height: 80px;
-      background-image: url("./images/pattern2small.svg");
+      background-image: url("./assets/pattern2small.svg");
     }
     &__image {
       display: none;
