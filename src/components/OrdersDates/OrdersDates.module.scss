@@ -35,6 +35,8 @@
     padding: 4px 8px;
     background: #f3f2f1;
     border-radius: 4px;
+        text-align: center;
+        align-items: center;
   }
   &__statusNo {
     font-family: "Rubik";
@@ -81,7 +83,7 @@
     font-size: 16px;
     line-height: 150%;
     color: #ffffff;
-    background: #ff6633;
+    background-color: #ff6633;
     border-radius: 4px;
   }
   &__btn_get {
