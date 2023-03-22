@@ -1,43 +1,11 @@
 import React from "react";
 import s from "./Basket.module.scss";
 // import { CardProductBasket } from "./CardProductBasket/CardProductBasket";
-import { Toggle } from "../../ui/Toggle/Toggle";
 import { Checkbox } from "../../ui/Checkbox/Checkbox";
-import { CartFlex } from "../../layout/CartFlex/CartFlex";
+
 
 export const Basket = (props) => {
-  const {
-    set = [],
-    persentOfDiscount = 5,
-    accumPoints,
-    minOrderSum = 1000,
-    bonusPersent = 10,
-  } = props;
-
-  let numOfProducts = set.lenght ? set.lenght : 0;
-  let end = "ов";
-
-  // редактирует окончание в зависимости от кол-ва товаров
-  if (numOfProducts) {
-    if (numOfProducts === 1) end = "";
-    if (numOfProducts > 1 && numOfProducts < 5) end = "a";
-    if (numOfProducts > 5) end = "ов";
-    if (numOfProducts > 20) {
-      let num = numOfProducts % 10;
-      if (num === 1) end = "";
-      if (num > 1 && num < 5) end = "a";
-      if (num > 5) end = "ов";
-    }
-  }
-
-  const finalCost = set.reduce((sum, el) => {
-    return sum + el.cost * el.quantity;
-  }, 0);
-
-  let bonus = (finalCost * bonusPersent) / 100;
-
-  let discount = (finalCost * persentOfDiscount) / 100;
-  let discountPrice = finalCost - discount;
+  // const { set = [] } = props;
 
   return (
     <div className={s.basket}>
@@ -49,6 +17,7 @@ export const Basket = (props) => {
         <button className={s.btn_delete__all}>Удалить все</button>
       </div>
       <div className={s.basket__flex}>
+
         <CartFlex />
 
         <div className={s.item2}>
@@ -103,6 +72,21 @@ export const Basket = (props) => {
 
           <button className={s.basket_btn}>Оформить заказ</button>
         </div>
+
+        <ul className={s.item1}>
+          {/* {set.lenght ? (
+              set.map((item) => {
+                return (
+                  <li className={s.product}>
+                    <CardProductBasket key={item.id} {...item} />
+                  </li>
+                );
+              })
+            ) : (
+              <li className={s.basketitem}>Вы ничего не выбрали</li>
+            )} */}
+        </ul>
+        <Calculator />
       </div>
     </div>
   );
