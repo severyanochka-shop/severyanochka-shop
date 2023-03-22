@@ -5,19 +5,22 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
   &__top {
     height: 20px;
     width: 145px;
     float: left;
   }
+
   &__pic {
     height: 26px;
     width: 24px;
     margin-right: 10px;
     float: left;
   }
+
   &__tel {
-    color: rgba(65, 65, 65, 1);
+    color: rgb(65 65 65 / 100%);
     cursor: pointer;
   }
 }
@@ -28,6 +31,7 @@
       width: 161px;
       height: 84px;
     }
+
     &__pic {
       height: 21px;
       width: 19px;
@@ -41,6 +45,7 @@
       width: 143px;
       height: 80px;
     }
+
     &__top {
       height: 16px;
       width: 116px;

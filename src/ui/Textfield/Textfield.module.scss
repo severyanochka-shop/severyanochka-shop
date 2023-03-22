@@ -6,7 +6,7 @@
     display: inline-block;
     text-align: left;
     margin-bottom: 0.25rem;
-    font-family: 'Rubik';
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -15,50 +15,58 @@
     position: relative;
 
     }
+
     &__input {
     padding-left: 16px;
-    background: #FFFFFF;
+    background: #FFF;
     border: 1px solid #BFBFBF;
     border-radius: 4px;
     color: #414141;
     display: block;
+
     // position: relative;
     }
+
     &__input_medium {
     width: 250px;
     height: 40px;
-    font-family: 'Rubik', sans-serif;
+    font-family: Rubik, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     }
+
     &__input_large {
     width: 250px;
     height: 60px;
-    font-family: 'Rubik';
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
     }
+
     &__password {
 	  position: absolute;
 	  right: 6px;
     bottom: 0;
 	  display: inline-block;
     }
+
     &__input:focus {
-    background: #FFFFFF;
+    background: #FFF;
     border: 1px solid #70C05B;
-    box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+    box-shadow: 4px 8px 16px rgb(112 192 91 / 20%);
     border-radius: 4px;
     outline: 0;
     }
+
     &__input:disabled {
       background-color: #f5f5f5;
       opacity: 1;
     }
+
     &__eye {
       width: 24px;
       height: 24;

@@ -1,5 +1,5 @@
 .wrapper {
-    background-color: #ffffff;
+    background-color: #fff;
     max-width: 876px;
 }
 
@@ -8,8 +8,8 @@
   display: flex;
   max-width: 876px;
   height: 90px;
-  background-color: #ffffff;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
 
   &__empty {
     opacity: 0.5;
@@ -43,7 +43,7 @@
   margin-right: 8px;
   top: 0;
   left: 0;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
   border-radius: 4px;
 }
 
@@ -55,7 +55,7 @@
 
 .product_describe {
   text-align: start;
-  margin: 10px 0 10px;
+  margin: 10px 0;
 }
 
 .price {
@@ -127,10 +127,12 @@
     .wrapper {
     max-width: 449px;
 }
+
   .card_basket {
     max-width: 449px;
     height: 114px;
   }
+
   .end {
     flex-direction: column;
     position: absolute;
@@ -141,18 +143,22 @@
   .withoutcard {
 margin-right: 4px;
 }
+
 .card_text {
     max-width: 217px;
     display: block;
 }
+
 .price_discount {
   margin-right: 8px;
  }
+
   .total_price {
     margin-left: 0;
     margin-top: 4px;
     text-align: end;
   }
+
 .not_avail {
     text-align: end;
 }
@@ -162,17 +168,20 @@ margin-right: 4px;
         .wrapper {
     max-width: 336px;
 }
+
   .card_basket {
     display: block;
     max-width: 336px;
     height: 146px;
   }
+
   .product_image {
     width: 104px;
     height: 90px;
     display: inline;
     float: left;
   }
+
   .card_text {
      display: inline;
   }
@@ -201,6 +210,7 @@ margin-right: 4px;
   .total_cross {
     font-size: 12px;
   }
+
   .not_avail {
     font-size: 18px;
     line-height: 27px;

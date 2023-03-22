@@ -1,15 +1,19 @@
 .toggle-switch {
   position: relative;
   display: inline-block;
+
   &__XL {
     width: 75px;
   }
+
   &__L {
     width: 64px;
   }
+
   &__M {
     width: 46px;
   }
+
   &__S {
     width: 34px;
   }
@@ -32,74 +36,84 @@
   width: 200%;
   margin-left: -100%;
   transition: margin 0.3s ease-in 0s;
-  &__L:before,
-  &__L:after {
+
+  &__L::before,
+  &__L::after {
     float: left;
     width: 50%;
     height: 30px;
     box-sizing: border-box;
   }
-  &__L:before {
+
+  &__L::before {
     content: "";
     background-color: #f8f8f8;
   }
-  &__L:after {
+
+  &__L::after {
     content: "";
     background-color: #f8f8f8;
   }
+
   // XL
-  &__XL:before,
-  &__XL:after {
+  &__XL::before,
+  &__XL::after {
     float: left;
     width: 50%;
     height: 35px;
     box-sizing: border-box;
   }
-  &__XL:before {
+
+  &__XL::before {
     content: "";
     background-color: #f8f8f8;
   }
-  &__XL:after {
+
+  &__XL::after {
     content: "";
     background-color: #f8f8f8;
   }
 
   // M
-  &__M:before,
-  &__M:after {
+  &__M::before,
+  &__M::after {
     float: left;
     width: 50%;
     height: 22px;
     box-sizing: border-box;
   }
-  &__M:before {
+
+  &__M::before {
     content: "";
     background-color: #f8f8f8;
   }
-  &__M:after {
+
+  &__M::after {
     content: "";
     background-color: #f8f8f8;
   }
 
   //S
-  &__S:before,
-  &__S:after {
+  &__S::before,
+  &__S::after {
     float: left;
     width: 50%;
     height: 15px;
     box-sizing: border-box;
   }
-  &__S:before {
-    content: "";
-    background-color: #f8f8f8;
-  }
-  &__S:after {
+
+  &__S::before {
     content: "";
     background-color: #f8f8f8;
   }
 
-  &__disable:before,
-  &__disable:after {
+  &__S::after {
+    content: "";
+    background-color: #f8f8f8;
+  }
+
+  &__disable::before,
+  &__disable::after {
     background-color: #f8f8f8;
   }
 }
@@ -109,18 +123,21 @@
   width: 200%;
   margin-left: -100%;
   transition: margin 0.3s ease-in 0s;
-  &__L:before,
-  &__L:after {
+
+  &__L::before,
+  &__L::after {
     float: left;
     width: 50%;
     height: 30px;
     box-sizing: border-box;
   }
-  &__L:before {
+
+  &__L::before {
     content: "";
     background-color: #70c05b;
   }
-  &__L:after {
+
+  &__L::after {
     content: "";
     padding-right: 10px;
     background-color: #70c05b;
@@ -128,58 +145,64 @@
     text-align: right;
   }
 
-  &__XL:before,
-  &__XL:after {
+  &__XL::before,
+  &__XL::after {
     float: left;
     width: 50%;
     height: 35px;
     box-sizing: border-box;
   }
-  &__XL:before {
+
+  &__XL::before {
     content: "";
     background-color: #70c05b;
   }
-  &__XL:after {
+
+  &__XL::after {
     content: "";
     background-color: #70c05b;
   }
 
   //M
-  &__M:before,
-  &__M:after {
+  &__M::before,
+  &__M::after {
     float: left;
     width: 50%;
     height: 22px;
     box-sizing: border-box;
   }
-  &__M:before {
+
+  &__M::before {
     content: "";
     background-color: #70c05b;
   }
-  &__M:after {
+
+  &__M::after {
     content: "";
     background-color: #70c05b;
   }
 
   // S
-  &__S:before,
-  &__S:after {
+  &__S::before,
+  &__S::after {
     float: left;
     width: 50%;
     height: 15px;
     box-sizing: border-box;
   }
-  &__S:before {
-    content: "";
-    background-color: #70c05b;
-  }
-  &__S:after {
+
+  &__S::before {
     content: "";
     background-color: #70c05b;
   }
 
-  &__disable:before,
-  &__disable:after {
+  &__S::after {
+    content: "";
+    background-color: #70c05b;
+  }
+
+  &__disable::before,
+  &__disable::after {
     background-color: #f8f8f8;
   }
 }
@@ -191,8 +214,8 @@
   top: 0;
   bottom: 0;
   left: 0; // toggle
-  border: 0.5px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgb(0 0 0 / 4%);
+  box-shadow: 0 3px 8px rgb(0 0 0 / 15%), 0 1px 1px rgb(0 0 0 / 8%);
   border-radius: 100px;
   transition: all 0.3s ease-in 0s;
 
@@ -223,6 +246,7 @@
   &__disable {
     background: #e0e0e0;
   }
+
   &:hover {
     background-color: black;
   }
@@ -235,8 +259,8 @@
   top: 0;
   bottom: 0;
   right: 0; // toggle
-  border: 0.5px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgb(0 0 0 / 4%);
+  box-shadow: 0 3px 8px rgb(0 0 0 / 15%), 0 1px 1px rgb(0 0 0 / 8%);
   border-radius: 100px;
   transition: all 0.3s ease-in 0s;
 
@@ -246,6 +270,7 @@
 
   &__disable {
     background: #e0e0e0;
+
     &:hover {
       background-color: #e0e0e0;
     }
