@@ -10,6 +10,7 @@
     font-weight: 700;
     text-align: left;
   }
+
   &__nav {
     display: flex;
     font-size: 12px;
@@ -22,6 +23,7 @@
 .nav__stars {
   display: flex;
   justify-content: space-between;
+
   &__rewiew {
     cursor: pointer;
     text-decoration: underline;
@@ -34,11 +36,11 @@
   height: 19px;
   width: 133px;
   background-color: #fbf8ec;
-  color: rgba(96, 96, 96, 1);
+  color: rgb(96 96 96 / 100%);
   text-rendering: auto;
   font-size: 12px;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   border: 0;
   cursor: pointer;
   position: relative;
@@ -48,19 +50,19 @@
   height: 19px;
   width: 21px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
 }
 
 .btn_info {
   height: 26px;
   width: 188px;
   background-color: #fbf8ec;
-  color: rgba(191, 191, 191, 1);
+  color: rgb(191 191 191 / 100%);
   text-rendering: auto;
   font-size: 12px;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   border: 0;
   cursor: pointer;
   position: relative;
@@ -69,7 +71,7 @@
 .btn_info > img {
   position: absolute;
   top: 3px;
-  right: 0px;
+  right: 0;
   height: 21px;
   width: 21px;
 }
@@ -92,6 +94,7 @@
   display: block;
   width: 64px;
   height: 86px;
+
   // это стилизация картинки, если у нее нет бордера и тени:
   // background-color: white;
   // box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -105,7 +108,7 @@
   min-width: 504px;
   height: 496px;
   background-color: white;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
   border-radius: 4px;
 }
 
@@ -123,17 +126,20 @@
   border-collapse: collapse;
   padding: 8px;
   table-layout: fixed;
+
   &__body tr:first-child {
     font-size: 24px;
     font-weight: 400;
     height: 54px;
   }
+
   &__body tr:nth-child(2) {
     font-size: 12px;
     vertical-align: middle;
     height: 26px;
-    color: rgba(191, 191, 191, 1);
+    color: rgb(191 191 191 / 100%);
   }
+
   &__price {
     font-size: 36px;
     font-weight: 700;
@@ -145,12 +151,12 @@
 .btn_basket {
   width: 376px;
   height: 60px;
-  background-color: rgba(255, 102, 51, 1);
+  background-color: rgb(255 102 51 / 100%);
   color: white;
   text-rendering: auto;
   font-size: 24px;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   border-radius: 4px;
   border: inherit;
   cursor: pointer;
@@ -206,12 +212,15 @@
   border: 0;
   border-collapse: collapse;
   table-layout: fixed;
+
   &__body tr:nth-child(odd) {
-    background-color: rgba(243, 242, 241, 1);
+    background-color: rgb(243 242 241 / 100%);
   }
+
   &__tr {
     height: 26px;
   }
+
   &__td {
     padding-left: 8px;
   }
@@ -221,8 +230,9 @@
   grid-column: 4 / 5;
   grid-row: 1 / 2;
 }
+
 .item4__title {
-  color: rgba(96, 96, 96, 1);
+  color: rgb(96 96 96 / 100%);
   font-size: 16px;
   text-align: left;
   margin-bottom: 8px;
@@ -240,7 +250,7 @@
   height: 104px;
   padding: 0 0 10px 10px;
   font-size: 18px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
   border-radius: 4px;
 }
 
@@ -283,7 +293,7 @@
     height: 158px;
     padding: 2px;
     font-size: 18px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
     border-radius: 4px;
   }
 }
@@ -292,10 +302,12 @@
   .wrapper__nav {
     width: 90%;
   }
+
   .card__flex {
     gap: 16px;
     grid-template-columns: 72px auto;
   }
+
   .item1 {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -338,17 +350,21 @@
   .item1 {
     width: 72px;
   }
+
   .item2 {
     margin: 0;
   }
+
   .item3 {
     width: 336px;
   }
+
   .btn_basket,
   .table1,
   .table2 {
     width: 100%;
   }
+
   .btn_info {
     width: 168px;
     text-align: left;

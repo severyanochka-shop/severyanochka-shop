@@ -1,16 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import cl from "./CardCatalog.module.scss";
-import stargrey from "./assets/stargrey.svg";
-import starorange from "./assets/starorange.svg";
 import basket from "./assets/shoppingcart.svg";
 import { Button } from "../../ui/Button/Button";
+import { Stars } from "../Reviews/Starts/Stars";
 
 export const CardCatalog = ({
   image,
   price_usual,
   discount,
   handlerLike,
-  handlerBasket,
+  addInBasket,
   price_discount,
   name,
   counter,
@@ -39,12 +38,12 @@ export const CardCatalog = ({
         <div className={cl.price}>
           <div>
             <p className={cl.price_discount}>
-              {discount ? (price_usual * discount) / 100 : price_discount} ₽
+              {(discount ? (price_usual * discount) / 100 : price_discount).toFixed(2)} ₽
             </p>
             <p className={cl.withcard}>С картой</p>
           </div>
           <div>
-            <p className={cl.price_usual}>{price_usual} ₽</p>
+            <p className={cl.price_usual}>{price_usual.toFixed(2)} ₽</p>
             <p className={cl.withoutcard}>Обычная</p>
           </div>
         </div>
@@ -52,13 +51,9 @@ export const CardCatalog = ({
       </div>
       <div className={cl.footer_card}>
         <div className={cl.rating}>
-          <img src={starorange} alt="" className={cl.star} />
-          <img src={starorange} alt="" className={cl.star} />
-          <img src={stargrey} alt="" className={cl.star} />
-          <img src={stargrey} alt="" className={cl.star} />
-          <img src={stargrey} alt="" className={cl.star} />
+          <Stars/>
         </div>
-        <Button border="green" className={cl.cardcatalog_button} onClick={handlerBasket}>
+        <Button border="green" className={cl.cardcatalog_button} onClick={addInBasket}>
           В корзину
         </Button>
       </div>

@@ -3,20 +3,27 @@ import { Container } from "../../layout/Container/Container";
 import s from "../OrdersDates/OrdersDates.module.scss";
 import calendar from "./assets/calendar.svg";
 import calendarWhite from "./assets/calendarwhite.svg";
+import clsx from "clsx";
 
 export const OrdersDates = ({ text, price, time }) => {
   let options = { year: "numeric", month: "numeric", day: "numeric" };
   let date = new Date().toLocaleString("ru-RU", options);
+      const innerClassName = clsx({
+        [s.orders__statusInProcess]: text === "В процессе",
+        [s.orders__statusNo]: text === "Не доставили" || text === "Возврат",
+        [s.orders__statusYes]: text === "Получен",
+      });
+        const rightClassName = clsx({
+          [s.orders__btn_order]: text === "Не доставили" || text === "Возврат" || text === "Получен",
+        });
+
   return (
     <Container>
       <div className={s.orders}>
         <div className={s.orders__day}>
           <p className={s.orders__date}>{date}</p>
           <p className={s.orders__time}>{time}</p>
-          {text === "В процессе" && <p className={s.orders__statusInProcess}>{text}</p>}
-          {text === "Не доставили" && <p className={s.orders__statusNo}>{text}</p>}
-          {text === "Возврат" && <p className={s.orders__statusNo}>{text}</p>}
-          {text === "Получен" && <p className={s.orders__statusYes}>{text}</p>}
+          <p className={innerClassName}>{text}</p>
         </div>
         <div className={s.orders__right}>
           <p className={s.orders__price}>{price} ₽</p>
@@ -32,9 +39,9 @@ export const OrdersDates = ({ text, price, time }) => {
               <p>Когда</p>
             </button>
           )}
-          {text === "Не доставили" && <button className={s.orders__btn_order}>Заказать</button>}
-          {text === "Возврат" && <button className={s.orders__btn_order}>Заказать</button>}
-          {text === "Получен" && <button className={s.orders__btn_order}>Заказать</button>}
+          {(text === "Не доставили" || text === "Возврат" || text === "Получен") &&
+            (<button className={rightClassName}>Заказать</button>)
+          }
         </div>
       </div>
     </Container>

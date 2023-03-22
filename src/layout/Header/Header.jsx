@@ -14,6 +14,7 @@ import cart_hover from "./images/pictograms/cart_hover.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
+import { Textfield } from "../../ui/TextField/Textfield";
 
 export const Header = () => {
   return (
@@ -37,7 +38,7 @@ export const Header = () => {
                 </div>
               </HeaderButton>
             </Link>
-            <input className={s.header_input} placeholder="Найти товар" />
+            <Textfield placeholder={"Найти товар"} header />
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
             </Link>

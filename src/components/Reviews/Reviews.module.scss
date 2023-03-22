@@ -1,6 +1,6 @@
 .reviews {
   font-size: 16px;
-  color: rgba(65, 65, 65, 1);
+  color: rgb(65 65 65 / 100%);
 }
 
 .reviews__all {
@@ -22,14 +22,17 @@
 .total_score {
   margin-bottom: 28px;
   display: flex;
+
   &__stars {
     margin-right: 16px;
   }
+
   &__num {
     font-weight: 700;
     width: 54px;
   }
 }
+
 .allstars {
   display: grid;
   height: 160px;
@@ -38,6 +41,7 @@
   grid-template-rows: repeat(5, 1fr);
   align-items: center;
 }
+
 .allstars > img {
   height: 16px;
   width: 16px;
@@ -53,6 +57,7 @@
 .span {
   text-align: left;
 }
+
 [id="point"] {
   text-align: right;
 }
@@ -77,15 +82,18 @@
   flex-direction: column;
   gap: 12px;
   text-align: left;
+
   &__pic {
     height: 36px;
     width: 36px;
     margin-right: 15px;
   }
+
   &__name {
     font-size: 18px;
     padding-top: 9px;
   }
+
   &__stars {
     display: flex;
     height: 16px;
@@ -93,11 +101,13 @@
     margin-right: 16px;
     justify-content: space-between;
   }
+
   &__date {
     padding-top: 2px;
-    color: rgba(143, 143, 143, 1);
+    color: rgb(143 143 143 / 100%);
     font-size: 12px;
   }
+
   &__text {
     font-size: 16px;
     text-align: justify;
@@ -109,6 +119,7 @@
   .rewievbox {
     max-width: 544px;
   }
+
   .reviews__all {
     gap: 40px;
   }
