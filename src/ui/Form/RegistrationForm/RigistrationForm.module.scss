@@ -4,7 +4,7 @@
   position: relative;
   width: 687px;
   height: 998px;
-  box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
+  box-shadow: 8px 16px 32px rgb(255 102 51 / 20%);
   border-radius: 4px;
   background-color: #fff;
   padding: 72px 67.5px 44px 67.5px;
@@ -15,7 +15,7 @@
 .wrapper__input {
   display: block;
   position: relative;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .closeForm {
@@ -23,6 +23,7 @@
   position: absolute;
   top: 0;
   right: 0;
+
   &:hover {
     cursor: pointer;
   }
@@ -138,6 +139,7 @@
   justify-content: center;
   text-align: center;
   z-index: 1;
+
 
   &_text {
     line-height: 24px;
