@@ -14,7 +14,7 @@ import cart_hover from "./images/pictograms/cart_hover.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
-import { Textfield } from "../../ui/TextField/Textfield";
+import { Textfield } from "../../ui/Textfield/Textfield";
 
 export const Header = () => {
   return (
@@ -49,7 +49,7 @@ export const Header = () => {
               <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} />
             </Link>
             <Link to="/login">
-              <HeaderButton background="orange">
+              <HeaderButton background="orange" size="large">
                 <div className={s.button__wrapper}>
                   <span className={s.button__text}>Войти</span>
                   <img src={login} alt="->" />

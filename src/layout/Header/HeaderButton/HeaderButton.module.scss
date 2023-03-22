@@ -10,7 +10,11 @@
   line-height: 150%;
   height: 40px;
   min-width: 40px;
-  margin: 0 0 16px 12px;
+  margin: 0 0 16px 13px;
+
+  &__large {
+    width: 154px;
+  }
 
   //Background color
   &__orange {
@@ -21,6 +25,16 @@
   &__green {
     background: #70c05b;
     color: #fff;
+  }
+}
+
+@media (max-width: 1009px) {
+  .button__large {
+    width: 40px;
+  }
+
+  .button__wrapper {
+    width: 40px;
   }
 }
 
