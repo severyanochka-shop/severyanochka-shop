@@ -3,6 +3,7 @@
   flex-direction: column;
   max-width: 688px;
   float: right;
+
   &__stars {
     width: 136px;
     height: 24px;
@@ -10,8 +11,9 @@
     justify-content: space-between;
     margin-left: 16px;
   }
+
   &__text {
-    border: 1px solid rgba(191, 191, 191, 1);
+    border: 1px solid rgb(191 191 191 / 100%);
     border-radius: 4px;
     background-color: white;
     overflow: hidden;
@@ -20,21 +22,24 @@
     outline: none;
     resize: none;
   }
+
   &__subtitle {
     padding-top: 3px;
     font-weight: 700;
   }
+
   &_btn {
     width: 188px;
     height: 40px;
     font-size: 16px;
-    background-color: rgba(252, 213, 186, 1);
-    color: rgba(255, 102, 51, 1);
+    background-color: rgb(252 213 186 / 100%);
+    color: rgb(255 102 51 / 100%);
     border-radius: 4px;
     transition: 0.2s;
+
     &:hover {
-      background-color: rgba(255, 102, 51, 1);
-      color: rgba(252, 213, 186, 1);
+      background-color: rgb(255 102 51 / 100%);
+      color: rgb(252 213 186 / 100%);
       transition: 0.2s;
     }
   }
@@ -45,6 +50,7 @@
   width: 24px;
   background: no-repeat center/cover;
   cursor: pointer;
+
   &:hover {
     background-image: url("../Images/starfull.svg");
   }

@@ -12,18 +12,21 @@
     margin-top: 50px;
     margin-bottom: 120px;
   }
+
   &__titles {
     margin-left: 0;
   }
+
   &__subtitle {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
-    color: #ff6633;
+    color: #f63;
     text-align: left;
   }
+
   &__img {
     background-image: url("./assets/groupAround.svg");
     background-repeat: no-repeat;
@@ -31,6 +34,7 @@
     height: 380px;
     align-self: flex-end;
   }
+
   &__checkboxes {
     display: grid;
     grid-template-columns: 300px 400px 500px;
@@ -45,17 +49,20 @@
     align-items: center;
     margin-bottom: 80px;
   }
+
   &__thanks_img {
     width: 127px;
     height: 103px;
   }
+
   &__thanks_triangle {
     border-top: 40px solid #e5ffde;
     border-left: 40px solid transparent;
     margin-left: 40px;
   }
+
   &__thanks_text {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -81,6 +88,7 @@
       margin-bottom: 100px;
       margin-left: 40px;
     }
+
     &__titles {
       margin-top: 30px;
       margin-bottom: 30px;
@@ -88,11 +96,13 @@
     &__subtitle {
       font-size: 18px;
     }
+
     &__img {
       width: 100%;
       max-height: 300px;
       align-self: flex-start;
     }
+
     &__checkboxes {
       grid-template-columns: 300px 450px;
       margin-bottom: 120px;
@@ -100,15 +110,18 @@
     &__thanks {
       margin: 0 auto 60px;
     }
+
     &__thanks_img {
       width: 113px;
       height: 92px;
     }
+
     &__thanks_triangle {
       margin-left: 30px;
       width: 41px;
       height: 40px;
     }
+
     &__thanks_text {
       font-size: 18px;
       padding: 20px 40px;
@@ -134,6 +147,7 @@
       width: 100%;
       max-height: 200px;
     }
+
     &__checkboxes {
       grid-template-columns: 300px;
       gap: 20px;
@@ -143,17 +157,20 @@
       flex-direction: column;
       margin: 0 auto 20px;
     }
+
     &__thanks_img {
       width: 68px;
       height: 56px;
       margin-bottom: 15px;
     }
+
     &__thanks_triangle {
       margin-left: 0;
       border-top: none;
       border-bottom: 40px solid #e5ffde; 
 	    border-left: 40px solid transparent;
     }
+
     &__thanks_text {
       font-size: 14px;
       width: 290px;

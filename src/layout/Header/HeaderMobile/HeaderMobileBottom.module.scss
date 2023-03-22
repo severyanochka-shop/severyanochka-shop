@@ -2,8 +2,8 @@
   position: sticky;
   z-index: 1;
   bottom: 0;
-  background: #ffffff;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 2px 4px 8px rgb(0 0 0 / 10%);
 }
 
 .nav {
@@ -12,7 +12,7 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: end;
-  padding: 0 9px 0 0px;
+  padding: 0 9px 0 0;
 }
 
 .button__wrapper {

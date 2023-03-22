@@ -4,7 +4,7 @@
   color: inherit;
   cursor: pointer;
   border-radius: 4px;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   font-weight: 400;
   line-height: 150%;
   padding: 5px;
@@ -16,11 +16,13 @@
     height: 60px;
     font-size: 24px;
   }
+
   &__medium {
     height: 40px;
     width: 157px;
     font-size: 16px;
   }
+
   &__small {
     height: 32px;
     width: 157px;
@@ -37,48 +39,57 @@
       color: var(--primary-color);
       cursor: default;
     }
+
     &:hover {
-      box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+      box-shadow: 4px 8px 16px rgb(255 102 51 / 20%);
       transition: 0.2s;
     }
+
     &:active {
-      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 0 rgb(0 0 0 / 20%);
     }
   }
+
   &__green {
     background: #70c05b;
-    color: #ffffff;
+    color: #fff;
 
     &_disabled {
       background: #e5ffde;
       color: #70c05b;
       cursor: default;
     }
+
     &:hover {
-      box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+      box-shadow: 4px 8px 16px rgb(112 192 91 / 20%);
       transition: 0.2s;
     }
+
     &:active {
-      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 0 rgb(0 0 0 / 20%);
     }
   }
+
   &__gray {
     background: #f3f2f1;
     color: #606060;
 
     &_disabled {
-      background: #ffffff;
+      background: #fff;
       color: var(--light);
       cursor: default;
     }
+
     &:hover {
-      box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 4px 8px 16px rgb(0 0 0 / 20%);
       transition: 0.2s;
     }
+
     &:active {
-      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 0 rgb(0 0 0 / 20%);
     }
   }
+
   &__red {
     background: #d80000;
     color: #f2f2f2;
@@ -88,12 +99,14 @@
       color: #d80000;
       cursor: default;
     }
+
     &:hover {
-      box-shadow: 4px 8px 16px rgba(216, 0, 0, 0.2);
+      box-shadow: 4px 8px 16px rgb(216 0 0 / 20%);
       transition: 0.2s;
     }
+
     &:active {
-      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 0 rgb(0 0 0 / 20%);
     }
   }
 }
@@ -111,8 +124,9 @@
       color: #fff;
       transition: 0.5s;
     }
+
     &:active {
-      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 0 rgb(0 0 0 / 20%);
     }
 
     &_disabled {
@@ -122,6 +136,7 @@
       cursor: default;
     }
   }
+
   &__green {
     background: none;
     border: 1px solid #70c05b;
@@ -140,10 +155,12 @@
       color: #fff;
       transition: 0.5s;
     }
+
     &:active {
-      box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 0 rgb(0 0 0 / 20%);
     }
   }
+
   &__gray {
     background: none;
     border: 1px solid #8f8f8f;
@@ -156,6 +173,7 @@
       cursor: default;
     }
   }
+
   &__red {
     background: none;
     border: 1px solid #d80000;
