@@ -14,7 +14,7 @@ export const Delivery = (props) => {
           <div className={s.item1__where}>
             <h4 className={s.item1__subtitle}>Куда</h4>
             <div className={s.wherewraper}>
-              <label htmlFor="">
+              <label htmlFor="" className={s.item1__label}>
                 Населенный пункт
                 <Select className={s.item1__select} />
               </label>
@@ -43,7 +43,7 @@ export const Delivery = (props) => {
                 Дата
                 <Select className={s.date__select} />
               </label>
-              <label htmlFor="">
+              <div className={s.time_min}>
                 Время
                 <div className={s.time}>
                   <button className={s.item1__when__time}>8:00-14:00</button>
@@ -56,26 +56,14 @@ export const Delivery = (props) => {
                   </button>
                 </div>
                 <div className={s.time_min}>
-                  <button style={{ width: "61px" }} className={s.item1__when__time}>
-                    8-10
-                  </button>
-                  <button style={{ width: "61px" }} className={s.item1__when__time}>
-                    10-12
-                  </button>
-                  <button style={{ width: "61px" }} className={s.item1__when__time}>
-                    12-14
-                  </button>
-                  <button style={{ width: "61px" }} className={s.item1__when__time}>
-                    14-16
-                  </button>
-                  <button style={{ width: "61px" }} className={s.item1__when__time}>
-                    16-18
-                  </button>
-                  <button style={{ width: "61px" }} className={s.item1__when__time}>
-                    18-20
-                  </button>
+                  <button className={s.item1_time}>8-10</button>
+                  <button className={s.item1_time}>10-12</button>
+                  <button className={s.item1_time}>12-14</button>
+                  <button className={s.item1_time}>14-16</button>
+                  <button className={s.item1_time}>16-18</button>
+                  <button className={s.item1_time}>18-20</button>
                 </div>
-              </label>
+              </div>
             </div>
           </div>
           <div className={s.item__enter}>
@@ -87,7 +75,10 @@ export const Delivery = (props) => {
             </div>
           </div>
         </div>
-        <Calculator />
+        <div className={s.calculator}>
+          <Calculator btn="Оплатить на сайте" />
+          <button className={s.calc__btn}>Оплатить при получении</button>
+        </div>
       </div>
     </div>
   );

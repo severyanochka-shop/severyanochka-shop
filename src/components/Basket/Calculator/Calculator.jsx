@@ -10,6 +10,7 @@ export const Calculator = (props) => {
     minOrderSum = 1000,
     bonusPersent = 10,
     set = [],
+    btn = "Оформить заказ",
   } = props;
 
   let numOfProducts = set.lenght ? set.lenght : 0;
@@ -65,7 +66,7 @@ export const Calculator = (props) => {
       </div>
       <p className={s.minprice}>Минимальная сумма заказа {minOrderSum} ₽</p>
 
-      <button className={s.basket_btn}>Оформить заказ</button>
+      <button className={s.basket_btn}>{btn}</button>
     </div>
   );
 };
