@@ -3,7 +3,6 @@
   width: 876px;
   position: relative;
   border-radius: 4px;
-
 }
 
 .card_basket {
@@ -145,6 +144,7 @@
 @media (max-width: 769px) {
   .wrapper {
     width: 449px;
+  }
   .card_basket {
     max-width: 449px;
     height: 114px;
@@ -157,17 +157,17 @@
   }
 
   .withoutcard {
-margin-right: 4px;
-}
+    margin-right: 4px;
+  }
 
-.card_text {
+  .card_text {
     max-width: 217px;
     display: block;
-}
+  }
 
-.price_discount {
-  margin-right: 8px;
- }
+  .price_discount {
+    margin-right: 8px;
+  }
 
   .total_price {
     margin-left: 0;
@@ -175,8 +175,7 @@ margin-right: 4px;
     text-align: end;
   }
 
-
-.not_avail {
+  .not_avail {
     text-align: end;
   }
   .product_describe {
@@ -187,7 +186,7 @@ margin-right: 4px;
 @media (max-width: 440px) {
   .wrapper {
     max-width: 336px;
-}
+  }
 
   .card_basket {
     display: block;

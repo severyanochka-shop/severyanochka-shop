@@ -27,21 +27,6 @@
   display: block;
 }
 
-.header_input {
-  display: block;
-  padding: 8px;
-  width: 436px;
-  height: 40px;
-  background: #fff;
-  border: 1px solid #70c05b;
-  border-radius: 4px;
-  font-size: 16px;
-  line-height: 150%;
-  color: #8f8f8f;
-  outline: none;
-  margin: 0 28px 16px 16px;
-}
-
 .logo {
   display: block;
   margin: 0 28px 20px 0;
@@ -50,10 +35,6 @@
 @media (max-width: 1280px) {
   .logo {
     margin: 0 16px 16px 0;
-  }
-
-  .header_input {
-    margin: 0 12px 16px 20px;
   }
 }
 

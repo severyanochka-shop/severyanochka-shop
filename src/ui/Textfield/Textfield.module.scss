@@ -1,74 +1,108 @@
 .textfield {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+
+  &__header {
+    margin: 0 0 11px 20px;
+  }
+  &__mobile {
     box-sizing: border-box;
-    
-    &__label {
+    width: 90%;
+  }
+
+  &__label {
     display: inline-block;
     text-align: left;
     margin-bottom: 0.25rem;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #8F8F8F;
+    color: #8f8f8f;
     position: relative;
-
+    &_sms {
+      font-size: 18px;
     }
-
-    &__input {
+    &_mobile {
+      display: inline-block;
+      line-height: 150%;  
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__input {
     padding-left: 16px;
-    background: #FFF;
-    border: 1px solid #BFBFBF;
+    background: #ffffff;
+    border: 1px solid #bfbfbf;
     border-radius: 4px;
     color: #414141;
     display: block;
-
-    // position: relative;
-    }
-
-    &__input_medium {
+    font-size: 16px;
+  }
+  &__input_medium {
     width: 250px;
     height: 40px;
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    }
-
-    &__input_large {
+  }
+  &__input_large {
     width: 250px;
     height: 60px;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 400;
     font-size: 24px;
     line-height: 150%;
-    }
+  }
 
-    &__password {
-	  position: absolute;
-	  right: 6px;
+  &__input_huge {
+    width: 260px;
+    height: 60px;
+    font-size: 22px;
+    line-height: 150%;
+  }
+
+  &__input_header {
+    padding: 8px;
+    width: 436px;
+    height: 40px;
+    border: 1px solid #70c05b;
+    font-size: 16px;
+    line-height: 150%;
+    color: #8f8f8f;
+  }
+  &__input_mobile {
+    padding: 8px;
+    width: 100%;
+    height: 40px;
+    height: 40px;
+    border: 1px solid #70c05b;
+    font-size: 16px;
+    line-height: 150%;
+    color: #8f8f8f;
+  }
+
+  &__password {
+    position: absolute;
+    right: 6px;
     bottom: 0;
-	  display: inline-block;
+    display: inline-block;
+    &_huge {
+      position: absolute;
+      right: 6px;
+      display: inline-block;
+      top: 45px;
     }
+  }
 
-    &__input:focus {
-    background: #FFF;
-    border: 1px solid #70C05B;
-    box-shadow: 4px 8px 16px rgb(112 192 91 / 20%);
+  &__input:focus {
+    background: #ffffff;
+    border: 1px solid #70c05b;
+    box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
     border-radius: 4px;
     outline: 0;
-    }
-
-    &__input:disabled {
-      background-color: #f5f5f5;
-      opacity: 1;
-    }
-
-    &__eye {
-      width: 24px;
-      height: 24;
-    }
+  }
+  &__input:disabled {
+    background-color: #f5f5f5;
+    opacity: 1;
+  }
+  &__eye {
+    width: 24px;
+    height: 24;
+  }
 }

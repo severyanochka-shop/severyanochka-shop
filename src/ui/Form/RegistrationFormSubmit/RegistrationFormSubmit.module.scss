@@ -3,12 +3,22 @@
   display: block;
   position: relative;
   width: 420px;
-  height: 481px;
-  box-shadow: 8px 16px 32px rgb(255 102 51 / 20%);
+  height: 420px;
+  box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
   border-radius: 4px;
   background-color: #fff;
-  padding: 72px 50px 48px;
+  padding: 72px 80px 40px 80px;
   color: #414141;
+
+  &__SMS {
+    height: 480px;
+  }
+}
+
+.wrapperSMS {
+  display: block;
+  width: 110px;
+  margin: 0 auto;
 }
 
 .title {
@@ -28,9 +38,15 @@
   margin-bottom: 32px;
 }
 
+.labelClass {
+  font-size: 18px;
+}
+
 .button {
+  margin: 0 auto;
   width: 260px;
   height: 68px;
+  margin-top: 32px;
   margin-bottom: 32px;
   font-size: 24px;
 }
@@ -73,7 +89,7 @@
 .messageError {
   position: absolute;
   left: 27%;
-  top: 21%;  
+  top: 21%;
   display: flex;
   width: 192px;
   height: 40px;
@@ -88,5 +104,56 @@
     color: #f2f2f2;
     font-size: 14px;
     line-height: 24px;
+  }
+}
+
+.sms {
+  padding: 12px 6px 12px 16px;
+  width: 110px;
+  height: 60px;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+.bottomWrapper {
+  margin: 0 auto;
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  font-size: 12px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  &__text {
+    font-size: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.bottomBack {
+  display: flex;
+  width: 100px;
+  text-align: justify;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.repeat {
+  text-align: center;
+  &__again {
+    text-decoration: underline;
+    color: #ff6633;
+    margin-bottom: 32px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

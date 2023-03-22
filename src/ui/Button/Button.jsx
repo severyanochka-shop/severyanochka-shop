@@ -14,6 +14,7 @@ export const Button = (props) => {
     border,
     disabled,
     handler,
+    type,
   } = props;
 
   const innerClassName = clsx(s.button, className, {
@@ -40,7 +41,7 @@ export const Button = (props) => {
   });
 
   return (
-    <button onClick={handler} className={innerClassName}>
+    <button onClick={handler} className={innerClassName} type={type}>
       {children}
     </button>
   );
