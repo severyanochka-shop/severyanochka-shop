@@ -5,7 +5,6 @@
 }
 
 .nav {
-  border: 1px solid red;
   height: 72px;
   display: flex;
   justify-content: space-between;
@@ -39,7 +38,7 @@
   }
 }
 
-@media (max-width: 1009px) {
+@media (max-width: 1076px) {
   .button__text {
     display: none;
   }

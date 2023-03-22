@@ -106,3 +106,24 @@
     height: 24;
   }
 }
+@media (max-width: 1129px) {
+  .textfield {
+    &__input_header {
+      max-width: 386px;
+    }
+  }
+}
+
+@media (max-width: 1076px) {
+  .textfield__header {
+    margin: 0 17px 11px 17px;
+  }
+}
+
+@media (max-width: 769px) {
+  .textfield {
+    &__input_header {
+      max-width: 336px;
+    }
+  }
+}
