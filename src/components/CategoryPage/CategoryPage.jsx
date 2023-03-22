@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Container } from "../../layout/Container/Container";
 import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 import { Button } from "../../ui/Button/Button";
@@ -14,14 +15,30 @@ export const CategoryPage = ({
   inStock,
   subcategory,
 }) => {
+
+  console.log(hideFilter)
+
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
+
+
+  //показать бургер
+  // const [burgerHide, setBurgerHide] = useState(true)
+  // const hideFilter = () => {
+  //   console.log(burgerHide)
+  //   setBurgerHide(!burgerHide)
+  // }
+
+
+
+
   return (
     <Container>
       <div className={cl.category_page}>
         <div className={cl.filter}>
-          <Button medium background="gray" className={cl.button_filter} onClick={hideFilter}>
+          {/* <Button medium background="gray" className={cl.button_filter} onClick={()=>setBurgerHide(!burgerHide)}> */}
+          <Button medium background="gray" className={cl.button_filter} onClick={()=>hideFilter()}>
             <p className={cl.text_filter}>Фильтр</p>
           </Button>
           <div className={cl.filter_none}>
