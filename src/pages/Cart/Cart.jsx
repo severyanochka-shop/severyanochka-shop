@@ -3,6 +3,7 @@ import { Basket } from "../../components/Basket/Basket";
 import { Title } from "../../layout/Title/Title";
 import { Section } from "../../layout/Section/Section";
 import { Discount } from "../../ui/Discount/Discount";
+import { CardProductBasket } from "../../components/CardProductBasket/CardProductBasket";
 import s from "./Cart.module.scss";
 
 export const Cart = () => {
@@ -13,6 +14,7 @@ export const Cart = () => {
         <Discount orange large className={s.count_product} text={0} />
       </div>
       <Basket />
+      <CardProductBasket inStock />
     </Section>
   );
 };

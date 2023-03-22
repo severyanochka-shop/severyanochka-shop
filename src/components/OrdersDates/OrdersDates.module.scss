@@ -9,24 +9,27 @@
     align-items: center;
     text-align: center;
   }
+
   &__date {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
     color: #414141;
   }
+
   &__time {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
     color: #414141;
   }
+
   &__statusInProcess {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -38,8 +41,9 @@
         text-align: center;
         align-items: center;
   }
+
   &__statusNo {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -49,52 +53,58 @@
     background: #d80000;
     border-radius: 4px;
   }
+
   &__statusYes {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #ffffff;
+    color: #fff;
     padding: 4px 8px;
     background: #70c05b;
     border-radius: 4px;
   }
+
   &__right {
     display: flex;
     gap: 24px;
     align-items: center;
     text-align: center;
   }
+
   &__price {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
     color: #414141;
   }
+
   &__btn_order {
     width: 200px;
     height: 40px;
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #ffffff;
     background-color: #ff6633;
+
     border-radius: 4px;
   }
+
   &__btn_get {
     width: 200px;
     height: 40px;
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #ffffff;
+    color: #fff;
     background: #70c05b;
     border-radius: 4px;
     display: flex;
@@ -102,23 +112,26 @@
     text-align: center;
     justify-content: space-around;
   }
+
     &__calendar {
     width: 24px;
     height: 24px;
   }
+
     &__btn_getsmall {
     display: none;
     width: 120px;
     height: 40px;
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #ffffff;
+    color: #fff;
     background: #70c05b;
     border-radius: 4px;
   }
+
     &__calendar_white {
     display: none;    
     width: 19px;
@@ -147,36 +160,45 @@
     gap: 10px;
     align-items: flex-start;
   }
+
     &__statusInProcess {
     font-size: 12px;
   }
+
   &__statusNo {
     font-size: 12px;
   }
+
   &__statusYes {
     font-size: 12px;
   }
+
     &__right {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
+
   &__price {
     text-align: center;
         font-size: 20px;
 }
+
   &__btn_get {
     display: none;
   }
+
     &__btn_getsmall {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
     }
+
     &__calendar_white {
     display: block;
     }
+
     &__btn_order {
     width: 168px;
     height: 40px;

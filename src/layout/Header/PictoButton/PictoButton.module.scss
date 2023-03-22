@@ -2,19 +2,21 @@
   box-sizing: border-box;
   background: none;
   border: none;
-  color: #000000;
+  color: #000;
   cursor: pointer;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
   margin: 0 12px 11px;
 
   &:hover {
-    color: #ff6633;
+    color: #f63;
+
     .button__image_hover {
       display: block;
     }
+
     .button__image {
       display: none;
     }
@@ -41,6 +43,7 @@
   .button {
     margin: 0 8px 6px;
     font-size: 8px;
+
     &__image {
       margin: 0 auto 5px;
     }

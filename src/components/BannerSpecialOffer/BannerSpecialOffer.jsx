@@ -1,9 +1,9 @@
 import React from "react";
 import s from "./BannerSpecialOffer.module.scss";
-import cardofloyalty from "./images/cardofloyalty.png";
-import korzina from "./images/korzina.svg";
+import cardofloyalty from "./assets/cardofloyalty.png";
+import korzina from "./assets/korzina.svg";
 
-export const Banners = () => {
+export const BannerSpecialOffer = () => {
   return (
     <>
       <div className={s.bannercard}>
