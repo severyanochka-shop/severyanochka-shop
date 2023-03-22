@@ -1,44 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./InputRange.module.scss";
 
-export const InputRange = (props) => {
-  const { min = 1, max = 1000 } = props;
-  const [value, setValue] = useState(min);
-  const [secValue, setSecValue] = useState(max);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  const sechandleChange = (e) => {
-    setSecValue(e.target.value);
-  };
+export const InputRange = ({ min = 0, max = 1000 }) => {
+  const [minValue, setMinValue] = useState(min);
+  const [maxValue, setMaxValue] = useState(max);
 
   const handleClick = (e) => {
-    setValue(min);
-    setSecValue(max);
-    document.getElementById("min").value = min.toString();
-    document.getElementById("max").value = max.toString();
+    setMinValue(min);
+    setMaxValue(max);
   };
 
-  const sliderControl = (e) => {
-    let from = document.getElementById("min").value;
-    let to = document.getElementById("max").value;
-    if (Number(from) >= Number(to)) {
-      document.getElementById("max").value =
-        document.getElementById("min").value;
-      setSecValue(String(to));
-    }
+  const getBackgroundSizeMin = () => {
+    return {
+      backgroundSize: `${(minValue * 100) / max - min + 2}% 100%`,
+    };
   };
 
-  const sliderControlMax = (e) => {
-    let from = document.getElementById("min").value;
-    let to = document.getElementById("max").value;
-    if (Number(to) <= Number(from)) {
-      document.getElementById("min").value =
-        document.getElementById("max").value;
-      setValue(String(from));
-    }
+  const getBackgroundSizeMax = () => {
+    return {
+      backgroundSize: `${(maxValue * 100) / max - min}% 100%`,
+    };
+  };
+
+  useEffect(() => {
+    if (minValue < min) setMinValue(min);
+  }, [minValue]);
+
+  useEffect(() => {
+    if (maxValue > max) setMaxValue(max);
+  }, [maxValue]);
+
+  const handlerRangeMin = (e) => {
+    if (+e.target.value <= maxValue) setMinValue(e.target.value);
+    else setMinValue(maxValue);
+  };
+
+  const handlerRangeMax = (e) => {
+    if (+e.target.value >= minValue) setMaxValue(e.target.value);
+    else setMaxValue(minValue);
   };
 
   return (
@@ -50,36 +49,42 @@ export const InputRange = (props) => {
         </button>
       </div>
       <div className={s.range__price}>
-        <div className={s.range__price__cell}>{value}</div>
+        <input
+          type="number"
+          className={s.range__price__cell}
+          value={minValue ? minValue : min}
+          onChange={handlerRangeMin}
+        />
         <div className={s.range__price__dach}></div>
-        <div className={s.range__price__cell}>{secValue}</div>
+        <input
+          type="number"
+          className={s.range__price__cell}
+          value={maxValue ? maxValue : minValue ? minValue : 0}
+          onChange={handlerRangeMax}
+        />
       </div>
-      <div style={{ display: "flex", position: "relative" }}>
+      <div className={s.range__wrapper}>
         <input
           id="min"
-          onChange={(e) => {
-            handleChange(e);
-            sliderControl(e);
-          }}
+          onChange={handlerRangeMin}
+          value={minValue ? minValue : min}
           type="range"
-          className={s.range__input}
+          className={s.range__input_min}
           min={min}
           max={max}
-          step="1"
-          defaultValue={min}
+          step={1}
+          style={getBackgroundSizeMax()}
         />
         <input
           id="max"
-          onChange={(e) => {
-            sechandleChange(e);
-            sliderControlMax(e);
-          }}
+          onChange={handlerRangeMax}
+          value={maxValue ? maxValue : minValue ? minValue : 0}
           type="range"
-          className={s.range__input}
+          className={s.range__input_max}
           min={min}
           max={max}
-          step="1"
-          defaultValue={max}
+          step={1}
+          style={getBackgroundSizeMin()}
         />
       </div>
     </div>
