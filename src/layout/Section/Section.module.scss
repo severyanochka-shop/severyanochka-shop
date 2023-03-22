@@ -1,5 +1,6 @@
 .section {
   margin-bottom: 120px;
+
   &:last-child {
     margin-bottom: 80px;
   }
@@ -8,6 +9,7 @@
 @media (max-width: 1068px) {
   .section {
     margin-bottom: 100px;
+
     &:last-child {
       margin-bottom: 60px;
     }
@@ -17,6 +19,7 @@
 @media (max-width: 660px) {
   .section {
     margin-bottom: 80px;
+
     &:last-child {
       margin-bottom: 40px;
     }

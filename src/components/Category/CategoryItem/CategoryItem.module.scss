@@ -1,8 +1,9 @@
 .item {
   position: relative;
+
   &:hover > .shadow {
     height: 117px;
-    background: linear-gradient(180deg, rgba(255, 102, 51, 0) 0%, #ff6633 100%);
+    background: linear-gradient(180deg, rgb(255 102 51 / 0%) 0%, #f63 100%);
     cursor: pointer;
   }
 }
@@ -18,7 +19,7 @@
   height: 117px;
   width: 100%;
   border-radius: 4px;
-  background: linear-gradient(180deg, rgba(112, 192, 91, 0) 0%, #70c05b 82.81%);
+  background: linear-gradient(180deg, rgb(112 192 91 / 0%) 0%, #70c05b 82.81%);
 }
 
 .title {
@@ -28,7 +29,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 150%;
-  color: #ffffff;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
