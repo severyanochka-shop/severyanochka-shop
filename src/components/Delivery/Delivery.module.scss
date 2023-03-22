@@ -1,0 +1,257 @@
+.delivery {
+  max-width: 1208px;
+  margin: 0 auto;
+  &__flex {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.item1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: rgba(143, 143, 143, 1);
+  font-size: 16px;
+  width: 896px;
+  &__subtitle {
+    padding-top: 9px;
+    color: rgba(65, 65, 65, 1);
+    height: 54px;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  &__select {
+    width: 245px;
+  }
+  &__when {
+    &__time {
+      cursor: pointer;
+      width: 169px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: rgba(243, 242, 241, 1);
+      color: rgba(96, 96, 96, 1);
+      transition: 0.2s;
+      font-family: "Rubik", sans-serif;
+      font-size: 16px;
+      &:hover {
+        background-color: rgba(112, 192, 91, 1);
+        color: rgba(255, 255, 255, 1);
+        transition: 0.2s;
+      }
+      &:disabled {
+        background-color: white;
+        color: rgba(191, 191, 191, 1);
+      }
+    }
+  }
+}
+
+.time {
+  display: flex;
+  gap: 8px;
+}
+
+.time_min {
+  padding-top: 2px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 249px;
+  display: none;
+}
+
+.wherewraper {
+  display: flex;
+  gap: 40px;
+}
+
+.input {
+  &__street {
+    width: 243px;
+    height: 40px;
+    border: 1px solid rgba(191, 191, 191, 1);
+    color: rgba(65, 65, 65, 1);
+    padding: 8px 16px;
+    margin-top: 2px;
+    border-radius: 4px;
+    outline: none;
+  }
+  &__house {
+    width: 53px;
+    height: 40px;
+    border: 1px solid rgba(191, 191, 191, 1);
+    color: rgba(65, 65, 65, 1);
+    padding: 8px 16px;
+    margin-top: 2px;
+    border-radius: 4px;
+    outline: none;
+  }
+  &__apart {
+    width: 74px;
+    height: 40px;
+    border: 1px solid rgba(191, 191, 191, 1);
+    color: rgba(65, 65, 65, 1);
+    padding: 8px 16px;
+    margin-top: 2px;
+    border-radius: 4px;
+    outline: none;
+  }
+  &__extra {
+    width: 121px;
+    height: 40px;
+    border: 1px solid rgba(191, 191, 191, 1);
+    color: rgba(65, 65, 65, 1);
+    padding: 8px 16px;
+    margin-top: 2px;
+    border-radius: 4px;
+    outline: none;
+  }
+}
+
+.label__street {
+  width: 243px;
+  height: 24px;
+}
+
+.label__house {
+  width: 56px;
+  height: 24px;
+}
+
+.label__apart {
+  width: 74px;
+  height: 24px;
+}
+
+.label__extra {
+  width: 121px;
+  height: 24px;
+}
+
+.date__select {
+  width: 155px;
+}
+
+.enter__tel {
+  outline: none;
+  height: 40px;
+  width: 168px;
+  border: 1px solid rgba(191, 191, 191, 1);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.enter_btn {
+  cursor: pointer;
+  border-radius: 4px;
+  width: 168px;
+  height: 40px;
+  font-size: 12px;
+  transition: 0.2s;
+  font-family: "Rubik", sans-serif;
+  background-color: rgba(255, 102, 51, 1);
+  color: rgba(255, 255, 255, 1);
+  &:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 102, 51, 1);
+    transition: 0.2s;
+  }
+}
+
+.email_btn {
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 152px;
+  height: 24px;
+  font-size: 12px;
+  transition: 0.2s;
+  font-family: "Rubik", sans-serif;
+  background-color: rgba(112, 192, 91, 1);
+  color: rgba(255, 255, 255, 1);
+  &:hover {
+    background-color: #fbf8ec;
+    color: rgba(112, 192, 91, 1);
+    transition: 0.2s;
+  }
+}
+
+@media (max-width: 1250px) {
+  .wherewraper {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1000px) {
+  .item1 {
+    width: 449px;
+  }
+
+  .item1__select {
+    width: 174px;
+  }
+  .input__street,
+  .label__street {
+    width: 243px;
+  }
+  .label__house,
+  .input__house {
+    width: 67px;
+  }
+  .label__apart,
+  .input__apart {
+    width: 160px;
+  }
+  .label__extra,
+  .input__extra {
+    width: 158px;
+  }
+  .time {
+    display: none;
+  }
+  .time_min {
+    display: flex;
+  }
+  .enter__tel {
+    width: 141px;
+  }
+  .enter_btn {
+    width: 111px;
+  }
+  .email_btn {
+    width: 101px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wherewraper {
+    width: 336px;
+    height: 276px;
+    gap: 16px 16px;
+  }
+  .item1__select,
+  .input__street,
+  .label__street,
+  .date__select,
+  .datewraper {
+    width: 100%;
+  }
+  .label__house,
+  .input__house {
+    width: 65px;
+  }
+  .label__apart,
+  .input__apart {
+    width: 77px;
+  }
+  .label__extra,
+  .input__extra {
+    width: 162px;
+  }
+}
