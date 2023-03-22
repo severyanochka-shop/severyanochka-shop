@@ -3,7 +3,7 @@
   height: 100px;
   border: 1px solid #ececef;
   border-radius: 26px;
-  padding: 38px 0 38px;
+  padding: 38px 0;
   background-color: white;
   margin-top: 24px;
 }
@@ -14,6 +14,7 @@
   margin: 0 auto;
   position: relative;
 }
+
 /* Fill */
 .spinnerfill {
   width: 24px;
@@ -22,10 +23,7 @@
   border-top: 2px solid #70c05b;
   border-radius: 100%;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   margin: auto;
   animation: spin 1.5s infinite linear;
 }
@@ -34,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -45,6 +44,7 @@
   display: flex;
   width: 27px;
   height: 27px;
+
   --height: 6.8px;
   --width: 1.5px;
   --color: gray;
@@ -66,12 +66,14 @@
   100% {
     background: var(--color);
   }
+
   4% {
     background: var(--activeColor);
   }
 }
+
 .stick1 {
-  top: 0px;
+  top: 0;
   left: 12px;
   animation: var(--speed) ease-in-out 0s infinite stinlarge1;
 }
@@ -83,6 +85,7 @@
   100% {
     background: var(--color);
   }
+
   12.45% {
     background: var(--activeColor);
   }
@@ -102,6 +105,7 @@
   100% {
     background: var(--color);
   }
+
   20.75% {
     background: var(--activeColor);
   }
@@ -121,6 +125,7 @@
   100% {
     background: var(--color);
   }
+
   29.05% {
     background: var(--activeColor);
   }
@@ -140,6 +145,7 @@
   100% {
     background: var(--color);
   }
+
   37.35% {
     background: var(--activeColor);
   }
@@ -159,6 +165,7 @@
   100% {
     background: var(--color);
   }
+
   45.65% {
     background: var(--activeColor);
   }
@@ -178,6 +185,7 @@
   100% {
     background: var(--color);
   }
+
   53.95% {
     background: var(--activeColor);
   }
@@ -197,6 +205,7 @@
   100% {
     background: var(--color);
   }
+
   62.25% {
     background: var(--activeColor);
   }
@@ -216,6 +225,7 @@
   100% {
     background: var(--color);
   }
+
   70.55% {
     background: var(--activeColor);
   }
@@ -235,6 +245,7 @@
   100% {
     background: var(--color);
   }
+
   78.85% {
     background: var(--activeColor);
   }
@@ -254,6 +265,7 @@
   100% {
     background: var(--color);
   }
+
   87.15% {
     background: var(--activeColor);
   }
@@ -273,6 +285,7 @@
   100% {
     background: var(--color);
   }
+
   94% {
     background: var(--activeColor);
   }
@@ -291,6 +304,7 @@
   display: flex;
   width: 25.5px;
   height: 25.5px;
+
   --height: 4px;
   --width: 4px;
   --color: gray;
@@ -312,13 +326,14 @@
   100% {
     background: var(--color);
   }
+
   6.25% {
     background: var(--activeColor);
   }
 }
 
 .circle1 {
-  top: 0px;
+  top: 0;
   left: 12px;
   animation: var(--speed) ease-in-out 0s infinite inlarge1;
 }
@@ -330,6 +345,7 @@
   100% {
     background: var(--color);
   }
+
   18.75% {
     background: var(--activeColor);
   }
@@ -349,6 +365,7 @@
   100% {
     background: var(--color);
   }
+
   31.25% {
     background: var(--activeColor);
   }
@@ -368,6 +385,7 @@
   100% {
     background: var(--color);
   }
+
   43.75% {
     background: var(--activeColor);
   }
@@ -387,6 +405,7 @@
   100% {
     background: var(--color);
   }
+
   56.25% {
     background: var(--activeColor);
   }
@@ -405,6 +424,7 @@
   100% {
     background: var(--color);
   }
+
   68.75% {
     background: var(--activeColor);
   }
@@ -424,6 +444,7 @@
   100% {
     background: var(--color);
   }
+
   81.25% {
     background: var(--activeColor);
   }
@@ -442,6 +463,7 @@
   100% {
     background: var(--color);
   }
+
   93.75% {
     background: var(--activeColor);
   }
@@ -481,10 +503,12 @@
     stroke-dasharray: 1, 150;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -35;
   }
+
   100% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;

@@ -16,6 +16,7 @@
     width: 64px;
     height: 44px;
   }
+
   &__links_grid {
     display: flex;
     flex-wrap: wrap;
@@ -23,6 +24,7 @@
     list-style: none;
     text-decoration: none;
   }
+
   &__link {
     font-size: 12px;
     line-height: 150%;
@@ -30,19 +32,23 @@
     text-decoration: none;
     list-style: none;
   }
+
   &__items_grid {
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
   }
+
   &__img {
     width: 20px;
     height: 20px;
   }
+
   &__contact_grid {
     display: flex;
     column-gap: 10.5px;
   }
+
   &__design_grid {
     display: flex;
     column-gap: 8px;
@@ -50,10 +56,12 @@
     align-items: center;
     grid-column: 4;
   }
+
   &__des {
     font-size: 12px;
     line-height: 150%;
   }
+
   &__deslogo {
     width: 100px;
     height: 10px;
@@ -64,6 +72,7 @@
   .footer {
     grid-template-columns: 64px 1fr 52px 152px;
     gap: 0 20px;
+
     &__items_grid {
       column-gap: 12px;
     }
@@ -79,15 +88,18 @@
     &__logo_grid {
       width: 93px;
       height: 64px;
+
       &_wrapper {
         grid-row: span 2;
       }
     }
+
     &__links_grid {
       gap: 16px;
       grid-row: 3;
       grid-column: span 2;
     }
+
     &__items_grid {
       justify-content: center;
       grid-row: 1;
@@ -98,6 +110,7 @@
       grid-row: 2;
       grid-column: 2;
     }
+
     &__design_grid {
       grid-row: 4;
       grid-column: 1;
