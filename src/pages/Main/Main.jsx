@@ -7,7 +7,8 @@ import { Section } from "../../layout/Section/Section";
 import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
-import Cart from "../Cart/Cart";
+import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
+
 
 export const Main = () => {
   return (
@@ -33,6 +34,7 @@ export const Main = () => {
           <SectionLink to="/bought_before">Все покупки</SectionLink>
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
+        <BannerSpecialOffer />
       </Section>
     </>
   );

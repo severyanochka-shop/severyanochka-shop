@@ -12,18 +12,21 @@
     margin-top: 50px;
     margin-bottom: 120px;
   }
+
   &__titles {
     margin-left: 0;
   }
+
   &__subtitle {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
-    color: #ff6633;
+    color: #f63;
     text-align: left;
   }
+
   &__img {
     background-image: url("./assets/groupAround.svg");
     background-repeat: no-repeat;
@@ -31,6 +34,7 @@
     height: 380px;
     align-self: flex-end;
   }
+
   &__checkboxes {
     display: grid;
     grid-template-columns: 300px 400px 500px;
@@ -39,18 +43,21 @@
     align-items: start;
     margin-bottom: 240px;
   }
+
   &__texts {
     text-align: left;
     margin-left: 55px;
     position: relative;
   }
+
   &__check_img {
     position: absolute;
     left: -36px;
     display: block;
   }
+
   &__textOne {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -58,32 +65,36 @@
     color: #414141;
     margin-bottom: 10px;
   }
+
   &__textTwo {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
     color: #414141;
   }
+
   &__thanks {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 80px;
   }
+
   &__thanks_img {
     width: 127px;
     height: 103px;
   }
+
   &__thanks_triangle {
-    border-top: 40px solid #e5ffde;
     border-top: 40px solid #e5ffde;
     border-left: 40px solid transparent;
     margin-left: 40px;
   }
+
   &__thanks_text {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -111,12 +122,14 @@
       margin-bottom: 100px;
       margin-left: 40px;
     }
+
     &__titles {
       margin-left: 0;
       margin-bottom: 30px;
     }
+
     &__title {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 48px;
@@ -124,18 +137,21 @@
       color: #414141;
       text-align: left;
     }
+
     &__subtitle {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 18px;
       line-height: 150%;
-      color: #ff6633;
+      color: #f63;
       text-align: left;
     }
+
     &__subtitle_br {
       display: none;
     }
+
     &__img {
       background-image: url("./assets/groupAround.svg");
       background-repeat: no-repeat;
@@ -143,6 +159,7 @@
       height: 380px;
       align-self: center;
     }
+
     &__checkboxes {
       display: grid;
       grid-template-columns: 300px 450px;
@@ -151,22 +168,26 @@
       align-items: start;
       margin-bottom: 120px;
     }
+
     &__textsthree {
       grid-row: 2;
       grid-column: span 2;
     }
+
     &__texts {
       text-align: left;
       margin-left: 55px;
       position: relative;
     }
+
     &__check_img {
       position: absolute;
       left: -36px;
       display: block;
     }
+
     &__textOne {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -174,31 +195,36 @@
       color: #414141;
       margin-bottom: 10px;
     }
+
     &__textTwo {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 18px;
       line-height: 150%;
       color: #414141;
     }
+
     &__thanks {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 auto 60px;
     }
+
     &__thanks_img {
       width: 113px;
       height: 92px;
     }
+
     &__thanks_triangle {
       margin-left: 30px;
       width: 41px;
       height: 40px;
     }
+
     &__thanks_text {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 18px;
@@ -228,12 +254,14 @@
       margin-bottom: 100px;
       margin-left: 12px;
     }
+
     &__titles {
       margin-left: 0;
       margin-bottom: 30px;
     }
+
     &__title {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 36px;
@@ -241,20 +269,23 @@
       color: #414141;
       text-align: left;
     }
+
     &__subtitle {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
       line-height: 150%;
-      color: #ff6633;
+      color: #f63;
       text-align: left;
     }
+
     &__img {
       background-image: url("./assets/groupAround.svg");
       background-repeat: no-repeat;
       align-self: center;
     }
+
     &__checkboxes {
       display: grid;
       grid-template-columns: 300px;
@@ -263,24 +294,29 @@
       align-items: start;
       margin-bottom: 100px;
     }
+
     &__textssecond {
       grid-row: 2;
     }
+
     &__textsthree {
       grid-row: 3;
     }
+
     &__texts {
       text-align: left;
       margin-left: 55px;
       position: relative;
     }
+
     &__check_img {
       position: absolute;
       left: -36px;
       display: block;
     }
+
     &__textOne {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -288,14 +324,16 @@
       color: #414141;
       margin-bottom: 10px;
     }
+
     &__textTwo {
-      font-family: "Rubik";
+      font-family: Rubik;
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
       line-height: 150%;
       color: #414141;
     }
+
     &__thanks {
       display: flex;
       flex-direction: column;
@@ -304,17 +342,20 @@
       margin-bottom: 20px;
       margin: 0 auto 60px;
     }
+
     &__thanks_img {
       width: 68px;
       height: 56px;
       margin-bottom: 15px;
     }
+
     &__thanks_triangle {
       margin-left: 0;
       border-top: none;
       border-bottom: 40px solid #e5ffde; 
 	    border-left: 40px solid transparent;
     }
+
     &__thanks_text {
       font-style: normal;
       font-weight: 700;

@@ -11,6 +11,8 @@ import parusonmap from "./assets/parusonmap.svg";
 import rjabaonmap from "./assets/rjabaonmap.svg";
 import pelisonmap from "./assets/pelisonmap.svg";
 import { ContactItem } from "../ContactItem/ContactItem";
+import { YMaps } from "@pbe/react-yandex-maps";
+import { YandexMaps } from "../YandexMaps/YandexMaps";
 
 export const Contacts = () => {
   const [active, setActive] = useState("shel");
@@ -87,17 +89,9 @@ export const Contacts = () => {
           <ContactItem adress={"ул. Заводская 16"} phone={"+7 8214091101"} img={rjaba} />
           <ContactItem adress={"ул. Рабочая 1"} phone={"+7 8214091300"} img={los} />
         </div>
-        <div className={s.item4}>
-          <picture className={s.item4__picture}>
-            <source media="(max-width: 450px)" srcSet={minmap} />
-            <source media="(max-width: 1100px)" srcSet={map} />
-            <img src={map} alt="Карта" />
-          </picture>
-          <img className={s.item4__voshod} src={voshodonmap} alt="voshod" />
-          <img className={s.item4__parus} src={parusonmap} alt="parus" />
-          <img className={s.item4__rjaba} src={rjabaonmap} alt="parus" />
-          <img className={s.item4__pelis} src={pelisonmap} alt="parus" />
-        </div>
+        <YMaps>
+          <YandexMaps width="1208px" height="354px" />
+        </YMaps>
       </div>
     </div>
   );

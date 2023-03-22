@@ -1,10 +1,8 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  overflow: scroll;
   column-gap: 40px;
   margin-bottom: 120px;
-  scrollbar-width: none;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -18,6 +16,7 @@
   .wrapper {
     column-gap: 32px;
   }
+
   .title_wrapper {
     margin-bottom: 32px;
   }
@@ -29,6 +28,7 @@
     grid-template-rows: repeat(2, 1fr);
     gap: 16px;
   }
+
   .title_wrapper {
     margin-bottom: 16px;
   }
