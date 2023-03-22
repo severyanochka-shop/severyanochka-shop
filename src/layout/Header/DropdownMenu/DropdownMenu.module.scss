@@ -1,11 +1,10 @@
 .menu {
   position: absolute;
-  top: 0;
   z-index: 10;
   width: 100%;
   top: 72px;
-  background: #ffffff;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  box-shadow: 0 8px 16px rgb(0 0 0 / 15%);
   min-height: 248px;
   font-weight: 700;
   line-height: 150%;
@@ -73,15 +72,16 @@
     "freez-3 . . .";
   column-gap: 40px;
   row-gap: 24px;
-  padding: 40px 0px;
+  padding: 40px 0;
   list-style-type: none;
   text-align: left;
 
   &__link {
     color: #414141;
     text-decoration: none;
+
     &:hover {
-      color: #ff6633;
+      color: #f63;
     }
   }
 }
@@ -135,6 +135,7 @@
       "unproducts-12";
     padding: 32px;
   }
+
   .menu {
     width: 302px;
   }

@@ -6,6 +6,7 @@
     gap: 56px;
     position: relative;
   }
+
   &__flex {
     display: flex;
     justify-content: space-between;
@@ -24,13 +25,14 @@
   height: 24px;
   font-size: 12px;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
-  color: rgba(96, 96, 96, 1);
+  font-family: Rubik, sans-serif;
+  color: rgb(96 96 96 / 100%);
   background-color: #fbf8ec;
   cursor: pointer;
   margin-left: 35px;
+
   &:hover {
-    color: rgba(255, 102, 51, 1);
+    color: rgb(255 102 51 / 100%);
   }
 }
 
@@ -39,12 +41,13 @@
   height: 24px;
   font-size: 12px;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
-  color: rgba(96, 96, 96, 1);
+  font-family: Rubik, sans-serif;
+  color: rgb(96 96 96 / 100%);
   background-color: #fbf8ec;
   cursor: pointer;
+
   &:hover {
-    color: rgba(255, 102, 51, 1);
+    color: rgb(255 102 51 / 100%);
   }
 }
 
@@ -61,16 +64,17 @@
 }
 
 .item1:nth-child(3) {
-  box-shadow: 6px 8px 16px rgba(255, 102, 51, 0.2);
+  box-shadow: 6px 8px 16px rgb(255 102 51 / 20%);
 }
 
 .product {
   width: 449px;
   height: 114px;
-  background: #ffffff;
+  background: #fff;
   position: relative;
   border-radius: 4px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
+
   &:hover {
     background-color: #e4f4e1;
   }
@@ -80,7 +84,7 @@
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 8px;
   border-radius: 4px;
 }
@@ -101,16 +105,19 @@
   width: 255px;
   font-size: 16px;
   font-weight: 400;
-  color: rgba(143, 143, 143, 1);
+  color: rgb(143 143 143 / 100%);
   align-items: center;
+
   &__debit {
     margin-bottom: 22px;
     display: flex;
   }
+
   &__p {
     color: "rgba(65, 65, 65, 1)";
     padding-top: 4px;
   }
+
   &__text {
     width: 255px;
   }
@@ -124,7 +131,7 @@
 }
 
 .table {
-  border-top: 2px solid rgba(243, 242, 241, 1);
+  border-top: 2px solid rgb(243 242 241 / 100%);
   margin: 16px 0 8px;
   text-align: left;
   border-spacing: 16px;
@@ -132,11 +139,13 @@
   width: 255px;
 
   &__total {
-    border-top: 2px solid rgba(243, 242, 241, 1);
+    border-top: 2px solid rgb(243 242 241 / 100%);
   }
+
   &__tr {
     height: 24px;
   }
+
   &__td {
     text-align: right;
   }
@@ -164,8 +173,8 @@
 }
 
 .minprice {
-  background-color: rgba(216, 0, 0, 1);
-  color: rgba(255, 255, 255, 1);
+  background-color: rgb(216 0 0 / 100%);
+  color: rgb(255 255 255 / 100%);
   width: 214px;
   height: 24px;
   border-radius: 4px;
@@ -176,18 +185,19 @@
 }
 
 .basket_btn {
-  background-color: rgba(252, 213, 186, 1);
-  color: rgba(255, 102, 51, 1);
-  font-family: "Rubik", sans-serif;
+  background-color: rgb(252 213 186 / 100%);
+  color: rgb(255 102 51 / 100%);
+  font-family: Rubik, sans-serif;
   font-size: 24px;
   width: 255px;
   height: 60px;
   cursor: pointer;
   border-radius: 4px;
   transition: 0.2s;
+
   &:hover {
-    color: rgba(252, 213, 186, 1);
-    background-color: rgba(255, 102, 51, 1);
+    color: rgb(252 213 186 / 100%);
+    background-color: rgb(255 102 51 / 100%);
     transition: 0.2s;
   }
 }
@@ -196,6 +206,7 @@
   .basket__flex {
     flex-direction: column;
   }
+
   .item2 {
     width: 336px;
   }

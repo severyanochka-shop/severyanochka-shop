@@ -3,7 +3,7 @@ import s from "./BannerSpecialOffer.module.scss";
 import cardofloyalty from "./assets/cardofloyalty.png";
 import korzina from "./assets/korzina.svg";
 
-export const Banners = () => {
+export const BannerSpecialOffer = () => {
   return (
     <>
       <div className={s.bannercard}>

@@ -2,7 +2,7 @@
   width: 584px;
   height: 200px;
   background-color: #fcd5ba;
-  margin: 50px auto 50px;
+  margin: 50px auto;
   border-radius: 4px;
   display: flex;
   justify-content: space-around;
@@ -11,35 +11,39 @@
     padding: 30px 0 40px 40px;
     width: 300px;
   }
+
   &__title {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
     color: #414141;
   }
+
   &__subtitle {
-    font-family: "Rubik";
+    font-family: Rubik;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #414141;
   }
+
   &__img {
     width: 290px;
   }
 }
+
 .bannercard:hover {
-  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+  box-shadow: 4px 8px 16px rgb(255 102 51 / 20%);
 }
 
 .bannerkorzina {
   width: 584px;
   height: 200px;
   background-color: #e5ffde;
-  margin: 50px auto 50px;
+  margin: 50px auto;
   border-radius: 4px;
   display: flex;
   justify-content: space-around;
@@ -50,8 +54,9 @@
     margin: 0 auto;
   }
 }
+
 .bannerkorzina:hover {
-  box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+  box-shadow: 4px 8px 16px rgb(112 192 91 / 20%);
 }
 
 @media (max-width: 592px) {
@@ -67,6 +72,7 @@
     width: 310px;
   }
 }
+
 .bannerkorzina {
     width: 320px;
     height: auto;

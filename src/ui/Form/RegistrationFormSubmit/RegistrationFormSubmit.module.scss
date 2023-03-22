@@ -1,14 +1,13 @@
 .wrapper {
-
   margin: 0 auto;
   display: block;
   position: relative;
   width: 420px;
   height: 481px;
-  box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
+  box-shadow: 8px 16px 32px rgb(255 102 51 / 20%);
   border-radius: 4px;
   background-color: #fff;
-  padding: 72px 50px 48px 50px;
+  padding: 72px 50px 48px;
   color: #414141;
 }
 
@@ -43,8 +42,9 @@
 
   &__again {
     text-decoration: underline;
-    color: #ff6633;
+    color: #f63;
     margin-bottom: 32px;
+
     &:hover {
       cursor: pointer;
     }
@@ -60,6 +60,7 @@
   align-items: center;
   padding: 8px 8px 8px 12.5px;
   color: #606060;
+
   &:hover {
     cursor: pointer;
   }
@@ -68,6 +69,7 @@
 .backWrapper__arrow {
   display: block;
 }
+
 .messageError {
   position: absolute;
   left: 27%;
@@ -80,6 +82,7 @@
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+
   &_text {
     text-align: center;
     color: #f2f2f2;

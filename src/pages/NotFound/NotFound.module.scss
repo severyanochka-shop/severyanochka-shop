@@ -1,5 +1,5 @@
 .notfound {
-  padding: 40px 0;
+  padding: auto 0;
   display: flex;
   align-items: center;
   height: 100%;
@@ -30,54 +30,59 @@
 }
 
 //Rotating animation
-@-webkit-keyframes rotating /* Safari and Chrome */ {
+@keyframes rotating /* Safari and Chrome */ {
   from {
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   to {
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotating {
   from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+
 .rotating {
-  -webkit-animation: rotating 20s linear infinite;
-  -moz-animation: rotating 20s linear infinite;
-  -ms-animation: rotating 20s linear infinite;
-  -o-animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
   animation: rotating 20s linear infinite;
 }
 
 .turbo {
-  -webkit-animation: rotating 5s linear infinite;
-  -moz-animation: rotating 5s linear infinite;
-  -ms-animation: rotating 5s linear infinite;
-  -o-animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
   animation: rotating 5s linear infinite;
 }
+
 .nitro {
-  -webkit-animation: rotating 0.1s linear infinite;
-  -moz-animation: rotating 0.1s linear infinite;
-  -ms-animation: rotating 0.1s linear infinite;
-  -o-animation: rotating 0.1s linear infinite;
+  animation: rotating 0.1s linear infinite;
+  animation: rotating 0.1s linear infinite;
+  animation: rotating 0.1s linear infinite;
+  animation: rotating 0.1s linear infinite;
   animation: rotating 0.1s linear infinite;
 }
 
@@ -87,11 +92,13 @@
     height: 350px;
   }
 }
+
 @media (max-width: 940px) {
   .img {
     width: 250px;
     height: 250px;
   }
+
   .title {
     font-size: 28px;
   }
@@ -102,10 +109,12 @@
     flex-direction: column;
     gap: 40px;
   }
+
   .title {
     font-size: 24px;
     text-align: center;
   }
+
   .btn {
     width: 100%;
   }

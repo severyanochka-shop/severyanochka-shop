@@ -4,7 +4,7 @@
   column-gap: 17.5px;
   height: 40px;
   padding: 8px 16px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 5px;
   font-size: 14px;
   line-height: 24px;
@@ -18,7 +18,7 @@
 .gray {
   background: #f4f6fb;
   color: #151515;
-  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 8px 16px rgb(0 0 0 / 15%));
 }
 
 .img {
