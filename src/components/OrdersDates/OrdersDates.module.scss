@@ -38,6 +38,8 @@
     padding: 4px 8px;
     background: #f3f2f1;
     border-radius: 4px;
+        text-align: center;
+        align-items: center;
   }
 
   &__statusNo {
@@ -88,8 +90,9 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #fff;
-    background: #f63;
+    color: #ffffff;
+    background-color: #ff6633;
+
     border-radius: 4px;
   }
 
