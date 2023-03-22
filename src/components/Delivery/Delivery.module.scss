@@ -26,33 +26,15 @@
   &__select {
     width: 245px;
   }
-  &__when {
-    &__time {
-      cursor: pointer;
-      width: 169px;
-      height: 40px;
-      border-radius: 4px;
-      background-color: rgba(243, 242, 241, 1);
-      color: rgba(96, 96, 96, 1);
-      transition: 0.2s;
-      font-family: "Rubik", sans-serif;
-      font-size: 16px;
-      &:hover {
-        background-color: rgba(112, 192, 91, 1);
-        color: rgba(255, 255, 255, 1);
-        transition: 0.2s;
-      }
-      &:disabled {
-        background-color: white;
-        color: rgba(191, 191, 191, 1);
-      }
-    }
-  }
 }
 
+.time {
+  display: flex;
+  gap: 8px;
+}
+.item1__when__time,
 .item1_time {
   cursor: pointer;
-  width: 77.67px;
   height: 40px;
   border-radius: 4px;
   background-color: rgba(243, 242, 241, 1);
@@ -65,11 +47,13 @@
     color: rgba(255, 255, 255, 1);
     transition: 0.2s;
   }
+  &:disabled {
+    background-color: white;
+    color: rgba(191, 191, 191, 1);
+  }
 }
-
-.time {
-  display: flex;
-  gap: 8px;
+.item1__when__time {
+  width: 169px;
 }
 
 .time_min {
@@ -80,52 +64,40 @@
   width: 249px;
   display: none;
 }
+.item1_time {
+  width: 77.67px;
+}
 
 .wherewraper {
   display: flex;
   gap: 40px;
 }
 
+.input__street,
+.input__house,
+.input__apart,
+.input__extra,
+.enter__tel {
+  height: 40px;
+  border: 1px solid rgba(191, 191, 191, 1);
+  color: rgba(65, 65, 65, 1);
+  padding: 8px 16px;
+  border-radius: 4px;
+  outline: none;
+}
+
 .input {
   &__street {
     width: 243px;
-    height: 40px;
-    border: 1px solid rgba(191, 191, 191, 1);
-    color: rgba(65, 65, 65, 1);
-    padding: 8px 16px;
-    margin-top: 2px;
-    border-radius: 4px;
-    outline: none;
   }
   &__house {
     width: 53px;
-    height: 40px;
-    border: 1px solid rgba(191, 191, 191, 1);
-    color: rgba(65, 65, 65, 1);
-    padding: 8px 16px;
-    margin-top: 2px;
-    border-radius: 4px;
-    outline: none;
   }
   &__apart {
     width: 74px;
-    height: 40px;
-    border: 1px solid rgba(191, 191, 191, 1);
-    color: rgba(65, 65, 65, 1);
-    padding: 8px 16px;
-    margin-top: 2px;
-    border-radius: 4px;
-    outline: none;
   }
   &__extra {
     width: 121px;
-    height: 40px;
-    border: 1px solid rgba(191, 191, 191, 1);
-    color: rgba(65, 65, 65, 1);
-    padding: 8px 16px;
-    margin-top: 2px;
-    border-radius: 4px;
-    outline: none;
   }
 }
 
@@ -154,13 +126,7 @@
 }
 
 .enter__tel {
-  outline: none;
-  height: 40px;
   width: 168px;
-  border: 1px solid rgba(191, 191, 191, 1);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
 }
 
 .enter_btn {
@@ -180,13 +146,10 @@
   }
 }
 
-.email_btn {
-  margin-top: 8px;
+.email_btn,
+.calc__btn {
   cursor: pointer;
   border-radius: 4px;
-  width: 152px;
-  height: 24px;
-  font-size: 12px;
   transition: 0.2s;
   font-family: "Rubik", sans-serif;
   background-color: rgba(112, 192, 91, 1);
@@ -196,6 +159,13 @@
     color: rgba(112, 192, 91, 1);
     transition: 0.2s;
   }
+}
+
+.email_btn {
+  margin-top: 8px;
+  width: 152px;
+  height: 24px;
+  font-size: 12px;
 }
 
 .calculator {
@@ -208,16 +178,6 @@
   width: 272px;
   height: 40px;
   font-size: 16px;
-  border-radius: 4px;
-  transition: 0.2s;
-  background-color: rgba(112, 192, 91, 1);
-
-  color: rgba(255, 255, 255, 1);
-  &:hover {
-    transition: 0.2s;
-    color: rgba(112, 192, 91, 1);
-    background-color: rgba(255, 255, 255, 1);
-  }
 }
 
 @media (max-width: 1250px) {
@@ -266,7 +226,6 @@
   .email_btn {
     width: 101px;
   }
-
   .calc__btn {
     width: 255px;
   }
@@ -277,7 +236,6 @@
     flex-direction: column;
     gap: 32px;
   }
-
   .item1 {
     width: 336px;
   }
@@ -299,15 +257,12 @@
   .date__select,
   .datewraper,
   .time_min,
-  .enter__tel {
+  .enter__tel,
+  .item1__label {
     width: 100%;
   }
   .label__street {
     height: 64px;
-  }
-  .item1__label {
-    height: 64px;
-    width: 100%;
   }
   .label__house,
   .input__house {
@@ -324,7 +279,8 @@
 
   .label__house,
   .label__extra,
-  .label__apart {
+  .label__apart,
+  .item1__label {
     height: 64px;
   }
   .time_min {

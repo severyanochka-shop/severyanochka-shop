@@ -2,8 +2,6 @@ import React from "react";
 import { Select } from "../../ui/Select/Select";
 import s from "./Delivery.module.scss";
 import { Calculator } from "../Basket/Calculator/Calculator";
-// import { Button } from "../../ui/Button/Button";
-// import { ControlledTextfield } from "../../ui/Form/ControlledInput/ControlledTextfield";
 
 export const Delivery = (props) => {
   // const { } = props;
@@ -39,11 +37,11 @@ export const Delivery = (props) => {
           <div className={s.item1__when}>
             <h4 className={s.item1__subtitle}>Когда</h4>
             <div className={s.wherewraper}>
-              <label htmlFor="" className={s.datewraper}>
+              <label className={s.datewraper}>
                 Дата
                 <Select className={s.date__select} />
               </label>
-              <div className={s.time_min}>
+              <label className={s.datebox}>
                 Время
                 <div className={s.time}>
                   <button className={s.item1__when__time}>8:00-14:00</button>
@@ -63,7 +61,7 @@ export const Delivery = (props) => {
                   <button className={s.item1_time}>16-18</button>
                   <button className={s.item1_time}>18-20</button>
                 </div>
-              </div>
+              </label>
             </div>
           </div>
           <div className={s.item__enter}>
