@@ -6,12 +6,12 @@ import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
-import { Category } from "../../components/Category/Category";
+
 
 export const Main = () => {
   return (
     <>
-      {/* <BannerPromo />
+      <BannerPromo />
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Акции</SectionTitle>
@@ -33,8 +33,7 @@ export const Main = () => {
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
         <BannerSpecialOffer />
-      </Section> */}
-      <Category />
+      </Section>
     </>
   );
 };

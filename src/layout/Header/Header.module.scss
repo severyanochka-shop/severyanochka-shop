@@ -22,14 +22,18 @@
   height: 40px;
 }
 
+.large {
+  width: 154px;
+}
+
 .button__text {
-  margin: 0 20px;
+  margin: 0 23px;
   display: block;
 }
 
 .logo {
   display: block;
-  margin: 0 28px 20px 0;
+  margin: 0 24px 20px 0;
 }
 
 @media (max-width: 1280px) {
@@ -38,9 +42,12 @@
   }
 }
 
-@media (max-width: 1009px) {
+@media (max-width: 1076px) {
   .button__text {
     display: none;
+  }
+  .logo {
+    margin: 0 0 16px 0;
   }
 
   .button__wrapper {
