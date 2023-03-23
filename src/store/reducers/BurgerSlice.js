@@ -4,7 +4,7 @@ const initialState = {
   burgerHide: false,
 };
 
-const burgerReducer = createSlice({
+export const burgerReducer = createSlice({
   name: "burger",
   initialState,
 
@@ -15,5 +15,5 @@ const burgerReducer = createSlice({
   },
 });
 
-export const { getBurger } = burgerReducer.actions;
+// export const { getBurger } = burgerReducer.actions;
 export default burgerReducer.reducer; 

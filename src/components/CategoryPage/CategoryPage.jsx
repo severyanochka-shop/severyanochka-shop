@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Container } from "../../layout/Container/Container";
 import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 import { Button } from "../../ui/Button/Button";
@@ -7,7 +6,8 @@ import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
 import cl from "./CategoryPage.module.scss";
 import { useDispatch } from "react-redux";
-import { getBurger } from "../../store/reducers/BurgerSlice";
+import { burgerReducer } from "../../store/reducers/BurgerSlice";
+import { useSelector } from "react-redux";
 
 export const CategoryPage = ({
   deleteFilters,
@@ -20,10 +20,18 @@ export const CategoryPage = ({
   let final_value = 100;
   let filter_counter = 6;
 
+  const { getBurger } = burgerReducer.actions;
+  const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
+
   const dispatch = useDispatch();
+
+  burgerHide
+    ? document.body.setAttribute("style", "overflow: hidden; position: fixed;")
+    : document.body.setAttribute("style", "overflow: visible; position: static;");
 
   return (
     <Container>
+      <div className={burgerHide ? cl.popUp : ""} onClick={() => dispatch(getBurger())}></div>
       <div className={cl.category_page}>
         <div className={cl.filter}>
           <Button

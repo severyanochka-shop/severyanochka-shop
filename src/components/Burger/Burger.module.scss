@@ -7,7 +7,7 @@
   background-color: #fff;
   padding: 20px 20px 0 20px;
   display: none;
-  z-index: 1;
+  z-index: 2;
   transition: 0.3s;
 
   &_hide {
@@ -119,11 +119,11 @@ text_filter {
   margin-bottom: 50px;
 }
 
-ul {
+.list{
   list-style: none;
 }
 
-li {
+.list_item{
   color: #414141;
   line-height: 24px;
   margin-bottom: 30px;
@@ -145,6 +145,8 @@ li {
 .btn_show {
   margin-top: 40px;
 }
+
+
 
 @media (max-width: 913px) {
   .wrapper {
