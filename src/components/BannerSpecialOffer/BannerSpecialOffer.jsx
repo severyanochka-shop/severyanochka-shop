@@ -13,7 +13,7 @@ export const BannerSpecialOffer = () => {
             И получайте бонусы при покупке в магазинах и на сайте
           </p>
         </div>
-        <img src={cardofloyalty} alt="card" className={s.bannercard__img} />
+        {/* <img src={cardofloyalty} alt="card" className={s.bannercard__img} /> */}
       </div>
       <div className={s.bannerkorzina}>
         <div className={s.bannercard__texts}>
