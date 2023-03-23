@@ -4,70 +4,13 @@ import emptystar from "../Images/star.svg";
 import star from "../Images/starfull.svg";
 
 export const Stars = ({ type }) => {
-  const scoreFive = (
+  return (
     <div className={s.score_stars}>
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
+      {type >= 1 ? <img src={star} alt="★" /> : <img src={emptystar} alt="☆" />}
+      {type >= 2 ? <img src={star} alt="★" /> : <img src={emptystar} alt="☆" />}
+      {type >= 3 ? <img src={star} alt="★" /> : <img src={emptystar} alt="☆" />}
+      {type >= 4 ? <img src={star} alt="★" /> : <img src={emptystar} alt="☆" />}
+      {type >= 5 ? <img src={star} alt="★" /> : <img src={emptystar} alt="☆" />}
     </div>
   );
-
-  const scoreFour = (
-    <div className={s.score_stars}>
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={emptystar} alt="☆" />
-    </div>
-  );
-
-  const scoreThree = (
-    <div className={s.score_stars}>
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-    </div>
-  );
-
-  const scoreTwo = (
-    <div className={s.score_stars}>
-      <img src={star} alt="★" />
-      <img src={star} alt="★" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-    </div>
-  );
-
-  const scoreOne = (
-    <div className={s.score_stars}>
-      <img src={star} alt="★" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-    </div>
-  );
-
-  const scoreZero = (
-    <div className={s.score_stars}>
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-      <img src={emptystar} alt="☆" />
-    </div>
-  );
-
-  if (type === "1") return scoreOne;
-  if (type === "2") return scoreTwo;
-  if (type === "3") return scoreThree;
-  if (type === "4") return scoreFour;
-  if (type === "5") return scoreFive;
-  if (type === "0") return scoreZero;
 };
