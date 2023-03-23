@@ -15,11 +15,11 @@ import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
 import { Textfield } from "../../ui/Textfield/Textfield";
+import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
   return (
     <>
-      {/* <DropdownMenu /> */}
       <div className={s.header}>
         <Container>
           <div className={s.nav}>
@@ -31,7 +31,7 @@ export const Header = () => {
               </picture>
             </Link>
             <Link to="/category">
-              <HeaderButton background="green">
+              <HeaderButton background="green" onMouseEnter>
                 <div className={s.button__wrapper}>
                   <img src={menu} alt="|||" />
                   <span className={s.button__text}>Каталог</span>
@@ -49,7 +49,6 @@ export const Header = () => {
               <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} />
             </Link>
             <Link to="/login">
-              {/* <HeaderButton background="orange" size="large"> */}
               <HeaderButton background="orange">
                 <div className={`${s.button__wrapper} ${s.large}`}>
                   <span className={s.button__text}>Войти</span>
@@ -60,6 +59,7 @@ export const Header = () => {
           </div>
         </Container>
       </div>
+      <DropdownMenu />
     </>
   );
 };
