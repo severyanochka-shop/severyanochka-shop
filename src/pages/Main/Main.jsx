@@ -11,7 +11,7 @@ export const Main = () => {
   return (
     <>
       <BannerPromo />
-      {/* <Section>
+      <Section>
         <SectionTitleWrapper>
           <SectionTitle>Акции</SectionTitle>
           <SectionLink to="/stocks">Все акции</SectionLink>
@@ -31,8 +31,10 @@ export const Main = () => {
           <SectionLink to="/bought_before">Все покупки</SectionLink>
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
-      </Section> */}
-      <BannerSpecialOffer />
+        <BannerSpecialOffer />
+      </Section>{" "}
+      */}
+      <Category />
     </>
   );
 };

@@ -1,0 +1,48 @@
+  .about__texts {
+    text-align: left;
+    margin-left: 40px;
+    // margin-right: 50px;
+    position: relative;
+  }
+  .about__check_img {
+    position: absolute;
+    left: -39px;
+    display: block;
+  }
+  .about__textOne {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #414141;
+    margin-bottom: 15px;
+  }
+  .about__textTwo {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #414141;
+  }
+
+  @media (max-width: 1300px) {
+    .about__textOne {
+      font-size: 14px;
+      word-wrap: break-word;
+    }
+    .about__textTwo {
+      font-size: 18px;
+      word-wrap: break-word;
+    }
+}
+
+@media (max-width: 760px) {
+    .about__textOne {
+      font-size: 14px;
+    }
+    .about__textTwo {
+      font-size: 14px;
+    }
+}

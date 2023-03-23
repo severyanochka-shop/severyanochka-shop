@@ -15,11 +15,11 @@ export const CategoryPage = ({
   funcApply,
   inStock,
   subcategory,
+  
 }) => {
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
-
   const dispatch = useDispatch();
 
   return (
@@ -37,8 +37,8 @@ export const CategoryPage = ({
           <div className={cl.filter_none}>
             <InputRange />
             <div className={cl.list_block}>
-              <ul>
-                <li>{subcategory}</li>
+              <ul className={cl.ul_subcategory}>
+                <li className={cl.li_subcategory}>{subcategory}</li>
               </ul>
             </div>
             <div className={cl.stock}>

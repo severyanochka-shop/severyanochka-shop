@@ -10,7 +10,7 @@
   line-height: 150%;
   height: 40px;
   min-width: 40px;
-  margin: 0 0 16px 12px;
+  margin: 0 0 16px 13px;
 
   //Background color
   &__orange {
@@ -24,9 +24,19 @@
   }
 }
 
+@media (max-width: 1076px) {
+  .button__large {
+    width: 40px;
+  }
+
+  .button__wrapper {
+    width: 40px;
+  }
+}
+
 @media (max-width: 769px) {
   .button {
-    margin-left: 8px;
+    margin-left: 0px;
   }
 }
 

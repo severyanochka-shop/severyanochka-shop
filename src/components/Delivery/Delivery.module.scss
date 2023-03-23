@@ -6,7 +6,6 @@
     gap: 40px;
   }
 }
-
 .item1 {
   display: flex;
   flex-direction: column;
@@ -14,6 +13,7 @@
   color: rgba(143, 143, 143, 1);
   font-size: 16px;
   width: 896px;
+  margin-top: 27px;
   &__subtitle {
     padding-top: 9px;
     color: rgba(65, 65, 65, 1);
@@ -21,14 +21,25 @@
     font-size: 36px;
     font-weight: 700;
     text-align: left;
-    margin-bottom: 24px;
+    margin-bottom: 27px;
   }
   &__select {
     width: 245px;
+    height: 40px;
   }
 }
 
+.item1__subtitle_first {
+  padding-top: 9px;
+  color: rgba(65, 65, 65, 1);
+  height: 54px;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: left;
+}
+
 .time {
+  padding-top: 4px;
   display: flex;
   gap: 8px;
 }
@@ -101,24 +112,27 @@
   }
 }
 
-.label__street {
-  width: 243px;
-  height: 24px;
-}
-
-.label__house {
-  width: 56px;
-  height: 24px;
-}
-
-.label__apart {
-  width: 74px;
-  height: 24px;
-}
-
+.label__street,
+.label__house,
+.label__apart,
 .label__extra {
-  width: 121px;
-  height: 24px;
+  padding-top: 4px;
+  height: 56px;
+}
+
+.label {
+  &__street {
+    width: 243px;
+  }
+  &__house {
+    width: 53px;
+  }
+  &__apart {
+    width: 74px;
+  }
+  &__extra {
+    width: 121px;
+  }
 }
 
 .date__select {
@@ -191,7 +205,6 @@
   .item1 {
     width: 449px;
   }
-
   .item1__select {
     width: 174px;
   }
@@ -243,6 +256,9 @@
     padding-top: 0;
     margin-bottom: 16px;
   }
+  .item1__subtitle_first {
+    padding-top: 0;
+  }
   .calc__btn {
     width: 336px;
     margin-bottom: 40px;
@@ -251,6 +267,11 @@
     width: 100%;
     gap: 16px 16px;
   }
+
+  .datewraper {
+    margin-bottom: 16px;
+  }
+
   .item1__select,
   .input__street,
   .label__street,
@@ -261,28 +282,22 @@
   .item1__label {
     width: 100%;
   }
-  .label__street {
-    height: 64px;
-  }
+
   .label__house,
   .input__house {
     width: 65px;
   }
+
   .label__apart,
   .input__apart {
     width: 77px;
   }
+
   .label__extra,
   .input__extra {
     width: 162px;
   }
 
-  .label__house,
-  .label__extra,
-  .label__apart,
-  .item1__label {
-    height: 64px;
-  }
   .time_min {
     height: 110px;
   }

@@ -16,7 +16,6 @@ export const Calculator = (props) => {
 
   let numOfProducts = set.lenght ? set.lenght : 0;
   let end = "ов";
-
   // редактирует окончание в зависимости от кол-ва товаров
   if (numOfProducts) {
     if (numOfProducts === 1) end = "";

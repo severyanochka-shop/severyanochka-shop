@@ -29,7 +29,7 @@
 
 @media (max-width: 769px) {
   .category {
-    max-width: 736px;
+    width: 736px;
   }
   .category > :first-child {
     width: 448px;
@@ -59,7 +59,7 @@
   }
 }
 
-@media (max-width: 429px) {
+@media (max-width: 541px) {
   .category {
     gap: 16px;
     max-width: 336px;
