@@ -1,14 +1,12 @@
 import React from "react";
 import { BannerPromo } from "../../components/BannerPromo/BannerPromo";
-import { CardProductBasket } from "../../components/CardProductBasket/CardProductBasket";
-import { CartFlex } from "../../layout/CartFlex/CartFlex";
 import { FlexWrapper } from "../../layout/FlexWrapper/FlexWrapper";
 import { Section } from "../../layout/Section/Section";
 import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
-
+import { Category } from "../../components/Category/Category";
 
 export const Main = () => {
   return (

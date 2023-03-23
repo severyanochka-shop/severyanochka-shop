@@ -1,9 +1,16 @@
 .discount {
+  display: flex;
+  align-items: center;
   padding: 3px 8px;
+  width: max-content;
   font-size: 12px;
   line-height: 150%;
   background: #fff;
   border-radius: 4px;
+}
+
+.text {
+  margin: 0;
 }
 
 .small {

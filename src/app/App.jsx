@@ -21,6 +21,7 @@ import { ScrollToTop } from "./ScrollToTop";
 import { StocksAsync as Stocks } from "../pages/Stocks/Stcoks.async";
 import { NewProductsAsync as NewProducts } from "../pages/NewProducts/NewProducts.async";
 import { BoughtBeforeAsync as BoughtBefore } from "../pages/BoughtBefore/BoughtBefore.async";
+import { ProductAsync as Product } from "../pages/Product/Product.async";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -97,15 +98,31 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              element: (
-                <React.Suspense>
-                  <CategoryCatalog />
-                </React.Suspense>
-              ),
               loader: ({ params }) => params.category,
               handle: {
-                crumb: (numb) => <Link to="/category/:category">{categories[numb - 1].name}</Link>,
+                crumb: (numb) => <Link to={`/category/${numb}`}>{categories[numb - 1].name}</Link>,
               },
+              children: [
+                {
+                  index: true,
+                  element: (
+                    <React.Suspense>
+                      <CategoryCatalog />
+                    </React.Suspense>
+                  ),
+                },
+                {
+                  path: "/category/:category/cart",
+                  element: (
+                    <React.Suspense>
+                      <Product />
+                    </React.Suspense>
+                  ),
+                  handle: {
+                    crumb: () => <Link to="/category/:category/cart">Товар</Link>,
+                  },
+                },
+              ],
             },
           ],
         },

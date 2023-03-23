@@ -11,7 +11,7 @@ export const Category = () => {
     <Container>
       <div className={s.category}>
         {categories.map((el) => (
-          <Link key={el.id} to={`${el.order}`}>
+          <Link key={el.id} to={`${el.order}`} className={s.link}>
             <CategoryItem name={el.name} image={el.image} />
           </Link>
         ))}
