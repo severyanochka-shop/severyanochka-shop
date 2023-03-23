@@ -21,12 +21,12 @@ export const Footer = () => {
       name: "Контакты",
     },
     {
-      to: "/articles",
-      name: "Статьи",
-    },
-    {
       to: "/vacancies",
       name: "Вакансии",
+    },
+    {
+      to: "/articles",
+      name: "Статьи",
     },
     {
       to: "/policy",
