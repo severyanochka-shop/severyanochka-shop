@@ -49,8 +49,9 @@ export const Header = () => {
               <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} />
             </Link>
             <Link to="/login">
+              {/* <HeaderButton background="orange" size="large"> */}
               <HeaderButton background="orange">
-                <div className={s.button__wrapper}>
+                <div className={`${s.button__wrapper} ${s.large}`}>
                   <span className={s.button__text}>Войти</span>
                   <img src={login} alt="->" />
                 </div>
