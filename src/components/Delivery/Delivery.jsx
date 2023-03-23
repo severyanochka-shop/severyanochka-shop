@@ -3,36 +3,33 @@ import { Select } from "../../ui/Select/Select";
 import s from "./Delivery.module.scss";
 import { Calculator } from "../Basket/Calculator/Calculator";
 
-export const Delivery = (props) => {
-  // const { } = props;
+export const Delivery = () => {
   return (
     <div className={s.delivery}>
+      <h4 className={s.item1__subtitle_first}>Куда</h4>
       <div className={s.delivery__flex}>
         <div className={s.item1}>
-          <div className={s.item1__where}>
-            <h4 className={s.item1__subtitle}>Куда</h4>
-            <div className={s.wherewraper}>
-              <label htmlFor="" className={s.item1__label}>
-                Населенный пункт
-                <Select className={s.item1__select} />
-              </label>
-              <label className={s.label__street} htmlFor="street">
-                Улица
-                <input className={s.input__street} type="text" name="street" id="" />
-              </label>
-              <label className={s.label__house} htmlFor="house">
-                Дом
-                <input className={s.input__house} type="text" name="house" id="" />
-              </label>
-              <label className={s.label__apart} htmlFor="apart">
-                Квартира
-                <input className={s.input__apart} type="text" name="apart" id="" />
-              </label>
-              <label className={s.label__extra} htmlFor="extra">
-                Дополнительно
-                <input className={s.input__extra} type="text" name="extra" id="" />
-              </label>
-            </div>
+          <div className={s.wherewraper}>
+            <label htmlFor="" className={s.item1__label}>
+              Населенный пункт
+              <Select className={s.item1__select} />
+            </label>
+            <label className={s.label__street} htmlFor="street">
+              Улица
+              <input className={s.input__street} type="text" name="street" id="" />
+            </label>
+            <label className={s.label__house} htmlFor="house">
+              Дом
+              <input className={s.input__house} type="text" name="house" id="" />
+            </label>
+            <label className={s.label__apart} htmlFor="apart">
+              Квартира
+              <input className={s.input__apart} type="text" name="apart" id="" />
+            </label>
+            <label className={s.label__extra} htmlFor="extra">
+              Дополнительно
+              <input className={s.input__extra} type="text" name="extra" id="" />
+            </label>
           </div>
           <div className={s.item1__when}>
             <h4 className={s.item1__subtitle}>Когда</h4>
