@@ -11,13 +11,6 @@ export const Vacancies = () => {
       <Vacancy />
       <Vacancy />
       <Vacancy />
-      {/* {vacancyset.lenght ? (
-          vacancyset.map((item) => {
-            return <Vacancy key={item.id} {...item} />;
-          })
-        ) : (
-          <div className={s.item_empty}>Свободных вакансий нет</div>
-        )} */}
     </div>
   );
 };

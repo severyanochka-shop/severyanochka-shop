@@ -6,7 +6,7 @@ import Ok from "./assets/Ok.svg";
 import VK from "./assets/VK.svg";
 import Tel from "./assets/Tel.svg";
 import Zasov from "./assets/Zasov.svg";
-import logosev from "./assets/logosev.png";
+import logo from "./assets/logo.svg";
 import { Container } from "../Container/Container";
 import { Link } from "react-router-dom";
 
@@ -21,25 +21,41 @@ export const Footer = () => {
       name: "Контакты",
     },
     {
-      to: "/articles",
-      name: "Статьи",
-    },
-    {
       to: "/vacancies",
       name: "Вакансии",
+    },
+    {
+      to: "/articles",
+      name: "Статьи",
     },
     {
       to: "/policy",
       name: "Политика обработки персональных данных",
     },
   ];
-  let src = [Instagram, VK, Facebook, Ok];
+  let src = [
+    {
+      img: Instagram,
+      to: 'https://www.instagram.com/saintcode_/'
+    },
+    {
+      img: VK,
+      to: 'https://vk.com/public191201156',
+    }, 
+    {
+      img: Facebook,
+      to: 'https://t.me/scbootcamp'
+    },
+    {
+      img: Ok,
+      to: 'https://www.youtube.com/channel/UCv4mpiZ_MRJaotjfkjfscJw'
+  }];
   return (
     <div className={s.wrapper}>
       <Container>
         <div className={s.footer}>
           <Link className={s.footer__logo_grid_wrapper} to="/">
-            <img src={logosev} className={s.footer__logo_grid} alt="logo" />
+            <img src={logo} className={s.footer__logo_grid} alt="logo" />
           </Link>
           <ul className={s.footer__links_grid}>
             {data.map((el, ind) => (
@@ -52,13 +68,13 @@ export const Footer = () => {
           </ul>
           <div className={s.footer__items_grid}>
             {src.map((el, ind) => (
-              <a className={s.footer__item} key={ind}>
-                <img src={el} alt="logo" className={s.footer__img} />
+              <a className={s.footer__item} key={ind} href={el.to}>
+                <img src={el.img} alt="logo" className={s.footer__img} />
               </a>
             ))}
           </div>
           <div className={s.footer__contact_grid}>
-            <a className={s.footer__tel} href="">
+            <a className={s.footer__tel} href="tel:88007773333">
               <img src={Tel} alt="logo" />
             </a>
             <p className={s.footer__numbers}>8 800 777 33 33</p>
