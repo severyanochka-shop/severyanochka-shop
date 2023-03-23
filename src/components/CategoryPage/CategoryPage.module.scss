@@ -1,8 +1,8 @@
-h2 {
+.category_title {
     font-size: 48px;
     font-weight: 700;
     line-height: 72px;
-    margin-bottom: 60px;
+    margin: 27px 0 60px;
 }
 
 .input {
@@ -97,11 +97,11 @@ margin-bottom: 40px;
   margin-bottom: 50px;
 }
 
-ul {
+.ul_subcategory {
   list-style: none;
 }
 
-li {
+.li_subcategory {
   color: #414141;
   line-height: 24px;
   margin-bottom: 30px;
