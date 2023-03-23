@@ -63,7 +63,6 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 10px 0;
 }
 
 .price {
@@ -186,10 +185,12 @@
 @media (max-width: 440px) {
   .wrapper {
     max-width: 336px;
+    height: 146px;
   }
 
   .card_basket {
     display: block;
+    height: 146px;
   }
 
   .product_image {

@@ -1,13 +1,15 @@
 import React from "react";
+import { useState } from "react";
 import { Container } from "../../layout/Container/Container";
 import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 import { Button } from "../../ui/Button/Button";
 import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
 import cl from "./CategoryPage.module.scss";
+import { useDispatch } from "react-redux";
+import { getBurger } from "../../store/reducers/BurgerSlice";
 
 export const CategoryPage = ({
-  hideFilter,
   deleteFilters,
   deletePriceRange,
   funcApply,
@@ -17,11 +19,19 @@ export const CategoryPage = ({
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
+
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <div className={cl.category_page}>
         <div className={cl.filter}>
-          <Button medium background="gray" className={cl.button_filter} onClick={hideFilter}>
+          <Button
+            medium
+            background="gray"
+            className={cl.button_filter}
+            handler={() => dispatch(getBurger())}
+          >
             <p className={cl.text_filter}>Фильтр</p>
           </Button>
           <div className={cl.filter_none}>

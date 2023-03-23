@@ -10,6 +10,8 @@ export const Calculator = (props) => {
     minOrderSum = 1000,
     bonusPersent = 10,
     set = [],
+    btn = "Оформить заказ",
+    display = "block",
   } = props;
 
   let numOfProducts = set.lenght ? set.lenght : 0;
@@ -45,7 +47,7 @@ export const Calculator = (props) => {
       </div>
       <p className={s.item2__text}>На карте накоплено {accumPoints ? accumPoints : 0} ₽ </p>
       <div className={s.table}>
-        <p>
+        <p className={s.table__goods}>
           {numOfProducts ? numOfProducts : "нет"} товар{end}
         </p>
         <p className={s.table__cost}>{finalCost} ₽</p>
@@ -63,9 +65,11 @@ export const Calculator = (props) => {
           </strong>{" "}
         </p>
       </div>
-      <p className={s.minprice}>Минимальная сумма заказа {minOrderSum} ₽</p>
+      <p style={{ display: display }} className={s.minprice}>
+        Минимальная сумма заказа {minOrderSum} ₽
+      </p>
 
-      <button className={s.basket_btn}>Оформить заказ</button>
+      <button className={s.basket_btn}>{btn}</button>
     </div>
   );
 };

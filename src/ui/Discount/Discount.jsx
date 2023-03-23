@@ -25,7 +25,7 @@ export const Discount = ({
         [s.darkGreen]: darkGreen,
       })}
     >
-      <p>{text}</p>
+      <p className={s.text}>{text}</p>
     </div>
   );
 };
