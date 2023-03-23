@@ -10,7 +10,7 @@ export const YandexMaps = ({ width, height, mapsData }) => {
   //   return 1;
   // });
   // let geocoder = YMaps.Geocoder("Москва");
-  console.log(YMaps.Geocoder);
+  // console.log(YMaps.Geocoder);
   return (
     <YMaps onLoad={(ymaps) => console.log(ymaps)}>
       <Map defaultState={defaultState} width={width} height={height}>
