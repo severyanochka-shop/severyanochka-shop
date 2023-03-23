@@ -1,11 +1,10 @@
 .counter {
   background-color: #70c05b;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  gap: 8px;
+  column-gap: 8px;
   border-radius: 4px;
   width: 100px;
   height: 40px;
@@ -19,14 +18,9 @@
   text-align: center;
 }
 
-.minus {
+.btn {
   background-color: #70c05b;
-  font-size: 15px;
-  color: #fff;
-}
-
-.plus {
-  background-color: #70c05b;
+  border: none;
   font-size: 15px;
   color: #fff;
 }
@@ -35,7 +29,6 @@
   .counter {
     width: 120px;
   }
-
   .count {
     width: 40px;
   }

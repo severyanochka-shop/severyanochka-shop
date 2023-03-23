@@ -5,9 +5,8 @@ import { Stars } from "../Reviews/Starts/Stars";
 export const ProductCard = (props) => {
   const {
     id,
-    title = "Масло ПРОСТОКВАШИНО сливочное в/с 82% фольга без змж, Россия, 180 г",
     name = "простоквашино",
-    image,
+    image = require("./assets/imageofsimilar.png"),
     price = 100,
     discount = 5,
     numOfReviews = 2,
@@ -38,7 +37,6 @@ export const ProductCard = (props) => {
 
   return (
     <div id={id} className={s.wrapper}>
-      <h2 className={s.wrapper__title}>{title}</h2>
       <div className={s.wrapper__nav}>
         <p>art.371431</p>
         <div className={s.nav__stars}>
