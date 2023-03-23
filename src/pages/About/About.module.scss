@@ -1,4 +1,15 @@
 .title {
   margin-top: 20px;
   margin-left: 30px;
+  margin-bottom: 0;
+}
+@media (max-width: 1300px) {
+  .title {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 760px) {
+  .title {
+    margin-left: 10px;
+  }
 }
