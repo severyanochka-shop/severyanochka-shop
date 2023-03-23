@@ -1,6 +1,6 @@
 import React from "react";
 import { parameters } from "./preview";
-import { TextField as TextFieldComponent } from "../ui/TextField/TextField";
+import { TextField as TextFieldComponent } from "../ui/TextField/Textfield";
 
 const obj = {
   title: "UI",
