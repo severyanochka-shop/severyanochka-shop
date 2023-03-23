@@ -1,22 +1,13 @@
 .vacancy {
-  margin: 0 auto;
   display: grid;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  max-width: 1168px;
-}
-
-.item_empty {
-  font-size: 20px;
+  max-width: 1208px;
 }
 
 @media (max-width: 1200px) {
-  .vacancy_page {
-    max-width: 100%;
-  }
-
   .vacancy {
     max-width: 100%;
     gap: 24px;
@@ -36,7 +27,6 @@
     font-size: 36px;
     padding-top: 9px;
   }
-
   .vacancy {
     grid-template-columns: 1fr;
     gap: 16px;

@@ -1,5 +1,5 @@
 .item2 {
-  padding-top: 56px;
+  padding-top: 8px;
   display: flex;
   flex-direction: column;
   width: 272px;
@@ -113,7 +113,6 @@
 @media (max-width: 1000px) {
   .item2 {
     width: 255px;
-    // padding-top: 52px;
   }
 }
 

@@ -4,9 +4,7 @@ import { Checkbox } from "../../ui/Checkbox/Checkbox";
 import { Calculator } from "./Calculator/Calculator";
 import { CartFlex } from "../../layout/CartFlex/CartFlex";
 
-export const Basket = (props) => {
-  // const { set = [] } = props;
-
+export const Basket = () => {
   return (
     <div className={s.basket}>
       <div className={s.basket__buttons}>
@@ -18,20 +16,6 @@ export const Basket = (props) => {
       </div>
       <div className={s.basket__flex}>
         <CartFlex />
-
-        <ul className={s.item1}>
-          {/* {set.lenght ? (
-              set.map((item) => {
-                return (
-                  <li className={s.product}>
-                    <CardProductBasket key={item.id} {...item} />
-                  </li>
-                );
-              })
-            ) : (
-              <li className={s.basketitem}>Вы ничего не выбрали</li>
-            )} */}
-        </ul>
         <Calculator />
       </div>
     </div>
