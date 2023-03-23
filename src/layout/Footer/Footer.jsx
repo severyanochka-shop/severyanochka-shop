@@ -6,7 +6,7 @@ import Ok from "./assets/Ok.svg";
 import VK from "./assets/VK.svg";
 import Tel from "./assets/Tel.svg";
 import Zasov from "./assets/Zasov.svg";
-import logosev from "./assets/logosev.png";
+import logosev from "./assets/logosev.svg";
 import { Container } from "../Container/Container";
 import { Link } from "react-router-dom";
 
