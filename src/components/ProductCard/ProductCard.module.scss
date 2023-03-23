@@ -1,51 +1,65 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 21.5px;
-  margin-top: 27px;
-  max-width: 1208px;
+  gap: 16px;
 
   &__nav {
     display: flex;
-    font-size: 12px;
-    justify-content: space-between;
-    width: 564px;
-    height: 19px;
+    align-items: center;
+    height: 32px;
   }
+}
+
+.art {
+  margin-right: 24px;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
 }
 
 .nav__stars {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-right: 34.5px;
 
   &__rewiew {
     cursor: pointer;
-    text-decoration: underline;
-    width: 80px;
-    margin-left: 3px;
+    margin-left: 8px;
+    font-size: 14px;
+    line-height: 150%;
+    text-decoration-line: underline;
+    color: #414141;
   }
 }
 
 .btn_favorites {
-  height: 19px;
-  width: 133px;
+  display: flex;
+  align-items: center;
   background-color: #fbf8ec;
   color: rgb(96 96 96 / 100%);
   text-rendering: auto;
   font-size: 12px;
-  font-weight: 400;
-  font-family: Rubik, sans-serif;
-  border: 0;
+  border: none;
   cursor: pointer;
-  position: relative;
+  &:first-of-type {
+    margin-right: 41.05px;
+  }
 }
 
-.btn_favorites > img {
-  height: 19px;
-  width: 21px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.btn_favorites_share::before {
+  content: url("./assets/share.svg");
+  margin-right: 9.05px;
+  height: 24px;
+  width: 24px;
+}
+
+.btn_favorites_heart::before {
+  content: url("./assets/heart.svg");
+  margin-right: 9.05px;
+
+  height: 24px;
+  width: 24px;
 }
 
 .btn_info {

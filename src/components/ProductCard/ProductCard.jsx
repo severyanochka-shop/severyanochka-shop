@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import s from "./ProductCard.module.scss";
 import { Stars } from "../Reviews/Starts/Stars";
+import heart from "./assets/heart.svg";
+import clsx from "clsx";
 
 export const ProductCard = (props) => {
   const {
-    id,
     name = "простоквашино",
     image = require("./assets/imageofsimilar.png"),
     price = 100,
@@ -15,7 +16,7 @@ export const ProductCard = (props) => {
     imagesOfProduct = [],
     imagesOfSimilar = [],
   } = props;
-  const [active, setActive] = useState(false);
+
   let discountPrice = price - (price * discount) / 100;
   let end = "ов";
   // редактирует окончание в зависимости от кол-ва отзывов
@@ -31,45 +32,26 @@ export const ProductCard = (props) => {
     }
   }
 
-  const handleClick = () => {
-    setActive(!active);
-  };
-
   return (
-    <div id={id} className={s.wrapper}>
+    <div className={s.wrapper}>
       <div className={s.wrapper__nav}>
-        <p>art.371431</p>
+        <p className={s.art}>арт. 371431</p>
         <div className={s.nav__stars}>
           <Stars type="2" />
-          <p className={s.nav__stars__rewiew}>
-            {numOfReviews ? numOfReviews : "нет"} отзыв{end}
-          </p>
+          <p className={s.nav__stars__rewiew}>{!!numOfReviews && `${numOfReviews} отзыв${end}`}</p>
         </div>
-        <button className={s.btn_favorites}>
-          <img src={require("./assets/share.png")} alt="=>" />
-          Поделиться
+        <button className={clsx(s.btn_favorites, s.btn_favorites_share)}>
+          <p>Поделиться</p>
         </button>
-        <button
-          className={s.btn_favorites}
-          onClick={() => {
-            handleClick();
-          }}
-          style={{
-            color: active ? "rgba(255, 102, 51, 1)" : "rgba(96, 96, 96, 1)",
-          }}
-        >
-          <img src={require("./assets/heart.png")} alt="♡" />В избранное
+        <button className={clsx(s.btn_favorites, s.btn_favorites_heart)}>
+          <p>В избранное</p>
         </button>
       </div>
       <div className={s.card__flex}>
         <div className={s.item1}>
-          {imagesOfProduct.lenght ? (
-            imagesOfProduct.map((item) => {
-              return <img key={item.id} src={item.image} alt="product" {...item} />;
-            })
-          ) : (
-            <img src={require("./assets/imageofprodact.png")} alt="product" />
-          )}
+          {imagesOfProduct.map((item) => {
+            return <img key={item.id} src={item.image} alt="product" {...item} />;
+          })}
         </div>
         <div className={s.item2}>
           <img src={image} alt="main-product-foto" />

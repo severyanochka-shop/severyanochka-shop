@@ -15,10 +15,7 @@
 @media (max-width: 1240px) {
   .wrapper {
     column-gap: 32px;
-  }
-
-  .title_wrapper {
-    margin-bottom: 32px;
+    margin-bottom: 104px;
   }
 }
 
@@ -27,9 +24,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 16px;
-  }
-
-  .title_wrapper {
-    margin-bottom: 16px;
+    margin-bottom: 84px;
   }
 }

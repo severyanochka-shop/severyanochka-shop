@@ -17,6 +17,7 @@ export let data = [
   },
 
   {
+    id: "9559c344-29e5-4576-942c-9f1a08d64c13",
     name: "Батончик шоколадный Bounty Трио 82.5г",
     image_small: "https://photos.okolo.app/product/1160591-main/320x320.jpeg",
     priceRegular: 111.5,
@@ -24,6 +25,7 @@ export let data = [
   },
 
   {
+    id: "9559c344-29e5-4576-942c-9f1a08d64c12",
     name: "Смесь для выпечки Русский Продукт кекс апельсиновый, 300г",
     image_small: "https://photos.okolo.app/product/1211379-main/320x320.jpeg",
     priceRegular: 103.0,
@@ -31,6 +33,8 @@ export let data = [
   },
 
   {
+    id: "9559c344-29e5-4576-942c-9f1a08d64c11",
+
     name: "Носки Pompeabito женские в ассортименте р.38-40 1шт.",
     image_small: "https://photos.okolo.app/product/1490749-main/320x320.jpeg",
     priceRegular: 78.5,
@@ -38,6 +42,8 @@ export let data = [
   },
 
   {
+    id: "9559c344-29e5-4576-942c-9f1a08d64c10",
+
     name: "Холодный чай Lipton Зеленый 1л",
     image_small: "https://photos.okolo.app/product/1176068-main/320x320.jpeg",
     priceRegular: 100.5,
