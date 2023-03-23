@@ -37,16 +37,12 @@
 
 .deletebtn_blockTop {
   display: flex;
-  //   height: 32px;
   gap: 24px;
-  //   margin-bottom: 40px;
 }
 
 .deletebtn_blockBottom {
   display: flex;
-  //   height: 32px;
   gap: 24px;
-  //   margin-bottom: 40px;
 }
 
 .button_filter {
@@ -153,10 +149,8 @@ li {
 @media (max-width: 913px) {
   .wrapper {
     display: block;
-   
 
     &_hide {
-      background-color: red;
       left: 0;
     }
   }

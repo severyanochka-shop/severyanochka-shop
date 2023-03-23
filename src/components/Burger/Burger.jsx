@@ -3,7 +3,10 @@ import s from "../Burger/Burger.module.scss";
 import { Button } from "../../ui/Button/Button";
 import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
+import { useSelector } from "react-redux";
 import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import { getBurger } from "../../store/reducers/BurgerSlice";
 
 export const Burger = (
   // hideFilter,
@@ -13,26 +16,26 @@ export const Burger = (
   inStock,
   subcategory,
 ) => {
-
-
-  const [burgerHide, setBurgerHide] = true;
-  // const burgerHide = true;
-
-  // const hideFilter = () => {setBurgerHide(!burgerHide)}
-  const hideFilter = () => {console.log(burgerHide)}
+  const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
+  const dispatch = useDispatch();
 
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
 
-  return (
+  console.log(burgerHide)
 
-    <div className={burgerHide? clsx(s.wrapper, s.wrapper_hide)  : s.wrapper}>
+  return (
+    <div className={burgerHide ? clsx(s.wrapper, s.wrapper_hide) : s.wrapper}>
       <div className={s.filter}>
-        <Button medium background="gray" className={s.button_filter} hideFilter={hideFilter}>
+        <Button
+          medium
+          background="gray"
+          className={s.button_filter}
+          handler={() => dispatch(getBurger())}
+        >
           <p className={s.text_filter}>Фильтр</p>
         </Button>
-        {/* <InputRange /> */}
         <div className={s.deletebtn_block}>
           <Button small background="green" className={s.btn_quantity}>
             <div className={s.green_block}>
@@ -63,13 +66,13 @@ export const Burger = (
         <div className={s.filter_none}>
           <InputRange />
           {/* <div className={s.list_block}> */}
-            <ul>
-              <li>{subcategory}</li>
-              <li>ecample1</li>
-              <li>ecample2</li>
-              <li>ecample3</li>
-              <li>ecample4</li>
-            </ul>
+          <ul>
+            <li>{subcategory}</li>
+            <li>example1</li>
+            <li>example2</li>
+            <li>example3</li>
+            <li>example4</li>
+          </ul>
           {/* </div> */}
           <div className={s.stock}>
             <Toggle M onChange={inStock} />
