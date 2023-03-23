@@ -6,7 +6,6 @@ import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
-import { InputRange } from "../../ui/InputRange/InputRange";
 
 export const Main = () => {
   return (
@@ -34,7 +33,6 @@ export const Main = () => {
         <FlexWrapper title="Покупали раньше" />
         <BannerSpecialOffer />
       </Section>
-      <InputRange />
     </>
   );
 };
