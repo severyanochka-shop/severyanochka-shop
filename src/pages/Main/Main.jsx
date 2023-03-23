@@ -11,7 +11,7 @@ import { Category } from "../../components/Category/Category";
 export const Main = () => {
   return (
     <>
-      {/* <BannerPromo />
+      <BannerPromo />
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Акции</SectionTitle>
@@ -33,8 +33,7 @@ export const Main = () => {
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
         <BannerSpecialOffer />
-      </Section> */}
-      <Category/>
+      </Section>
     </>
   );
 };
