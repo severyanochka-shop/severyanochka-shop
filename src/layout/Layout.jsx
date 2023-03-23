@@ -6,7 +6,6 @@ import { Breadcrumbs } from "../ui/Breadcrumbs/Breadcrumbs";
 import { Outlet } from "react-router-dom";
 import { HeaderMobileTop } from "./Header/HeaderMobile/HeaderMobileTop";
 import { HeaderMobileBottom } from "./Header/HeaderMobile/HeaderMobileBottom";
-import { Delivery } from "../components/Delivery/Delivery";
 
 export const Layout = () => {
   return (
@@ -16,7 +15,6 @@ export const Layout = () => {
       <Breadcrumbs />
       <main className={s.main}>
         <Outlet />
-        <Delivery />
       </main>
       <Footer />
       <HeaderMobileBottom />

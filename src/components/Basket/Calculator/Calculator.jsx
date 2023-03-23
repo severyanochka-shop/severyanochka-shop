@@ -65,7 +65,7 @@ export const Calculator = (props) => {
           </strong>{" "}
         </p>
       </div>
-      <p style={{ display: { display } }} className={s.minprice}>
+      <p style={{ display: display }} className={s.minprice}>
         Минимальная сумма заказа {minOrderSum} ₽
       </p>
 
