@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "../../layout/Container/Container.jsx";
 import s from "./AboutCompany.module.scss";
 import groupPeople from "./assets/groupPeople.svg";
-// import сhecksev from "./assets/checksev.svg";
 import logosevabout from "./assets/logosevabout.svg";
 import { AboutCompanyList } from "./AboutCompanyList/AboutCompanyList.jsx";
 

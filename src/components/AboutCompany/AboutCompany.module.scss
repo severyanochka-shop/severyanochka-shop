@@ -2,19 +2,18 @@
   background-color: #fbf8ec;
   background-image: url("./assets/group7105.svg");
   background-repeat: no-repeat;
-  background-position: 25% 25%;
+  background-position: 10% -35%;
   background-size: contain;
-  background-origin: content-box;
-  margin: 0 auto;
+  position: relative;
 
   &__head {
     display: flex;
-    margin-top: 50px;
-    margin-bottom: 120px;
+    margin-top: 17px;
+    margin-bottom: 216px;
   }
 
   &__titles {
-    margin-left: 0;
+    margin-left: 30px;
   }
 
   &__subtitle {
@@ -25,23 +24,29 @@
     line-height: 150%;
     color: #f63;
     text-align: left;
+    width: 507px;
   }
 
   &__img {
     background-image: url("./assets/groupAround.svg");
     background-repeat: no-repeat;
+    background-size: cover;
     width: 621px;
-    height: 380px;
     align-self: flex-end;
+    position: absolute;
+    right: 0.5%;
+    top: -4.4%;
   }
-
   &__checkboxes {
     display: grid;
-    grid-template-columns: 300px 400px 500px;
-    gap: 10px;
-    justify-content: start;
+    width: 95%;
+    grid-template-columns: 310px 410px 550px;
+    gap: 20px;
+    justify-content: space-between;
     align-items: start;
-    margin-bottom: 240px;
+    margin-bottom: 120px;
+    margin-left: 0;
+    flex-grow: 1;
   }
   &__thanks {
     display: flex;
@@ -75,7 +80,7 @@
   }
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1300px) {
   .about {
     margin: 0 auto;
 
@@ -84,44 +89,44 @@
       flex-direction: column;
       justify-content: start;
       align-items: flex-start;
-      margin-top: 40px;
+      margin-top: 0;
       margin-bottom: 100px;
-      margin-left: 40px;
+      margin-left: 0;
+      position: inherit;
+      width: 90%;
     }
-
     &__titles {
       margin-top: 30px;
       margin-bottom: 30px;
     }
     &__subtitle {
       font-size: 18px;
+      width: 85%;
     }
-
     &__img {
-      width: 100%;
+      width: 90%;
       max-height: 300px;
       align-self: flex-start;
+      position: inherit;
     }
-
     &__checkboxes {
-      grid-template-columns: 300px 450px;
+      display: flex;
+      flex-wrap: wrap;
       margin-bottom: 120px;
+      width: 90%;
     }
     &__thanks {
       margin: 0 auto 60px;
     }
-
     &__thanks_img {
       width: 113px;
       height: 92px;
     }
-
     &__thanks_triangle {
       margin-left: 30px;
       width: 41px;
       height: 40px;
     }
-
     &__thanks_text {
       font-size: 18px;
       padding: 20px 40px;
@@ -137,17 +142,22 @@
 
     &__head {
       height: 250px;
-      margin-top: 15px;
-      margin-left: 12px;
+      margin-top: 0;
+      margin-left: 0;
+      width: 100%;
+    }
+    &__titles {
+      margin-top: 10px;
+      margin-left: 0;
     }
     &__subtitle {
       font-size: 14px;
+      width: 94%;
     }
-        &__img {
+    &__img {
       width: 100%;
       max-height: 200px;
     }
-
     &__checkboxes {
       grid-template-columns: 300px;
       gap: 20px;
@@ -157,20 +167,17 @@
       flex-direction: column;
       margin: 0 auto 20px;
     }
-
     &__thanks_img {
       width: 68px;
       height: 56px;
       margin-bottom: 15px;
     }
-
     &__thanks_triangle {
       margin-left: 0;
       border-top: none;
       border-bottom: 40px solid #e5ffde; 
 	    border-left: 40px solid transparent;
     }
-
     &__thanks_text {
       font-size: 14px;
       width: 290px;

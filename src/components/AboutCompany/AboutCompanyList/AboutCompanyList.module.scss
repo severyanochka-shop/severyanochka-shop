@@ -1,11 +1,12 @@
   .about__texts {
     text-align: left;
-    margin-left: 55px;
+    margin-left: 40px;
+    // margin-right: 50px;
     position: relative;
   }
   .about__check_img {
     position: absolute;
-    left: -36px;
+    left: -39px;
     display: block;
   }
   .about__textOne {
@@ -15,7 +16,7 @@
     font-size: 20px;
     line-height: 150%;
     color: #414141;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .about__textTwo {
     font-family: "Rubik";
@@ -26,26 +27,18 @@
     color: #414141;
   }
 
-  @media (max-width: 1240px) {
-  .about__textsthree {
-      grid-row: 2;
-      grid-column: span 2;
-    }
+  @media (max-width: 1300px) {
     .about__textOne {
       font-size: 14px;
+      word-wrap: break-word;
     }
     .about__textTwo {
       font-size: 18px;
+      word-wrap: break-word;
     }
 }
 
 @media (max-width: 760px) {
-  .about__textssecond {
-      grid-row: 2;
-    }
-    .about__textsthree {
-      grid-row: 3;
-    }
     .about__textOne {
       font-size: 14px;
     }
