@@ -20,12 +20,10 @@ export const CategoryPage = ({
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
-let category_title = 'Молочные продукты'
   const dispatch = useDispatch();
 
   return (
     <Container>
-      <h2 className={cl.category_title}>{category_title}</h2>
       <div className={cl.category_page}>
         <div className={cl.filter}>
           <Button
