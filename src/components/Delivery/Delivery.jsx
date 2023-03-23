@@ -74,7 +74,7 @@ export const Delivery = (props) => {
           </div>
         </div>
         <div className={s.calculator}>
-          <Calculator btn="Оплатить на сайте" />
+          <Calculator btn="Оплатить на сайте" display="none" />
           <button className={s.calc__btn}>Оплатить при получении</button>
         </div>
       </div>

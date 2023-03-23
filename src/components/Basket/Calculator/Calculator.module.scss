@@ -1,4 +1,5 @@
 .item2 {
+  padding-top: 56px;
   display: flex;
   flex-direction: column;
   width: 272px;
@@ -14,7 +15,7 @@
   &__p {
     text-align: left;
     color: rgba(65, 65, 65, 1);
-    padding-top: 4px;
+    padding-top: 2px;
   }
   &__text {
     width: 100%;
@@ -25,18 +26,19 @@
   width: 46px;
   height: 24px;
   border-radius: 100px;
-  margin-right: 22px;
+  margin-right: 10px;
 }
 
 .table {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 31px 48px 66px;
+  grid-template-rows: 31px 48px 65px;
   border-top: 2px solid rgba(243, 242, 241, 1);
-  margin: 24px 0 8px;
-  padding-top: 24px;
+  margin: 24px 0 0;
+  padding-top: 27px;
   text-align: left;
   width: 100%;
+  row-gap: 5px;
   &__cost {
     color: rgba(65, 65, 65, 1);
     text-align: right;
@@ -51,7 +53,7 @@
   }
   &__final {
     border-top: 2px solid rgba(243, 242, 241, 1);
-    padding-top: 24px;
+    padding-top: 20px;
     color: rgba(65, 65, 65, 1);
     font-size: 24px;
     font-weight: 700;
@@ -71,13 +73,12 @@
   width: 24px;
   height: 10px;
   position: absolute;
-  top: 10px;
+  top: 3px;
   left: 8px;
 }
 
 .points > p {
   color: #70c05b;
-  padding-top: 8px;
 }
 
 .minprice {
@@ -112,7 +113,7 @@
 @media (max-width: 1000px) {
   .item2 {
     width: 255px;
-    padding-top: 52px;
+    // padding-top: 52px;
   }
 }
 
