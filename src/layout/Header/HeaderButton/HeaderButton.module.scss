@@ -12,10 +12,6 @@
   min-width: 40px;
   margin: 0 0 16px 13px;
 
-  &__large {
-    width: 154px;
-  }
-
   //Background color
   &__orange {
     background: #f63;
@@ -40,7 +36,7 @@
 
 @media (max-width: 769px) {
   .button {
-    margin-left: 8px;
+    margin-left: 0px;
   }
 }
 
