@@ -19,12 +19,33 @@ import { Textfield } from "../../ui/Textfield/Textfield";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
-  const [menuIsOn, setDropdownMenuOn] = useState(false);
-  console.log(menuIsOn);
+  const [menuIsOn, setDropdownMenu] = useState(false);
+  const [DDmenuIsOn, setDDDropdownMenu] = useState(false);
+  const onMouseEnterHandler = () => setDropdownMenu(true);
+  const onMouseLeaveHandler = () =>
+    setTimeout(() => {
+      if (DDmenuIsOn === false) {
+        setDropdownMenu(false);
+      }
+    }, 500);
 
+  const DDonMouseEnterHandler = () => setDDDropdownMenu(true);
+  const DDonMouseLeaveHandler = () => {
+    setDDDropdownMenu(false);
+    setDropdownMenu(false);
+  };
+  console.log(`menuIsOn=${menuIsOn}`);
+  console.log(`DDmenuIsOn=${DDmenuIsOn}`);
   return (
     <>
-      {menuIsOn && <DropdownMenu />}
+      {menuIsOn && DDmenuIsOn && (
+        <DropdownMenu
+          DDhandlerOn={DDonMouseEnterHandler}
+          DDhandlerOff={DDonMouseLeaveHandler}
+          handlerOff={onMouseLeaveHandler}
+        />
+      )}
+
       <div className={s.header}>
         <Container>
           <div className={s.nav}>
@@ -38,8 +59,8 @@ export const Header = () => {
             <Link to="/category">
               <HeaderButton
                 background="green"
-                handlerOn={() => setDropdownMenuOn(true)}
-                handlerOff={() => setDropdownMenuOn(false)}
+                handlerOn={onMouseEnterHandler}
+                handlerOff={onMouseLeaveHandler}
               >
                 <div className={s.button__wrapper}>
                   <img src={menu} alt="|||" />
@@ -49,13 +70,7 @@ export const Header = () => {
             </Link>
             <Textfield placeholder={"Найти товар"} header />
             <Link to="/favourites">
-              <PictoButton
-                text={"Избранное"}
-                img={favorites}
-                img_hover={favorites_hover}
-                handlerOn={() => setDropdownMenuOn(true)}
-                handlerOff={() => setDropdownMenuOn(false)}
-              />
+              <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
             </Link>
             <Link to="/orders">
               <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} />

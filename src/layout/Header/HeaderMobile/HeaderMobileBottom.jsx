@@ -17,11 +17,18 @@ import { Container } from "../../Container/Container";
 import { DropdownMenu } from "../DropdownMenu/DropdownMenu";
 
 export const HeaderMobileBottom = () => {
-  const [menuIsOn, setDropdownMenuOn] = useState(false);
-
+  const [menuIsOn, setDropdownMenu] = useState(false);
+  const onMouseEnterHandler = () => setDropdownMenu(true);
+  const onMouseLeaveHandler = () =>
+    setTimeout(() => {
+      const menuIsOn = false;
+      setDropdownMenu(menuIsOn);
+    }, 500);
   return (
     <>
-      {menuIsOn && <DropdownMenu />}
+      {menuIsOn && (
+        <DropdownMenu handlerOn={onMouseEnterHandler} handlerOff={onMouseLeaveHandler} />
+      )}
       <div className={s.header_bottom}>
         <Container>
           <div className={s.nav}>
@@ -30,8 +37,8 @@ export const HeaderMobileBottom = () => {
                 text={"Каталог"}
                 img={catalog}
                 img_hover={catalog_hover}
-                handlerOn={() => setDropdownMenuOn(true)}
-                handlerOff={() => setDropdownMenuOn(false)}
+                handlerOn={onMouseEnterHandler}
+                handlerOff={onMouseLeaveHandler}
               />
             </Link>
             <Link to="/favourites">
