@@ -14,11 +14,11 @@
 
   &__image {
     position: absolute;
-    width: 303px;
-    height: 202px;
-    left: calc(50% - 303px / 2 - 385.5px);
-    top: calc(50% - 202px / 2 + 3px);
-    filter: drop-shadow(5px 11px 16px rgb(0 0 0 / 20%));
+    width: 335px;
+    height: 200px;
+    left: calc(50% - 329px / 2 - 383.5px);
+    top: calc(50% - 200px / 2);
+    filter: drop-shadow(5px 11px 16px rgb(0 0 0 / 2%));
   }
 
   &__title {
@@ -52,11 +52,11 @@
     }
 
     &__image {
-      width: 198px;
-      height: 132px;
-      left: calc(50% - 198px / 2 - 193px);
-      top: calc(50% - 132px / 2 + 14px);
-      filter: drop-shadow(5px 5px 10px rgb(0 0 0 / 20%));
+      width: 218px;
+      height: 137px;
+      left: calc(50% - 218px / 2 - 190px);
+      top: calc(50% - 137px / 2 + 11px);
+      filter: drop-shadow(5px 5px 10px rgb(0 0 0 / 2%));
     }
   }
 }
