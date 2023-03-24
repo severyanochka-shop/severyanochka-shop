@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const CardCatalog = ({
+  el,
   slug,
   image,
   price_usual,
@@ -24,7 +25,7 @@ export const CardCatalog = ({
 
   return (
     <div className={cl.card}>
-      <Link className={cl.link} to={`/category/${1}/${product[0].data.slug}`}>
+      <Link className={cl.link} to={`/category/${params.category}/${product[0].data.slug}`}>
         {counter && (
           <div className={cl.basket_block}>
             <img src={basket} alt="basket" />
