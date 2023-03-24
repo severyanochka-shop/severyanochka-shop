@@ -32,9 +32,7 @@ export const Main = () => {
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
         <BannerSpecialOffer />
-      </Section>{" "}
-      */}
-      <Category />
+      </Section>
     </>
   );
 };

@@ -113,8 +113,8 @@ export const App = () => {
                   ),
                 },
                 {
-                  path: "/category/:category/:id",
-                  loader: ({ params }) => params.id,
+                  path: "/category/:category/:slug",
+                  loader: ({ params }) => params.slug,
                   element: (
                     <React.Suspense>
                       <Product />

@@ -10,14 +10,14 @@ export const GridWrapper = ({ likesArr, addLike, removeLike }) => {
     <div className={cl.grid_wrapper}>
       {data.map((el) => (
         <CardCatalog
-          id={el.id}
-          name={el.name}
-          image={el.image_small}
+          slug={el.data.slug}
+          name={el.data.name}
+          image={el.data.images[0].full}
           likesArr={likesArr}
           addLike={addLike}
           removeLike={removeLike}
-          price_usual={el.priceRegular}
-          price_discount={el.priceWithCard}
+          price_usual={el.data.priceRegular}
+          price_discount={el.data.priceWithCard}
         />
       ))}
     </div>
