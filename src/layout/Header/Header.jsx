@@ -20,7 +20,6 @@ import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
   const [menuIsOn, setDropdownMenuOn] = useState(false);
-  console.log(menuIsOn);
 
   return (
     <>

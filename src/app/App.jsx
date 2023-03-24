@@ -99,9 +99,16 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              loader: ({ params }) => params.category,
+              loader: ({ params }) => {
+                console.log(categories.find((el) => el.slug === params.category).name);
+                return params.category;
+              },
               handle: {
-                crumb: (numb) => <Link to={`/category/${numb}`}>{categories[numb - 1].name}</Link>,
+                crumb: (categorySlug) => (
+                  <Link to={`/category/${categorySlug}`}>
+                    {categories.find((el) => el.slug === categorySlug).name}
+                  </Link>
+                ),
               },
               children: [
                 {
@@ -113,15 +120,21 @@ export const App = () => {
                   ),
                 },
                 {
-                  path: "/category/:category/:slug",
-                  loader: ({ params }) => params.slug,
+                  path: "/category/:category/:product",
+                  loader: ({ params }) => {
+                    return { categorySlug: params.category, productSlug: params.product };
+                  },
                   element: (
                     <React.Suspense>
                       <Product />
                     </React.Suspense>
                   ),
                   handle: {
-                    crumb: (numb) => <Link to="/category/2/cart">Товар</Link>,
+                    crumb: ({ categorySlug, productSlug }) => (
+                      <Link to={`/category/${categorySlug}/${productSlug}`}>
+                        {data.find((el) => el.data.slug === productSlug).name}
+                      </Link>
+                    ),
                   },
                 },
               ],

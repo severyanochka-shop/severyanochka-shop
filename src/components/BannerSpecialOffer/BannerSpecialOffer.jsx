@@ -3,11 +3,9 @@ import s from "./BannerSpecialOffer.module.scss";
 import cardofloyalty from "./assets/cardofloyalty.png";
 import basket from "./assets/basket.png";
 
-
 export const BannerSpecialOffer = () => {
   return (
     <>
-      <h2 className={s.banner_title}>Специальные предложения</h2>
       <div className={s.banner_box}>
         <div className={s.bannercard}>
           <div className={s.bannercard__texts}>
