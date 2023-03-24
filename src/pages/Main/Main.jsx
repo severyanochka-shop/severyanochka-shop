@@ -6,10 +6,12 @@ import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
+import { PersonalData } from "../../components/PersonalData/PersonalData";
 
 export const Main = () => {
   return (
     <>
+    <PersonalData/>
       <BannerPromo />
       <Section>
         <SectionTitleWrapper>
