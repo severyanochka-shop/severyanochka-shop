@@ -6,16 +6,18 @@ import { Toggle } from "../../ui/Toggle/Toggle";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
-import { getBurger } from "../../store/reducers/BurgerSlice";
+import { burgerReducer } from "../../store/reducers/BurgerSlice";
+
+
 
 export const Burger = (
-  // hideFilter,
   deleteFilters,
   deletePriceRange,
   funcApply,
   inStock,
   subcategory,
 ) => {
+  const {getBurger } = burgerReducer.actions
   const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
   const dispatch = useDispatch();
 
@@ -23,7 +25,6 @@ export const Burger = (
   let final_value = 100;
   let filter_counter = 6;
 
-  console.log(burgerHide)
 
   return (
     <div className={burgerHide ? clsx(s.wrapper, s.wrapper_hide) : s.wrapper}>
@@ -36,6 +37,7 @@ export const Burger = (
         >
           <p className={s.text_filter}>Фильтр</p>
         </Button>
+        
         <div className={s.deletebtn_block}>
           <Button small background="green" className={s.btn_quantity}>
             <div className={s.green_block}>
@@ -64,10 +66,10 @@ export const Burger = (
         </div>
 
         <div className={s.filter_none}>
-          <InputRange />
+          <InputRange burger/>
           {/* <div className={s.list_block}> */}
-          <ul>
-            <li>{subcategory}</li>
+          <ul className={s.list}>
+            <li className={s.list_item}>{subcategory}</li>
             <li>example1</li>
             <li>example2</li>
             <li>example3</li>
