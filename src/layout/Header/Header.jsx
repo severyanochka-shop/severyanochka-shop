@@ -15,11 +15,10 @@ import cart_hover from "./assets/pictograms/cart_hover.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
-import { Textfield } from "../../ui/Textfield/Textfield";
+import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
-
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
 
@@ -36,7 +35,6 @@ export const Header = () => {
     setMenuHover(false);
     setButtonHover(false);
   };
-
 
   return (
     <>
@@ -68,7 +66,7 @@ export const Header = () => {
                 </div>
               </HeaderButton>
             </Link>
-            <Textfield placeholder={"Найти товар"} header />
+            <TextField placeholder={"Найти товар"} header />
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
             </Link>
