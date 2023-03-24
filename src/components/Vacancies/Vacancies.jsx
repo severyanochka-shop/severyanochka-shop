@@ -2,8 +2,8 @@ import React from "react";
 import { Vacancy } from "./Vacancy/Vacancy";
 import s from "./Vacancies.module.scss";
 import { useState } from "react";
-import { Modal } from "../../components/Modal/Modal";
-import { ModalVacancy } from "../Modal/ModalVacancy/ModalVacancy";
+import { Modal } from "../../layout/Modal/Modal";
+import { ModalVacancy } from "../../layout/Modal/ModalVacancy/ModalVacancy";
 
 export const Vacancies = () => {
   const [isModal, setIsModal] = useState(false);
