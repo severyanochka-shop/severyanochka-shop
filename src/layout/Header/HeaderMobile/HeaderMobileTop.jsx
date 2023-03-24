@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import s from "./HeaderMobileTop.module.scss";
-import logo_mobile from "../images/logos/logo_mobile.svg";
+import logo_mobile from "../assets/logos/logo_mobile.svg";
 import { Container } from "../../Container/Container";
-import { Textfield } from "../../../ui/Textfield/Textfield";
+import { Textfield } from "../../../ui/TextField/Textfield";
 
 export const HeaderMobileTop = () => {
   return (

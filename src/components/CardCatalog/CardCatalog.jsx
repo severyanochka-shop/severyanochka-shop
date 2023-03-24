@@ -3,9 +3,11 @@ import cl from "./CardCatalog.module.scss";
 import basket from "./assets/shoppingcart.svg";
 import { Button } from "../../ui/Button/Button";
 import { Stars } from "../Reviews/Starts/Stars";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const CardCatalog = ({
+  slug,
   image,
   price_usual,
   discount,
@@ -15,11 +17,14 @@ export const CardCatalog = ({
   name,
   counter,
 }) => {
-  // const [counter, setCount] = useState(0);
+  const params = useParams();
+  const { categories } = useSelector((state) => state.categoriesReducer);
+  const { data } = useSelector((state) => state.dataReducer);
+  const product = data.filter((el) => el.data.slug === slug);
 
   return (
     <div className={cl.card}>
-      <Link className={cl.link} to="/category/1/cart">
+      <Link className={cl.link} to={`/category/${1}/${product[0].data.slug}`}>
         {counter && (
           <div className={cl.basket_block}>
             <img src={basket} alt="basket" />

@@ -1,37 +1,37 @@
+.banner_title {
+  font-size: 36px;
+}
+
+.banner_box {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
 .bannercard {
   width: 584px;
   height: 200px;
   background-color: #fcd5ba;
-  margin: 50px auto;
   border-radius: 4px;
   display: flex;
-  justify-content: space-around;
 
   &__texts {
-    padding: 30px 0 40px 40px;
-    width: 300px;
+    margin: 30px 0 44px 40px;
+    width: 258px;
   }
 
   &__title {
-    font-family: Rubik;
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 150%;
+    line-height: 34px;
     color: #414141;
+    margin-bottom: 6px;
   }
 
   &__subtitle {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+    line-height: 24px;
     color: #414141;
-  }
-
-  &__img {
-    width: 290px;
+    font-size: 16px;
   }
 }
 
@@ -43,15 +43,20 @@
   width: 584px;
   height: 200px;
   background-color: #e5ffde;
-  margin: 50px auto;
+  background-image: url(./assets/sign.svg);
   border-radius: 4px;
   display: flex;
-  justify-content: space-around;
+  position: relative;
 
-    &__img {
-    width: 200px;
-    display: block;
-    margin: 0 auto;
+  &__img {
+    width: 193px;
+    position: absolute;
+    right: 42px;
+    top: 14px;
+  }
+  &__texts_cart {
+    margin: 30px 0 44px 40px;
+    width: 258px;
   }
 }
 
@@ -59,26 +64,82 @@
   box-shadow: 4px 8px 16px rgb(112 192 91 / 20%);
 }
 
-@media (max-width: 592px) {
+@media (max-width: 1200px) {  
+  .banner_box {
+    gap: 20px;
+  }
   .bannercard {
-    width: 320px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
+    width: 500px;
+    overflow: hidden;
+    &__title {
+      width: 250px;
+    }
+  }
+  .bannerkorzina {
+    width: 500px;
     &__img {
-    width: 310px;
+      width: 132px;
+      top: 24px;
+      right: 36px;
+    }
   }
 }
 
-.bannerkorzina {
-    width: 320px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+@media (max-width: 921px) {
+  .bannercard {
+    width: 353px;
+    height: 170px;
+    overflow: hidden;
+
+    &__texts {
+      margin: 20px auto 36px 20px;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 27px;
+      width: 174px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__img {
+      transform: translateX(-40px);
+    }
+  }
+  .bannerkorzina {
+    width: 353px;
+    height: 170px;
+    overflow: hidden;
+
+    &__texts_cart {
+      margin: 20px auto 27px 20px;
+      width: 125px;
+    }
+  }
 }
+
+@media (max-width: 660px) {
+  .banner_box {
+    display: block;
+    margin-top: 16px;
+  }
+  .bannercard {
+    width: 336px;
+    height: 170px;
+    margin-bottom: 16px;
+
+    &__img {
+      width: 310px;
+      transform: translateX(-50px);
+    }
+  }
+
+  .bannerkorzina {
+    width: 336px;
+  }
 }

@@ -26,6 +26,7 @@ import { ProductAsync as Product } from "../pages/Product/Product.async";
 export const App = () => {
   const dispatch = useDispatch();
   const { categories } = useSelector((state) => state.categoriesReducer);
+  const { data } = useSelector((state) => state.dataReducer);
 
   useEffect(() => {
     dispatch(categoriesFetch());
@@ -112,14 +113,15 @@ export const App = () => {
                   ),
                 },
                 {
-                  path: "/category/:category/cart",
+                  path: "/category/:category/:slug",
+                  loader: ({ params }) => params.slug,
                   element: (
                     <React.Suspense>
                       <Product />
                     </React.Suspense>
                   ),
                   handle: {
-                    crumb: () => <Link to="/category/:category/cart">Товар</Link>,
+                    crumb: (numb) => <Link to="/category/2/cart">Товар</Link>,
                   },
                 },
               ],

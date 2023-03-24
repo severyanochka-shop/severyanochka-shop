@@ -1,7 +1,8 @@
+import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import s from "./InputRange.module.scss";
 
-export const InputRange = ({ min = 0, max = 1000 }) => {
+export const InputRange = ({ min = 0, max = 1000, burger }) => {
   const [minValue, setMinValue] = useState(min);
   const [maxValue, setMaxValue] = useState(max);
 
@@ -41,7 +42,7 @@ export const InputRange = ({ min = 0, max = 1000 }) => {
   };
 
   return (
-    <div className={s.range}>
+    <div className={burger? clsx(s.range, s.range__burger): s.range}>
       <div className={s.range__roof}>
         <p className={s.range__text}>Цена</p>
         <button className={s.range__btn} onClick={handleClick}>
@@ -69,7 +70,7 @@ export const InputRange = ({ min = 0, max = 1000 }) => {
           onChange={handlerRangeMin}
           value={minValue ? minValue : min}
           type="range"
-          className={s.range__input_min}
+          className={burger? clsx(s.range__input_min, s.range__input_min_burger) : s.range__input_min}
           min={min}
           max={max}
           step={1}
@@ -80,7 +81,7 @@ export const InputRange = ({ min = 0, max = 1000 }) => {
           onChange={handlerRangeMax}
           value={maxValue ? maxValue : minValue ? minValue : 0}
           type="range"
-          className={s.range__input_max}
+          className={burger? clsx(s.range__input_max, s.range__input_max_burger) : s.range__input_max}
           min={min}
           max={max}
           step={1}
