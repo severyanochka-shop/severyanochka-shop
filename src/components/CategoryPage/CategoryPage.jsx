@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../../layout/Container/Container";
 import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 import { Button } from "../../ui/Button/Button";
@@ -7,7 +6,8 @@ import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
 import cl from "./CategoryPage.module.scss";
 import { useDispatch } from "react-redux";
-import { getBurger } from "../../store/reducers/BurgerSlice";
+import { burgerSlice } from "../../store/reducers/BurgerSlice";
+import { useSelector } from "react-redux";
 
 export const CategoryPage = ({
   deleteFilters,
@@ -15,25 +15,69 @@ export const CategoryPage = ({
   funcApply,
   inStock,
   subcategory,
-  
 }) => {
   let initial_value = 44;
   let final_value = 100;
   let filter_counter = 6;
+
+  const { getBurger } = burgerSlice.actions;
+  const burger = useSelector((state) => state.burgerReducer.burgerHide);
   const dispatch = useDispatch();
+
+  const [burgerHide, setBurgerHide] = useState(false);
+
+  const [size, setSize] = useState(0);
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 913) setSize(914);
+    if (window.innerWidth < 913) setSize(0);
+  });
+
+  useEffect(() => {
+    if (size > 913) {
+      dispatch(getBurger(false));
+      setBurgerHide(false);
+    }
+  }, [size]);
+
+  useEffect(() => {
+    if (burger === false) {
+      setBurgerHide(false);
+    }
+  }, [burger]);
+
+  const handler = () => {
+    setBurgerHide(!burgerHide);
+    dispatch(getBurger(false));
+  };
+
+  const buttonHandler = () => {
+    setBurgerHide(true);
+    dispatch(getBurger());
+  };
+
+  burgerHide
+    ? document.body.setAttribute("style", "overflow: hidden; position: fixed;")
+    : document.body.setAttribute("style", "overflow: visible; position: static;");
 
   return (
     <Container>
+      <div className={burgerHide ? cl.popUp : ""} onClick={() => handler()}></div>
       <div className={cl.category_page}>
         <div className={cl.filter}>
+          <Button medium background="gray" className={cl.button_filter} handler={() => () => {}}>
+            <p className={cl.text_filter}>Фильтр</p>
+          </Button>
+
           <Button
             medium
             background="gray"
-            className={cl.button_filter}
-            handler={() => dispatch(getBurger())}
+            className={cl.button_filter_media}
+            handler={() => buttonHandler()}
           >
             <p className={cl.text_filter}>Фильтр</p>
           </Button>
+
           <div className={cl.filter_none}>
             <InputRange />
             <div className={cl.list_block}>
