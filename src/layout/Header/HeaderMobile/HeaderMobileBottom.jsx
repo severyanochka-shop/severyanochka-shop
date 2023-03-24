@@ -17,17 +17,30 @@ import { Container } from "../../Container/Container";
 import { DropdownMenu } from "../DropdownMenu/DropdownMenu";
 
 export const HeaderMobileBottom = () => {
-  const [menuIsOn, setDropdownMenu] = useState(false);
-  const onMouseEnterHandler = () => setDropdownMenu(true);
-  const onMouseLeaveHandler = () =>
+  const [isButtonHover, setButtonHover] = useState(false);
+  const [isMenuHover, setMenuHover] = useState(false);
+
+  const onButtonEnterHandler = () => setButtonHover(true);
+  const onButtonLeaveHandler = () =>
     setTimeout(() => {
-      const menuIsOn = false;
-      setDropdownMenu(menuIsOn);
-    }, 500);
+      if (isMenuHover === false) {
+        setButtonHover(false);
+      }
+    }, 200);
+
+  const onMenuEnterHandler = () => setMenuHover(true);
+  const onMenuLeaveHandler = () => {
+    setMenuHover(false);
+    setButtonHover(false);
+  };
+
   return (
     <>
-      {menuIsOn && (
-        <DropdownMenu handlerOn={onMouseEnterHandler} handlerOff={onMouseLeaveHandler} />
+      {(isButtonHover || isMenuHover) && (
+        <DropdownMenu
+          onMenuEnterHandler={onMenuEnterHandler}
+          onMenuLeaveHandler={onMenuLeaveHandler}
+        />
       )}
       <div className={s.header_bottom}>
         <Container>
@@ -37,8 +50,8 @@ export const HeaderMobileBottom = () => {
                 text={"Каталог"}
                 img={catalog}
                 img_hover={catalog_hover}
-                handlerOn={onMouseEnterHandler}
-                handlerOff={onMouseLeaveHandler}
+                onButtonEnterHandler={onButtonEnterHandler}
+                onButtonLeaveHandler={onButtonLeaveHandler}
               />
             </Link>
             <Link to="/favourites">

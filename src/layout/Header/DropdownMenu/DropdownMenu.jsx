@@ -4,9 +4,9 @@ import s from "./DropdownMenu.module.scss";
 import { Container } from "../../Container/Container";
 import data from "../data/categories.json";
 
-export const DropdownMenu = ({ DDhandlerOn, DDhandlerOff }) => {
+export const DropdownMenu = ({ onMenuEnterHandler, onMenuLeaveHandler }) => {
   return (
-    <div className={s.menu} onMouseEnter={DDhandlerOn} onMouseLeave={DDhandlerOff}>
+    <div className={s.menu} onMouseEnter={onMenuEnterHandler} onMouseLeave={onMenuLeaveHandler}>
       <Container>
         <ul className={s.list}>
           {data.map((el, i) => (

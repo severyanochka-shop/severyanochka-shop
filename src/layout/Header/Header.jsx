@@ -15,37 +15,35 @@ import cart_hover from "./assets/pictograms/cart_hover.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
-import { Textfield } from "../../ui/TextField/Textfield";
+import { Textfield } from "../../ui/Textfield/Textfield";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
-  const [menuIsOn, setDropdownMenu] = useState(false);
-  const [DDmenuIsOn, setDDDropdownMenu] = useState(false);
-  const onMouseEnterHandler = () => setDropdownMenu(true);
-  const onMouseLeaveHandler = () =>
-    setTimeout(() => {
-      if (DDmenuIsOn === false) {
-        setDropdownMenu(false);
-      }
-    }, 500);
+  const [isButtonHover, setButtonHover] = useState(false);
+  const [isMenuHover, setMenuHover] = useState(false);
 
-  const DDonMouseEnterHandler = () => setDDDropdownMenu(true);
-  const DDonMouseLeaveHandler = () => {
-    setDDDropdownMenu(false);
-    setDropdownMenu(false);
+  const onButtonEnterHandler = () => setButtonHover(true);
+  const onButtonLeaveHandler = () =>
+    setTimeout(() => {
+      if (isMenuHover === false) {
+        setButtonHover(false);
+      }
+    }, 200);
+
+  const onMenuEnterHandler = () => setMenuHover(true);
+  const onMenuLeaveHandler = () => {
+    setMenuHover(false);
+    setButtonHover(false);
   };
-  console.log(`menuIsOn=${menuIsOn}`);
-  console.log(`DDmenuIsOn=${DDmenuIsOn}`);
+
   return (
     <>
-      {menuIsOn && DDmenuIsOn && (
+      {(isButtonHover || isMenuHover) && (
         <DropdownMenu
-          DDhandlerOn={DDonMouseEnterHandler}
-          DDhandlerOff={DDonMouseLeaveHandler}
-          handlerOff={onMouseLeaveHandler}
+          onMenuEnterHandler={onMenuEnterHandler}
+          onMenuLeaveHandler={onMenuLeaveHandler}
         />
       )}
-
       <div className={s.header}>
         <Container>
           <div className={s.nav}>
@@ -59,8 +57,8 @@ export const Header = () => {
             <Link to="/category">
               <HeaderButton
                 background="green"
-                handlerOn={onMouseEnterHandler}
-                handlerOff={onMouseLeaveHandler}
+                onButtonEnterHandler={onButtonEnterHandler}
+                onButtonLeaveHandler={onButtonLeaveHandler}
               >
                 <div className={s.button__wrapper}>
                   <img src={menu} alt="|||" />
