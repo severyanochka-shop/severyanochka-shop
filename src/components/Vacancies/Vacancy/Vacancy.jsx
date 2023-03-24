@@ -3,9 +3,9 @@ import s from "./Vacancy.module.scss";
 import { Paragraph } from "./Paragraph/Paragraph";
 import telephone from "./telephone.svg";
 
-export const Vacancy = ({ post = "Должность" }) => {
+export const Vacancy = ({ post = "Должность", handleClose }) => {
   return (
-    <div className={s.vacancy}>
+    <div className={s.vacancy} onClick={handleClose}>
       <h3 className={s.title}>{post}</h3>
       <Paragraph
         post="Требования"
