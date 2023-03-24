@@ -76,8 +76,8 @@ export const Footer = () => {
           <div className={s.footer__contact_grid}>
             <a className={s.footer__tel} href="tel:88007773333">
               <img src={Tel} alt="logo" />
+              <p>8 800 777 33 33</p>
             </a>
-            <p className={s.footer__numbers}>8 800 777 33 33</p>
           </div>
           <div className={s.footer__design_grid}>
             <p className={s.footer__des}>Дизайн</p>
