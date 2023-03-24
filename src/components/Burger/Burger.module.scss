@@ -1,0 +1,158 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 360px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 20px 20px 0 20px;
+  display: none;
+  z-index: 2;
+  transition: 0.3s;
+
+  &_hide {
+    display: none;
+  }
+}
+
+.filter {
+  position: relative;
+  width: 100%;
+  margin-right: 40px;
+  height: 100%;
+}
+
+.category_page {
+  display: flex;
+}
+
+.deletebtn_block {
+  display: flex;
+
+  height: auto;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.deletebtn_blockTop {
+  display: flex;
+  gap: 24px;
+}
+
+.deletebtn_blockBottom {
+  display: flex;
+  gap: 24px;
+}
+
+.button_filter {
+  background-color: #f3f2f1;
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 40px;
+  color: #414141;
+}
+
+text_filter {
+  font-weight: 700;
+  color: black;
+  text-align: start;
+  padding-left: 5px;
+  line-height: 0;
+}
+
+.cross_green {
+  font-size: 15px;
+  color: white;
+  background-color: #70c05b;
+  padding: 3px;
+  line-height: 0;
+  float: right;
+  cursor: pointer;
+}
+
+.cross_gray {
+  font-size: 15px;
+  color: #414141;
+  background-color: #f3f2f1;
+  padding: 3px;
+  line-height: 0;
+  float: right;
+  cursor: pointer;
+}
+
+.text_green {
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+.text_gray {
+  font-size: 12px;
+  color: #606060;
+  margin: 0 auto;
+}
+.green_block {
+  display: flex;
+}
+
+.btn_quantity {
+  width: 118px;
+  cursor: default;
+}
+
+.btn_price {
+  width: 184px;
+  cursor: default;
+}
+
+.btn_delete {
+  cursor: default;
+  color: #414141;
+}
+
+.list_block {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.list{
+  list-style: none;
+}
+
+.list_item{
+  color: #414141;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.stock {
+  display: flex;
+  gap: 12px;
+  line-height: 24px;
+  color: #414141;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.btn_apply {
+  width: 100%;
+}
+
+.btn_show {
+  margin-top: 40px;
+}
+
+
+
+@media (max-width: 913px) {
+  .wrapper {
+    display: block;
+
+    &_hide {
+      left: 0;
+    }
+  }
+}

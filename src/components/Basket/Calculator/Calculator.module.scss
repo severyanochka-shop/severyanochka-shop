@@ -1,0 +1,124 @@
+.item2 {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(143, 143, 143, 1);
+  align-items: center;
+  &__debit {
+    width: 100%;
+    margin-bottom: 22px;
+    display: flex;
+  }
+  &__p {
+    text-align: left;
+    color: rgba(65, 65, 65, 1);
+    padding-top: 2px;
+  }
+  &__text {
+    width: 100%;
+  }
+}
+
+.toggle {
+  width: 46px;
+  height: 24px;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 31px 48px 65px;
+  border-top: 2px solid rgba(243, 242, 241, 1);
+  margin: 24px 0 0;
+  padding-top: 27px;
+  text-align: left;
+  width: 100%;
+  row-gap: 5px;
+  &__cost {
+    color: rgba(65, 65, 65, 1);
+    text-align: right;
+  }
+  &__discount {
+    color: rgba(255, 102, 51, 1);
+    text-align: right;
+  }
+  &__p {
+    border-top: 2px solid rgba(243, 242, 241, 1);
+    padding-top: 24px;
+  }
+  &__final {
+    border-top: 2px solid rgba(243, 242, 241, 1);
+    padding-top: 20px;
+    color: rgba(65, 65, 65, 1);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: right;
+  }
+}
+
+.points {
+  width: 201px;
+  height: 32px;
+  position: relative;
+  font-size: 12px;
+  text-align: right;
+}
+
+.points > img {
+  width: 24px;
+  height: 10px;
+  position: absolute;
+  top: 3px;
+  left: 8px;
+}
+
+.points > p {
+  color: #70c05b;
+}
+
+.minprice {
+  background-color: rgba(216, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  width: 214px;
+  height: 24px;
+  border-radius: 4px;
+  font-size: 11px;
+  text-align: center;
+  margin: 24px 0 19px;
+  padding: 5px 8px;
+}
+
+.basket_btn {
+  background-color: rgba(252, 213, 186, 1);
+  color: rgba(255, 102, 51, 1);
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+  &:hover {
+    color: rgba(252, 213, 186, 1);
+    background-color: rgba(255, 102, 51, 1);
+    transition: 0.2s;
+  }
+}
+
+@media (max-width: 1000px) {
+  .item2 {
+    width: 255px;
+  }
+}
+
+@media (max-width: 800px) {
+  .item2 {
+    padding-top: 0;
+    width: 336px;
+  }
+}

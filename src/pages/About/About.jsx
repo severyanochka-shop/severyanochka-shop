@@ -1,11 +1,15 @@
 import React from "react";
-import { Container } from "../../layout/Container/Container";
+import { AboutCompany } from "../../components/AboutCompany/AboutCompany";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
+import s from "./About.module.scss";
 
 export const About = () => {
   return (
-    <Container>
-      <h1>О компании</h1>
-    </Container>
+    <Section>
+      <Title className={s.title}>О компании</Title>
+      <AboutCompany />
+    </Section>
   );
 };
 

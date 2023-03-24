@@ -1,11 +1,12 @@
 import React from "react";
-import { Container } from "../../layout/Container/Container";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
 
 export const Policy = () => {
   return (
-    <Container>
-      <h1>Политика обработки персональных данных</h1>
-    </Container>
+    <Section>
+      <Title>Политика обработки персональных данных</Title>
+    </Section>
   );
 };
 

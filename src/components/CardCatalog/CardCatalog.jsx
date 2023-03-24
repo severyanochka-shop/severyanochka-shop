@@ -1,57 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import cl from "./CardCatalog.module.scss";
-import stargrey from "./img/stargrey.svg";
-import starorange from "./img/starorange.svg";
+import basket from "./assets/shoppingcart.svg";
 import { Button } from "../../ui/Button/Button";
-
+import { Stars } from "../Reviews/Starts/Stars";
+import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const CardCatalog = ({
-  product_img,
+  slug,
+  image,
   price_usual,
-  product_describe,
   discount,
   handlerLike,
-  handlerBasket,
+  addInBasket,
+  price_discount,
+  name,
+  counter,
 }) => {
+  const params = useParams();
+  const { categories } = useSelector((state) => state.categoriesReducer);
+  const { data } = useSelector((state) => state.dataReducer);
+  const product = data.filter((el) => el.data.slug === slug);
+
   return (
     <div className={cl.card}>
-      <img src={product_img} alt="" className={cl.image} />
-      <div className={cl.like_block}>
-        <button onClick={handlerLike} className={cl.heart}>
-          ❤
-        </button>
-      </div>
-      <div className={cl.discount_block}>
-        <p className={cl.discount}>-{discount}%</p>
-      </div>
-      <div className={cl.info}>
-        <div className={cl.price}>
-          <div>
-            <p className={cl.price_discount}>
-              {(price_usual * discount) / 100} ₽
-            </p>
-            <p className={cl.withcard}>С картой</p>
+      <Link className={cl.link} to={`/category/${1}/${product[0].data.slug}`}>
+        {counter && (
+          <div className={cl.basket_block}>
+            <img src={basket} alt="basket" />
+            <p>{counter}</p>
           </div>
-          <div>
-            <p className={cl.price_usual}>{price_usual} ₽</p>
-            <p className={cl.withoutcard}>Обычная</p>
-          </div>
+        )}
+
+        <img src={image} alt="" className={cl.image} />
+        <div className={cl.like_block}>
+          <button onClick={handlerLike} className={cl.heart}>
+            ❤
+          </button>
         </div>
-        <p className={cl.product_describe}>{product_describe}</p>
-      </div>
+        <div className={cl.discount_block}>
+          <p className={cl.discount}>-{discount}%</p>
+        </div>
+        <div className={cl.info}>
+          <div className={cl.price}>
+            <div>
+              <p className={cl.price_discount}>
+                {(discount ? (price_usual * discount) / 100 : price_discount).toFixed(2)} ₽
+              </p>
+              <p className={cl.withcard}>С картой</p>
+            </div>
+            <div>
+              <p className={cl.price_usual}>{price_usual.toFixed(2)} ₽</p>
+              <p className={cl.withoutcard}>Обычная</p>
+            </div>
+          </div>
+          <p className={cl.product_describe}>{name}</p>
+        </div>
+      </Link>
       <div className={cl.footer_card}>
         <div className={cl.rating}>
-          <img src={starorange} alt="" className={cl.star} />
-          <img src={starorange} alt="" className={cl.star} />
-          <img src={stargrey} alt="" className={cl.star} />
-          <img src={stargrey} alt="" className={cl.star} />
-          <img src={stargrey} alt="" className={cl.star} />
+          <Stars />
         </div>
-        <Button
-          border="green"
-          className={cl.cardcatalog_button}
-          onClick={handlerBasket}
-        >
+        <Button border="green" className={cl.cardcatalog_button} onClick={addInBasket}>
           В корзину
         </Button>
       </div>

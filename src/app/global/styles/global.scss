@@ -16,7 +16,7 @@ html {
 
 body {
   height: 100%;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   font-style: normal;
   font-weight: 400;
   background: #fbf8ec;
@@ -31,15 +31,27 @@ body {
   height: 100%;
 }
 
+.title_margin {
+  margin-bottom: 40px;
+}
+
 @media (max-width: 1240px) {
   .container {
     width: 100%;
     padding: 0 16px;
+  }
+
+  .title_margin {
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 12px;
+  }
+
+  .title_margin {
+    margin-bottom: 16px;
   }
 }

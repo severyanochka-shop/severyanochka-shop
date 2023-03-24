@@ -4,28 +4,39 @@
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  font-family: "Rubik", sans-serif;
+  font-family: Rubik, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   height: 40px;
   min-width: 40px;
-  margin: 0 0 16px 12px;
+  margin: 0 0 16px 13px;
 
   //Background color
   &__orange {
-    background: #ff6633;
-    color: #ffffff;
+    background: #f63;
+    color: #fff;
   }
+
   &__green {
     background: #70c05b;
-    color: #ffffff;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1076px) {
+  .button__large {
+    width: 40px;
+  }
+
+  .button__wrapper {
+    width: 40px;
   }
 }
 
 @media (max-width: 769px) {
   .button {
-    margin-left: 8px;
+    margin-left: 0px;
   }
 }
 

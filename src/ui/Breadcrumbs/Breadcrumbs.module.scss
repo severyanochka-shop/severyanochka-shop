@@ -1,8 +1,10 @@
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 14px;
+  margin: 27px 0;
   align-items: center;
   column-gap: 24.5px;
-  margin-bottom: 27px;
   list-style: none;
 }
 
@@ -10,6 +12,7 @@
   display: flex;
   align-items: center;
   gap: 24.5px;
+
   &:last-of-type > .link {
     color: #8f8f8f;
   }

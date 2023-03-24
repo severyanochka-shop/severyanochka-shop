@@ -1,11 +1,10 @@
 .counter {
   background-color: #70c05b;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  gap: 8px;
+  column-gap: 8px;
   border-radius: 4px;
   width: 100px;
   height: 40px;
@@ -13,22 +12,17 @@
 
 .count {
   font-size: 16px;
-  color: #ffffff;
+  color: #fff;
   width: 20px;
   height: 24x;
   text-align: center;
 }
-.minus {
-  background-color: #70c05b;
-  font-size: 15px;
 
-  color: #ffffff;
-}
-
-.plus {
+.btn {
   background-color: #70c05b;
+  border: none;
   font-size: 15px;
-  color: #ffffff;
+  color: #fff;
 }
 
 @media (max-width: 768px) {

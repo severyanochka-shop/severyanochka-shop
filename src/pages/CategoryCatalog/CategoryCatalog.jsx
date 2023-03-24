@@ -1,11 +1,21 @@
 import React from "react";
-import { Container } from "../../layout/Container/Container";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { Section } from "../../layout/Section/Section";
+import { Title } from "../../layout/Title/Title";
+import { CategoryPage } from "../../components/CategoryPage/CategoryPage";
+import { Burger } from "../../components/Burger/Burger";
 
 export const CategoryCatalog = () => {
+  const params = useParams();
+  const { categories } = useSelector((state) => state.categoriesReducer);
+
   return (
-    <Container>
-      <h1>Каталог по категории</h1>
-    </Container>
+    <Section>
+      <Burger />
+      <Title>{categories[params.category - 1].name}</Title>
+      <CategoryPage />
+    </Section>
   );
 };
 
