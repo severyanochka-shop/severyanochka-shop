@@ -6,7 +6,7 @@ import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
 import cl from "./CategoryPage.module.scss";
 import { useDispatch } from "react-redux";
-import { burgerReducer } from "../../store/reducers/BurgerSlice";
+import { burgerSlice } from "../../store/reducers/BurgerSlice";
 import { useSelector } from "react-redux";
 
 export const CategoryPage = ({
@@ -20,7 +20,7 @@ export const CategoryPage = ({
   let final_value = 100;
   let filter_counter = 6;
 
-  const { getBurger } = burgerReducer.actions;
+  const { getBurger } = burgerSlice.actions;
   const burger = useSelector((state) => state.burgerReducer.burgerHide);
   const dispatch = useDispatch();
 
@@ -65,13 +65,7 @@ export const CategoryPage = ({
       <div className={burgerHide ? cl.popUp : ""} onClick={() => handler()}></div>
       <div className={cl.category_page}>
         <div className={cl.filter}>
-
-          <Button
-            medium
-            background="gray"
-            className={cl.button_filter}
-            handler={() => ()=>{}}
-          >
+          <Button medium background="gray" className={cl.button_filter} handler={() => () => {}}>
             <p className={cl.text_filter}>Фильтр</p>
           </Button>
 
