@@ -6,11 +6,13 @@ import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
+import { Modal } from "../../components/Modal/Modal";
 
 export const Main = () => {
   return (
     <>
-      <BannerPromo />
+      <Modal />
+      {/* <BannerPromo />
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Акции</SectionTitle>
@@ -32,7 +34,7 @@ export const Main = () => {
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
         <BannerSpecialOffer />
-      </Section>
+      </Section> */}
     </>
   );
 };

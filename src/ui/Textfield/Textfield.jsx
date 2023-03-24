@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import s from "./Textfield.module.scss";
+import s from "./TextField.module.scss";
 import eye from "./eye.svg";
 import eyeOff from "./eyeOff.svg";
 import search from "./search.svg";

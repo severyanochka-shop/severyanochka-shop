@@ -15,7 +15,7 @@ import cart_hover from "./assets/pictograms/cart_hover.svg";
 import { HeaderButton } from "./HeaderButton/HeaderButton";
 import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
-import { Textfield } from "../../ui/Textfield/Textfield";
+import { Textfield } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
