@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import s from "./HeaderMobileTop.module.scss";
 import logo_mobile from "../assets/logos/logo_mobile.svg";
 import { Container } from "../../Container/Container";
-import { Textfield } from "../../../ui/Textfield/Textfield";
+import { TextField } from "../../../ui/TextField/TextField";
 
 export const HeaderMobileTop = () => {
   return (
@@ -14,7 +14,7 @@ export const HeaderMobileTop = () => {
             <Link to="/">
               <img src={logo_mobile} alt="ЛОГО" className={s.logo} />
             </Link>
-            <Textfield placeholder={"Найти товар"} className={s.header_input} mobile />
+            <TextField placeholder={"Найти товар"} className={s.header_input} mobile />
           </div>
         </Container>
       </div>

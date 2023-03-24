@@ -6,6 +6,7 @@ import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
+import { YandexMaps } from "../../components/YandexMaps/YandexMaps";
 
 export const Main = () => {
   return (
@@ -31,7 +32,14 @@ export const Main = () => {
           <SectionLink to="/bought_before">Все покупки</SectionLink>
         </SectionTitleWrapper>
         <FlexWrapper title="Покупали раньше" />
+      </Section>
+      <Section>
+        <SectionTitle>Специальные предложения</SectionTitle>
         <BannerSpecialOffer />
+      </Section>
+      <Section>
+        <SectionTitle>Наши магазины</SectionTitle>
+        <YandexMaps />
       </Section>
     </>
   );

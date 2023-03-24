@@ -1,0 +1,43 @@
+.modalvacancy {
+  display: flex;
+  flex-direction: column;
+  height: 636px;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  margin-bottom: 16px;
+  text-align: left;
+  font-size: 24px;
+  line-height: 150%;
+}
+.text {
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.telephone {
+  text-align: left;
+  font-size: 20px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.wrapper {
+  display: flex;
+  column-gap: 13.12px;
+  align-items: flex-end;
+}
+
+.mail {
+  margin-left: 15px;
+  color: #414141;
+}
