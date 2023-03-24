@@ -19,11 +19,33 @@ import { Textfield } from "../../ui/Textfield/Textfield";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
-  const [menuIsOn, setDropdownMenuOn] = useState(false);
+
+  const [isButtonHover, setButtonHover] = useState(false);
+  const [isMenuHover, setMenuHover] = useState(false);
+
+  const onButtonEnterHandler = () => setButtonHover(true);
+  const onButtonLeaveHandler = () =>
+    setTimeout(() => {
+      if (isMenuHover === false) {
+        setButtonHover(false);
+      }
+    }, 200);
+
+  const onMenuEnterHandler = () => setMenuHover(true);
+  const onMenuLeaveHandler = () => {
+    setMenuHover(false);
+    setButtonHover(false);
+  };
+
 
   return (
     <>
-      {menuIsOn && <DropdownMenu />}
+      {(isButtonHover || isMenuHover) && (
+        <DropdownMenu
+          onMenuEnterHandler={onMenuEnterHandler}
+          onMenuLeaveHandler={onMenuLeaveHandler}
+        />
+      )}
       <div className={s.header}>
         <Container>
           <div className={s.nav}>
@@ -37,8 +59,8 @@ export const Header = () => {
             <Link to="/category">
               <HeaderButton
                 background="green"
-                handlerOn={() => setDropdownMenuOn(true)}
-                handlerOff={() => setDropdownMenuOn(false)}
+                onButtonEnterHandler={onButtonEnterHandler}
+                onButtonLeaveHandler={onButtonLeaveHandler}
               >
                 <div className={s.button__wrapper}>
                   <img src={menu} alt="|||" />
@@ -48,13 +70,7 @@ export const Header = () => {
             </Link>
             <Textfield placeholder={"Найти товар"} header />
             <Link to="/favourites">
-              <PictoButton
-                text={"Избранное"}
-                img={favorites}
-                img_hover={favorites_hover}
-                handlerOn={() => setDropdownMenuOn(true)}
-                handlerOff={() => setDropdownMenuOn(false)}
-              />
+              <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
             </Link>
             <Link to="/orders">
               <PictoButton text={"Заказы"} img={orders} img_hover={orders_hover} />

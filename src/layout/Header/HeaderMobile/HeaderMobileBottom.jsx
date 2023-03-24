@@ -17,11 +17,31 @@ import { Container } from "../../Container/Container";
 import { DropdownMenu } from "../DropdownMenu/DropdownMenu";
 
 export const HeaderMobileBottom = () => {
-  const [menuIsOn, setDropdownMenuOn] = useState(false);
+  const [isButtonHover, setButtonHover] = useState(false);
+  const [isMenuHover, setMenuHover] = useState(false);
+
+  const onButtonEnterHandler = () => setButtonHover(true);
+  const onButtonLeaveHandler = () =>
+    setTimeout(() => {
+      if (isMenuHover === false) {
+        setButtonHover(false);
+      }
+    }, 200);
+
+  const onMenuEnterHandler = () => setMenuHover(true);
+  const onMenuLeaveHandler = () => {
+    setMenuHover(false);
+    setButtonHover(false);
+  };
 
   return (
     <>
-      {menuIsOn && <DropdownMenu />}
+      {(isButtonHover || isMenuHover) && (
+        <DropdownMenu
+          onMenuEnterHandler={onMenuEnterHandler}
+          onMenuLeaveHandler={onMenuLeaveHandler}
+        />
+      )}
       <div className={s.header_bottom}>
         <Container>
           <div className={s.nav}>
@@ -30,8 +50,8 @@ export const HeaderMobileBottom = () => {
                 text={"Каталог"}
                 img={catalog}
                 img_hover={catalog_hover}
-                handlerOn={() => setDropdownMenuOn(true)}
-                handlerOff={() => setDropdownMenuOn(false)}
+                onButtonEnterHandler={onButtonEnterHandler}
+                onButtonLeaveHandler={onButtonLeaveHandler}
               />
             </Link>
             <Link to="/favourites">
