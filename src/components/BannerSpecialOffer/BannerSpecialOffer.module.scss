@@ -44,6 +44,10 @@
   height: 200px;
   background-color: #e5ffde;
   background-image: url(./assets/sign.svg);
+  background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: cover;
   border-radius: 4px;
   display: flex;
   position: relative;

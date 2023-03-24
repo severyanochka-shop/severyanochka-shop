@@ -11,6 +11,7 @@
   gap: 0 40px;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &__logo_grid {
     margin-top: 5px;
@@ -70,6 +71,16 @@
     width: 100px;
     height: 10px;
   }
+
+  &__tel {
+    display: flex;
+    gap: 10.5px;
+    color: #414141;
+    text-decoration: none;
+  }
+      &__item:hover {
+    opacity: 0.5;
+    }
 }
 
 @media (max-width: 850px) {
@@ -80,6 +91,17 @@
     &__items_grid {
       column-gap: 12px;
     }
+    &__tel {
+      position: absolute;
+      top: 28px;
+    }
+
+    &__design_grid {
+      position: absolute;
+      top: 55px;
+      margin-top: 0;
+    }
+
   }
 }
 
@@ -88,14 +110,19 @@
     grid-template-columns: 93px 152px;
     grid-template-rows: 32px 32px 52px 18px;
     gap: 20px 59px;
+    padding: 40px 0 26px;
 
     &__logo_grid {
+      position: absolute;
+      top: 40px;
       width: 93px;
       height: 64px;
-
-      &_wrapper {
-        grid-row: span 2;
-      }
+    }
+    &_wrapper {
+      grid-row: span 2;
+    }
+    &__tel {
+      position: static;
     }
 
     &__links_grid {
@@ -106,8 +133,10 @@
 
     &__items_grid {
       justify-content: center;
+      gap: 20px;
       grid-row: 1;
       grid-column: 2;
+      
     }
 
     &__contact_grid {
@@ -116,8 +145,7 @@
     }
 
     &__design_grid {
-      grid-row: 4;
-      grid-column: 1;
+      display: none;
     }
   }
 }
