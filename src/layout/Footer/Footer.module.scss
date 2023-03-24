@@ -34,6 +34,9 @@
     text-decoration: none;
     list-style: none;
   }
+&__link:hover {
+color: #FF6633;
+}
 
   &__items_grid {
     margin-top: 5px;

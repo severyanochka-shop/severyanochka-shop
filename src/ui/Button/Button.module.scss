@@ -119,7 +119,6 @@
     color: var(--primary-color);
 
     &:hover {
-      border: none;
       background: var(--primary-color);
       color: #fff;
       transition: 0.5s;
@@ -150,7 +149,7 @@
     }
 
     &:hover {
-      border: none;
+      border: 1px solid var(--primary-color);
       background: var(--primary-color);
       color: #fff;
       transition: 0.5s;
