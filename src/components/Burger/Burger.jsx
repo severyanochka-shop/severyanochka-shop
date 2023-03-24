@@ -7,12 +7,10 @@ import { useSelector } from "react-redux";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
 import { burgerReducer } from "../../store/reducers/BurgerSlice";
-// import { getBurger } from "../../store/reducers/BurgerSlice";
 
 
 
 export const Burger = (
-  // hideFilter,
   deleteFilters,
   deletePriceRange,
   funcApply,
@@ -39,6 +37,7 @@ export const Burger = (
         >
           <p className={s.text_filter}>Фильтр</p>
         </Button>
+        
         <div className={s.deletebtn_block}>
           <Button small background="green" className={s.btn_quantity}>
             <div className={s.green_block}>

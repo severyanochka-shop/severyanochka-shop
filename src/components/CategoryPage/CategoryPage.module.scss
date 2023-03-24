@@ -23,7 +23,15 @@
 .button_filter {
   width: 100%;
   margin-bottom: 40px;
+  &_media {
+    display: none;
+  }
+
 }
+
+// .button_filter_media {
+//   display: none;
+// }
 
 .text_filter {
   font-weight: 700;
@@ -132,10 +140,15 @@
   }
 
   .button_filter {
-    background-color: #70c05b;
-    width: 128px;
-    margin-bottom: 32px;
+    display: none;
+    &_media {
+      display: block;
+      background-color: #70c05b;
+      width: 128px;
+      margin-bottom: 32px;
+    }
   }
+
 
   .text_filter {
     color: #fff;
