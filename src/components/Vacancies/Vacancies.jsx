@@ -17,8 +17,12 @@ export const Vacancies = () => {
       <Vacancy handleClose={handleClose} />
       <Vacancy handleClose={handleClose} />
       <Vacancy handleClose={handleClose} />
-      {isModal && <Modal handleClose={handleClose} />}
-      {isModal && <div className={s.shadow} onClick={handleClose}></div>}
+      {isModal && (
+        <>
+          <Modal handleClose={handleClose} />
+          <div className={s.shadow} onClick={handleClose}></div>
+        </>
+      )}
     </div>
   );
 };
