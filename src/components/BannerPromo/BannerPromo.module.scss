@@ -1,4 +1,6 @@
 .wrapper {
+  z-index: -2;
+  margin-top: 4px;
   position: relative;
   height: 200px;
   background: #fff;
@@ -63,6 +65,7 @@
 
 @media (max-width: 701px) {
   .wrapper {
+    margin-top: 0;
     margin-bottom: 44px;
     height: 80px;
 
