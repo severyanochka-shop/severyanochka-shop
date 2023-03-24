@@ -1,67 +1,612 @@
 export let data = [
   {
-    id: "9559c344-29e5-4576-942c-9f1a08d64c14",
-    name: "Салфетки влажные Pupi для интимной гигиены 15шт",
-    image_small: "https://photos.okolo.app/product/1161023-main/320x320.jpeg",
-    priceRegular: 100.5,
-    priceWithCard: 99.5,
-    promo: {
-      discountedPriceRegular: 50.25,
-      discountedPriceWithCard: 44.75,
-      discountPercent: 50.0,
-      isActive: true,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola1",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 2,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 3,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 4,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 5,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
     },
-    unitsOfMeasurement: "шт",
-    step: "1.0",
-    averageRating: 4.94,
   },
-
   {
-    name: "Батончик шоколадный Bounty Трио 82.5г",
-    image_small: "https://photos.okolo.app/product/1160591-main/320x320.jpeg",
-    priceRegular: 111.5,
-    priceWithCard: 99.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola2",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
-
   {
-    name: "Смесь для выпечки Русский Продукт кекс апельсиновый, 300г",
-    image_small: "https://photos.okolo.app/product/1211379-main/320x320.jpeg",
-    priceRegular: 103.0,
-    priceWithCard: 89.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola3",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
-
   {
-    name: "Носки Pompeabito женские в ассортименте р.38-40 1шт.",
-    image_small: "https://photos.okolo.app/product/1490749-main/320x320.jpeg",
-    priceRegular: 78.5,
-    priceWithCard: 45.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola4",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
-
   {
-    name: "Холодный чай Lipton Зеленый 1л",
-    image_small: "https://photos.okolo.app/product/1176068-main/320x320.jpeg",
-    priceRegular: 100.5,
-    priceWithCard: 99.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola5",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
-
   {
-    name: "Чай Beta tea Golden quality черный байховый цейлонский мелколистовой 100х1.5г",
-    image_small: "https://photos.okolo.app/product/1495298-main/320x320.jpeg",
-    priceRegular: 100.5,
-    priceWithCard: 99.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola6",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
-
   {
-    name: "Майонез Слобода Провансаль 67%, 400мл",
-    image_small: "https://photos.okolo.app/product/1189731-main/320x320.jpeg",
-    priceRegular: 45.5,
-    priceWithCard: 40.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola7",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
-
   {
-    name: "Лапша быстрого приготовления Роллтон По-домашнему с курицей 85г",
-    image_small: "https://photos.okolo.app/product/1195895-main/320x320.jpeg",
-    priceRegular: 46.5,
-    priceWithCard: 9.5,
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola8",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
+  },
+  {
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola9",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
+  },
+  {
+    message: "ok",
+    data: {
+      name: "Напиток добрый кола",
+      unitsOfMeasurement: "шт.",
+      step: 1,
+      priceRegular: 100,
+      priceWithCard: 90,
+      ingredients: "Вода сахар",
+      stockCount: 110,
+      subCategoryId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      promo: {
+        discountedPriceRegular: 90,
+        discountedPriceWithCard: 81,
+        discountPercent: 10,
+        isActive: true,
+        expiresAt: "2024-03-23T11:06:46.905Z",
+      },
+      information: [
+        {
+          value: "Добрый",
+          name: "Бренд",
+          unitsOfMeasurement: null,
+          order: 1,
+          isNutrient: false,
+          nutrientName: null,
+        },
+      ],
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      slug: "napitok-dobryy-kola10",
+      isNew: true,
+      images: [
+        {
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          path: "string",
+          order: 1,
+          full: "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=800&maxheight=800&format=jpg&quality=90",
+          small:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=300&maxheight=300&format=jpg&quality=90",
+          thumb:
+            "https://cdn.metro-cc.ru/ru/ru_pim_154814001001_01.png?maxwidth=80&maxheight=80&format=jpg&quality=90",
+        },
+      ],
+      averageRating: 5,
+      reviewsCount: 1,
+      reviews: [
+        {
+          name: "???",
+          rating: 5,
+          content: "Лушчий товар",
+          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          createdAt: "2022-03-23T11:06:46.905Z",
+          userName: "Алексей",
+        },
+      ],
+    },
   },
 ];

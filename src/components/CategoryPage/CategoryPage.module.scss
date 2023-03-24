@@ -1,9 +1,9 @@
 .input {
-background-color: red;
+  background-color: red;
 }
 
-.category_page{
-    display: flex;
+.category_page {
+  display: flex;
 }
 
 .filter {
@@ -11,14 +11,13 @@ background-color: red;
   width: 272px;
   margin-right: 40px;
   height: 100%;
-
 }
 
 .deletebtn_block {
-display: flex;
-height: 32px;
-gap: 24px;
-margin-bottom: 40px;
+  display: flex;
+  height: 32px;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 .button_filter {
@@ -126,26 +125,25 @@ margin-bottom: 40px;
 
   .category_page {
     display: block;
-}
+  }
 
-.filter_none {
-  display: none;
-}
+  .filter_none {
+    display: none;
+  }
 
-.button_filter {
-  background-color: #70c05b;
-  width: 128px;
-  margin-bottom: 32px;
-  
-}
+  .button_filter {
+    background-color: #70c05b;
+    width: 128px;
+    margin-bottom: 32px;
+  }
 
-.text_filter {
-  color: #fff;
-  font-weight: 400;
-  text-align: center;
-}
+  .text_filter {
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+  }
 
-.deletebtn_block {
-  display: none;
-}
+  .deletebtn_block {
+    display: none;
+  }
 }

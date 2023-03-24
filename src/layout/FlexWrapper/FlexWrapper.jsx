@@ -12,11 +12,12 @@ export const FlexWrapper = () => {
       {data.slice(0, 4).map((el, i) => (
         <CardCatalog
           key={i}
-          image={el.image_small}
-          price_usual={el.priceRegular}
-          product_describe={el.name}
-          discount={el.priceWithCard}
-        ></CardCatalog>
+          slug={el.data.slug}
+          image={el.data.images[0].full}
+          price_usual={el.data.priceRegular}
+          name={el.data.name}
+          discount={el.data.priceWithCard}
+        />
       ))}
     </div>
   );
