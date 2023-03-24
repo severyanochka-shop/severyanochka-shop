@@ -7,7 +7,9 @@
   border-radius: 4px;
   align-items: center;
 }
-
+.card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
 .link {
   text-decoration: none;
   color: #414141;
@@ -51,7 +53,12 @@
   border-radius: 4px;
   top: 8px;
   right: 8px;
+  
 }
+
+.like_block:hover {
+  box-shadow: 0 0 5px 2px red;
+  }
 
 .heart {
   line-height: 0;
@@ -63,6 +70,7 @@
   -webkit-text-stroke: 1px #414141;
   opacity: 0.5;
   font-size: 23px;
+  cursor: pointer;
 }
 
 .heart_like {

@@ -1,7 +1,7 @@
 .counter {
   background-color: #70c05b;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 8px;
   column-gap: 8px;
@@ -11,6 +11,7 @@
 }
 
 .count {
+  background-color: #70c05b;
   font-size: 16px;
   color: #fff;
   width: 20px;
@@ -19,10 +20,25 @@
 }
 
 .btn {
+  display: block;
   background-color: #70c05b;
   border: none;
   font-size: 15px;
   color: #fff;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  width: 30px;
+  height: 40px;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  line-height: 23px;
+}
+
+.btn:hover {
+    color: #606060;
 }
 
 @media (max-width: 768px) {

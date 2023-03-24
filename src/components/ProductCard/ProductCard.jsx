@@ -4,6 +4,7 @@ import { Stars } from "../Reviews/Starts/Stars";
 import clsx from "clsx";
 import info from "./assets/info.svg";
 import cart from "./assets/cart.svg";
+import { SimilarProduct } from "../SimilarProduct/SimilarProduct";
 
 export const ProductCard = ({ product }) => {
   let end = "ов";
@@ -37,19 +38,21 @@ export const ProductCard = ({ product }) => {
         <div className={s.wrapper__slider}>
           {product.images.map((el, i) => {
             return (
-              <div className={s.slider__wrapper}>
-                <img className={s.slider__image} key={el.id} src={el.thumb} alt={`Product ${i}`} />;
+              <div key={i} className={s.slider__wrapper}>
+                <img className={s.slider__image} key={el.id} src={el.thumb} alt={`Product ${i}`} />
               </div>
             );
           })}
         </div>
-        <div className={s.wrapper__product}>
-          <img className={s.product__image} src={product.images[0].full} alt="Product" />
+        <div>
+          <div className={s.wrapper__product}>
+            <img className={s.product__image} src={product.images[0].full} alt="Product" />
+          </div>
         </div>
         <div className={s.wrapper__description}>
           <div className={s.description__price_wrapper}>
             <div className={s.price__wrapper}>
-              <p className={s.price__price_old}>{product.priceRegular} ₽</p>
+              <p className={s.price__price_old}>{product.priceWithCard} ₽</p>
               <p className={s.price__price_new}>{product.priceRegular} ₽</p>
             </div>
 
@@ -86,21 +89,9 @@ export const ProductCard = ({ product }) => {
         <div className={s.wrapper__similar}>
           <p className={s.similar__title}>Похожие</p>
           <div className={s.similar__wrapper}>
-            {/* {imagesOfSimilar.lenght ? (
-              imagesOfSimilar.map((item) => {
-                return (
-                  <div key={item.id} {...item}>
-                    <img src={item.image} alt="foto" />
-                    <p>{item.price} ₽</p>
-                  </div>
-                );
-              })
-            ) : (
-              <div>
-                <img src={require("./assets/imageofsimilar.png")} alt="foto" />
-                <p>157,50 ₽</p>
-              </div>
-            )} */}
+            {product.images.slice(0, 4).map((el, i) => {
+              return <SimilarProduct key={i} img={el.small} price={product.priceRegular} />;
+            })}
           </div>
         </div>
       </div>

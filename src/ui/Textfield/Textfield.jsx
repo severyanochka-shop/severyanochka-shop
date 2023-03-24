@@ -5,7 +5,7 @@ import eye from "./eye.svg";
 import eyeOff from "./eyeOff.svg";
 import search from "./search.svg";
 
-export const Textfield = ({
+export const TextField = ({
   className,
   label,
   placeholder,

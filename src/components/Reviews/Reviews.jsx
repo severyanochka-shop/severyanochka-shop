@@ -44,7 +44,6 @@ export const Reviews = (props) => {
 
   return (
     <div className={s.reviews}>
-      <h2 className={s.title}>Отзывы</h2>
       <div className={s.reviews__all}>
         <div className={s.item1}>
           <div className={s.total_score}>

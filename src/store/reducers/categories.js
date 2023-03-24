@@ -4,6 +4,7 @@ export let categories = [
     name: "Молочные продукты и яйцо",
     type: "category",
     image: "https://codeine.tech/images/category/milk.jpg",
+    slug: "molochnie-producti-i-yaizo",
     order: 1,
   },
   {
@@ -11,6 +12,7 @@ export let categories = [
     name: "Хлеб и выпечка",
     type: "category",
     image: "https://codeine.tech/images/category/bread.jpg",
+    slug: "hleb-i-vipechka",
     order: 2,
   },
   {
@@ -18,6 +20,7 @@ export let categories = [
     name: "Овощи и фрукты",
     type: "category",
     image: "https://codeine.tech/images/category/fruits.jpg",
+    slug: "ovoshi-i-frukti",
     order: 3,
   },
   {
@@ -25,6 +28,7 @@ export let categories = [
     name: "Замороженные продукты",
     type: "category",
     image: "https://codeine.tech/images/category/frozen.jpg",
+    slug: "zamorojennie-producti",
     order: 4,
   },
   {
@@ -32,6 +36,7 @@ export let categories = [
     name: "Любимые напитки и снеки",
     type: "category",
     image: "https://codeine.tech/images/category/drinks.jpg",
+    slug: "lubimie-napitki-i-sneki",
     order: 5,
   },
   {
@@ -39,6 +44,7 @@ export let categories = [
     name: "Торты и пирожные",
     type: "category",
     image: "https://codeine.tech/images/category/candy.jpg",
+    slug: "totri-i-pirojnie",
     order: 6,
   },
   {
@@ -46,6 +52,7 @@ export let categories = [
     name: "Чай, кофе",
     type: "category",
     image: "https://codeine.tech/images/category/tea.jpg",
+    slug: "chai-kofe",
     order: 7,
   },
   {
@@ -53,6 +60,7 @@ export let categories = [
     name: "Бакалея",
     type: "category",
     image: "https://codeine.tech/images/category/grocery.jpg",
+    slug: "bakaleya",
     order: 8,
   },
   {
@@ -60,6 +68,7 @@ export let categories = [
     name: "Здоровое питание",
     type: "category",
     image: "https://codeine.tech/images/category/healthy.jpg",
+    slug: "zdorovoe-pitanie",
     order: 9,
   },
   {
@@ -67,6 +76,7 @@ export let categories = [
     name: "Зоотовары",
     type: "category",
     image: "https://codeine.tech/images/category/pets.jpg",
+    slug: "zootovari",
     order: 10,
   },
   {
@@ -74,6 +84,7 @@ export let categories = [
     name: "Детское питание",
     type: "category",
     image: "https://codeine.tech/images/category/children.jpg",
+    slug: "detskoe-pitanie",
     order: 11,
   },
   {
@@ -81,6 +92,7 @@ export let categories = [
     name: "Мясо и птица",
     type: "category",
     image: "https://codeine.tech/images/category/meat.jpg",
+    slug: "myaso-i-ptica",
     order: 12,
   },
   {
@@ -88,6 +100,7 @@ export let categories = [
     name: "Непродовольственные товары",
     type: "category",
     image: "https://codeine.tech/images/category/non-food.jpg",
+    slug: "neprodovolstvennie-tovari",
     order: 13,
   },
 ];
