@@ -20,14 +20,18 @@ export const Burger = (deleteFilters, deletePriceRange, funcApply, inStock, subc
   return (
     <div className={burgerHide ? clsx(s.wrapper, s.wrapper_hide) : s.wrapper}>
       <div className={s.filter}>
-        <Button
+        {/* <Button
           medium
           background="gray"
           className={s.button_filter}
           handler={() => dispatch(getBurger())}
         >
           <p className={s.text_filter}>Фильтр</p>
-        </Button>
+        </Button> */}
+
+        <div className={s.button_filter} handler={() => () => {}}>
+          <p className={s.text_filter}>Фильтр</p>
+        </div>
 
         <div className={s.deletebtn_block}>
           <Button small background="green" className={s.btn_quantity}>

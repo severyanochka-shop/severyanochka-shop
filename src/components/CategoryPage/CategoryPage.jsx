@@ -65,9 +65,14 @@ export const CategoryPage = ({
       <div className={burgerHide ? cl.popUp : ""} onClick={() => handler()}></div>
       <div className={cl.category_page}>
         <div className={cl.filter}>
-          <Button medium background="gray" className={cl.button_filter} handler={() => () => {}}>
+          
+          {/* <Button medium background="gray" className={cl.button_filter} handler={() => () => {}}>
             <p className={cl.text_filter}>Фильтр</p>
-          </Button>
+          </Button> */}
+
+          <div className={cl.button_filter} handler={() => () => {}}>
+            <p className={cl.text_filter}>Фильтр</p>
+          </div>
 
           <Button
             medium
