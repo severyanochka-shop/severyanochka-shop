@@ -5,11 +5,13 @@ import { useSelector } from "react-redux";
 
 export const GridWrapper = ({ likesArr, addLike, removeLike }) => {
   const { data } = useSelector((state) => state.dataReducer);
-  data.forEach((el) => console.log(el.id));
+
   return (
     <div className={cl.grid_wrapper}>
       {data.map((el) => (
         <CardCatalog
+          key={el.data.slug}
+          el={el}
           slug={el.data.slug}
           name={el.data.name}
           image={el.data.images[0].full}

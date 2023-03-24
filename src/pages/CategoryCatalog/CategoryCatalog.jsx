@@ -13,7 +13,7 @@ export const CategoryCatalog = () => {
   return (
     <Section>
       <Burger />
-      <Title>{categories[params.category - 1].name}</Title>
+      <Title>{categories.find((el) => el.slug === params.category).name}</Title>
       <CategoryPage />
     </Section>
   );
