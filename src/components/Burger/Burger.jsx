@@ -20,29 +20,21 @@ export const Burger = (deleteFilters, deletePriceRange, funcApply, inStock, subc
   return (
     <div className={burgerHide ? clsx(s.wrapper, s.wrapper_hide) : s.wrapper}>
       <div className={s.filter}>
-        {/* <Button
-          medium
-          background="gray"
-          className={s.button_filter}
-          handler={() => dispatch(getBurger())}
-        >
-          <p className={s.text_filter}>Фильтр</p>
-        </Button> */}
 
         <div className={s.button_filter} handler={() => () => {}}>
           <p className={s.text_filter}>Фильтр</p>
         </div>
 
         <div className={s.deletebtn_block}>
-          <Button small background="green" className={s.btn_quantity}>
+          <div  className={s.btn_quantity}>
             <div className={s.green_block}>
               <p className={s.text_green}>Фильтр {filter_counter} </p>
               <button className={s.cross_green} onClick={deleteFilters}>
                 ✕
               </button>
             </div>
-          </Button>
-          <Button small background="green" className={s.btn_price}>
+          </div>
+          <div small background="green" className={s.btn_price}>
             <div className={s.green_block}>
               <p className={s.text_green}>
                 Цена от {initial_value} до {final_value}
@@ -51,13 +43,13 @@ export const Burger = (deleteFilters, deletePriceRange, funcApply, inStock, subc
                 ✕
               </button>
             </div>
-          </Button>
-          <Button small background="gray" className={s.btn_delete}>
+          </div>
+          <div small background="gray" className={s.btn_delete}>
             <div className={s.green_block}>
               <p className={s.text_gray}>Очистить фильтры</p>
               <button className={s.cross_gray}>✕</button>
             </div>
-          </Button>
+          </div>
         </div>
 
         <div className={s.filter_none}>
