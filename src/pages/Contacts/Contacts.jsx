@@ -6,7 +6,7 @@ import { Title } from "../../layout/Title/Title";
 export const Contacts = () => {
   return (
     <Section>
-      <Title>Контакты</Title>
+      <Title contact>Контакты</Title>
       <ContactsComponent />
     </Section>
   );

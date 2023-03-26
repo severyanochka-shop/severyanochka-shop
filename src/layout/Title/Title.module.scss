@@ -6,10 +6,17 @@
   color: #414141;
 }
 
+.title_contact {
+  margin-bottom: 40px;
+}
+
 @media (max-width: 1068px) {
   .title {
     margin-bottom: 40px;
     font-size: 48px;
+  }
+  .title_contact {
+    margin-bottom: 33px;
   }
 }
 
