@@ -27,13 +27,13 @@ export const AddReview = ({ review, setReview }) => {
 
   const color = (id) => {
     return {
-      backgroundImage: score === id ? `url(${star})` : `url(${emptystar})`,
+      backgroundImage: score >= id ? `url(${star})` : `url(${emptystar})`,
     };
   };
 
   return (
     <div className={s.yourscore}>
-      <div style={{ display: "flex" }}>
+      <div className={s.yourscore__box}>
         <p className={s.yourscore__subtitle}>Ваша оценка</p>
         <div className={s.yourscore__stars}>
           {[1, 2, 3, 4, 5].map((el) => (
