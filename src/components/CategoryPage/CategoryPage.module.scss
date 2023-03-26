@@ -79,20 +79,41 @@
 
 .green_block {
   display: flex;
+  min-width: 118px;
+  height: 32px;
+  background-color: #70c05b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 9.5px 8px 8px;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 4px;
 }
+
+.gray_block {
+  display: flex;
+  min-width: 118px;
+  height: 32px;
+  background-color: #f3f2f1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 9.5px 8px 8px;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 4px;
+}
+
 
 .btn_quantity {
   width: 118px;
-  cursor: default;
 }
 
 .btn_price {
   width: 184px;
-  cursor: default;
 }
 
 .btn_delete {
-  cursor: default;
+  width: 171px;
   color: #414141;
 }
 

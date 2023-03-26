@@ -21,48 +21,46 @@ export const Burger = (deleteFilters, deletePriceRange, funcApply, inStock, subc
     <div className={burgerHide ? clsx(s.wrapper, s.wrapper_hide) : s.wrapper}>
       <div className={s.filter}>
 
-        <div className={s.button_filter} handler={() => () => {}}>
-          <p className={s.text_filter}>Фильтр</p>
+        <div className={s.button_filter}>
+          <span>Фильтр</span>
         </div>
 
         <div className={s.deletebtn_block}>
           <div  className={s.btn_quantity}>
             <div className={s.green_block}>
               <p className={s.text_green}>Фильтр {filter_counter} </p>
-              <button className={s.cross_green} onClick={deleteFilters}>
+              <button className={clsx(s.cross, s.cross_green)} onClick={deleteFilters}>
                 ✕
               </button>
             </div>
           </div>
-          <div small background="green" className={s.btn_price}>
+          <div className={s.btn_price}>
             <div className={s.green_block}>
               <p className={s.text_green}>
                 Цена от {initial_value} до {final_value}
               </p>
-              <button className={s.cross_green} onClick={deletePriceRange}>
+              <button className={clsx(s.cross, s.cross_green)} onClick={deletePriceRange}>
                 ✕
               </button>
             </div>
           </div>
-          <div small background="gray" className={s.btn_delete}>
-            <div className={s.green_block}>
+          <div className={s.btn_delete}>
+            <div className={clsx(s.green_block, s.green_block_gray)}>
               <p className={s.text_gray}>Очистить фильтры</p>
-              <button className={s.cross_gray}>✕</button>
+              <button className={clsx(s.cross, s.cross_gray)}>✕</button>
             </div>
           </div>
         </div>
 
         <div className={s.filter_none}>
           <InputRange burger />
-          {/* <div className={s.list_block}> */}
           <ul className={s.list}>
             <li className={s.list_item}>{subcategory}</li>
-            <li>example1</li>
-            <li>example2</li>
-            <li>example3</li>
-            <li>example4</li>
+            <li className={s.list_item}>example1</li>
+            <li className={s.list_item}>example2</li>
+            <li className={s.list_item}>example3</li>
+            <li className={s.list_item}>example4</li>
           </ul>
-          {/* </div> */}
           <div className={s.stock}>
             <Toggle M onChange={inStock} />
             <p>В наличии</p>
