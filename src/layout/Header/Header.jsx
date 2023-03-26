@@ -25,9 +25,7 @@ export const Header = () => {
   const onButtonEnterHandler = () => setButtonHover(true);
   const onButtonLeaveHandler = () =>
     setTimeout(() => {
-      if (isMenuHover === false) {
-        setButtonHover(false);
-      }
+      if (!isMenuHover) setButtonHover(false);
     }, 200);
 
   const onMenuEnterHandler = () => setMenuHover(true);

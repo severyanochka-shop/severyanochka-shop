@@ -13,13 +13,18 @@
   align-items: center;
   position: relative;
 
+  &__logo_grid_wrapper {
+    grid-row: span 2;
+  }
+
   &__logo_grid {
-    margin-top: 5px;
+    display: block;
     width: 64px;
     height: 44px;
   }
 
   &__links_grid {
+    grid-row: span 2;
     display: flex;
     flex-wrap: wrap;
     gap: 8px 40px;
@@ -34,12 +39,12 @@
     text-decoration: none;
     list-style: none;
   }
-&__link:hover {
-color: #FF6633;
-}
+  &__link:hover {
+    color: #ff6633;
+  }
 
   &__items_grid {
-    margin-top: 5px;
+    grid-row: span 2;
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
@@ -81,12 +86,12 @@ color: #FF6633;
     color: #414141;
     text-decoration: none;
   }
-      &__item:hover {
+  &__item:hover {
     opacity: 0.5;
-    }
+  }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 865px) {
   .footer {
     grid-template-columns: 64px 1fr 52px 152px;
     gap: 0 20px;
@@ -94,17 +99,6 @@ color: #FF6633;
     &__items_grid {
       column-gap: 12px;
     }
-    &__tel {
-      position: absolute;
-      top: 28px;
-    }
-
-    &__design_grid {
-      position: absolute;
-      top: 55px;
-      margin-top: 0;
-    }
-
   }
 }
 
@@ -139,7 +133,6 @@ color: #FF6633;
       gap: 20px;
       grid-row: 1;
       grid-column: 2;
-      
     }
 
     &__contact_grid {

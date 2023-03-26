@@ -99,14 +99,11 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              loader: ({ params }) => {
-                console.log(categories.find((el) => el.slug === params.category).name);
-                return params.category;
-              },
+              loader: ({ params }) => params.category,
               handle: {
-                crumb: (categorySlug) => (
-                  <Link to={`/category/${categorySlug}`}>
-                    {categories.find((el) => el.slug === categorySlug).name}
+                crumb: (category) => (
+                  <Link to={`/category/${category}`}>
+                    {categories.find((el) => el.slug === category).name}
                   </Link>
                 ),
               },
@@ -132,7 +129,7 @@ export const App = () => {
                   handle: {
                     crumb: ({ categorySlug, productSlug }) => (
                       <Link to={`/category/${categorySlug}/${productSlug}`}>
-                        {data.find((el) => el.data.slug === productSlug).name}
+                        {data.find((el) => el.data.slug === productSlug).data.name}
                       </Link>
                     ),
                   },

@@ -3,7 +3,6 @@ import s from "./ProductCard.module.scss";
 import { Stars } from "../Reviews/Starts/Stars";
 import clsx from "clsx";
 import info from "./assets/info.svg";
-import cart from "./assets/cart.svg";
 import { SimilarProduct } from "../SimilarProduct/SimilarProduct";
 
 export const ProductCard = ({ product }) => {
