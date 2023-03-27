@@ -20,7 +20,7 @@ export const CardCatalog = ({ el }) => {
       <div className={cl.card}>
         <img src={el.images[0].small} alt="product" className={cl.card__image} />
         {counter && <p className={cl.card__cart}>{counter}</p>}
-        <button className={cl.card__heart}>
+        <button className={cl.card__heart} onClick={(e) => e.preventDefault()}>
           <img src={heart} alt="♡" />
         </button>
         <Discount
@@ -41,9 +41,8 @@ export const CardCatalog = ({ el }) => {
             </div>
           </div>
           <p className={cl.card__description}>{el.name}</p>
-          <Stars />
-
-          <Button border="green" className={cl.card__button}>
+          <Stars rating={el.averageRating} />
+          <Button border="green" className={cl.card__button} onClick={(e) => e.preventDefault()}>
             В корзину
           </Button>
         </div>

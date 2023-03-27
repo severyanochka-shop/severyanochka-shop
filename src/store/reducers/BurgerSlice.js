@@ -9,8 +9,11 @@ export const burgerSlice = createSlice({
   initialState,
 
   reducers: {
-    getBurger: (state) => {
+    getBurger: (state, action) => {
       state.burgerHide = !state.burgerHide;
+      if (action.payload === false) {
+        state.burgerHide = false
+      }
     },
   },
 });

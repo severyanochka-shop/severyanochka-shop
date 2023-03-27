@@ -23,6 +23,7 @@ export const CategoryPage = ({
   const { getBurger } = burgerSlice.actions;
   const burger = useSelector((state) => state.burgerReducer.burgerHide);
   const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.dataReducer);
 
   const [burgerHide, setBurgerHide] = useState(false);
 
@@ -38,6 +39,13 @@ export const CategoryPage = ({
       dispatch(getBurger(false));
       setBurgerHide(false);
     }
+  }, [size]);
+
+  useEffect(() => {
+    // if (size > 913) {
+      dispatch(getBurger(false));
+      setBurgerHide(false);
+    // }
   }, [size]);
 
   useEffect(() => {
@@ -122,7 +130,7 @@ export const CategoryPage = ({
             </div>
           </div>
 
-          <GridWrapper />
+          <GridWrapper data={data} />
           <Button large background="gray" className={s.btn_show}>
             Показать ещё
           </Button>

@@ -7,8 +7,10 @@ import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
 import { YandexMaps } from "../../components/YandexMaps/YandexMaps";
+import { useSelector } from "react-redux";
 
 export const Main = () => {
+  const { data } = useSelector((state) => state.dataReducer);
   return (
     <>
       <BannerPromo />
@@ -17,21 +19,21 @@ export const Main = () => {
           <SectionTitle>Акции</SectionTitle>
           <SectionLink to="/stocks">Все акции</SectionLink>
         </SectionTitleWrapper>
-        <FlexWrapper title="Акции" />
+        <FlexWrapper data={data} />
       </Section>
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Новинки</SectionTitle>
           <SectionLink to="/new_products">Все новинки</SectionLink>
         </SectionTitleWrapper>
-        <FlexWrapper title="Новинки" />
+        <FlexWrapper data={data} />
       </Section>
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Покупали раньше</SectionTitle>
           <SectionLink to="/bought_before">Все покупки</SectionLink>
         </SectionTitleWrapper>
-        <FlexWrapper title="Покупали раньше" />
+        <FlexWrapper data={data} />
       </Section>
       <Section>
         <SectionTitle>Специальные предложения</SectionTitle>
