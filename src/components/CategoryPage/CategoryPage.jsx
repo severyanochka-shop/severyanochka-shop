@@ -41,6 +41,13 @@ export const CategoryPage = ({
   }, [size]);
 
   useEffect(() => {
+    // if (size > 913) {
+      dispatch(getBurger(false));
+      setBurgerHide(false);
+    // }
+  }, [size]);
+
+  useEffect(() => {
     if (burger === false) {
       setBurgerHide(false);
     }
