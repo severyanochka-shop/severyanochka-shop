@@ -8,26 +8,64 @@ import s from "./CategoryPage.module.scss";
 import { useDispatch } from "react-redux";
 import { burgerSlice } from "../../store/reducers/BurgerSlice";
 import { useSelector } from "react-redux";
+import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
 
-export const CategoryPage = ({
-  deleteFilters,
-  deletePriceRange,
-  funcApply,
-  inStock,
-  subcategory,
-}) => {
-  let initial_value = 44;
-  let final_value = 100;
-  let filter_counter = 6;
-
+export const CategoryPage = ({ subcategory }) => {
+  const dispatch = useDispatch();
   const { getBurger } = burgerSlice.actions;
   const burger = useSelector((state) => state.burgerReducer.burgerHide);
-  const dispatch = useDispatch();
+
   const { data } = useSelector((state) => state.dataReducer);
 
-  const [burgerHide, setBurgerHide] = useState(false);
+  const filterCategory = useSelector((state) => state.filterCategoryReducer);
+  const { setPrice, setCountFilter, setAvailability } = filterCategorySlice.actions;
 
+  const [burgerHide, setBurgerHide] = useState(false);
   const [size, setSize] = useState(0);
+
+  const [filterData, setFilterData] = useState([...data]);
+
+  const initialPrice = {
+    min: data.reduce((acc, el) => (acc.data.priceRegular < el.data.priceRegular ? acc : el)).data
+      .priceRegular,
+    max: data.reduce((acc, el) => (acc.data.priceRegular > el.data.priceRegular ? acc : el)).data
+      .priceRegular,
+  };
+
+  useEffect(() => {
+    dispatch(setPrice({ ...initialPrice }));
+  }, []);
+
+  useEffect(() => {
+    let countFilter = 0;
+    if (filterCategory.minPrice !== initialPrice.min) countFilter++;
+    if (filterCategory.maxPrice !== initialPrice.max) countFilter++;
+    if (filterCategory.availability) countFilter++;
+    dispatch(setCountFilter(countFilter));
+  }, [filterCategory]);
+
+  const deletePriceRange = () => {
+    dispatch(setPrice({ ...initialPrice }));
+  };
+
+  const deleteFilters = () => {
+    deletePriceRange();
+    dispatch(setAvailability());
+  };
+
+  const inStock = () => {
+    console.log("toggle");
+    dispatch(setAvailability());
+  };
+
+  const applyFilter = () => {
+    setFilterData(
+      [...data]
+        .filter((el) => el.data.priceRegular > filterCategory.minPrice)
+        .filter((el) => el.data.priceRegular < filterCategory.maxPrice)
+        .filter((el) => !filterCategory.availability || el.data.stockCount > 0),
+    );
+  };
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 913) setSize(914);
@@ -43,8 +81,8 @@ export const CategoryPage = ({
 
   useEffect(() => {
     // if (size > 913) {
-      dispatch(getBurger(false));
-      setBurgerHide(false);
+    dispatch(getBurger(false));
+    setBurgerHide(false);
     // }
   }, [size]);
 
@@ -87,50 +125,59 @@ export const CategoryPage = ({
           </Button>
 
           <div className={s.filter_none}>
-            <InputRange />
+            <InputRange min={initialPrice.min} max={initialPrice.max} />
             <div className={s.list_block}>
               <ul className={s.ul_subcategory}>
                 <li className={s.li_subcategory}>{subcategory}</li>
               </ul>
             </div>
             <div className={s.stock}>
-              <Toggle M onChange={inStock} />
+              <Toggle M handler={inStock} checked={filterCategory.availability} />
               <p>В наличии</p>
             </div>
-            <Button small background="orange" className={s.btn_apply} onClick={funcApply}>
+            <Button small background="orange" className={s.btn_apply} handler={applyFilter}>
               Применить
             </Button>
           </div>
         </div>
         <div style={{ width: "100%", textAlign: "center" }}>
           <div className={s.deletebtn_block}>
-            <div className={s.btn_quantity}>
-              <div className={s.green_block}>
-                <p className={s.text_green}>Фильтр {filter_counter} </p>
-                <button className={s.cross_green} onClick={deleteFilters}>
-                  ✕
-                </button>
+            {!!filterCategory.countFilter && (
+              <div className={s.btn_quantity}>
+                <div className={s.green_block}>
+                  <p className={s.text_green}>Фильтр {filterCategory.countFilter} </p>
+                  <button className={s.cross_green} onClick={deleteFilters}>
+                    ✕
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className={s.btn_price}>
-              <div className={s.green_block}>
-                <p className={s.text_green}>
-                  Цена от {initial_value} до {final_value}
-                </p>
-                <button className={s.cross_green} onClick={deletePriceRange}>
-                  ✕
-                </button>
+            )}
+            {(filterCategory.minPrice !== initialPrice.min ||
+              filterCategory.maxPrice !== initialPrice.max) && (
+              <div className={s.btn_price}>
+                <div className={s.green_block}>
+                  <p className={s.text_green}>
+                    Цена от {filterCategory.minPrice} до {filterCategory.maxPrice}
+                  </p>
+                  <button className={s.cross_green} onClick={deletePriceRange}>
+                    ✕
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className={s.btn_delete}>
-              <div className={s.gray_block}>
-                <p className={s.text_gray}>Очистить фильтры</p>
-                <button className={s.cross_gray}>✕</button>
+            )}
+            {!!filterCategory.countFilter && (
+              <div className={s.btn_delete}>
+                <div className={s.gray_block}>
+                  <p className={s.text_gray}>Очистить фильтры</p>
+                  <button className={s.cross_gray} onClick={deleteFilters}>
+                    ✕
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
-          <GridWrapper data={data} />
+          <GridWrapper data={filterData} />
           <Button large background="gray" className={s.btn_show}>
             Показать ещё
           </Button>
