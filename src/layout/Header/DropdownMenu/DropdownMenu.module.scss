@@ -1,6 +1,6 @@
 .menu {
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   top: 72px;
   background: #fff;
@@ -63,6 +63,8 @@
 }
 
 .list {
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(max-content, 272px));
   grid-template-areas:
@@ -117,6 +119,7 @@
 
 @media (max-width: 700px) {
   .list {
+    max-height: 80vh;
     font-weight: 400;
     grid-template-columns: 382px;
     grid-template-areas:

@@ -30,9 +30,13 @@ export const Header = () => {
       if (!isMenuHover) setButtonHover(false);
     }, 200);
 
-  const onMenuEnterHandler = () => setMenuHover(true);
+  const onMenuEnterHandler = () => {
+    document.body.style.overflow = "hidden";
+    setMenuHover(true);
+  };
 
   const onMenuLeaveHandler = () => {
+    document.body.style.overflow = "visible";
     setMenuHover(false);
     setButtonHover(false);
   };
