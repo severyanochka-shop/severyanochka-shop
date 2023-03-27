@@ -76,6 +76,9 @@
   flex-direction: column;
   gap: 12px;
   text-align: left;
+  &__mix {
+    display: flex;
+  }
 
   &__pic {
     height: 36px;
@@ -106,6 +109,10 @@
     font-size: 16px;
     text-align: justify;
   }
+}
+
+.star__mix {
+  display: flex;
 }
 
 @media (max-width: 1010px) {

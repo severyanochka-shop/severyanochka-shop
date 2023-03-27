@@ -28,88 +28,77 @@
 
 .deletebtn_block {
   display: flex;
-
   height: auto;
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
-.deletebtn_blockTop {
-  display: flex;
-  gap: 24px;
-}
-
-.deletebtn_blockBottom {
-  display: flex;
-  gap: 24px;
-}
-
 .button_filter {
   background-color: #f3f2f1;
+  padding: 10px 15px 10px 10px;
   font-weight: 700;
   width: 100%;
   text-align: left;
-  padding: 10px;
   margin-bottom: 40px;
   color: #414141;
+  height: 44px;
+  align-items: center;
+  line-height: 150%;
 }
 
-text_filter {
-  font-weight: 700;
-  color: black;
-  text-align: start;
-  padding-left: 5px;
-  line-height: 0;
-}
-
-.cross_green {
+.cross {
   font-size: 15px;
-  color: white;
-  background-color: #70c05b;
   padding: 3px;
-  line-height: 0;
-  float: right;
   cursor: pointer;
-}
 
-.cross_gray {
-  font-size: 15px;
-  color: #414141;
-  background-color: #f3f2f1;
-  padding: 3px;
-  line-height: 0;
-  float: right;
-  cursor: pointer;
+  &_green {
+    color: #fff;
+    background-color: #70c05b;
+  }
+
+  &_gray {
+    color: #414141;
+    background-color: #f3f2f1;
+  }
 }
 
 .text_green {
-  font-size: 12px;
   color: #ffffff;
   margin: 0 auto;
 }
 
 .text_gray {
-  font-size: 12px;
   color: #606060;
   margin: 0 auto;
 }
 .green_block {
   display: flex;
+  min-width: 118px;
+  height: 32px;
+  background-color: #70c05b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 9.5px 8px 8px;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 4px;
+
+  &_gray {
+    background-color: #f3f2f1;
+  }
 }
 
 .btn_quantity {
   width: 118px;
-  cursor: default;
 }
 
 .btn_price {
   width: 184px;
-  cursor: default;
 }
 
 .btn_delete {
-  cursor: default;
+  width: 171px;
   color: #414141;
 }
 
@@ -118,11 +107,11 @@ text_filter {
   margin-bottom: 50px;
 }
 
-.list{
+.list {
   list-style: none;
 }
 
-.list_item{
+.list_item {
   color: #414141;
   line-height: 24px;
   margin-bottom: 30px;
@@ -144,8 +133,6 @@ text_filter {
 .btn_show {
   margin-top: 40px;
 }
-
-
 
 @media (max-width: 913px) {
   .wrapper {

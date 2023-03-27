@@ -1,4 +1,6 @@
 .contacts {
+  display: flex;
+  flex-direction: column;
   color: rgb(65 65 65 / 100%);
 
   &__subtitle {
@@ -6,11 +8,6 @@
     font-size: 36px;
     margin-top: 120px;
   }
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
 }
 
 .item1 {
@@ -81,36 +78,6 @@
   font-size: 18px;
 }
 
-.item4 {
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-
-  &__voshod {
-    position: absolute;
-    top: 116px;
-    left: 126px;
-  }
-
-  &__parus {
-    position: absolute;
-    top: 191px;
-    left: 484px;
-  }
-
-  &__rjaba {
-    position: absolute;
-    top: 130px;
-    left: 784px;
-  }
-
-  &__pelis {
-    position: absolute;
-    top: 224px;
-    left: 953px;
-  }
-}
-
 @media (max-width: 1245px) {
   .contacts {
     max-width: 95%;
@@ -123,34 +90,11 @@
   .item2 {
     gap: 16px;
   }
-
-  .item4 {
-    width: 99%;
-    height: auto;
-  }
-
-  .item4 > img {
-    width: auto;
-    height: auto;
-  }
-}
-
-@media (max-width: 1135px) {
-  .item4__pelis {
-    display: none;
-  }
 }
 
 @media (max-width: 1030px) {
   .contacts {
     max-width: 95%;
-
-    &__title {
-      margin-bottom: 32px;
-      font-size: 48px;
-      height: 72px;
-      padding-top: 5px;
-    }
 
     &__subtitle {
       font-size: 24px;
@@ -176,12 +120,6 @@
       height: 27px;
       padding-top: 0;
     }
-  }
-}
-
-@media (max-width: 995px) {
-  .item4__rjaba {
-    display: none;
   }
 }
 
@@ -237,21 +175,5 @@
     width: 336px;
     height: 176px;
     gap: 16px;
-  }
-
-  .item4 {
-    margin-top: 17px;
-  }
-}
-
-@media (max-width: 670px) {
-  .item4__parus {
-    display: none;
-  }
-}
-
-@media (max-width: 450px) {
-  .item4__voshod {
-    display: none;
   }
 }
