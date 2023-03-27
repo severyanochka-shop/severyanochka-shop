@@ -6,7 +6,7 @@ import emptystar from "../Images/star.svg";
 
 export const AddReview = ({ review, setReview }) => {
   const [value, setValue] = useState("");
-  const [score, setScore] = useState("");
+  const [score, setScore] = useState(0);
 
   const saveReview = () => {
     if (value) {
@@ -21,56 +21,31 @@ export const AddReview = ({ review, setReview }) => {
         },
       ]);
       setValue("");
-      setScore("");
+      setScore(0);
     }
   };
 
   const color = (id) => {
     return {
-      backgroundImage: score === id ? `url(${star})` : `url(${emptystar})`,
+      backgroundImage: score >= id ? `url(${star})` : `url(${emptystar})`,
     };
   };
 
   return (
     <div className={s.yourscore}>
-      <div style={{ display: "flex" }}>
+      <div className={s.yourscore__box}>
         <p className={s.yourscore__subtitle}>Ваша оценка</p>
         <div className={s.yourscore__stars}>
-          <div
-            onClick={() => {
-              setScore("1");
-            }}
-            style={color("1")}
-            className={s.divstar}
-          ></div>
-          <div
-            onClick={() => {
-              setScore("2");
-            }}
-            style={color("2")}
-            className={s.divstar}
-          ></div>
-          <div
-            onClick={() => {
-              setScore("3");
-            }}
-            style={color("3")}
-            className={s.divstar}
-          ></div>
-          <div
-            onClick={() => {
-              setScore("4");
-            }}
-            style={color("4")}
-            className={s.divstar}
-          ></div>
-          <div
-            onClick={() => {
-              setScore("5");
-            }}
-            style={color("5")}
-            className={s.divstar}
-          ></div>
+          {[1, 2, 3, 4, 5].map((el) => (
+            <div
+              key={el}
+              onClick={() => {
+                setScore(el);
+              }}
+              style={color(el)}
+              className={s.divstar}
+            ></div>
+          ))}
         </div>
       </div>
       <textarea

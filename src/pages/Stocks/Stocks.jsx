@@ -7,7 +7,7 @@ export const Stocks = () => {
   return (
     <Section>
       <Title>Акции</Title>
-      <GridWrapper />
+      {/* <GridWrapper /> */}
     </Section>
   );
 };

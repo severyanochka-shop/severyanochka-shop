@@ -3,6 +3,9 @@
   flex-direction: column;
   max-width: 688px;
   float: right;
+  &__box {
+    display: flex;
+  }
 
   &__stars {
     width: 136px;
