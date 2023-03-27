@@ -36,6 +36,28 @@
   margin: 0 24px 20px 0;
 }
 
+.inputWrapper {
+  position: relative;
+  // display: block;
+}
+
+.list {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  left: 0px;
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+
+  &_empty {
+    display: none;
+
+  }
+}
+
 @media (max-width: 1280px) {
   .logo {
     margin: 0 16px 16px 0;

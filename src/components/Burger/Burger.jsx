@@ -29,7 +29,7 @@ export const Burger = (deleteFilters, deletePriceRange, funcApply, inStock, subc
           <div  className={s.btn_quantity}>
             <div className={s.green_block}>
               <p className={s.text_green}>Фильтр {filter_counter} </p>
-              <button className={clsx(s.cross, s.cross_green)} onClick={deleteFilters}>
+              <button className={clsx(s.cross, s.cross_green)} onClick={(deleteFilters)}>
                 ✕
               </button>
             </div>

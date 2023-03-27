@@ -34,6 +34,13 @@ export const Header = () => {
     setButtonHover(false);
   };
 
+  const [inputValue, setInputValue] = useState ('')
+  const   inputSearch = (e) => {
+    console.log(e.target.value)
+    setInputValue(e.target.value)
+
+  }
+
   return (
     <>
       {(isButtonHover || isMenuHover) && (
@@ -64,7 +71,15 @@ export const Header = () => {
                 </div>
               </HeaderButton>
             </Link>
-            <TextField placeholder={"Найти товар"} header />
+            <div className={s.inputWrapper}>
+              <TextField placeholder={"Найти товар"} header handler={(e)=>inputSearch(e)}/>
+                <ul className={inputValue? s.list : s.list_empty}>
+                  <li className={s.list__item}>item1</li>
+                  <li className={s.list__item}>item2</li>
+                  <li className={s.list__item}>item3</li>
+                  <li className={s.list__item}>item4</li>
+                </ul>
+            </div>
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
             </Link>
