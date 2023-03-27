@@ -45,18 +45,12 @@
 }
 .item1__when__time,
 .item1_time {
-  cursor: pointer;
   height: 40px;
-  border-radius: 4px;
-  background-color: rgba(243, 242, 241, 1);
   color: rgba(96, 96, 96, 1);
-  transition: 0.2s;
-  font-family: "Rubik", sans-serif;
   font-size: 16px;
   &:hover {
     background-color: rgba(112, 192, 91, 1);
     color: rgba(255, 255, 255, 1);
-    transition: 0.2s;
   }
   &:disabled {
     background-color: white;
@@ -144,15 +138,9 @@
 }
 
 .enter_btn {
-  cursor: pointer;
-  border-radius: 4px;
   width: 168px;
   height: 40px;
   font-size: 12px;
-  transition: 0.2s;
-  font-family: "Rubik", sans-serif;
-  background-color: rgba(255, 102, 51, 1);
-  color: rgba(255, 255, 255, 1);
   &:hover {
     background-color: rgba(255, 255, 255, 1);
     color: rgba(255, 102, 51, 1);
@@ -162,16 +150,9 @@
 
 .email_btn,
 .calc__btn {
-  cursor: pointer;
-  border-radius: 4px;
-  transition: 0.2s;
-  font-family: "Rubik", sans-serif;
-  background-color: rgba(112, 192, 91, 1);
-  color: rgba(255, 255, 255, 1);
   &:hover {
     background-color: #fbf8ec;
     color: rgba(112, 192, 91, 1);
-    transition: 0.2s;
   }
 }
 
