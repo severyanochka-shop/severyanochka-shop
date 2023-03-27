@@ -25,8 +25,9 @@ export const filterCategorySlice = createSlice({
     setCountFilter: (state, action) => {
       state.countFilter = action.payload;
     },
-    setAvailability: (state) => {
-      state.availability = !state.availability;
+    setAvailability: (state, action) => {
+      if (!action.payload) state.availability = !state.availability;
+      else state.availability = action.payload;
     },
   },
 });

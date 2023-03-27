@@ -32,6 +32,15 @@ export const CategoryPage = ({ subcategory }) => {
       .priceRegular,
   };
 
+  const applyFilter = () => {
+    setFilterData(
+      [...data]
+        .filter((el) => el.data.priceRegular >= filterCategory.minPrice)
+        .filter((el) => el.data.priceRegular <= filterCategory.maxPrice)
+        .filter((el) => !filterCategory.availability || el.data.stockCount > 0),
+    );
+  };
+
   useEffect(() => {
     dispatch(setPrice({ ...initialPrice }));
   }, []);
@@ -46,25 +55,17 @@ export const CategoryPage = ({ subcategory }) => {
 
   const deletePriceRange = () => {
     dispatch(setPrice({ ...initialPrice }));
+    setFilterData([...data].filter((el) => !filterCategory.availability || el.data.stockCount > 0));
   };
 
   const deleteFilters = () => {
     deletePriceRange();
-    dispatch(setAvailability());
+    dispatch(setAvailability(false));
+    setFilterData([...data]);
   };
 
   const inStock = () => {
-    console.log("toggle");
     dispatch(setAvailability());
-  };
-
-  const applyFilter = () => {
-    setFilterData(
-      [...data]
-        .filter((el) => el.data.priceRegular > filterCategory.minPrice)
-        .filter((el) => el.data.priceRegular < filterCategory.maxPrice)
-        .filter((el) => !filterCategory.availability || el.data.stockCount > 0),
-    );
   };
 
   window.addEventListener("resize", () => {
@@ -125,7 +126,11 @@ export const CategoryPage = ({ subcategory }) => {
           </Button>
 
           <div className={s.filter_none}>
-            <InputRange min={initialPrice.min} max={initialPrice.max} />
+            <InputRange
+              min={initialPrice.min}
+              max={initialPrice.max}
+              handler={() => applyFilter()}
+            />
             <div className={s.list_block}>
               <ul className={s.ul_subcategory}>
                 <li className={s.li_subcategory}>{subcategory}</li>
