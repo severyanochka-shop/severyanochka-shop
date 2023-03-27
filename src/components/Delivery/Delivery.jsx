@@ -2,8 +2,13 @@ import React from "react";
 import { Select } from "../../ui/Select/Select";
 import s from "./Delivery.module.scss";
 import { Calculator } from "../Basket/Calculator/Calculator";
+import { Button } from "../../ui/Button/Button";
 
 export const Delivery = () => {
+  const timeFrame = [
+    ["8:00-14:00", "14:00-18:00", "18:00-20:00", "20:00-22:00"],
+    ["8-10", "10 - 12", "12-14", "14-16", "16-18", "18-20"],
+  ];
   return (
     <div className={s.delivery}>
       <h4 className={s.item1__subtitle_first}>Куда</h4>
@@ -41,22 +46,22 @@ export const Delivery = () => {
               <label className={s.datebox}>
                 Время
                 <div className={s.time}>
-                  <button className={s.item1__when__time}>8:00-14:00</button>
-                  <button className={s.item1__when__time}>14:00-18:00</button>
-                  <button className={s.item1__when__time} disabled>
-                    18:00-20:00
-                  </button>
-                  <button className={s.item1__when__time} disabled>
-                    20:00-22:00
-                  </button>
+                  {timeFrame[0].map((el) => (
+                    <>
+                      <Button background="gray" className={s.item1__when__time}>
+                        {el}
+                      </Button>
+                    </>
+                  ))}
                 </div>
                 <div className={s.time_min}>
-                  <button className={s.item1_time}>8-10</button>
-                  <button className={s.item1_time}>10-12</button>
-                  <button className={s.item1_time}>12-14</button>
-                  <button className={s.item1_time}>14-16</button>
-                  <button className={s.item1_time}>16-18</button>
-                  <button className={s.item1_time}>18-20</button>
+                  {timeFrame[1].map((el) => (
+                    <>
+                      <Button background="gray" className={s.item1_time}>
+                        {el}
+                      </Button>
+                    </>
+                  ))}
                 </div>
               </label>
             </div>
@@ -65,14 +70,20 @@ export const Delivery = () => {
             <h4 className={s.item1__subtitle}>Вход</h4>
             <div className={s.wherewraper}>
               <input type="tel" className={s.enter__tel} placeholder="+79128886677" />
-              <button className={s.enter_btn}>Получить код</button>
-              <button className={s.email_btn}>Войти по почте</button>
+              <Button background="orange" className={s.enter_btn}>
+                Получить код
+              </Button>
+              <Button background="green" className={s.email_btn}>
+                Войти по почте
+              </Button>
             </div>
           </div>
         </div>
         <div className={s.calculator}>
           <Calculator btn="Оплатить на сайте" display="none" />
-          <button className={s.calc__btn}>Оплатить при получении</button>
+          <Button background="green" className={s.calc__btn}>
+            Оплатить при получении
+          </Button>
         </div>
       </div>
     </div>

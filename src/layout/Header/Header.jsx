@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
 import s from "./Header.module.scss";
 import logo_desktop from "./assets/logos/logo_desktop.svg";
 import logo_tablet from "./assets/logos/logo_tablet.svg";
@@ -19,16 +19,19 @@ import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
+  const href = useHref();
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
 
   const onButtonEnterHandler = () => setButtonHover(true);
+
   const onButtonLeaveHandler = () =>
     setTimeout(() => {
       if (!isMenuHover) setButtonHover(false);
     }, 200);
 
   const onMenuEnterHandler = () => setMenuHover(true);
+
   const onMenuLeaveHandler = () => {
     setMenuHover(false);
     setButtonHover(false);
@@ -43,7 +46,7 @@ export const Header = () => {
 
   return (
     <>
-      {(isButtonHover || isMenuHover) && (
+      {(isButtonHover || isMenuHover) && href !== "/category" && (
         <DropdownMenu
           onMenuEnterHandler={onMenuEnterHandler}
           onMenuLeaveHandler={onMenuLeaveHandler}
