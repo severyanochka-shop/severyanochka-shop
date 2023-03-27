@@ -2,11 +2,7 @@ import React from "react";
 import s from "./FlexWrapper.module.scss";
 import { CardCatalog } from "../../components/CardCatalog/CardCatalog";
 
-import { useSelector } from "react-redux";
-
-export const FlexWrapper = () => {
-  const { data } = useSelector((state) => state.dataReducer);
-
+export const FlexWrapper = ({ data }) => {
   return (
     <div className={s.wrapper}>
       {data.slice(0, 4).map((el, i) => (

@@ -23,7 +23,7 @@ const Product = () => {
       </Section>
       <Section>
         <SectionTitle className={s.subtitle}>С этим товаром покупают</SectionTitle>
-        <FlexWrapper />
+        <FlexWrapper data={data} />
       </Section>
       <Section>
         <SectionTitle className={s.subtitle}>Отзывы</SectionTitle>
@@ -34,7 +34,7 @@ const Product = () => {
           <SectionTitle>Акции</SectionTitle>
           <SectionLink to="/stocks">Все акции</SectionLink>
         </SectionTitleWrapper>
-        <FlexWrapper title="Акции" />
+        <FlexWrapper data={data} />
       </Section>
     </>
   );
