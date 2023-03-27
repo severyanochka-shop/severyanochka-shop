@@ -1,6 +1,5 @@
 import React from "react";
 import cl from "./CardCatalog.module.scss";
-import cart from "./assets/shoppingcart.svg";
 import { Button } from "../../ui/Button/Button";
 import { Stars } from "../Reviews/Starts/Stars";
 import { Link, useParams } from "react-router-dom";
@@ -11,7 +10,6 @@ import clsx from "clsx";
 export const CardCatalog = ({ el }) => {
   const params = useParams();
   const counter = 5;
-
   return (
     <Link
       className={cl.link}
