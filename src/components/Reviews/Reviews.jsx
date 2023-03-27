@@ -35,7 +35,7 @@ export const Reviews = (props) => {
         <div className={s.item1}>
           <div className={s.total_score}>
             <div className={s.total_score__stars}>
-              <Stars type={totalScore} />
+              <Stars rating={totalScore} />
             </div>
             <p className={s.total_score__num}>{totalScore ? totalScore : 0} из 5</p>
           </div>
@@ -44,7 +44,7 @@ export const Reviews = (props) => {
             {[5, 4, 3, 2, 1].map((el) => (
               <>
                 <span className={s.span}>{el}</span>
-                <Stars type={el} />
+                <Stars rating={el} />
                 <span id="point">{repet(el)}</span>
               </>
             ))}
@@ -52,16 +52,16 @@ export const Reviews = (props) => {
         </div>
         <div className={s.rewievbox}>
           <div className={s.item2}>
-            <ReviewItem name={"Татьяна"} type={4} date={"22.02.2022"} text={"приятный вкус"} />
+            <ReviewItem name={"Татьяна"} rating={4} date={"22.02.2022"} text={"приятный вкус"} />
             <ReviewItem
               name={"Мария"}
-              type={5}
+              rating={5}
               date={"22.02.2022"}
               text={"Масло среднее, есть вкуснее"}
             />
             <ReviewItem
               name={"Алексей"}
-              type={1}
+              rating={1}
               date={"22.02.2022"}
               text={
                 "Покупали в том числе в этом весе. Масло по вкусу и органолептическим свойствам совершенно не похоже на натуральное. Упаковка выглядит как напечатанная на дешёвом принтере. На наш взгляд продукт является подделкой или контрафактной продукцией. Просим разобраться."
@@ -76,7 +76,7 @@ export const Reviews = (props) => {
                   </div>
                   <div className={s.star__mix}>
                     <div className={s.review__stars}>
-                      <Stars type={r.score} />
+                      <Stars rating={r.score} />
                     </div>
                     <p className={s.review__date}>{r.date}</p>
                   </div>
