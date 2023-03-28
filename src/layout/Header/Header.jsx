@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Link, useHref } from "react-router-dom";
 import s from "./Header.module.scss";
@@ -82,18 +82,45 @@ export const Header = () => {
   console.log(listCategories);
   let listSubcategories = [...data.subcategories].map((el) => el.name);
   console.log(listSubcategories);
-  // const [list, setList] = useState([]);
 
   const [inputValue, setInputValue] = useState("");
 
-  // setList (data.categories.filter((el) => el.name.toLowerCase().includes(inputValue.toLowerCase().trim())))
-  // console.log(list)
   const newListCategories = listCategories.filter((el) =>
     el.toLowerCase().includes(inputValue.toLowerCase().trim()),
   );
   const newListSubcategories = listSubcategories.filter((el) =>
     el.toLowerCase().includes(inputValue.toLowerCase().trim()),
   );
+
+  // передача value в инпут
+  const itemSearchHandler = (e) => {
+    setInputValue(e.target.textContent);
+    setIsOpen(!isOpen);
+  };
+  //скрытие выпадающего списка при автокомплите
+  const [isOpen, setIsOpen] = useState(true);
+  const inputClickHandler = () => {
+    console.log("click input");
+    setIsOpen(true);
+    console.log(isOpen);
+  };
+
+  //скрытие выпадающего списка при клике вне поля
+  const dropDownRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen === false) return;
+    const handleClick = (e) => {
+      if (!dropDownRef.current) return;
+      if (!dropDownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -125,21 +152,38 @@ export const Header = () => {
                 </div>
               </HeaderButton>
             </Link>
-            <div className={s.inputWrapper}>
+            <div className={s.inputWrapper} ref={dropDownRef}>
               <TextField
                 placeholder={"Найти товар"}
+                header
                 header_search
                 handler={(e) => setInputValue(e.target.value)}
                 value={inputValue}
+                onClick={inputClickHandler}
               />
-              <ul className={inputValue ? s.list : s.list_empty}>
+              {/* <ul className={inputValue ? s.list : s.list_empty}>
                 {newListCategories.map((el) => (
                   <li className={s.list__item}>{newListCategories}</li>
                 ))}
                 {newListSubcategories.map((el) => (
                   <li className={s.list__item}>{newListSubcategories}</li>
                 ))}
-              </ul>
+              </ul> */}
+
+              {inputValue && isOpen ? (
+                <ul className={s.list}>
+                  {newListCategories.map((el) => (
+                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                      {newListCategories}
+                    </li>
+                  ))}
+                  {newListSubcategories.map((el) => (
+                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                      {newListSubcategories}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />

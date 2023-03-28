@@ -39,32 +39,47 @@
 .inputWrapper {
   position: relative;
   // display: block;
+  padding: 0px 0px;
 }
 
 .list {
   list-style: none;
   position: absolute;
-  width: 100%;
-  top: 32px;
+  width: 436px;
+  top: 31px;
   left: 0px;
   background-color: #fff;
 
+  margin: 0 0 0 17px;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 150%;
   border-radius: 0px 0px 4px 4px;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #70c05b;
   border-top: none;
-  padding: 4px 8px 8px 16px;
+  padding: 0px 8px 8px 16px;
+  box-shadow: 2px 4px 8px rgb(0 0 0 / 10%);
+  color: #8f8f8f;
 
   &_empty {
     display: none;
-
+  }
+}
+.list__item {
+  cursor: pointer;
+  &:hover {
+    color: #414141;
   }
 }
 
 @media (max-width: 1280px) {
   .logo {
     margin: 0 16px 16px 0;
+  }
+}
+
+@media (max-width: 1129px) {
+  .list {
+    width: 386px;
   }
 }
 
@@ -78,6 +93,13 @@
 
   .button__wrapper {
     width: 40px;
+  }
+}
+
+@media (max-width: 856px) {
+  .list {
+    width: 336px;
+    margin: 0 0 0 7px;
   }
 }
 
