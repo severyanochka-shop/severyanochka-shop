@@ -12,9 +12,11 @@ export const filterCategorySlice = createSlice({
   initialState,
 
   reducers: {
-    setPrice: (state, action) => {
+    setInitialState: (state, action) => {
+      state.countFilter = 0;
       state.maxPrice = action.payload.max;
       state.minPrice = action.payload.min;
+      state.availability = action.payload.availability;
     },
     setMinPrice: (state, action) => {
       state.minPrice = action.payload;
