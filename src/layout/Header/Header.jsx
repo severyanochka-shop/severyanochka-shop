@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useHref } from "react-router-dom";
 import s from "./Header.module.scss";
@@ -19,6 +19,43 @@ import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 
 export const Header = () => {
+  const data = {
+    categories: [
+      {
+        name: "Молоко, сыр, сметана",
+        id: "bb577846-623f-400b-be19-bbf6446600d8",
+      },
+      {
+        name: "что-то",
+        id: "1",
+      },
+    ],
+    subcategories: [
+      {
+        name: "Молоко",
+        id: "bb577846-622f-400b-b119-bbf6446600d8",
+      },
+    ],
+    products: [
+      {
+        name: "Молоко Простоквашино",
+        id: "bb577846-622f-400b-b199-bbf6446600d8",
+      },
+      {
+        name: "Молоко Вкуснотеево",
+        id: "bb577846-622f-400b-b119-bbf6456600d8",
+      },
+      {
+        name: "Молоко Домик в деревне",
+        id: "bb577846-622f-400b-b119-b2f6446600d8",
+      },
+      {
+        name: "Молоко Валио",
+        id: "bb577846-622f-400b-b119-bbf6411100d8",
+      },
+    ],
+  };
+
   const href = useHref();
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
@@ -37,12 +74,22 @@ export const Header = () => {
     setButtonHover(false);
   };
 
-  const [inputValue, setInputValue] = useState ('')
-  const   inputSearch = (e) => {
-    console.log(e.target.value)
-    setInputValue(e.target.value)
+  let listCategories = [...data.categories].map((el) => el.name);
+  console.log(listCategories);
+  let listSubcategories = [...data.subcategories].map((el) => el.name);
+  console.log(listSubcategories);
+  // const [list, setList] = useState([]);
 
-  }
+  const [inputValue, setInputValue] = useState("");
+
+  // setList (data.categories.filter((el) => el.name.toLowerCase().includes(inputValue.toLowerCase().trim())))
+  // console.log(list)
+  const newListCategories = listCategories.filter((el) =>
+    el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  );
+  const newListSubcategories = listSubcategories.filter((el) =>
+    el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  );
 
   return (
     <>
@@ -75,13 +122,20 @@ export const Header = () => {
               </HeaderButton>
             </Link>
             <div className={s.inputWrapper}>
-              <TextField placeholder={"Найти товар"} header handler={(e)=>inputSearch(e)}/>
-                <ul className={inputValue? s.list : s.list_empty}>
-                  <li className={s.list__item}>item1</li>
-                  <li className={s.list__item}>item2</li>
-                  <li className={s.list__item}>item3</li>
-                  <li className={s.list__item}>item4</li>
-                </ul>
+              <TextField
+                placeholder={"Найти товар"}
+                header_search
+                handler={(e) => setInputValue(e.target.value)}
+                value={inputValue}
+              />
+              <ul className={inputValue ? s.list : s.list_empty}>
+                {newListCategories.map((el) => (
+                  <li className={s.list__item}>{newListCategories}</li>
+                ))}
+                {newListSubcategories.map((el) => (
+                  <li className={s.list__item}>{newListSubcategories}</li>
+                ))}
+              </ul>
             </div>
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />

@@ -17,8 +17,11 @@ export const TextField = ({
   header,
   mobile,
   handler,
+  header_search,
   ...restprops
 }) => {
+
+  
   return (
     <div className={header ? s.textfield__header : mobile ? s.textfield__mobile : "textfield"}>
       <label
@@ -48,6 +51,7 @@ export const TextField = ({
             [s.textfield__input_huge]: huge,
             [s.textfield__input_header]: header,
             [s.textfield__input_mobile]: mobile,
+            [s.textfield__input_header_search]: header_search,
           })}
           {...restprops}
         ></input>
