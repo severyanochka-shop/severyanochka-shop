@@ -63,7 +63,7 @@
 }
 
 .list {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(max-content, 272px));
@@ -140,7 +140,7 @@
   }
 
   .menu {
-    width: 302px;
+    width: 332px;
     top: 56px;
   }
 }
