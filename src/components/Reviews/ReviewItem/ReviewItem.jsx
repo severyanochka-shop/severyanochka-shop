@@ -4,7 +4,7 @@ import user from "./Images/user.svg";
 import { Stars } from "../Starts/Stars";
 
 export const ReviewItem = (props) => {
-  const { name, date, text, type } = props;
+  const { name, date, text, rating } = props;
   return (
     <div className={s.review}>
       <div style={{ display: "flex" }}>
@@ -13,7 +13,7 @@ export const ReviewItem = (props) => {
       </div>
       <div style={{ display: "flex" }}>
         <div className={s.review__stars}>
-          <Stars type={type} />
+          <Stars rating={rating} />
         </div>
         <p className={s.review__date}>{date}</p>
       </div>

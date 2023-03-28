@@ -50,7 +50,7 @@ export const Burger = ({ deletePriceRange, funcApply, inStock, subcategory }) =>
         </div>
 
         <div className={s.filter_none}>
-          <InputRange burger />
+          <InputRange />
           <ul className={s.list}>
             <li className={s.list_item}>{subcategory}</li>
             <li className={s.list_item}>example1</li>

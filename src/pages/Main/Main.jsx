@@ -8,6 +8,7 @@ import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTit
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
 import { YandexMaps } from "../../components/YandexMaps/YandexMaps";
 import { useSelector } from "react-redux";
+import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 
 export const Main = () => {
   const { data } = useSelector((state) => state.dataReducer);
@@ -42,6 +43,10 @@ export const Main = () => {
       <Section>
         <SectionTitle>Наши магазины</SectionTitle>
         <YandexMaps />
+      </Section>
+      <Section>
+        <SectionTitle>Статьи</SectionTitle>
+        <ArticleWrapper />
       </Section>
     </>
   );
