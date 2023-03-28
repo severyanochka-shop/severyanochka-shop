@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { v1 } from "uuid";
 import s from "./AddReview.module.scss";
-import star from "../Images/starfull.svg";
+import fullstar from "../Images/starfull.svg";
 import emptystar from "../Images/star.svg";
 
 export const AddReview = ({ review, setReview }) => {
   const [value, setValue] = useState("");
   const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(0);
 
   const saveReview = () => {
     if (value) {
@@ -22,13 +23,20 @@ export const AddReview = ({ review, setReview }) => {
       ]);
       setValue("");
       setScore(0);
+      setHover(0);
     }
   };
 
-  const color = (id) => {
-    return {
-      backgroundImage: score >= id ? `url(${star})` : `url(${emptystar})`,
-    };
+  const handleMouseOver = (el) => {
+    setHover(el);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(0);
+  };
+
+  const handleClick = (el) => {
+    setScore(el);
   };
 
   return (
@@ -39,10 +47,13 @@ export const AddReview = ({ review, setReview }) => {
           {[1, 2, 3, 4, 5].map((el) => (
             <div
               key={el}
-              onClick={() => {
-                setScore(el);
+              onMouseOver={() => handleMouseOver(el)}
+              onMouseLeave={handleMouseLeave}
+              onClick={() => handleClick(el)}
+              style={{
+                backgroundImage:
+                  el <= (hover || score) ? `url("${fullstar}")` : `url(${emptystar})`,
               }}
-              style={color(el)}
               className={s.divstar}
             ></div>
           ))}
