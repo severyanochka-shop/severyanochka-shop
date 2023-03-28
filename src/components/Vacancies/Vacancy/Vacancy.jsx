@@ -2,8 +2,15 @@ import React from "react";
 import s from "./Vacancy.module.scss";
 import { Paragraph } from "./Paragraph/Paragraph";
 import telephone from "./telephone.svg";
+import { useState } from "react";
+import { Modal } from "../../../layout/Modal/Modal";
+import { ModalVacancy } from "../../../layout/Modal/ModalVacancy/ModalVacancy";
 
-export const Vacancy = ({ post = "Должность", handleClose }) => {
+export const Vacancy = ({ post = "Должность" }) => {
+  const [isModal, setIsModal] = useState(false);
+  const handleClose = () => {
+    setIsModal(!isModal);
+  };
   return (
     <div className={s.vacancy} onClick={handleClose}>
       <h3 className={s.title}>{post}</h3>
@@ -32,6 +39,7 @@ export const Vacancy = ({ post = "Должность", handleClose }) => {
           +7 904 271 35 90
         </a>
       </div>
+      {isModal && <Modal handleClose={handleClose} children={<ModalVacancy />} />}
     </div>
   );
 };
