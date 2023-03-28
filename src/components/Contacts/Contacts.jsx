@@ -19,6 +19,37 @@ export const Contacts = () => {
     return { backgroundColor: active === id ? "#70c05b" : "rgba(243, 242, 241, 1)" };
   };
 
+  const shops = [
+    {
+      name: "п.Щельяюр",
+      id: "shel",
+      adress: "ул.Дорожная",
+      phone: "+79042713590",
+      img: { src: voshod, alt: "Восход" },
+    },
+    {
+      name: "д.Вертеп",
+      id: "vert",
+      adress: "ул. Советская 87",
+      phone: "+7 8214091330",
+      img: { src: parus, alt: "Парус" },
+    },
+    {
+      name: "с.Краснобор",
+      id: "kras",
+      adress: "ул. Заводская 16",
+      phone: "+7 8214091101",
+      img: { src: rjaba, alt: "Рябинушка" },
+    },
+    {
+      name: "д.Диюр",
+      id: "diur",
+      adress: "ул. Рабочая 1",
+      phone: "+7 8214091300",
+      img: { src: los, alt: "Пелысь" },
+    },
+  ];
+
   return (
     <div className={s.contacts}>
       <div className={s.item1}>
@@ -39,14 +70,10 @@ export const Contacts = () => {
       </div>
       <h3 className={s.contacts__subtitle}>Наши магазины</h3>
       <div className={s.item2}>
-        {[
-          { name: "п.Щельяюр", id: "shel" },
-          { name: "д.Вертеп", id: "vert" },
-          { name: "с.Краснобор", id: "kras" },
-          { name: "д.Диюр", id: "diur" },
-        ].map((el) => (
+        {shops.map((el, i) => (
           <>
             <button
+              key={i}
               id={el.id}
               onClick={handleClick}
               className={s.location__btn}
@@ -58,10 +85,15 @@ export const Contacts = () => {
         ))}
       </div>
       <div className={s.item3}>
-        <ContactItem adress={"ул.Дорожная"} phone={"+79042713590"} img={voshod} />
-        <ContactItem adress={"ул. Советская 87"} phone={"+7 8214091330"} img={parus} />
-        <ContactItem adress={"ул. Заводская 16"} phone={"+7 8214091101"} img={rjaba} />
-        <ContactItem adress={"ул. Рабочая 1"} phone={"+7 8214091300"} img={los} />
+        {shops.map((el, i) => (
+          <ContactItem
+            key={i.toString()}
+            adress={el.adress}
+            phone={el.phone}
+            img={el.img.src}
+            alt={el.img.alt}
+          />
+        ))}
       </div>
       <YMaps>
         <YandexMaps width="1208px" height="354px" />
