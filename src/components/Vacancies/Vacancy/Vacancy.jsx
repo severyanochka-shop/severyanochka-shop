@@ -22,7 +22,15 @@ export const Vacancy = ({ post = "Должность", handleClose }) => {
       <p className={s.text}>Звоните</p>
       <div className={s.wrapper}>
         <img src={telephone} alt="tel" />
-        <p className={s.telephone}>+7 904 271 35 90</p>
+        <a
+          href="tel:+7 904 271 35 90"
+          className={s.telephone}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          +7 904 271 35 90
+        </a>
       </div>
     </div>
   );
