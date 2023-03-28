@@ -104,7 +104,7 @@ export const CategoryPage = ({ subcategory }) => {
   };
 
   burgerHide
-    ? document.body.setAttribute("style", "overflow: hidden; position: fixed;")
+    ? document.body.setAttribute("style", "overflow-y: scroll; position: fixed;")
     : document.body.setAttribute("style", "overflow: visible; position: static;");
 
   return (
