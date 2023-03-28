@@ -18,18 +18,20 @@ export const CategoryPage = ({ subcategory }) => {
   const { data } = useSelector((state) => state.dataReducer);
 
   const filterCategory = useSelector((state) => state.filterCategoryReducer);
-  const { setPrice, setCountFilter, setAvailability } = filterCategorySlice.actions;
+  const { setInitialState, setCountFilter, setAvailability, setMinPrice, setMaxPrice } =
+    filterCategorySlice.actions;
 
   const [burgerHide, setBurgerHide] = useState(false);
   const [size, setSize] = useState(0);
 
   const [filterData, setFilterData] = useState([...data]);
 
-  const initialPrice = {
+  const initialState = {
     min: data.reduce((acc, el) => (acc.data.priceRegular < el.data.priceRegular ? acc : el)).data
       .priceRegular,
     max: data.reduce((acc, el) => (acc.data.priceRegular > el.data.priceRegular ? acc : el)).data
       .priceRegular,
+    availability: false,
   };
 
   const applyFilter = () => {
@@ -42,19 +44,21 @@ export const CategoryPage = ({ subcategory }) => {
   };
 
   useEffect(() => {
-    dispatch(setPrice({ ...initialPrice }));
+    dispatch(setInitialState({ ...initialState }));
   }, []);
 
   useEffect(() => {
     let countFilter = 0;
-    if (filterCategory.minPrice !== initialPrice.min) countFilter++;
-    if (filterCategory.maxPrice !== initialPrice.max) countFilter++;
+    if (filterCategory.minPrice !== initialState.min) countFilter++;
+    if (filterCategory.maxPrice !== initialState.max) countFilter++;
     if (filterCategory.availability) countFilter++;
     dispatch(setCountFilter(countFilter));
   }, [filterCategory]);
 
   const deletePriceRange = () => {
-    dispatch(setPrice({ ...initialPrice }));
+    dispatch(setMinPrice(initialState.min));
+    dispatch(setMaxPrice(initialState.max));
+
     setFilterData([...data].filter((el) => !filterCategory.availability || el.data.stockCount > 0));
   };
 
@@ -104,7 +108,7 @@ export const CategoryPage = ({ subcategory }) => {
   };
 
   burgerHide
-    ? document.body.setAttribute("style", "overflow: hidden; position: fixed;")
+    ? document.body.setAttribute("style", "position: fixed; overflow-y: scroll; ")
     : document.body.setAttribute("style", "overflow: visible; position: static;");
 
   return (
@@ -127,8 +131,8 @@ export const CategoryPage = ({ subcategory }) => {
 
           <div className={s.filter_none}>
             <InputRange
-              min={initialPrice.min}
-              max={initialPrice.max}
+              min={initialState.min}
+              max={initialState.max}
               handler={() => applyFilter()}
             />
             <div className={s.list_block}>
@@ -157,8 +161,8 @@ export const CategoryPage = ({ subcategory }) => {
                 </div>
               </div>
             )}
-            {(filterCategory.minPrice !== initialPrice.min ||
-              filterCategory.maxPrice !== initialPrice.max) && (
+            {(filterCategory.minPrice !== initialState.min ||
+              filterCategory.maxPrice !== initialState.max) && (
               <div className={s.btn_price}>
                 <div className={s.green_block}>
                   <p className={s.text_green}>
