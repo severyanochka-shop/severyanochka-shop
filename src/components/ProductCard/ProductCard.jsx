@@ -25,7 +25,7 @@ export const ProductCard = ({ product }) => {
       <div className={s.product__nav}>
         <p className={s.art}>арт. 371431</p>
         <div className={s.nav__stars}>
-          <Stars type={product.averageRating} />
+          <Stars rating={product.averageRating} />
           <p className={s.nav__stars__rewiew}>
             {!!product.reviewsCount && `${product.reviewsCount} отзыв${end}`}
           </p>
