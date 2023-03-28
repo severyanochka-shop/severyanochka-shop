@@ -1,7 +1,7 @@
 .modalvacancy {
   display: flex;
   flex-direction: column;
-  height: 636px;
+  height: 600px;
   justify-content: space-between;
 }
 
@@ -22,6 +22,10 @@
   text-align: left;
   font-size: 18px;
   line-height: 150%;
+}
+
+.info {
+  height: 68px;
 }
 
 .telephone {

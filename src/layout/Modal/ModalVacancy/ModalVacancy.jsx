@@ -23,7 +23,7 @@ export const ModalVacancy = (props) => {
           />
         </div>
       </div>
-      <div>
+      <div className={s.info}>
         <p className={s.text}>Звоните</p>
         <div className={s.wrapper}>
           <img src={telephone} alt="tel" />
