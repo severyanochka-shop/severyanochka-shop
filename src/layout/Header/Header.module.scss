@@ -45,7 +45,7 @@
   list-style: none;
   position: absolute;
   width: 436px;
-  top: 31px;
+  top: 33px;
   left: 0px;
   background-color: #fff;
   margin: 0 0 0 17px;
@@ -67,6 +67,12 @@
   &:hover {
     color: #414141;
   }
+}
+.symbol {
+  color: red;
+}
+.leftFilter {
+  color: black
 }
 
 @media (max-width: 1280px) {

@@ -79,9 +79,7 @@ export const Header = () => {
   };
 
   let listCategories = [...data.categories].map((el) => el.name);
-  console.log(listCategories);
   let listSubcategories = [...data.subcategories].map((el) => el.name);
-  console.log(listSubcategories);
 
   const [inputValue, setInputValue] = useState("");
 
@@ -92,18 +90,53 @@ export const Header = () => {
     el.toLowerCase().includes(inputValue.toLowerCase().trim()),
   );
 
-  // передача value в инпут
+  //поиск символов
+  const [symbol, setSymbol] = useState("");
+  console.log("символ", symbol);
+  const [leftFilter, setLeftFilter] = useState(newListCategories);
+
+  useEffect(()=> {},[symbol])
+
+
+  const inputHandler = (e) => {
+    setInputValue(e.target.value);
+    searchSymbols(newListCategories, e.target.value);
+  };
+
+  const searchSymbols = (data, e) => {
+    if (!data) {
+      return;
+    } else {
+      console.log(data);
+      console.log(e);
+      // console.log(e.target.value);
+      const regexp = new RegExp(e, "ig");
+      console.log(regexp);
+      if (data[0] === undefined) return;
+      const matchValue = data[0].match(regexp);
+      if (matchValue === null) return setSymbol("");
+      else {
+        console.log(matchValue.join(""));
+        let a = newListCategories[0];
+        console.log(a.slice(matchValue.length, a.length));
+        // console.log(a.slice(5,20))
+        // console.log(e.target.value.split(regexp));
+        // return e.target.value.split(regexp);
+        setSymbol(matchValue.join(""));
+        setLeftFilter(a.slice(matchValue.length, a.length))
+      }
+    }
+  };
+
+  // передача value в из окна в инпут
   const itemSearchHandler = (e) => {
     setInputValue(e.target.textContent);
     setIsOpen(!isOpen);
   };
+
   //скрытие выпадающего списка при автокомплите
   const [isOpen, setIsOpen] = useState(true);
-  const inputClickHandler = () => {
-    console.log("click input");
-    setIsOpen(true);
-    console.log(isOpen);
-  };
+  const inputClickHandler = () => setIsOpen(true);
 
   //скрытие выпадающего списка при клике вне поля
   const dropDownRef = useRef(null);
@@ -121,6 +154,11 @@ export const Header = () => {
       document.removeEventListener("click", handleClick);
     };
   }, [isOpen]);
+
+  //выделение текста
+  const highlight = (e) => {
+    console.log(e.target.value);
+  };
 
   return (
     <>
@@ -153,11 +191,12 @@ export const Header = () => {
               </HeaderButton>
             </Link>
             <div className={s.inputWrapper} ref={dropDownRef}>
+              <div>{symbol}</div>
               <TextField
                 placeholder={"Найти товар"}
                 header
                 header_search
-                handler={(e) => setInputValue(e.target.value)}
+                handler={(e) => inputHandler(e)}
                 value={inputValue}
                 onClick={inputClickHandler}
               />
@@ -166,8 +205,12 @@ export const Header = () => {
                 <ul className={s.list}>
                   {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      {newListCategories}
+                      {/* {symbol ? <span className={s.symbol}>{symbol}</span> : newListCategories} */}
+                      {/* {symbol ? (<span className={s.symbol}>{`${symbol}${leftFilter}`}</span>): newListCategories} */}
+                      <span className={s.symbol}>{`${symbol}`}</span>
+                      <span className={s.leftFilter}>{`${leftFilter}`}</span>
                     </li>
+                    
                   ))}
                   {newListSubcategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>

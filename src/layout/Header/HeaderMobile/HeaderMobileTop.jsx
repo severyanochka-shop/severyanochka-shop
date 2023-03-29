@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef }from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import s from "./HeaderMobileTop.module.scss";
 import logo_mobile from "../assets/logos/logo_mobile.svg";
@@ -6,7 +6,6 @@ import { Container } from "../../Container/Container";
 import { TextField } from "../../../ui/TextField/TextField";
 
 export const HeaderMobileTop = () => {
-
   const data = {
     categories: [
       {
@@ -45,9 +44,7 @@ export const HeaderMobileTop = () => {
   };
 
   let listCategories = [...data.categories].map((el) => el.name);
-  console.log(listCategories);
   let listSubcategories = [...data.subcategories].map((el) => el.name);
-  console.log(listSubcategories);
 
   const [inputValue, setInputValue] = useState("");
 
@@ -85,10 +82,6 @@ export const HeaderMobileTop = () => {
       document.removeEventListener("click", handleClick);
     };
   }, [isOpen]);
-  
-  console.log(inputValue)
-  console.log(isOpen)
-
 
   return (
     <>
@@ -100,7 +93,7 @@ export const HeaderMobileTop = () => {
             </Link>
             {/* <TextField placeholder={"Найти товар"} className={s.header_input} mobile /> */}
             <div className={s.inputWrapper} ref={dropDownRef}>
-            <TextField
+              <TextField
                 placeholder={"Найти товар"}
                 mobile
                 header_search
@@ -108,8 +101,8 @@ export const HeaderMobileTop = () => {
                 value={inputValue}
                 onClick={inputClickHandler}
               />
-           
-            {inputValue && isOpen ? (
+
+              {inputValue && isOpen ? (
                 <ul className={s.list}>
                   {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
@@ -124,8 +117,7 @@ export const HeaderMobileTop = () => {
                 </ul>
               ) : null}
 
-
-                {/* <ul className={s.list}>
+              {/* <ul className={s.list}>
                   {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
                       {newListCategories}
@@ -137,10 +129,7 @@ export const HeaderMobileTop = () => {
                     </li>
                   ))}
                 </ul> */}
-            
-              </div>
-
-
+            </div>
           </div>
         </Container>
       </div>
