@@ -110,6 +110,8 @@
     display: block;
     width: 80px;
     height: 80px;
+    padding: 5px;
+    object-fit: contain;
   }
 }
 
@@ -119,6 +121,7 @@
     margin: 0 auto;
     width: 100%;
     height: auto;
+    padding: 10px;
   }
 }
 

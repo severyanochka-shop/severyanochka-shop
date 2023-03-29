@@ -1,4 +1,18 @@
 .article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  background: #ffffff;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  margin-bottom: 60px;
+  overflow: hidden;
+
+  &__wrapper {
+    padding: 0 30px 0;
+  }
+
   &__image {
     display: block;
     width: 100%;
@@ -28,12 +42,19 @@
     display: block;
     font-size: 20px;
     line-height: 150%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 }
 
 @media (max-width: 970px) {
   .article {
+    border-radius: 10px;
+    margin-bottom: 40px;
+
+    &__wrapper {
+      padding: 0 20px 0;
+    }
+
     &__image {
       width: 100%;
       height: 300px;
@@ -52,7 +73,7 @@
 
     &__text {
       font-size: 18px;
-      margin-bottom: 60px;
+      margin-bottom: 35px;
     }
   }
 }

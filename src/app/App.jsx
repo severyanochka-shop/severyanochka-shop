@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Await, createBrowserRouter, Link, RouterProvider, useParams } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import { Layout } from "../layout/Layout";
 import { AboutAsync as About } from "../pages/About/About.async";
 import { ArticlesAsync as Articles } from "../pages/Articles/Articles.async";
@@ -14,25 +13,16 @@ import { OrdersAsync as Orders } from "../pages/Orders/Orders.async";
 import { PolicyAsync as Policy } from "../pages/Policy/Policy.async";
 import { VacanciesAsync as Vacancies } from "../pages/Vacancies/Vacancies.async";
 import { ContactsAsync as Contacts } from "../pages/Contacts/Contacts.async";
-import { dataFetch } from "../store/reducers/ActionCreators";
 import "./global/styles/global.scss";
 import "./global/styles/variables.scss";
 import { ScrollToTop } from "./ScrollToTop";
-import { StocksAsync as Stocks } from "../pages/Stocks/Stcoks.async";
+import { StocksAsync as Stocks } from "../pages/Stocks/Stocks.async";
 import { NewProductsAsync as NewProducts } from "../pages/NewProducts/NewProducts.async";
 import { BoughtBeforeAsync as BoughtBefore } from "../pages/BoughtBefore/BoughtBefore.async";
 import { ProductAsync as Product } from "../pages/Product/Product.async";
 import axios from "axios";
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const params = useParams();
-  const { data } = useSelector((state) => state.dataReducer);
-
-  useEffect(() => {
-    dispatch(dataFetch());
-  }, []);
-
   const router = createBrowserRouter([
     {
       path: "/",
