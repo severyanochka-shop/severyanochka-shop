@@ -27,7 +27,12 @@ export const Article = ({ date, title, text, image }) => {
           Подробнее
         </Button>
       </div>
-      {isModal && <Modal handleClose={handleClose} children={<ModalArticle />} />}
+      {isModal && (
+        <Modal
+          handleClose={handleClose}
+          children={<ModalArticle date={date} title={title} text={text} image={image} />}
+        />
+      )}
     </div>
   );
 };
