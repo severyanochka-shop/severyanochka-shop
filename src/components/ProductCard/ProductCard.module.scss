@@ -46,7 +46,6 @@
   &:first-of-type {
     margin-right: 41.05px;
   }
-
 }
 
 .btn_favorites_share::before {
@@ -76,10 +75,11 @@
   }
   &__product {
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0 4px;
     max-width: 504px;
-    width: 100%;
-    height: auto;
     box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
     border-radius: 4px;
     background: #ffffff;

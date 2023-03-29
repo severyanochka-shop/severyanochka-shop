@@ -2,19 +2,23 @@ import React from "react";
 import s from "./Calculator.module.scss";
 import { Toggle } from "../../../ui/Toggle/Toggle";
 import green from "../assets/somegreen.png";
+import { useSelector } from "react-redux";
 
 export const Calculator = (props) => {
+  const { data } = useSelector((state) => state.dataReducer);
   const {
     persentOfDiscount = 5,
     accumPoints,
     minOrderSum = 1000,
     bonusPersent = 10,
-    set = [],
     btn = "Оформить заказ",
     display = "block",
   } = props;
 
-  let numOfProducts = set.lenght ? set.lenght : 0;
+  let numOfProducts = data.reduce((sum) => {
+    return sum + 1;
+  }, 0);
+
   let end = "ов";
   // редактирует окончание в зависимости от кол-ва товаров
   if (numOfProducts) {
@@ -29,8 +33,8 @@ export const Calculator = (props) => {
     }
   }
 
-  const finalCost = set.reduce((sum, el) => {
-    return sum + el.cost * el.quantity;
+  const finalCost = data.reduce((sum, el) => {
+    return sum + el.data.priceWithCard;
   }, 0);
   let bonus = (finalCost * bonusPersent) / 100;
   let discount = (finalCost * persentOfDiscount) / 100;

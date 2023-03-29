@@ -11,12 +11,7 @@ export const CardCatalog = ({ el }) => {
   const params = useParams();
   const counter = 5;
   return (
-    <Link
-      className={cl.link}
-      to={`/category/${params.category ? params.category : "molochnie-producti-i-yaizo"}/${
-        el.slug
-      }`}
-    >
+    <Link className={cl.link} to={`/category/${params.category}/${el.id}`}>
       <div className={cl.card}>
         <img src={el.images[0].small} alt="product" className={cl.card__image} />
         {counter && <p className={cl.card__cart}>{counter}</p>}
@@ -27,7 +22,7 @@ export const CardCatalog = ({ el }) => {
           orange
           large
           className={cl.card__discount}
-          text={`-${el.promo.discountPercent}%`}
+          text={`-${el.promo?.discountPercent}%`}
         />
         <div className={cl.card__content_wrapper}>
           <div className={cl.card__price}>

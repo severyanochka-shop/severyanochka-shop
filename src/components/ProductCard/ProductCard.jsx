@@ -43,10 +43,8 @@ export const ProductCard = ({ product }) => {
             );
           })}
         </div>
-        <div>
-          <div className={s.wrapper__product}>
-            <img className={s.product__image} src={product.images[0].full} alt="Product" />
-          </div>
+        <div className={s.wrapper__product}>
+          <img className={s.product__image} src={product.images[0].full} alt="Product" />
         </div>
         <div className={s.wrapper__description}>
           <div className={s.description__price_wrapper}>
@@ -81,14 +79,16 @@ export const ProductCard = ({ product }) => {
             </div>
             <div className={s.information__wrapper}>
               <p className={s.information__left}>Упаковка</p>
-              <p className={s.information__right}>Упаковка</p>
+              <p className={s.information__right}>
+                {product.step} {product.unitsOfMeasurement}
+              </p>
             </div>
           </div>
         </div>
         <div className={s.wrapper__similar}>
           <p className={s.similar__title}>Похожие</p>
           <div className={s.similar__wrapper}>
-            {product.images.slice(0, 4).map((el, i) => {
+            {product.images.map((el, i) => {
               return <SimilarProduct key={i} img={el.small} price={product.priceRegular} />;
             })}
           </div>

@@ -3,11 +3,11 @@ import { CategoryItem } from "./CategoryItem/CategoryItem";
 import s from "./Category.module.scss";
 import { Link } from "react-router-dom";
 
-export const Category = ({ categories }) => {
+export const Category = ({ data }) => {
   return (
     <div className={s.category}>
-      {categories.map((el) => (
-        <Link key={el.id} to={`${el.slug}`} className={s.link} onClick={()=>{}}>
+      {data.map((el) => (
+        <Link key={el.id} to={`${el.id}`} className={s.link} onClick={() => {}}>
           <CategoryItem name={el.name} image={el.image} />
         </Link>
       ))}

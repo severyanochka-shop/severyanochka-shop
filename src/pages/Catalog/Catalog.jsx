@@ -15,7 +15,7 @@ const Catalog = () => {
       <Title>Каталог</Title>
       {!!isLoading && <Spinners type="circle" />}
       {!!error && <Error />}
-      {!!data && <Category categories={data} />}
+      {!!data && <Category data={data} />}
     </Section>
   );
 };
