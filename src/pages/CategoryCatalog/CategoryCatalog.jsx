@@ -5,16 +5,29 @@ import { Section } from "../../layout/Section/Section";
 import { Title } from "../../layout/Title/Title";
 import { CategoryPage } from "../../components/CategoryPage/CategoryPage";
 import { Burger } from "../../components/Burger/Burger";
+import axios from "axios";
+import useSWR from "swr";
 
 export const CategoryCatalog = () => {
   const params = useParams();
-  const { categories } = useSelector((state) => state.categoriesReducer);
+  const fetcher = (url) => axios({ url }).then((res) => res.data.data);
+
+  const { data, error, isLoading } = useSWR(
+    `http://codeine.tech:3000/api/categories/${params.category}`,
+    fetcher,
+  );
+
+  console.log(data, error, isLoading);
 
   return (
     <Section>
       <Burger />
-      <Title>{categories.find((el) => el.slug === params.category).name}</Title>
-      <CategoryPage />
+      {!!data && (
+        <>
+          <Title>{data.name}</Title>
+          <CategoryPage data={data} />
+        </>
+      )}
     </Section>
   );
 };

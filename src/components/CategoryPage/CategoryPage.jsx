@@ -10,12 +10,10 @@ import { burgerSlice } from "../../store/reducers/BurgerSlice";
 import { useSelector } from "react-redux";
 import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
 
-export const CategoryPage = ({ subcategory }) => {
+export const CategoryPage = ({ data }) => {
   const dispatch = useDispatch();
   const { getBurger } = burgerSlice.actions;
   const burger = useSelector((state) => state.burgerReducer.burgerHide);
-
-  const { data } = useSelector((state) => state.dataReducer);
 
   const filterCategory = useSelector((state) => state.filterCategoryReducer);
   const { setInitialState, setCountFilter, setAvailability, setMinPrice, setMaxPrice } =
@@ -24,22 +22,24 @@ export const CategoryPage = ({ subcategory }) => {
   const [burgerHide, setBurgerHide] = useState(false);
   const [size, setSize] = useState(0);
 
-  const [filterData, setFilterData] = useState([...data]);
+  const [filterData, setFilterData] = useState([...data.products]);
 
   const initialState = {
-    min: data.reduce((acc, el) => (acc.data.priceRegular < el.data.priceRegular ? acc : el)).data
+    min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
       .priceRegular,
-    max: data.reduce((acc, el) => (acc.data.priceRegular > el.data.priceRegular ? acc : el)).data
+    max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
       .priceRegular,
     availability: false,
   };
 
+  console.log(data);
+
   const applyFilter = () => {
     setFilterData(
-      [...data]
-        .filter((el) => el.data.priceRegular >= filterCategory.minPrice)
-        .filter((el) => el.data.priceRegular <= filterCategory.maxPrice)
-        .filter((el) => !filterCategory.availability || el.data.stockCount > 0),
+      [...data.products]
+        .filter((el) => el.priceRegular >= filterCategory.minPrice)
+        .filter((el) => el.priceRegular <= filterCategory.maxPrice)
+        .filter((el) => !filterCategory.availability || el.stockCount > 0),
     );
   };
 
@@ -59,13 +59,15 @@ export const CategoryPage = ({ subcategory }) => {
     dispatch(setMinPrice(initialState.min));
     dispatch(setMaxPrice(initialState.max));
 
-    setFilterData([...data].filter((el) => !filterCategory.availability || el.data.stockCount > 0));
+    setFilterData(
+      [...data.products].filter((el) => !filterCategory.availability || el.stockCount > 0),
+    );
   };
 
   const deleteFilters = () => {
     deletePriceRange();
     dispatch(setAvailability(false));
-    setFilterData([...data]);
+    setFilterData([...data.products]);
   };
 
   const inStock = () => {
@@ -137,7 +139,7 @@ export const CategoryPage = ({ subcategory }) => {
             />
             <div className={s.list_block}>
               <ul className={s.ul_subcategory}>
-                <li className={s.li_subcategory}>{subcategory}</li>
+                <li className={s.li_subcategory}>133</li>
               </ul>
             </div>
             <div className={s.stock}>

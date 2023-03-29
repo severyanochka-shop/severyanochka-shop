@@ -6,7 +6,7 @@ export const GridWrapper = ({ data }) => {
   return (
     <div className={cl.grid_wrapper}>
       {data.map((el) => (
-        <CardCatalog key={el.data.slug} el={el.data} />
+        <CardCatalog key={el.slug} el={el} />
       ))}
     </div>
   );

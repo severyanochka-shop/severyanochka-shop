@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
+import { Await, createBrowserRouter, Link, RouterProvider, useParams } from "react-router-dom";
 import { Layout } from "../layout/Layout";
 import { AboutAsync as About } from "../pages/About/About.async";
 import { ArticlesAsync as Articles } from "../pages/Articles/Articles.async";
@@ -14,7 +14,7 @@ import { OrdersAsync as Orders } from "../pages/Orders/Orders.async";
 import { PolicyAsync as Policy } from "../pages/Policy/Policy.async";
 import { VacanciesAsync as Vacancies } from "../pages/Vacancies/Vacancies.async";
 import { ContactsAsync as Contacts } from "../pages/Contacts/Contacts.async";
-import { categoriesFetch, dataFetch } from "../store/reducers/ActionCreators";
+import { dataFetch } from "../store/reducers/ActionCreators";
 import "./global/styles/global.scss";
 import "./global/styles/variables.scss";
 import { ScrollToTop } from "./ScrollToTop";
@@ -22,14 +22,14 @@ import { StocksAsync as Stocks } from "../pages/Stocks/Stcoks.async";
 import { NewProductsAsync as NewProducts } from "../pages/NewProducts/NewProducts.async";
 import { BoughtBeforeAsync as BoughtBefore } from "../pages/BoughtBefore/BoughtBefore.async";
 import { ProductAsync as Product } from "../pages/Product/Product.async";
+import axios from "axios";
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { categories } = useSelector((state) => state.categoriesReducer);
+  const params = useParams();
   const { data } = useSelector((state) => state.dataReducer);
 
   useEffect(() => {
-    dispatch(categoriesFetch());
     dispatch(dataFetch());
   }, []);
 
@@ -99,13 +99,11 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              loader: ({ params }) => params.category,
+              loader: async ({ params }) =>
+                (await axios(`http://codeine.tech:3000/api/categories/${params.category}`)).data
+                  .data,
               handle: {
-                crumb: (category) => (
-                  <Link to={`/category/${category}`}>
-                    {categories.find((el) => el.slug === category).name}
-                  </Link>
-                ),
+                crumb: (category) => <Link to={`/category/${category}`}>{category.name}</Link>,
               },
               children: [
                 {

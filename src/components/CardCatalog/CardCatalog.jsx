@@ -27,7 +27,7 @@ export const CardCatalog = ({ el }) => {
           orange
           large
           className={cl.card__discount}
-          text={`-${el.promo.discountPercent}%`}
+          text={`-${el.promo?.discountPercent}%`}
         />
         <div className={cl.card__content_wrapper}>
           <div className={cl.card__price}>
