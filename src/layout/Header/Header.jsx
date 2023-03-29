@@ -94,37 +94,38 @@ export const Header = () => {
   const [symbol, setSymbol] = useState("");
   console.log("символ", symbol);
   const [leftFilter, setLeftFilter] = useState(newListCategories);
+  console.log(leftFilter);
 
-  useEffect(()=> {},[symbol])
-
+  //
+  useEffect(() => {
+    if (newListCategories[0] === undefined) return;
+    let a = newListCategories[0];
+    setLeftFilter(a.slice(symbol.length, a.length));
+    console.log("leftFilter", leftFilter);
+  }, [symbol]);
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
-    searchSymbols(newListCategories, e.target.value);
+    searchSymbols(newListCategories, inputValue);
   };
 
-  const searchSymbols = (data, e) => {
-    if (!data) {
-      return;
-    } else {
-      console.log(data);
-      console.log(e);
-      // console.log(e.target.value);
-      const regexp = new RegExp(e, "ig");
-      console.log(regexp);
-      if (data[0] === undefined) return;
-      const matchValue = data[0].match(regexp);
-      if (matchValue === null) return setSymbol("");
-      else {
-        console.log(matchValue.join(""));
-        let a = newListCategories[0];
-        console.log(a.slice(matchValue.length, a.length));
-        // console.log(a.slice(5,20))
-        // console.log(e.target.value.split(regexp));
-        // return e.target.value.split(regexp);
-        setSymbol(matchValue.join(""));
-        setLeftFilter(a.slice(matchValue.length, a.length))
-      }
+  const searchSymbols = (filter, inputValue) => {
+    if (!filter) return;
+    const regexp = new RegExp(inputValue, "ig");
+    console.log(regexp);
+    console.log("inputvalue", inputValue);
+    if (filter[0] === undefined) return ;
+    const matchValue = filter[0].match(inputValue);
+    console.log("filter", filter[0]);
+    console.log("matchValue", matchValue);
+    if (matchValue === null) return setSymbol("");
+    else {
+      console.log(matchValue.join(""));
+      let a = newListCategories[0];
+      console.log(a.slice(matchValue.length, a.length));
+      setSymbol(matchValue.join(""));
+      console.log(symbol);
+      setLeftFilter(a.slice(symbol.length, a.length))
     }
   };
 
@@ -191,7 +192,6 @@ export const Header = () => {
               </HeaderButton>
             </Link>
             <div className={s.inputWrapper} ref={dropDownRef}>
-              <div>{symbol}</div>
               <TextField
                 placeholder={"Найти товар"}
                 header
@@ -203,15 +203,26 @@ export const Header = () => {
 
               {inputValue && isOpen ? (
                 <ul className={s.list}>
-                  {newListCategories.map((el) => (
+                  {/* {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      {/* {symbol ? <span className={s.symbol}>{symbol}</span> : newListCategories} */}
-                      {/* {symbol ? (<span className={s.symbol}>{`${symbol}${leftFilter}`}</span>): newListCategories} */}
                       <span className={s.symbol}>{`${symbol}`}</span>
                       <span className={s.leftFilter}>{`${leftFilter}`}</span>
                     </li>
-                    
+                  ))} */}
+
+                  {newListCategories.map((el) => (
+                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                      <span className={s.symbol}>{`${symbol}`}</span>
+                      <span className={s.leftFilter}>{`${leftFilter}`}</span>
+                    </li>
                   ))}
+
+                  {/* {newListSubcategories.map((el) => (
+                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                      {newListSubcategories}
+                    </li>
+                  ))} */}
+
                   {newListSubcategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
                       {newListSubcategories}
