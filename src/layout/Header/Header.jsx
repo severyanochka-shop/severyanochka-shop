@@ -97,16 +97,11 @@ export const Header = () => {
   console.log(leftFilter);
 
   //
-  useEffect(() => {
-    if (newListCategories[0] === undefined) return;
-    let a = newListCategories[0];
-    setLeftFilter(a.slice(symbol.length, a.length));
-    console.log("leftFilter", leftFilter);
-  }, [symbol]);
+
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
-    searchSymbols(newListCategories, inputValue);
+    // searchSymbols(newListCategories, inputValue);
   };
 
   const searchSymbols = (filter, inputValue) => {
@@ -128,6 +123,13 @@ export const Header = () => {
       setLeftFilter(a.slice(symbol.length, a.length))
     }
   };
+
+  useEffect(() => {
+    if (newListCategories[0] === undefined) return;
+    let a = newListCategories[0];
+    setLeftFilter(a.slice(symbol.length, a.length));
+    console.log("leftFilter", leftFilter);
+  }, [symbol]);
 
   // передача value в из окна в инпут
   const itemSearchHandler = (e) => {

@@ -70,10 +70,16 @@
   }
 }
 .symbol {
-  color: red;
+  font-weight: 600;
+  &:hover {
+    color: #414141;
+  }
 }
 .leftFilter {
-  color: black
+  color: #8f8f8f;
+  &:hover {
+    color: #414141;
+  }
 }
 
 @media (max-width: 1280px) {
