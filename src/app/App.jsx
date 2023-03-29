@@ -103,7 +103,7 @@ export const App = () => {
                 (await axios(`http://codeine.tech:3000/api/categories/${params.category}`)).data
                   .data,
               handle: {
-                crumb: (category) => <Link to={`/category/${category}`}>{category.name}</Link>,
+                crumb: (category) => <Link to={`/category/${category.id}`}>{category.name}</Link>,
               },
               children: [
                 {
@@ -116,18 +116,18 @@ export const App = () => {
                 },
                 {
                   path: "/category/:category/:product",
-                  loader: ({ params }) => {
-                    return { categorySlug: params.category, productSlug: params.product };
-                  },
+                  loader: async ({ params }) =>
+                    (await axios(`http://codeine.tech:3000/api/products/${params.product}`)).data
+                      .data,
                   element: (
                     <React.Suspense>
                       <Product />
                     </React.Suspense>
                   ),
                   handle: {
-                    crumb: ({ categorySlug, productSlug }) => (
-                      <Link to={`/category/${categorySlug}/${productSlug}`}>
-                        {data.find((el) => el.data.slug === productSlug).data.name}
+                    crumb: (product) => (
+                      <Link to={`/category/${product.categoryId}/${product.id}`}>
+                        {product.name}
                       </Link>
                     ),
                   },

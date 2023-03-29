@@ -17,8 +17,6 @@ export const CategoryCatalog = () => {
     fetcher,
   );
 
-  console.log(data, error, isLoading);
-
   return (
     <Section>
       <Burger />
