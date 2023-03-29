@@ -9,15 +9,24 @@ import { useDispatch } from "react-redux";
 import { burgerSlice } from "../../store/reducers/BurgerSlice";
 import { useSelector } from "react-redux";
 import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
+import clsx from "clsx";
+import { FilterButton } from "./FilterButton/FilterButton";
 
 export const CategoryPage = ({ data }) => {
   const dispatch = useDispatch();
+
   const { getBurger } = burgerSlice.actions;
   const burger = useSelector((state) => state.burgerReducer.burgerHide);
 
   const filterCategory = useSelector((state) => state.filterCategoryReducer);
-  const { setInitialState, setCountFilter, setAvailability, setMinPrice, setMaxPrice } =
-    filterCategorySlice.actions;
+  const {
+    setInitialState,
+    setCountFilter,
+    setAvailability,
+    setMinPrice,
+    setMaxPrice,
+    setSubcategory,
+  } = filterCategorySlice.actions;
 
   const [burgerHide, setBurgerHide] = useState(false);
   const [size, setSize] = useState(0);
@@ -30,17 +39,28 @@ export const CategoryPage = ({ data }) => {
     max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
       .priceRegular,
     availability: false,
+    subcategory: false,
   };
-
-  console.log(data);
 
   const applyFilter = () => {
     setFilterData(
       [...data.products]
+        .filter(
+          (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
+        )
         .filter((el) => el.priceRegular >= filterCategory.minPrice)
         .filter((el) => el.priceRegular <= filterCategory.maxPrice)
         .filter((el) => !filterCategory.availability || el.stockCount > 0),
     );
+    let countFilter = 0;
+    if (
+      filterCategory.minPrice !== initialState.min ||
+      filterCategory.maxPrice !== initialState.max
+    )
+      countFilter++;
+    if (filterCategory.availability) countFilter++;
+    if (filterCategory.subcategory) countFilter++;
+    dispatch(setCountFilter(countFilter));
   };
 
   useEffect(() => {
@@ -49,29 +69,41 @@ export const CategoryPage = ({ data }) => {
 
   useEffect(() => {
     let countFilter = 0;
-    if (filterCategory.minPrice !== initialState.min) countFilter++;
-    if (filterCategory.maxPrice !== initialState.max) countFilter++;
+    if (
+      filterCategory.minPrice !== initialState.min ||
+      filterCategory.maxPrice !== initialState.max
+    )
+      countFilter++;
     if (filterCategory.availability) countFilter++;
+    if (filterCategory.subcategory) countFilter++;
     dispatch(setCountFilter(countFilter));
-  }, [filterCategory]);
+  }, [filterData]);
 
   const deletePriceRange = () => {
     dispatch(setMinPrice(initialState.min));
     dispatch(setMaxPrice(initialState.max));
 
     setFilterData(
-      [...data.products].filter((el) => !filterCategory.availability || el.stockCount > 0),
+      [...data.products]
+        .filter(
+          (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
+        )
+        .filter((el) => !filterCategory.availability || el.stockCount > 0),
     );
   };
 
   const deleteFilters = () => {
-    deletePriceRange();
-    dispatch(setAvailability(false));
+    dispatch(setInitialState({ ...initialState }));
+    dispatch(setCountFilter(0));
     setFilterData([...data.products]);
   };
 
   const inStock = () => {
     dispatch(setAvailability());
+  };
+
+  const handlerSubcategory = (subcategoryId) => {
+    dispatch(setSubcategory(subcategoryId));
   };
 
   window.addEventListener("resize", () => {
@@ -110,7 +142,7 @@ export const CategoryPage = ({ data }) => {
   };
 
   burgerHide
-    ? document.body.setAttribute("style", "position: fixed; overflow-y: scroll; ")
+    ? document.body.setAttribute("style", "position: fixed; overflow-y: scroll;")
     : document.body.setAttribute("style", "overflow: visible; position: static;");
 
   return (
@@ -132,14 +164,20 @@ export const CategoryPage = ({ data }) => {
           </Button>
 
           <div className={s.filter_none}>
-            <InputRange
-              min={initialState.min}
-              max={initialState.max}
-              handler={() => applyFilter()}
-            />
+            <InputRange min={initialState.min} max={initialState.max} />
             <div className={s.list_block}>
               <ul className={s.ul_subcategory}>
-                <li className={s.li_subcategory}>133</li>
+                {data.subcategories.map((el) => (
+                  <li
+                    key={el.id}
+                    className={clsx(s.li_subcategory, {
+                      [s.li_subcategory_active]: el.id === filterCategory.subcategory,
+                    })}
+                    onClick={() => handlerSubcategory(el.id)}
+                  >
+                    {el.name}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className={s.stock}>
@@ -154,37 +192,22 @@ export const CategoryPage = ({ data }) => {
         <div style={{ width: "100%", textAlign: "center" }}>
           <div className={s.deletebtn_block}>
             {!!filterCategory.countFilter && (
-              <div className={s.btn_quantity}>
-                <div className={s.green_block}>
-                  <p className={s.text_green}>Фильтр {filterCategory.countFilter} </p>
-                  <button className={s.cross_green} onClick={deleteFilters}>
-                    ✕
-                  </button>
-                </div>
-              </div>
+              <FilterButton
+                color="green"
+                text={`Фильтр ${filterCategory.countFilter}`}
+                onClick={deleteFilters}
+              />
             )}
             {(filterCategory.minPrice !== initialState.min ||
               filterCategory.maxPrice !== initialState.max) && (
-              <div className={s.btn_price}>
-                <div className={s.green_block}>
-                  <p className={s.text_green}>
-                    Цена от {filterCategory.minPrice} до {filterCategory.maxPrice}
-                  </p>
-                  <button className={s.cross_green} onClick={deletePriceRange}>
-                    ✕
-                  </button>
-                </div>
-              </div>
+              <FilterButton
+                color="green"
+                text={`Цена от ${filterCategory.minPrice} до ${filterCategory.maxPrice}`}
+                onClick={deletePriceRange}
+              />
             )}
             {!!filterCategory.countFilter && (
-              <div className={s.btn_delete}>
-                <div className={s.gray_block}>
-                  <p className={s.text_gray}>Очистить фильтры</p>
-                  <button className={s.cross_gray} onClick={deleteFilters}>
-                    ✕
-                  </button>
-                </div>
-              </div>
+              <FilterButton color="gray" text="Очистить фильтры" onClick={deleteFilters} />
             )}
           </div>
 

@@ -1,0 +1,19 @@
+.button {
+  cursor: auto;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+  &__text {
+    padding: 0 9px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  &__cross {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}

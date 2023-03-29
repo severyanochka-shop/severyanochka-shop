@@ -5,6 +5,7 @@ const initialState = {
   minPrice: 0,
   maxPrice: Number.MAX_SAFE_INTEGER,
   availability: false,
+  subcategory: false,
 };
 
 export const filterCategorySlice = createSlice({
@@ -17,6 +18,7 @@ export const filterCategorySlice = createSlice({
       state.maxPrice = action.payload.max;
       state.minPrice = action.payload.min;
       state.availability = action.payload.availability;
+      state.subcategory = action.payload.subcategory;
     },
     setMinPrice: (state, action) => {
       state.minPrice = action.payload;
@@ -30,6 +32,9 @@ export const filterCategorySlice = createSlice({
     setAvailability: (state, action) => {
       if (!action.payload) state.availability = !state.availability;
       else state.availability = action.payload;
+    },
+    setSubcategory: (state, action) => {
+      state.subcategory = action.payload;
     },
   },
 });

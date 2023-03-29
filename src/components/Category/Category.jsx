@@ -7,7 +7,7 @@ export const Category = ({ data }) => {
   return (
     <div className={s.category}>
       {data.map((el) => (
-        <Link key={el.id} to={`${el.id}`} className={s.link} onClick={() => {}}>
+        <Link key={el.id} to={`${el.id}`} className={s.link}>
           <CategoryItem name={el.name} image={el.image} />
         </Link>
       ))}

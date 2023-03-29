@@ -27,94 +27,18 @@
   height: 44px;
   text-align: center;
   margin-bottom: 40px;
-  background-color: #F3F2F1;
+  background-color: #f3f2f1;
   border-radius: 4px;
   color: #414141;
   &_media {
     display: none;
   }
-
 }
-
 
 .text_filter {
   font-weight: 700;
   color: black;
   text-align: start;
-  // padding-left: 5px;
-  // line-height: 0;
-}
-
-.cross_green {
-  font-size: 15px;
-  color: white;
-  background-color: #70c05b;
-  padding: 3px;
-  line-height: 0;
-  float: right;
-  cursor: pointer;
-}
-
-.cross_gray {
-  font-size: 15px;
-  color: #414141;
-  background-color: #f3f2f1;
-  padding: 3px;
-  line-height: 0;
-  float: right;
-  cursor: pointer;
-}
-
-.text_green {
-  font-size: 12px;
-  color: #fff;
-  margin: 0 auto;
-}
-
-.text_gray {
-  font-size: 12px;
-  color: #606060;
-  margin: 0 auto;
-}
-
-.green_block {
-  display: flex;
-  min-width: 118px;
-  height: 32px;
-  background-color: #70c05b;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 9.5px 8px 8px;
-  font-size: 12px;
-  line-height: 18px;
-  border-radius: 4px;
-}
-
-.gray_block {
-  display: flex;
-  min-width: 118px;
-  height: 32px;
-  background-color: #f3f2f1;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 9.5px 8px 8px;
-  font-size: 12px;
-  line-height: 18px;
-  border-radius: 4px;
-}
-
-
-.btn_quantity {
-  width: 118px;
-}
-
-.btn_price {
-  width: 184px;
-}
-
-.btn_delete {
-  width: 171px;
-  color: #414141;
 }
 
 .list_block {
@@ -130,6 +54,11 @@
   color: #414141;
   line-height: 24px;
   margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.li_subcategory_active {
+  color: #ff6633;
 }
 
 .stock {
@@ -173,7 +102,6 @@
       margin-bottom: 32px;
     }
   }
-
 
   .text_filter {
     color: #fff;

@@ -7,25 +7,25 @@
   font-family: Rubik, sans-serif;
   font-weight: 400;
   line-height: 150%;
-  padding: 5px;
+  padding: 4px 8px;
   transition: 0.2s;
 
   //Sizes
   &__large {
-    width: 193px;
+    width: max-content;
     height: 60px;
     font-size: 24px;
   }
 
   &__medium {
     height: 40px;
-    width: 157px;
+    width: max-content;
     font-size: 16px;
   }
 
   &__small {
     height: 32px;
-    width: 157px;
+    width: max-content;
     font-size: 12px;
   }
 
