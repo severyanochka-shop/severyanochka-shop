@@ -5,11 +5,14 @@
   background-color: #fff;
   box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
   border-radius: 4px;
+  padding: 5px;
 }
 
 .image {
   height: 67px;
+  width: 142px;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .price {
