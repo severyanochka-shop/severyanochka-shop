@@ -8,11 +8,21 @@
   height: 56px;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  // flex-direction: row;
   align-items: end;
   padding: 8px 4px;
 }
 
+.inputWrapper {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.list {
+  display: block;
+  background-color: red;
+}
 
 .logo {
   display: block;
@@ -23,5 +33,4 @@
   .header_top {
     display: none;
   }
-  
 }
