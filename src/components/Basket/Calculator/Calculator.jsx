@@ -15,7 +15,10 @@ export const Calculator = (props) => {
     display = "block",
   } = props;
 
-  let numOfProducts = data.lenght ? data.lenght : 0;
+  let numOfProducts = data.reduce((sum) => {
+    return sum + 1;
+  }, 0);
+
   let end = "ов";
   // редактирует окончание в зависимости от кол-ва товаров
   if (numOfProducts) {
