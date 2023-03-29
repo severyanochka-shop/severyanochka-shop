@@ -161,14 +161,6 @@ export const Header = () => {
                 value={inputValue}
                 onClick={inputClickHandler}
               />
-              {/* <ul className={inputValue ? s.list : s.list_empty}>
-                {newListCategories.map((el) => (
-                  <li className={s.list__item}>{newListCategories}</li>
-                ))}
-                {newListSubcategories.map((el) => (
-                  <li className={s.list__item}>{newListSubcategories}</li>
-                ))}
-              </ul> */}
 
               {inputValue && isOpen ? (
                 <ul className={s.list}>

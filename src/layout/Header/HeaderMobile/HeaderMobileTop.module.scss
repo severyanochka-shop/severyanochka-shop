@@ -15,14 +15,37 @@
 
 .inputWrapper {
   display: flex;
-  justify-content: end;
+  position: relative;
   width: 100%;
 }
 
 .list {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
-  background-color: red;
+  background-color: #fff;
+  width: 99.9%;
+  border: 1px solid #70c05b;
+
+  top: 31px;
+  border-top: none;
+  // border-bottom: none;
+  padding: 0px 8px 8px 8px;
+  box-shadow: 0px 6px 8px rgb(0 0 0 / 10%);
+  color: #8f8f8f;
+  border-radius: 0px 0px 4px 4px;
+ 
 }
+
+.list__item {
+  cursor: pointer;
+  &:hover {
+    color: #414141;
+  }
+}
+
 
 .logo {
   display: block;

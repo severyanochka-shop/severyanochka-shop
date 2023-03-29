@@ -66,9 +66,7 @@ export const HeaderMobileTop = () => {
   //скрытие выпадающего списка при автокомплите
   const [isOpen, setIsOpen] = useState(true);
   const inputClickHandler = () => {
-    console.log("click input");
     setIsOpen(true);
-    console.log(isOpen);
   };
 
   //скрытие выпадающего списка при клике вне поля
@@ -101,7 +99,7 @@ export const HeaderMobileTop = () => {
               <img src={logo_mobile} alt="ЛОГО" className={s.logo} />
             </Link>
             {/* <TextField placeholder={"Найти товар"} className={s.header_input} mobile /> */}
-            <div className={s.inputWrapper}>
+            <div className={s.inputWrapper} ref={dropDownRef}>
             <TextField
                 placeholder={"Найти товар"}
                 mobile
@@ -110,8 +108,8 @@ export const HeaderMobileTop = () => {
                 value={inputValue}
                 onClick={inputClickHandler}
               />
-            </div>
-            {/* {inputValue && isOpen ? (
+           
+            {inputValue && isOpen ? (
                 <ul className={s.list}>
                   {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
@@ -124,7 +122,7 @@ export const HeaderMobileTop = () => {
                     </li>
                   ))}
                 </ul>
-              ) : null} */}
+              ) : null}
 
 
                 {/* <ul className={s.list}>
@@ -138,9 +136,10 @@ export const HeaderMobileTop = () => {
                       {newListSubcategories}
                     </li>
                   ))}
-                </ul>
-   
- */}
+                </ul> */}
+            
+              </div>
+
 
           </div>
         </Container>
