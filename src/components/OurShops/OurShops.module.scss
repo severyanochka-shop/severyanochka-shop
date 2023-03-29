@@ -1,0 +1,87 @@
+.ourshops {
+  display: flex;
+  flex-direction: column;
+  color: rgb(65 65 65 / 100%);
+
+  &__subtitle {
+    text-align: left;
+    font-size: 36px;
+  }
+}
+
+.item2 {
+  display: flex;
+  width: 556px;
+  gap: 24px;
+  margin: 40px 0 32px;
+}
+
+.location__btn {
+  cursor: pointer;
+  font-family: Rubik, sans-serif;
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgb(243 242 241 / 100%);
+  color: rgb(96 96 96 / 100%);
+  font-size: 16px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #70c05b;
+    transition: 0.3s;
+  }
+}
+
+.item3 {
+  display: flex;
+  gap: 80px;
+  height: 96px;
+  margin-bottom: 33px;
+  font-size: 18px;
+}
+
+@media (max-width: 1245px) {
+  .item2 {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .ourshops {
+    max-width: 95%;
+
+    &__subtitle {
+      font-size: 24px;
+    }
+  }
+
+  .item3 {
+    gap: 26px;
+  }
+}
+
+@media (max-width: 850px) {
+  .item3 {
+    height: 84px;
+    font-size: 16px;
+  }
+
+  .item3__el {
+    width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  .ourshops__subtitle {
+    font-size: 36px;
+  }
+
+  .item3 {
+    font-size: 14px;
+    flex-wrap: wrap;
+    width: 336px;
+    height: 176px;
+    gap: 16px;
+  }
+}
