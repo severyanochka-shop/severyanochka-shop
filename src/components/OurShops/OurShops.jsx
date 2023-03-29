@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import s from "./OurShops.module.scss";
 import voshod from "./assets/voshod.svg";
 import parus from "./assets/parus.svg";
@@ -11,9 +11,7 @@ import { useLocation } from "react-router-dom";
 
 export const OurShops = () => {
   const [active, setActive] = useState("shel");
-  const { pathname } = useLocation();
-
-  useEffect(() => {}, [pathname]);
+  const location = useLocation();
 
   const handleClick = (e) => {
     setActive(e.target.id);
@@ -71,17 +69,19 @@ export const OurShops = () => {
           </>
         ))}
       </div>
-      <div className={s.item3}>
-        {shops.map((el, i) => (
-          <ContactItem
-            key={i.toString()}
-            adress={el.adress}
-            phone={el.phone}
-            img={el.img.src}
-            alt={el.img.alt}
-          />
-        ))}
-      </div>
+      {location.pathname === "/" ? null : (
+        <div className={s.item3}>
+          {shops.map((el, i) => (
+            <ContactItem
+              key={i.toString()}
+              adress={el.adress}
+              phone={el.phone}
+              img={el.img.src}
+              alt={el.img.alt}
+            />
+          ))}
+        </div>
+      )}
       <YMaps>
         <YandexMaps width="1208px" height="354px" />
       </YMaps>
