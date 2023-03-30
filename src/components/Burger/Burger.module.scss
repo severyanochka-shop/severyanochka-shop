@@ -109,12 +109,18 @@
 
 .list {
   list-style: none;
+  margin-top: 30px;
 }
 
 .list_item {
   color: #414141;
   line-height: 24px;
   margin-bottom: 30px;
+  cursor: pointer;
+
+  &_active {
+    color: #ff6633;
+  }
 }
 
 .stock {
