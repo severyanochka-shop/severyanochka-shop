@@ -1,4 +1,4 @@
-import React, {useState, useEffect}from "react";
+import React, { useState, useEffect } from "react";
 import s from "../Burger/Burger.module.scss";
 import { Button } from "../../ui/Button/Button";
 import { InputRange } from "../../ui/InputRange/InputRange";
@@ -9,100 +9,99 @@ import { useSelector } from "react-redux";
 import { burgerSlice } from "../../store/reducers/BurgerSlice";
 import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
 
-export const Burger = ({ deletePriceRange, funcApply, inStock, subcategory, data }) => {
-
-  console.log(data)
+export const Burger = ({ data }) => {
+  console.log(data);
 
   const { getBurger } = burgerSlice.actions;
   const dispatch = useDispatch();
 
   const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
 
+  const [filterData, setFilterData] = useState([...data.products]);
+  console.log(filterData);
 
-  // const [filterData, setFilterData] = useState([...data.products]);
-  // const {
-  //   setInitialState,
-  //   setCountFilter,
-  //   setAvailability,
-  //   setMinPrice,
-  //   setMaxPrice,
-  //   setSubcategory,
-  // } = filterCategorySlice.actions;
+  const filterCategory = useSelector((state) => state.filterCategoryReducer);
+  const {
+    setInitialState,
+    setCountFilter,
+    setAvailability,
+    setMinPrice,
+    setMaxPrice,
+    setSubcategory,
+  } = filterCategorySlice.actions;
 
-  // const initialState = {
-  //   min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
-  //     .priceRegular,
-  //   max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
-  //     .priceRegular,
-  //   availability: false,
-  //   subcategory: false,
-  // };
+  const initialState = {
+    min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
+      .priceRegular,
+    max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
+      .priceRegular,
+    availability: false,
+    subcategory: false,
+  };
 
-  // const applyFilter = () => {
-  //   setFilterData(
-  //     [...data.products]
-  //       .filter(
-  //         (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
-  //       )
-  //       .filter((el) => el.priceRegular >= filterCategory.minPrice)
-  //       .filter((el) => el.priceRegular <= filterCategory.maxPrice)
-  //       .filter((el) => !filterCategory.availability || el.stockCount > 0),
-  //   );
-  //   let countFilter = 0;
-  //   if (
-  //     filterCategory.minPrice !== initialState.min ||
-  //     filterCategory.maxPrice !== initialState.max
-  //   )
-  //     countFilter++;
-  //   if (filterCategory.availability) countFilter++;
-  //   if (filterCategory.subcategory) countFilter++;
-  //   dispatch(setCountFilter(countFilter));
-  // };
+  const applyFilter = () => {
+    setFilterData(
+      [...data.products]
+        .filter(
+          (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
+        )
+        .filter((el) => el.priceRegular >= filterCategory.minPrice)
+        .filter((el) => el.priceRegular <= filterCategory.maxPrice)
+        .filter((el) => !filterCategory.availability || el.stockCount > 0),
+    );
+    let countFilter = 0;
+    if (
+      filterCategory.minPrice !== initialState.min ||
+      filterCategory.maxPrice !== initialState.max
+    )
+      countFilter++;
+    if (filterCategory.availability) countFilter++;
+    if (filterCategory.subcategory) countFilter++;
+    dispatch(setCountFilter(countFilter));
+  };
 
-  // useEffect(() => {
-  //   dispatch(setInitialState({ ...initialState }));
-  // }, []);
+  useEffect(() => {
+    dispatch(setInitialState({ ...initialState }));
+  }, []);
 
-  // useEffect(() => {
-  //   let countFilter = 0;
-  //   if (
-  //     filterCategory.minPrice !== initialState.min ||
-  //     filterCategory.maxPrice !== initialState.max
-  //   )
-  //     countFilter++;
-  //   if (filterCategory.availability) countFilter++;
-  //   if (filterCategory.subcategory) countFilter++;
-  //   dispatch(setCountFilter(countFilter));
-  // }, [filterData]);
+  useEffect(() => {
+    let countFilter = 0;
+    if (
+      filterCategory.minPrice !== initialState.min ||
+      filterCategory.maxPrice !== initialState.max
+    )
+      countFilter++;
+    if (filterCategory.availability) countFilter++;
+    if (filterCategory.subcategory) countFilter++;
+    dispatch(setCountFilter(countFilter));
+  }, [filterData]);
 
-  // const deletePriceRange = () => {
-  //   dispatch(setMinPrice(initialState.min));
-  //   dispatch(setMaxPrice(initialState.max));
+  const deletePriceRange = () => {
+    dispatch(setMinPrice(initialState.min));
+    dispatch(setMaxPrice(initialState.max));
 
-  //   setFilterData(
-  //     [...data.products]
-  //       .filter(
-  //         (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
-  //       )
-  //       .filter((el) => !filterCategory.availability || el.stockCount > 0),
-  //   );
-  // };
+    setFilterData(
+      [...data.products]
+        .filter(
+          (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
+        )
+        .filter((el) => !filterCategory.availability || el.stockCount > 0),
+    );
+  };
 
-  // const deleteFilters = () => {
-  //   dispatch(setInitialState({ ...initialState }));
-  //   dispatch(setCountFilter(0));
-  //   setFilterData([...data.products]);
-  // };
+  const deleteFilters = () => {
+    dispatch(setInitialState({ ...initialState }));
+    dispatch(setCountFilter(0));
+    setFilterData([...data.products]);
+  };
 
-  // const inStock = () => {
-  //   dispatch(setAvailability());
-  // };
+  const inStock = () => {
+    dispatch(setAvailability());
+  };
 
-  // const handlerSubcategory = (subcategoryId) => {
-  //   dispatch(setSubcategory(subcategoryId));
-  // };
-
-
+  const handlerSubcategory = (subcategoryId) => {
+    dispatch(setSubcategory(subcategoryId));
+  };
 
   let initial_value = 44;
   let final_value = 100;
@@ -141,19 +140,25 @@ export const Burger = ({ deletePriceRange, funcApply, inStock, subcategory, data
         </div>
 
         <div className={s.filter_none}>
-          <InputRange />
+          <InputRange min={initialState.min} max={initialState.max} />
           <ul className={s.list}>
-            <li className={s.list_item}>{subcategory}</li>
-            <li className={s.list_item}>example1</li>
-            <li className={s.list_item}>example2</li>
-            <li className={s.list_item}>example3</li>
-            <li className={s.list_item}>example4</li>
+            {data.subcategories.map((el) => {
+              <li
+                key={el.id}
+                className={
+                  (clsx(s.list_item),
+                  {
+                    [s.list_item_active]: el.id === filterCategory.subcategory,
+                  })
+                }
+              ></li>;
+            })}
           </ul>
           <div className={s.stock}>
             <Toggle M onChange={inStock} />
             <p>В наличии</p>
           </div>
-          <Button small background="orange" className={s.btn_apply} onClick={funcApply}>
+          <Button small background="orange" className={s.btn_apply} onClick={applyFilter}>
             Применить
           </Button>
         </div>

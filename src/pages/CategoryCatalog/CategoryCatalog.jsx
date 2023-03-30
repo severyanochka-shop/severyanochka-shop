@@ -19,7 +19,7 @@ export const CategoryCatalog = () => {
 
   return (
     <Section>
-      <Burger data={data}/>
+      {!!data && <Burger data={data}/>}
       {!!data && (
         <>
           <Title>{data.name}</Title>
