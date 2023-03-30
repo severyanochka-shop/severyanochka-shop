@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Textfield } from "../../../ui/Textfield/Textfield";
-import { Button } from "../../Button/Button";
+import { TextField } from "../../../ui/TextField/TextField";
+import { Button } from "../../../ui/Button/Button";
 import { rules } from "../RegistrationForm/rules";
 import arrow from "../RegistrationFormSubmit/images/arrow.svg";
 import s from "./AuthorizationForm.module.scss";
@@ -95,7 +95,7 @@ export const AuthorizationForm = () => {
         </div>
       )}
       {(step === 1 || forgetPassword) && step !== 3 && step !== 4 && (
-        <Textfield
+        <TextField
           huge
           maxLength="11"
           register={register}
@@ -149,7 +149,7 @@ export const AuthorizationForm = () => {
               </p>
             </div>
           )}
-          <Textfield
+          <TextField
             huge
             className={step === 4 ? s.inputField : ""}
             register={register}
@@ -179,8 +179,7 @@ export const AuthorizationForm = () => {
 
       {((step !== 1 && step !== 2 && !forgetPassword) || step === 4) && (
         <div className={s.wrapper__input}>
-
-          <Textfield
+          <TextField
             huge
             register={register}
             name={"secondPassword"}
@@ -200,7 +199,7 @@ export const AuthorizationForm = () => {
       {step === 3 && (
         <div className={s.wrapper__input}>
           <div className={s.wrapperSMS}>
-            <Textfield
+            <TextField
               className={s.sms}
               register={register}
               name={"input"}
@@ -223,11 +222,7 @@ export const AuthorizationForm = () => {
         </Button>
       )}
       {step === 2 && !forgetPassword && (
-        <Button
-          background="orange"
-          className={s.button}
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <Button background="orange" className={s.button} onSubmit={handleSubmit(onSubmit)}>
           ПОДТВЕРДИТЬ
         </Button>
       )}

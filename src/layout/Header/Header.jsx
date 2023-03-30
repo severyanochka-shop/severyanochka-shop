@@ -17,11 +17,18 @@ import { PictoButton } from "./PictoButton/PictoButton";
 import { Container } from "../Container/Container";
 import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
+import { Modal } from "../Modal/Modal";
+import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
 
 export const Header = () => {
   const href = useHref();
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
+
+  const [isModal, setIsModal] = useState(false);
+  const handleClose = () => {
+    setIsModal(!isModal);
+  };
 
   const onButtonEnterHandler = () => setButtonHover(true);
 
@@ -81,16 +88,15 @@ export const Header = () => {
             <Link to="/cart">
               <PictoButton text={"Корзина"} img={cart} img_hover={cart_hover} />
             </Link>
-            <Link to="/login">
-              <HeaderButton background="orange">
-                <div className={`${s.button__wrapper} ${s.large}`}>
-                  <span className={s.button__text}>Войти</span>
-                  <img src={login} alt="->" />
-                </div>
-              </HeaderButton>
-            </Link>
+            <HeaderButton background="orange" onClick={handleClose}>
+              <div className={`${s.button__wrapper} ${s.large}`}>
+                <span className={s.button__text}>Войти</span>
+                <img src={login} alt="->" />
+              </div>
+            </HeaderButton>
           </div>
         </Container>
+        {isModal && <Modal handleClose={handleClose} children={<AuthorizationForm />} />}
       </div>
     </>
   );
