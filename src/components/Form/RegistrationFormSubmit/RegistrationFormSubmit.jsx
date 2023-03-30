@@ -1,7 +1,7 @@
 import React from "react";
 import arrow from "../RegistrationFormSubmit/images/arrow.svg";
 import s from "./RegistrationFormSubmit.module.scss";
-import { Button } from "../../Button/Button";
+import { Button } from "../../../ui/Button/Button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Textfield } from "../../../ui/Textfield/Textfield";
@@ -52,7 +52,7 @@ export const RegistrationFormSubmit = () => {
             maxLength="4"
             label={"Код из СМС"}
             rule={rules.ruleSMS}
-            labelClass = {s.labelClass}
+            labelClass={s.labelClass}
           />
         </div>
       </div>
