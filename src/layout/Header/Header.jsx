@@ -101,7 +101,7 @@ export const Header = () => {
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
-    // searchSymbols(newListCategories, inputValue);
+    searchSymbols(newListCategories, e.target.value);
   };
 
   const searchSymbols = (filter, inputValue) => {
