@@ -19,8 +19,19 @@ import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { Modal } from "../Modal/Modal";
 import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
+import axios from "axios";
+import useSWR from "swr";
 
 export const Header = () => {
+
+  const fetcher = (url) => axios({ url }).then((res) => res.data.data);
+  const { info, error, isLoading } = useSWR(
+    "http://codeine.tech:3000/api/categories/3ed82cc0-9d71-46ec-97d0-365121844a40",
+    fetcher,
+  );
+
+    // console.log(info )
+
   const data = {
     categories: [
       {
