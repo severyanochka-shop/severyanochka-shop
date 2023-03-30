@@ -20,6 +20,7 @@ export const Contacts = () => {
           </a>
         </div>
       </div>
+      <h3 className={s.subtitle}>Наши магазины</h3>
       <OurShops />
     </div>
   );

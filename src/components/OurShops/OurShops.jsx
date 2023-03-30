@@ -53,20 +53,17 @@ export const OurShops = () => {
   ];
   return (
     <div className={s.ourshops}>
-      <h3 className={s.ourshops__subtitle}>Наши магазины</h3>
       <div className={s.item2}>
         {shops.map((el, i) => (
-          <>
-            <button
-              key={i}
-              id={el.id}
-              onClick={handleClick}
-              className={s.location__btn}
-              style={background(el.id)}
-            >
-              {el.name}
-            </button>
-          </>
+          <button
+            key={i}
+            id={el.id}
+            onClick={handleClick}
+            className={s.location__btn}
+            style={background(el.id)}
+          >
+            {el.name}
+          </button>
         ))}
       </div>
       {location.pathname === "/" ? null : (
@@ -83,7 +80,7 @@ export const OurShops = () => {
         </div>
       )}
       <YMaps>
-        <YandexMaps width="1208px" height="354px" />
+        <YandexMaps width="100%" height="354px" />
       </YMaps>
     </div>
   );

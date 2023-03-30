@@ -6,8 +6,8 @@ import { SectionLink } from "../../layout/SectionLink/SectionLink";
 import { SectionTitle } from "../../layout/SectionTitle/SectionTitle";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
-import { YandexMaps } from "../../components/YandexMaps/YandexMaps";
 import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
+import { OurShops } from "../../components/OurShops/OurShops";
 import axios from "axios";
 import useSWR from "swr";
 
@@ -48,15 +48,21 @@ export const Main = () => {
         </Section>
       )}
       <Section>
-        <SectionTitle>Специальные предложения</SectionTitle>
+        <SectionTitleWrapper>
+          <SectionTitle>Специальные предложения</SectionTitle>
+        </SectionTitleWrapper>
         <BannerSpecialOffer />
       </Section>
       <Section>
-        <SectionTitle>Наши магазины</SectionTitle>
-        <YandexMaps />
+        <SectionTitleWrapper>
+          <SectionTitle>Наши магазины</SectionTitle>
+        </SectionTitleWrapper>
+        <OurShops />
       </Section>
       <Section>
-        <SectionTitle>Статьи</SectionTitle>
+        <SectionTitleWrapper>
+          <SectionTitle>Статьи</SectionTitle>
+        </SectionTitleWrapper>
         <ArticleWrapper />
       </Section>
     </>
