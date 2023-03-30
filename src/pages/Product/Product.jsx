@@ -8,32 +8,28 @@ import { Reviews } from "../../components/Reviews/Reviews";
 import s from "./Product.module.scss";
 import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTitleWrapper";
 import { SectionLink } from "../../layout/SectionLink/SectionLink";
-import axios from "axios";
-import useSWR from "swr";
+import { useProduct } from "../../api/hooks/useProduct";
+import { useCategory } from "../../api/hooks/useCategory";
 
 const Product = () => {
   const params = useParams();
-  const fetcher = (url) => axios({ url }).then((res) => res.data.data);
 
-  const product = useSWR(`http://codeine.tech:3000/api/products/${params.product}`, fetcher);
-
-  const category = useSWR(`http://codeine.tech:3000/api/categories/${params.category}`, fetcher);
-
-  console.log(product.data);
+  const { product, errorProduct, isLoadingProduct } = useProduct(params.product);
+  const { category, errorCategory, isLoadingCategory } = useCategory(params.category);
 
   return (
     <>
-      {!!product.data && (
+      {!!product && (
         <Section>
-          <SectionTitle className={s.title}>{product.data.name}</SectionTitle>
-          <ProductCard product={product.data} />
+          <SectionTitle className={s.title}>{product.name}</SectionTitle>
+          <ProductCard product={product} />
         </Section>
       )}
-      {!!category.data && (
+      {!!category && (
         <>
           <Section>
             <SectionTitle className={s.subtitle}>С этим товаром покупают</SectionTitle>
-            <FlexWrapper data={category.data.products.slice(0, 4)} />
+            <FlexWrapper data={category.products.slice(0, 4)} />
           </Section>
           <Section>
             <SectionTitle className={s.subtitle}>Отзывы</SectionTitle>
@@ -44,7 +40,7 @@ const Product = () => {
               <SectionTitle>Акции</SectionTitle>
               <SectionLink to="/stocks">Все акции</SectionLink>
             </SectionTitleWrapper>
-            <FlexWrapper data={category.data.products.slice(5, 9)} />
+            <FlexWrapper data={category.products.slice(5, 9)} />
           </Section>
         </>
       )}

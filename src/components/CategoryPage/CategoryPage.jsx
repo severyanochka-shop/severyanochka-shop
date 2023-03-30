@@ -12,7 +12,7 @@ import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
 import clsx from "clsx";
 import { FilterButton } from "./FilterButton/FilterButton";
 
-export const CategoryPage = ({ data }) => {
+export const CategoryPage = ({ category }) => {
   const dispatch = useDispatch();
 
   const { getBurger } = burgerSlice.actions;
@@ -31,12 +31,12 @@ export const CategoryPage = ({ data }) => {
   const [burgerHide, setBurgerHide] = useState(false);
   const [size, setSize] = useState(0);
 
-  const [filterData, setFilterData] = useState([...data.products]);
+  const [filterData, setFilterData] = useState([...category.products]);
 
   const initialState = {
-    min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
+    min: category.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
       .priceRegular,
-    max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
+    max: category.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
       .priceRegular,
     availability: false,
     subcategory: false,
@@ -44,7 +44,7 @@ export const CategoryPage = ({ data }) => {
 
   const applyFilter = () => {
     setFilterData(
-      [...data.products]
+      [...category.products]
         .filter(
           (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
         )
@@ -84,7 +84,7 @@ export const CategoryPage = ({ data }) => {
     dispatch(setMaxPrice(initialState.max));
 
     setFilterData(
-      [...data.products]
+      [...category.products]
         .filter(
           (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
         )
@@ -95,7 +95,7 @@ export const CategoryPage = ({ data }) => {
   const deleteFilters = () => {
     dispatch(setInitialState({ ...initialState }));
     dispatch(setCountFilter(0));
-    setFilterData([...data.products]);
+    setFilterData([...category.products]);
   };
 
   const inStock = () => {
@@ -160,7 +160,7 @@ export const CategoryPage = ({ data }) => {
             <InputRange min={initialState.min} max={initialState.max} />
             <div className={s.list_block}>
               <ul className={s.ul_subcategory}>
-                {data.subcategories.map((el) => (
+                {category.subcategories.map((el) => (
                   <li
                     key={el.id}
                     className={clsx(s.li_subcategory, {
