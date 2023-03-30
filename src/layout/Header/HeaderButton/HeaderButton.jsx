@@ -8,6 +8,7 @@ export const HeaderButton = ({
   background,
   onButtonEnterHandler,
   onButtonLeaveHandler,
+  onClick,
 }) => {
   const innerClassName = clsx(s.button, className, {
     [s.button__green]: background === "green",
@@ -18,6 +19,7 @@ export const HeaderButton = ({
     <button
       onMouseEnter={onButtonEnterHandler}
       onMouseLeave={onButtonLeaveHandler}
+      onClick={onClick}
       className={innerClassName}
     >
       {children}
