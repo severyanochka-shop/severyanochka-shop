@@ -4,21 +4,14 @@ import { Button } from "../../ui/Button/Button";
 import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
 import clsx from "clsx";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { burgerSlice } from "../../store/reducers/BurgerSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
+import { FilterButton } from "../CategoryPage/FilterButton/FilterButton";
 
 export const Burger = ({ data }) => {
-  console.log(data);
-
-  const { getBurger } = burgerSlice.actions;
   const dispatch = useDispatch();
-
   const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
-
   const [filterData, setFilterData] = useState([...data.products]);
-  console.log(filterData);
 
   const filterCategory = useSelector((state) => state.filterCategoryReducer);
   const {
@@ -103,10 +96,6 @@ export const Burger = ({ data }) => {
     dispatch(setSubcategory(subcategoryId));
   };
 
-  let initial_value = 44;
-  let final_value = 100;
-  let filter_counter = 6;
-
   return (
     <div className={burgerHide ? clsx(s.wrapper, s.wrapper_hide) : s.wrapper}>
       <div className={s.filter}>
@@ -115,50 +104,46 @@ export const Burger = ({ data }) => {
         </div>
 
         <div className={s.deletebtn_block}>
-          <div className={s.btn_quantity}>
-            <div className={s.green_block}>
-              <p className={s.text_green}>Фильтр {filter_counter} </p>
-              <button className={clsx(s.cross, s.cross_green)}>✕</button>
-            </div>
-          </div>
-          <div className={s.btn_price}>
-            <div className={s.green_block}>
-              <p className={s.text_green}>
-                Цена от {initial_value} до {final_value}
-              </p>
-              <button className={clsx(s.cross, s.cross_green)} onClick={deletePriceRange}>
-                ✕
-              </button>
-            </div>
-          </div>
-          <div className={s.btn_delete}>
-            <div className={clsx(s.green_block, s.green_block_gray)}>
-              <p className={s.text_gray}>Очистить фильтры</p>
-              <button className={clsx(s.cross, s.cross_gray)}>✕</button>
-            </div>
-          </div>
+          {!!filterCategory.countFilter && (
+            <FilterButton
+              color="green"
+              text={`Фильтр ${filterCategory.countFilter}`}
+              onClick={deleteFilters}
+            />
+          )}
+          {(filterCategory.minPrice !== initialState.min ||
+            filterCategory.maxPrice !== initialState.max) && (
+            <FilterButton
+              color="green"
+              text={`Цена от ${filterCategory.minPrice} до ${filterCategory.maxPrice}`}
+              onClick={deletePriceRange}
+            />
+          )}
+          {!!filterCategory.countFilter && (
+            <FilterButton color="gray" text="Очистить фильтры" onClick={deleteFilters} />
+          )}
         </div>
 
         <div className={s.filter_none}>
           <InputRange min={initialState.min} max={initialState.max} />
           <ul className={s.list}>
-            {data.subcategories.map((el) => {
+            {data.subcategories.map((el) => (
               <li
                 key={el.id}
-                className={
-                  (clsx(s.list_item),
-                  {
-                    [s.list_item_active]: el.id === filterCategory.subcategory,
-                  })
-                }
-              ></li>;
-            })}
+                className={clsx(s.list_item, {
+                  [s.list_item_active]: el.id === filterCategory.subcategory,
+                })}
+                onClick={() => handlerSubcategory(el.id)}
+              >
+                {el.name}
+              </li>
+            ))}
           </ul>
           <div className={s.stock}>
-            <Toggle M onChange={inStock} />
+            <Toggle M handler={inStock} checked={filterCategory.availability} />
             <p>В наличии</p>
           </div>
-          <Button small background="orange" className={s.btn_apply} onClick={applyFilter}>
+          <Button small background="orange" className={s.btn_apply} handler={applyFilter}>
             Применить
           </Button>
         </div>
