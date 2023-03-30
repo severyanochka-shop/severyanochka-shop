@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect}from "react";
 import s from "../Burger/Burger.module.scss";
 import { Button } from "../../ui/Button/Button";
 import { InputRange } from "../../ui/InputRange/InputRange";
@@ -19,23 +19,88 @@ export const Burger = ({ deletePriceRange, funcApply, inStock, subcategory, data
   const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
 
 
-  const {
-    setInitialState,
-    setCountFilter,
-    setAvailability,
-    setMinPrice,
-    setMaxPrice,
-    setSubcategory,
-  } = filterCategorySlice.actions;
+  // const [filterData, setFilterData] = useState([...data.products]);
+  // const {
+  //   setInitialState,
+  //   setCountFilter,
+  //   setAvailability,
+  //   setMinPrice,
+  //   setMaxPrice,
+  //   setSubcategory,
+  // } = filterCategorySlice.actions;
 
-  const initialState = {
-    min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
-      .priceRegular,
-    max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
-      .priceRegular,
-    availability: false,
-    subcategory: false,
-  };
+  // const initialState = {
+  //   min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
+  //     .priceRegular,
+  //   max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
+  //     .priceRegular,
+  //   availability: false,
+  //   subcategory: false,
+  // };
+
+  // const applyFilter = () => {
+  //   setFilterData(
+  //     [...data.products]
+  //       .filter(
+  //         (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
+  //       )
+  //       .filter((el) => el.priceRegular >= filterCategory.minPrice)
+  //       .filter((el) => el.priceRegular <= filterCategory.maxPrice)
+  //       .filter((el) => !filterCategory.availability || el.stockCount > 0),
+  //   );
+  //   let countFilter = 0;
+  //   if (
+  //     filterCategory.minPrice !== initialState.min ||
+  //     filterCategory.maxPrice !== initialState.max
+  //   )
+  //     countFilter++;
+  //   if (filterCategory.availability) countFilter++;
+  //   if (filterCategory.subcategory) countFilter++;
+  //   dispatch(setCountFilter(countFilter));
+  // };
+
+  // useEffect(() => {
+  //   dispatch(setInitialState({ ...initialState }));
+  // }, []);
+
+  // useEffect(() => {
+  //   let countFilter = 0;
+  //   if (
+  //     filterCategory.minPrice !== initialState.min ||
+  //     filterCategory.maxPrice !== initialState.max
+  //   )
+  //     countFilter++;
+  //   if (filterCategory.availability) countFilter++;
+  //   if (filterCategory.subcategory) countFilter++;
+  //   dispatch(setCountFilter(countFilter));
+  // }, [filterData]);
+
+  // const deletePriceRange = () => {
+  //   dispatch(setMinPrice(initialState.min));
+  //   dispatch(setMaxPrice(initialState.max));
+
+  //   setFilterData(
+  //     [...data.products]
+  //       .filter(
+  //         (el) => !filterCategory.subcategory || el.subcategoryId === filterCategory.subcategory,
+  //       )
+  //       .filter((el) => !filterCategory.availability || el.stockCount > 0),
+  //   );
+  // };
+
+  // const deleteFilters = () => {
+  //   dispatch(setInitialState({ ...initialState }));
+  //   dispatch(setCountFilter(0));
+  //   setFilterData([...data.products]);
+  // };
+
+  // const inStock = () => {
+  //   dispatch(setAvailability());
+  // };
+
+  // const handlerSubcategory = (subcategoryId) => {
+  //   dispatch(setSubcategory(subcategoryId));
+  // };
 
 
 
