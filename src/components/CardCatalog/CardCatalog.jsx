@@ -10,28 +10,38 @@ import clsx from "clsx";
 export const CardCatalog = ({ el }) => {
   const params = useParams();
   const counter = 5;
+  console.log(el);
   return (
-    <Link className={cl.link} to={`/category/${params.category}/${el.id}`}>
+    <Link
+      className={cl.link}
+      to={`/category/${params.category ? params.category : el.categoryId}/${el.id}`}
+    >
       <div className={cl.card}>
         <img src={el.images[0].small} alt="product" className={cl.card__image} />
         {counter && <p className={cl.card__cart}>{counter}</p>}
         <button className={cl.card__heart} onClick={(e) => e.preventDefault()}>
           <img src={heart} alt="♡" />
         </button>
-        <Discount
-          orange
-          large
-          className={cl.card__discount}
-          text={`-${el.promo?.discountPercent}%`}
-        />
+        {!!el.promo && (
+          <Discount
+            orange
+            large
+            className={cl.card__discount}
+            text={`-${el.promo.discountPercent}%`}
+          />
+        )}
         <div className={cl.card__content_wrapper}>
           <div className={cl.card__price}>
             <div>
-              <p className={cl.price__priceWithCard}>{el.priceWithCard} ₽</p>
+              <p className={cl.price__priceWithCard}>
+                {el.promo ? el.promo.discountedPriceWithCard : el.priceWithCard} ₽
+              </p>
               <p className={cl.price__availableСard}>С картой</p>
             </div>
             <div>
-              <p className={clsx(cl.price__upriceRegular, cl.alignRight)}>{el.priceRegular} ₽</p>
+              <p className={clsx(cl.price__upriceRegular, cl.alignRight)}>
+                {el.promo ? el.promo.discountedPriceRegular : el.priceRegular} ₽
+              </p>
               <p className={clsx(cl.price__availableСard, cl.price__alignRight)}>Обычная</p>
             </div>
           </div>

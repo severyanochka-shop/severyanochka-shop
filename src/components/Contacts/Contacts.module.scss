@@ -1,7 +1,4 @@
 .contacts {
-  display: flex;
-  gap: 120px;
-  flex-direction: column;
   color: rgb(65 65 65 / 100%);
 }
 
@@ -9,6 +6,7 @@
   display: flex;
   height: 88px;
   gap: 85px;
+  margin-bottom: 120px;
 }
 
 .box {
@@ -41,22 +39,24 @@
   }
 }
 
-@media (max-width: 1245px) {
-  .contacts {
-    max-width: 95%;
-  }
+.subtitle {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 40px;
+}
 
+@media (max-width: 1245px) {
   .item1 {
     gap: 40px;
   }
 }
 
 @media (max-width: 1030px) {
-  .contacts {
-    max-width: 95%;
-    gap: 100px;
+  .item1 {
+    margin-bottom: 100px;
   }
-
   .box {
     font-size: 18px;
 
@@ -75,14 +75,12 @@
 }
 
 @media (max-width: 760px) {
-  .contacts {
-    gap: 80px;
-  }
   .item1 {
     flex-direction: column;
     width: 300px;
     height: 186px;
     gap: 16px;
+    margin-bottom: 80px;
   }
 
   .box {
@@ -105,5 +103,15 @@
     &__tel {
       font-size: 22px;
     }
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .subtitle {
+    font-size: 36px;
+    margin-bottom: 32px;
   }
 }

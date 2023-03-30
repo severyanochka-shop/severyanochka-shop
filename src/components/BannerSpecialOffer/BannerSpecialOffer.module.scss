@@ -5,7 +5,6 @@
 .banner_box {
   display: flex;
   gap: 40px;
-  margin-top: 40px;
 }
 
 .bannercard {
@@ -68,7 +67,7 @@
   box-shadow: 4px 8px 16px rgb(112 192 91 / 20%);
 }
 
-@media (max-width: 1200px) {  
+@media (max-width: 1200px) {
   .banner_box {
     gap: 20px;
   }

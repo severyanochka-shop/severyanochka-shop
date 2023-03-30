@@ -1,24 +1,17 @@
 .ourshops {
   display: flex;
   flex-direction: column;
+  row-gap: 32px;
   color: rgb(65 65 65 / 100%);
-
-  &__subtitle {
-    text-align: left;
-    font-size: 36px;
-  }
 }
 
 .item2 {
   display: flex;
-  width: 556px;
-  gap: 24px;
-  margin: 40px 0 32px;
+  column-gap: 24px;
 }
 
 .location__btn {
   cursor: pointer;
-  font-family: Rubik, sans-serif;
   height: 40px;
   padding: 8px;
   border-radius: 4px;
@@ -35,9 +28,8 @@
 
 .item3 {
   display: flex;
-  gap: 80px;
+  column-gap: 80px;
   height: 96px;
-  margin-bottom: 33px;
   font-size: 18px;
 }
 
@@ -49,8 +41,6 @@
 
 @media (max-width: 1030px) {
   .ourshops {
-    max-width: 95%;
-
     &__subtitle {
       font-size: 24px;
     }
