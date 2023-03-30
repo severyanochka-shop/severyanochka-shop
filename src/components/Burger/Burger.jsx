@@ -3,15 +3,41 @@ import s from "../Burger/Burger.module.scss";
 import { Button } from "../../ui/Button/Button";
 import { InputRange } from "../../ui/InputRange/InputRange";
 import { Toggle } from "../../ui/Toggle/Toggle";
-import { useSelector } from "react-redux";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { burgerSlice } from "../../store/reducers/BurgerSlice";
+import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
 
-export const Burger = ({ deletePriceRange, funcApply, inStock, subcategory }) => {
+export const Burger = ({ deletePriceRange, funcApply, inStock, subcategory, data }) => {
+
+  console.log(data)
+
   const { getBurger } = burgerSlice.actions;
-  const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
   const dispatch = useDispatch();
+
+  const burgerHide = useSelector((state) => state.burgerReducer.burgerHide);
+
+
+  const {
+    setInitialState,
+    setCountFilter,
+    setAvailability,
+    setMinPrice,
+    setMaxPrice,
+    setSubcategory,
+  } = filterCategorySlice.actions;
+
+  const initialState = {
+    min: data.products.reduce((acc, el) => (acc.priceRegular < el.priceRegular ? acc : el))
+      .priceRegular,
+    max: data.products.reduce((acc, el) => (acc.priceRegular > el.priceRegular ? acc : el))
+      .priceRegular,
+    availability: false,
+    subcategory: false,
+  };
+
+
 
   let initial_value = 44;
   let final_value = 100;

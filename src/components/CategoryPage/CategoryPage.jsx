@@ -111,12 +111,6 @@ export const CategoryPage = ({ data }) => {
     if (window.innerWidth < 913) setSize(0);
   });
 
-  useEffect(() => {
-    if (size > 913) {
-      dispatch(getBurger(false));
-      setBurgerHide(false);
-    }
-  }, [size]);
 
   useEffect(() => {
     // if (size > 913) {
