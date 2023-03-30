@@ -20,7 +20,7 @@ import { StocksAsync as Stocks } from "../pages/Stocks/Stocks.async";
 import { NewProductsAsync as NewProducts } from "../pages/NewProducts/NewProducts.async";
 import { BoughtBeforeAsync as BoughtBefore } from "../pages/BoughtBefore/BoughtBefore.async";
 import { ProductAsync as Product } from "../pages/Product/Product.async";
-import axios from "axios";
+import { fetcher } from "../api/fetcher";
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -89,9 +89,7 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              loader: async ({ params }) =>
-                (await axios(`http://codeine.tech:3000/api/categories/${params.category}`)).data
-                  .data,
+              loader: async ({ params }) => fetcher(["/categories", params.category]),
               handle: {
                 crumb: (category) => <Link to={`/category/${category.id}`}>{category.name}</Link>,
               },
@@ -106,9 +104,7 @@ export const App = () => {
                 },
                 {
                   path: "/category/:category/:product",
-                  loader: async ({ params }) =>
-                    (await axios(`http://codeine.tech:3000/api/products/${params.product}`)).data
-                      .data,
+                  loader: async ({ params }) => fetcher(["/products", params.product]),
                   element: (
                     <React.Suspense>
                       <Product />

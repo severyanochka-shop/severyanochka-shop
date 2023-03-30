@@ -10,7 +10,6 @@ import clsx from "clsx";
 export const CardCatalog = ({ el }) => {
   const params = useParams();
   const counter = 5;
-  console.log(el);
   return (
     <Link
       className={cl.link}
