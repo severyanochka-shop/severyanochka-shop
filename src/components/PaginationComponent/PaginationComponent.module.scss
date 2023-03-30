@@ -1,0 +1,32 @@
+.pagination {
+  padding: 0 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 656px;
+
+  &__image {
+    display: block;
+  }
+
+  &__button {
+    cursor: pointer;
+    background: none;
+    font-size: 16px;
+    font-family: "Rubik";
+    line-height: 150%;
+    color: #606060;
+
+    &:hover {
+      color: #ff6633;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    width: 568px;
+  }
+}
