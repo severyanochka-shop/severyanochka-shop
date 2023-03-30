@@ -49,8 +49,12 @@ export const ProductCard = ({ product }) => {
         <div className={s.wrapper__description}>
           <div className={s.description__price_wrapper}>
             <div className={s.price__wrapper}>
-              <p className={s.price__price_old}>{product.priceWithCard} ₽</p>
-              <p className={s.price__price_new}>{product.priceRegular} ₽</p>
+              <p className={s.price__price_old}>
+                {product.promo ? product.promo.discountedPriceRegular : product.priceRegular} ₽
+              </p>
+              <p className={s.price__price_new}>
+                {product.promo ? product.promo.discountedPriceWithCard : product.priceWithCard} ₽
+              </p>
             </div>
 
             <div className={s.text__wrapper}>
@@ -89,7 +93,15 @@ export const ProductCard = ({ product }) => {
           <p className={s.similar__title}>Похожие</p>
           <div className={s.similar__wrapper}>
             {product.images.map((el, i) => {
-              return <SimilarProduct key={i} img={el.small} price={product.priceRegular} />;
+              return (
+                <SimilarProduct
+                  key={i}
+                  img={el.small}
+                  price={
+                    product.promo ? product.promo.discountedPriceWithCard : product.priceWithCard
+                  }
+                />
+              );
             })}
           </div>
         </div>
