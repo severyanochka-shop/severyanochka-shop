@@ -6,54 +6,62 @@ import { Container } from "../../Container/Container";
 import { TextField } from "../../../ui/TextField/TextField";
 
 export const HeaderMobileTop = () => {
-  const data = {
-    categories: [
-      {
-        name: "Молоко, сыр, сметана",
-        id: "bb577846-623f-400b-be19-bbf6446600d8",
-      },
-      {
-        name: "что-то",
-        id: "1",
-      },
-    ],
-    subcategories: [
-      {
-        name: "Молоко",
-        id: "bb577846-622f-400b-b119-bbf6446600d8",
-      },
-    ],
-    products: [
-      {
-        name: "Молоко Простоквашино",
-        id: "bb577846-622f-400b-b199-bbf6446600d8",
-      },
-      {
-        name: "Молоко Вкуснотеево",
-        id: "bb577846-622f-400b-b119-bbf6456600d8",
-      },
-      {
-        name: "Молоко Домик в деревне",
-        id: "bb577846-622f-400b-b119-b2f6446600d8",
-      },
-      {
-        name: "Молоко Валио",
-        id: "bb577846-622f-400b-b119-bbf6411100d8",
-      },
-    ],
-  };
+  let array = [
+    { 0: "Молоко, сыры, яйцо" },
+    { 1: "Хлеб и выпечка" },
+    { 2: "Фрукты и овощи" },
+    { 3: "Замороженные продукты" },
+    { 4: "Вода и напитки" },
+    { 5: "Кондитерские изделия и сладости" },
+    { 6: "Чай, кофе, какао" },
+    { 7: "Бакалея" },
+    { 8: "Здоровое питание" },
+    { 9: "Зоотовары" },
+    { 10: "Детское питание" },
+    { 11: "Мясо, птица, колбасы" },
+    { 12: "Непродовольственные товары" },
+  ];
 
-  let listCategories = [...data.categories].map((el) => el.name);
-  let listSubcategories = [...data.subcategories].map((el) => el.name);
+  // let listCategories = [...data.categories].map((el) => el.name);
+  // let listSubcategories = [...data.subcategories].map((el) => el.name);
 
   const [inputValue, setInputValue] = useState("");
 
-  const newListCategories = listCategories.filter((el) =>
-    el.toLowerCase().includes(inputValue.toLowerCase().trim()),
-  );
-  const newListSubcategories = listSubcategories.filter((el) =>
-    el.toLowerCase().includes(inputValue.toLowerCase().trim()),
-  );
+  //
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [findValue, setFindValue] = useState("");
+
+  // const newListCategories = listCategories.filter((el) =>
+  //   el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  // );
+  // const newListSubcategories = listSubcategories.filter((el) =>
+  //   el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  // );
+
+  const inputHandler = (e) => {
+    setInputValue(e.target.value);
+    searchSymbols(array, e.target.value);
+  };
+
+
+  const searchSymbols = (filter, inputValue) => {
+    const regexp = new RegExp(inputValue, "ig");
+    filter.forEach((element) => {
+      for (let key in element) {
+        const matchValue = element[key].match(regexp);
+        if (matchValue === null || matchValue.join("").length < 3) return;
+        else {
+          console.log("ыффавыа", matchValue.join(""));
+          console.log("ыффавыа", element[key]);
+          let temp = element[key];
+          setStart(temp.slice(0, temp.indexOf(matchValue)));
+          setFindValue(matchValue);
+          setEnd(temp.slice(temp.indexOf(matchValue) + matchValue.join("").length, temp.length));
+        }
+      }
+    });
+  };
 
   // передача value в инпут
   const itemSearchHandler = (e) => {
@@ -62,9 +70,7 @@ export const HeaderMobileTop = () => {
   };
   //скрытие выпадающего списка при автокомплите
   const [isOpen, setIsOpen] = useState(true);
-  const inputClickHandler = () => {
-    setIsOpen(true);
-  };
+  const inputClickHandler = () => setIsOpen(true);
 
   //скрытие выпадающего списка при клике вне поля
   const dropDownRef = useRef(null);
@@ -91,18 +97,28 @@ export const HeaderMobileTop = () => {
             <Link to="/">
               <img src={logo_mobile} alt="ЛОГО" className={s.logo} />
             </Link>
-            {/* <TextField placeholder={"Найти товар"} className={s.header_input} mobile /> */}
+
             <div className={s.inputWrapper} ref={dropDownRef}>
               <TextField
                 placeholder={"Найти товар"}
                 mobile
                 header_search
-                handler={(e) => setInputValue(e.target.value)}
+                handler={(e) => inputHandler(e)}
                 value={inputValue}
                 onClick={inputClickHandler}
               />
 
-              {inputValue && isOpen ? (
+              {inputValue.length > 2 && isOpen ? (
+                <ul className={s.list}>
+                  <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                    <span className={s.leftFilter}>{start}</span>
+                    <span className={s.symbol}>{findValue}</span>
+                    <span className={s.leftFilter}>{end}</span>
+                  </li>
+                </ul>
+              ) : null}
+
+              {/* {inputValue && isOpen ? (
                 <ul className={s.list}>
                   {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
@@ -115,20 +131,7 @@ export const HeaderMobileTop = () => {
                     </li>
                   ))}
                 </ul>
-              ) : null}
-
-              {/* <ul className={s.list}>
-                  {newListCategories.map((el) => (
-                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      {newListCategories}
-                    </li>
-                  ))}
-                  {newListSubcategories.map((el) => (
-                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      {newListSubcategories}
-                    </li>
-                  ))}
-                </ul> */}
+              ) : null} */}
             </div>
           </div>
         </Container>

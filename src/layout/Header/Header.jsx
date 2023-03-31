@@ -19,24 +19,8 @@ import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { Modal } from "../Modal/Modal";
 import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
-import axios from "axios";
-import useSWR from "swr";
-import { useCategories } from "../../api/hooks/useCategories";
 
 export const Header = () => {
-  // const fetcher = (url) => axios({ url }).then((res) => res.data.data);
-  // const { info, error, isLoading } = useSWR(
-  //   "http://codeine.tech:3000/api/categories/3ed82cc0-9d71-46ec-97d0-365121844a40",
-  //   fetcher,
-  // );
-  // console.log(info)
-
-  // const { categories, error, isLoading } = useCategories();
-  // console.log(categories);
-
-  // let arr = categories.map((el) => el.name);
-  // console.log(arr);
-
   let array = [
     { 0: "Молоко, сыры, яйцо" },
     { 1: "Хлеб и выпечка" },
@@ -52,53 +36,13 @@ export const Header = () => {
     { 11: "Мясо, птица, колбасы" },
     { 12: "Непродовольственные товары" },
   ];
-  
-  const data = {
-    categories: [
-      {
-        name: "Молоко, сыр, сметана",
-        id: "bb577846-623f-400b-be19-bbf6446600d8",
-      },
-      {
-        name: "что-то",
-        id: "1",
-      },
-    ],
-    subcategories: [
-      {
-        name: "Молоко",
-        id: "bb577846-622f-400b-b119-bbf6446600d8",
-      },
-    ],
-    products: [
-      {
-        name: "Молоко Простоквашино",
-        id: "bb577846-622f-400b-b199-bbf6446600d8",
-      },
-      {
-        name: "Молоко Вкуснотеево",
-        id: "bb577846-622f-400b-b119-bbf6456600d8",
-      },
-      {
-        name: "Молоко Домик в деревне",
-        id: "bb577846-622f-400b-b119-b2f6446600d8",
-      },
-      {
-        name: "Молоко Валио",
-        id: "bb577846-622f-400b-b119-bbf6411100d8",
-      },
-    ],
-  };
 
   const href = useHref();
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
-
   const [isModal, setIsModal] = useState(false);
-  const handleClose = () => {
-    setIsModal(!isModal);
-  };
 
+  const handleClose = () => setIsModal(!isModal);
   const onButtonEnterHandler = () => setButtonHover(true);
 
   const onButtonLeaveHandler = () =>
@@ -117,21 +61,8 @@ export const Header = () => {
     setButtonHover(false);
   };
 
-  let listCategories = [...data.categories].map((el) => el.name);
-  let listSubcategories = [...data.subcategories].map((el) => el.name);
-
   const [inputValue, setInputValue] = useState("");
 
-  const newListCategories = listCategories.filter((el) =>
-    el.toLowerCase().includes(inputValue.toLowerCase().trim()),
-  );
-  const newListSubcategories = listSubcategories.filter((el) =>
-    el.toLowerCase().includes(inputValue.toLowerCase().trim()),
-  );
-
-  // const [start, setStart] = useState(categories[0].name);
-  // const [end, setEnd] = useState(categories[0].name);
-  // const [findValue, setFindValue] = useState("");
   //
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
@@ -140,39 +71,18 @@ export const Header = () => {
   const inputHandler = (e) => {
     setInputValue(e.target.value);
     searchSymbols(array, e.target.value);
-    // searchSymbols(e.target.value);
   };
 
-  // const searchSymbols = (filter, inputValue) => {
-  //   // if (!filter) return;
-  //   const regexp = new RegExp(inputValue, "ig");
-  //   if (filter[0] === undefined) return ;
-  //   const matchValue = filter[0].match(regexp);
-  //   if (matchValue === null || matchValue.join('').length < 3) return
-  //   else {
-  //     console.log('ыффавыа',matchValue.join(""));
-  //     let a = newListCategories[0];
-
-  //     setStart(a.slice(0, a.indexOf(matchValue)));
-  //     setFindValue(matchValue);
-  //     setEnd(a.slice((a.indexOf(matchValue)+ matchValue.join("").length), a.length));
-  //   }
-  // };
-
   const searchSymbols = (filter, inputValue) => {
-    // if (!filter) return;
     const regexp = new RegExp(inputValue, "ig");
     filter.forEach((element) => {
       for (let key in element) {
-        console.log(element[key]);
         const matchValue = element[key].match(regexp);
         if (matchValue === null || matchValue.join("").length < 3) return;
         else {
           console.log("ыффавыа", matchValue.join(""));
           console.log("ыффавыа", element[key]);
           let temp = element[key];
-          console.log("11111111", temp);
-          // setStart(a.slice(0, a.indexOf(matchValue)));
           setStart(temp.slice(0, temp.indexOf(matchValue)));
           setFindValue(matchValue);
           setEnd(temp.slice(temp.indexOf(matchValue) + matchValue.join("").length, temp.length));
@@ -189,7 +99,7 @@ export const Header = () => {
 
   const itemSearchHandler = (e) => {
     // setInputValue(e.target.textContent);
-    setInputValue(start+findValue+end)
+    setInputValue(start + findValue + end);
     setIsOpen(!isOpen);
   };
 
@@ -256,36 +166,11 @@ export const Header = () => {
 
               {inputValue.length > 2 && isOpen ? (
                 <ul className={s.list}>
-                  {/* {newListCategories.map((el) => (
-                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      <span className={s.symbol}>{`${symbol}`}</span>
-                      <span className={s.leftFilter}>{`${leftFilter}`}</span>
-                    </li>
-                  ))} */}
-
-                  {/* {newListCategories.map((el) => (
-                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      <span className={s.leftFilter}>{start}</span>
-                      <span className={s.symbol}>{findValue}</span>
-                      <span className={s.leftFilter}>{end}</span>
-                    </li>
-                  ))} */}
                   <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
                     <span className={s.leftFilter}>{start}</span>
                     <span className={s.symbol}>{findValue}</span>
                     <span className={s.leftFilter}>{end}</span>
                   </li>
-                  {/* {newListSubcategories.map((el) => (
-                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      {newListSubcategories}
-                    </li>
-                  ))} */}
-
-                  {newListSubcategories.map((el) => (
-                    <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      {newListSubcategories}
-                    </li>
-                  ))}
                 </ul>
               ) : null}
             </div>
