@@ -37,6 +37,13 @@ export const Header = () => {
     { 12: "Непродовольственные товары" },
   ];
 
+  // const newListCategories = listCategories.filter((el) =>
+  //   el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  // );
+  // const newListSubcategories = listSubcategories.filter((el) =>
+  //   el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  // );
+
   const href = useHref();
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
@@ -73,29 +80,47 @@ export const Header = () => {
     searchSymbols(array, e.target.value);
   };
 
-  const searchSymbols = (filter, inputValue) => {
-    const regexp = new RegExp(inputValue, "ig");
-    filter.forEach((element) => {
+  // const searchSymbols = (filter, inputValue) => {
+  //   const regexp = new RegExp(inputValue, "ig");
+  //   filter.forEach((element) => {
+  //     for (let key in element) {
+  //       const matchValue = element[key].match(regexp);
+  //       if (matchValue === null || matchValue.join("").length < 3) {
+  //         console.log("true", matchValue);
+  //         console.log(!!start);
+  //         // setStart("");
+  //         // setFindValue("");
+  //         // setEnd("");
+  //         return;
+  //       } else {
+  //         console.log("matchValue", matchValue.join(""));
+  //         console.log("element", element[key]);
+  //         let temp = element[key];
+  //         setStart(temp.slice(0, temp.indexOf(matchValue)));
+  //         setFindValue(matchValue);
+  //         setEnd(temp.slice(temp.indexOf(matchValue) + matchValue.join("").length, temp.length));
+  //       }
+  //     }
+  //   });
+  // };
+
+  const searchSymbols = (array, inputValue) => {
+    if (inputValue.length < 3) return
+    array.forEach((element) => {
       for (let key in element) {
-        const matchValue = element[key].match(regexp);
-        if (matchValue === null || matchValue.join("").length < 3) {
-          console.log("true", matchValue);
-          console.log(!!start);
-          // setStart("");
-          // setFindValue("");
-          // setEnd("");
-          return;
-        } else {
-          console.log("matchValue", matchValue.join(""));
-          console.log("element", element[key]);
-          let temp = element[key];
-          setStart(temp.slice(0, temp.indexOf(matchValue)));
-          setFindValue(matchValue);
-          setEnd(temp.slice(temp.indexOf(matchValue) + matchValue.join("").length, temp.length));
+        console.log(element[key].toLowerCase().includes(inputValue.toLowerCase().trim()))
+        if (!element[key].toLowerCase().includes(inputValue.toLowerCase().trim())) return
+        else {
+          let temp = element[key]
+          let subStr = inputValue;
+          setStart(temp.slice(0, temp.toLowerCase().indexOf(subStr.toLowerCase())));
+          setFindValue(subStr.toLowerCase());
+          setEnd(temp.slice(temp.toLowerCase().indexOf(subStr.toLowerCase()) + subStr.length), temp.length);
         }
       }
     });
   };
+
 
   // передача value в из окна в инпут
   // const itemSearchHandler = (e) => {
