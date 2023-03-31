@@ -1,6 +1,7 @@
 .item {
   position: relative;
   width: 100%;
+  height: 200px;
 
   &:hover > .shadow {
     height: 117px;
@@ -42,7 +43,9 @@
   }
   .item {
     max-width: 448px;
+    height: 140px;
   }
+
 }
 
 @media (max-width: 746px) {
@@ -63,5 +66,13 @@
   .title {
     min-width: 140px;
     line-height: 27px;
+  }
+}
+
+
+@media (max-width: 361px) {
+
+    .item {
+    height: 140px;
   }
 }
