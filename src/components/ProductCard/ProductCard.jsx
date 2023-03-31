@@ -75,11 +75,15 @@ export const ProductCard = ({ product }) => {
           <div className={s.description__information}>
             <div className={s.information__wrapper}>
               <p className={s.information__left}>Бренд</p>
-              <p className={s.information__right}>Бренд</p>
+              <p className={s.information__right}>
+                {product.information.find((el) => el.name === "Бренд").value}
+              </p>
             </div>
             <div className={s.information__wrapper}>
               <p className={s.information__left}>Страна производителя</p>
-              <p className={s.information__right}>Страна производителя</p>
+              <p className={s.information__right}>
+                {product.information.find((el) => el.name === "Страна производства").value}
+              </p>
             </div>
             <div className={s.information__wrapper}>
               <p className={s.information__left}>Упаковка</p>
