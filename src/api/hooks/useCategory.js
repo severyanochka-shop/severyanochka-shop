@@ -3,7 +3,7 @@ import { fetcher } from "../fetcher";
 
 export const useCategory = (slug) => {
   const args = {
-    productLimit: 6,
+    productLimit: 21,
     minPrice: 100,
     maxPrice: 250,
     productOffset: 6,
