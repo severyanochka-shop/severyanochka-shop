@@ -44,7 +44,6 @@ export const HeaderMobileTop = () => {
     searchSymbols(array, e.target.value);
   };
 
-
   const searchSymbols = (filter, inputValue) => {
     const regexp = new RegExp(inputValue, "ig");
     filter.forEach((element) => {
@@ -52,8 +51,6 @@ export const HeaderMobileTop = () => {
         const matchValue = element[key].match(regexp);
         if (matchValue === null || matchValue.join("").length < 3) return;
         else {
-          console.log("ыффавыа", matchValue.join(""));
-          console.log("ыффавыа", element[key]);
           let temp = element[key];
           setStart(temp.slice(0, temp.indexOf(matchValue)));
           setFindValue(matchValue);
@@ -111,9 +108,9 @@ export const HeaderMobileTop = () => {
               {inputValue.length > 2 && isOpen ? (
                 <ul className={s.list}>
                   <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                    <span className={s.leftFilter}>{start}</span>
-                    <span className={s.symbol}>{findValue}</span>
-                    <span className={s.leftFilter}>{end}</span>
+                    <span className={s.startWord}>{start}</span>
+                    <span className={s.findWord}>{findValue}</span>
+                    <span className={s.endWord}>{end}</span>
                   </li>
                 </ul>
               ) : null}

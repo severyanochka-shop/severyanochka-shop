@@ -78,10 +78,16 @@ export const Header = () => {
     filter.forEach((element) => {
       for (let key in element) {
         const matchValue = element[key].match(regexp);
-        if (matchValue === null || matchValue.join("").length < 3) return;
-        else {
-          console.log("ыффавыа", matchValue.join(""));
-          console.log("ыффавыа", element[key]);
+        if (matchValue === null || matchValue.join("").length < 3) {
+          console.log("true", matchValue);
+          console.log(!!start);
+          // setStart("");
+          // setFindValue("");
+          // setEnd("");
+          return;
+        } else {
+          console.log("matchValue", matchValue.join(""));
+          console.log("element", element[key]);
           let temp = element[key];
           setStart(temp.slice(0, temp.indexOf(matchValue)));
           setFindValue(matchValue);
@@ -164,15 +170,15 @@ export const Header = () => {
                 onClick={inputClickHandler}
               />
 
-              {inputValue.length > 2 && isOpen ? (
+              {inputValue.length > 2 && isOpen && findValue &&
                 <ul className={s.list}>
                   <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                    <span className={s.leftFilter}>{start}</span>
-                    <span className={s.symbol}>{findValue}</span>
-                    <span className={s.leftFilter}>{end}</span>
+                    <span className={s.startWord}>{start}</span>
+                    <span className={s.findWord}>{findValue}</span>
+                    <span className={s.endWord}>{end}</span>
                   </li>
                 </ul>
-              ) : null}
+              }
             </div>
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
