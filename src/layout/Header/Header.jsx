@@ -108,14 +108,14 @@ export const Header = () => {
     if (inputValue.length < 3) return
     array.forEach((element) => {
       for (let key in element) {
-        console.log(element[key].toLowerCase().includes(inputValue.toLowerCase().trim()))
         if (!element[key].toLowerCase().includes(inputValue.toLowerCase().trim())) return
         else {
-          let temp = element[key]
-          let subStr = inputValue;
-          setStart(temp.slice(0, temp.toLowerCase().indexOf(subStr.toLowerCase())));
-          setFindValue(subStr.toLowerCase());
-          setEnd(temp.slice(temp.toLowerCase().indexOf(subStr.toLowerCase()) + subStr.length), temp.length);
+          const str = element[key]
+          const subStr = inputValue;
+          setStart(str.slice(0, str.toLowerCase().indexOf(subStr.toLowerCase())));
+          let tempStart = str.slice(0, str.toLowerCase().indexOf(subStr.toLowerCase()));
+          tempStart.length === 0 ? setFindValue(str.slice(0, subStr.length)) : setFindValue(subStr.toLowerCase());
+          setEnd(str.slice(str.toLowerCase().indexOf(subStr.toLowerCase()) + subStr.length), str.length);
         }
       }
     });
