@@ -169,44 +169,16 @@ export const Header = () => {
         else {
           console.log("ыффавыа", matchValue.join(""));
           console.log("ыффавыа", element[key]);
-          let a = element[key];
-          setStart(a.slice(0, a.indexOf(matchValue)));
+          let temp = element[key];
+          console.log("11111111", temp);
+          // setStart(a.slice(0, a.indexOf(matchValue)));
+          setStart(temp.slice(0, temp.indexOf(matchValue)));
           setFindValue(matchValue);
-          setEnd(a.slice(a.indexOf(matchValue) + matchValue.join("").length, a.length));
+          setEnd(temp.slice(temp.indexOf(matchValue) + matchValue.join("").length, temp.length));
         }
       }
     });
-    // if (filter[0] === undefined) return ;
-    // const matchValue = filter[0].match(regexp);
-    // if (matchValue === null || matchValue.join('').length < 3) return
-    // else {
-    //   console.log('ыффавыа',matchValue.join(""));
-    //   let a = newListCategories[0];
-
-    //   setStart(a.slice(0, a.indexOf(matchValue)));
-    //   setFindValue(matchValue);
-    //   setEnd(a.slice((a.indexOf(matchValue)+ matchValue.join("").length), a.length));
-    // }
   };
-
-  // const searchSymbols = (inputValue) => {
-  //   categories.forEach(el => {
-  //     console.log(el.name)
-  //   });
-  //   const regexp = new RegExp(inputValue, "ig");
-  //   // if (filter[0] === undefined) return ;
-  //   for (let i = 0; i<categories.length; i++) {
-  //   }
-
-  //   const matchValue = categories[0].match(regexp);
-  //   if (matchValue === null || matchValue.join('').length < 3) return
-  //   else {
-  //     let a = categories[0]
-  //     setStart(a.slice(0, a.indexOf(matchValue)));
-  //     setFindValue(matchValue);
-  //     setEnd(a.slice((a.indexOf(matchValue)+ matchValue.join("").length), a.length));
-  //   }
-  // };
 
   // передача value в из окна в инпут
   const itemSearchHandler = (e) => {
@@ -284,13 +256,17 @@ export const Header = () => {
                     </li>
                   ))} */}
 
-                  {newListCategories.map((el) => (
+                  {/* {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
                       <span className={s.leftFilter}>{start}</span>
                       <span className={s.symbol}>{findValue}</span>
                       <span className={s.leftFilter}>{end}</span>
                     </li>
-                  ))}
+                  ))} */}
+
+                  <span className={s.leftFilter}>{start}</span>
+                  <span className={s.symbol}>{findValue}</span>
+                  <span className={s.leftFilter}>{end}</span>
 
                   {/* {newListSubcategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
