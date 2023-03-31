@@ -14,7 +14,7 @@ export const CardCatalog = ({ el }) => {
   return (
     <Link
       className={cl.link}
-      to={`/category/${params.category ? params.category : el.categoryId}/${el.id}`}
+      to={`/category/${params.category ? params.category : el.slug}/${el.slug}`}
     >
       <div className={cl.card}>
         <img src={el.images[0].small} alt="product" className={cl.card__image} />

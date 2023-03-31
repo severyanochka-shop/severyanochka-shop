@@ -7,7 +7,7 @@ export const Category = ({ categories }) => {
   return (
     <div className={s.category}>
       {categories.map((el) => (
-        <Link key={el.id} to={`${el.id}`} className={s.link}>
+        <Link key={el.id} to={`${el.slug}`} className={s.link}>
           <CategoryItem name={el.name} image={el.image} />
         </Link>
       ))}

@@ -10,19 +10,17 @@ import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 import { OurShops } from "../../components/OurShops/OurShops";
 import axios from "axios";
 import useSWR from "swr";
-import { PaginationComponent } from "../../components/PaginationComponent/PaginationComponent";
 
 export const Main = () => {
-  const fetcher = (url) => axios({ url }).then((res) => res.data.data);
-  const { data, error, isLoading } = useSWR(
-    "http://codeine.tech:3000/api/categories/3ed82cc0-9d71-46ec-97d0-365121844a40",
-    fetcher,
-  );
+  // const fetcher = (url) => axios({ url }).then((res) => res.data.data);
+  // const { data, error, isLoading } = useSWR(
+  //   "http://codeine.tech:3000/api/categories/id/213493a0-c190-4690-95b9-1a8720fd83f2",
+  //   fetcher,
+  // );
   return (
     <>
-      <PaginationComponent />
       <BannerPromo />
-      {!!data && (
+      {/* {!!data && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Акции</SectionTitle>
@@ -37,7 +35,7 @@ export const Main = () => {
             <SectionTitle>Новинки</SectionTitle>
             <SectionLink to="/new_products">Все новинки</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(50, 54)} />
+          <FlexWrapper data={data.products.slice(10, 14)} />
         </Section>
       )}
       {!!data && (
@@ -46,9 +44,9 @@ export const Main = () => {
             <SectionTitle>Покупали раньше</SectionTitle>
             <SectionLink to="/bought_before">Все покупки</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(100, 104)} />
+          <FlexWrapper data={data.products.slice(20, 24)} />
         </Section>
-      )}
+      )} */}
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Специальные предложения</SectionTitle>
