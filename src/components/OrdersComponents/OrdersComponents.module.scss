@@ -1,0 +1,33 @@
+.orders {
+    margin-bottom: 40px;
+
+    &__flexWrapper {
+    width: 270px;
+    height: 350px;
+    background-color: aqua;
+}
+    &__btn {
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+    &__btn_gray {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+    &__eye {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+    &__text {
+    margin-left: 8px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #606060
+}
+}
