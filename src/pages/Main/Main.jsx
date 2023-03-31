@@ -10,7 +10,6 @@ import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 import { OurShops } from "../../components/OurShops/OurShops";
 import axios from "axios";
 import useSWR from "swr";
-import { PaginationComponent } from "../../components/PaginationComponent/PaginationComponent";
 
 export const Main = () => {
   const fetcher = (url) => axios({ url }).then((res) => res.data.data);
@@ -20,7 +19,6 @@ export const Main = () => {
   );
   return (
     <>
-      <PaginationComponent />
       <BannerPromo />
       {!!data && (
         <Section>
