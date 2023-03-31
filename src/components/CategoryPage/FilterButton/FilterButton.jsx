@@ -9,9 +9,9 @@ export const FilterButton = ({ color, text, onClick }) => {
     <Button small background={color} className={s.button}>
       <div className={s.button__wrapper}>
         <p className={s.button__text}>{text}</p>
-        <button className={s.button__cross} onClick={onClick}>
+        <div className={s.button__cross} onClick={onClick}>
           <img src={color === "green" ? whiteCross : blackCross} alt="☓" />
-        </button>
+        </div>
       </div>
     </Button>
   );

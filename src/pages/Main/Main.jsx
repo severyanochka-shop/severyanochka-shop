@@ -8,45 +8,41 @@ import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTit
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
 import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 import { OurShops } from "../../components/OurShops/OurShops";
-import axios from "axios";
-import useSWR from "swr";
-import { PaginationComponent } from "../../components/PaginationComponent/PaginationComponent";
+import { useCategories } from "../../api/hooks/useCategories";
+import { useCategory } from "../../api/hooks/useCategory";
 
 export const Main = () => {
-  const fetcher = (url) => axios({ url }).then((res) => res.data.data);
-  const { data, error, isLoading } = useSWR(
-    "http://codeine.tech:3000/api/categories/3ed82cc0-9d71-46ec-97d0-365121844a40",
-    fetcher,
-  );
+  const { categories, errorCategories, isLoadingCategories } = useCategories();
+  const { category, errorCategory, isLoadingCategory } = useCategory("moloko-syry-yajco");
+
   return (
     <>
-      <PaginationComponent />
       <BannerPromo />
-      {!!data && (
+      {!!category && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Акции</SectionTitle>
             <SectionLink to="/stocks">Все акции</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(0, 4)} />
+          <FlexWrapper data={category.products.slice(0, 4)} />
         </Section>
       )}
-      {!!data && (
+      {!!category && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Новинки</SectionTitle>
             <SectionLink to="/new_products">Все новинки</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(50, 54)} />
+          <FlexWrapper data={category.products.slice(8, 12)} />
         </Section>
       )}
-      {!!data && (
+      {!!category && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Покупали раньше</SectionTitle>
             <SectionLink to="/bought_before">Все покупки</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(100, 104)} />
+          <FlexWrapper data={category.products.slice(14, 18)} />
         </Section>
       )}
       <Section>

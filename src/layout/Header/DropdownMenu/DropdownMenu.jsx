@@ -19,7 +19,7 @@ export const DropdownMenu = ({ onMenuEnterHandler, onMenuLeaveHandler }) => {
             {categories.map((el, i) => (
               <li className={s[`area${i}`]} key={el.id}>
                 <Link
-                  to={`/category/${el.id}`}
+                  to={`/category/${el.slug}`}
                   className={s.list__link}
                   onClick={onMenuLeaveHandler}
                 >

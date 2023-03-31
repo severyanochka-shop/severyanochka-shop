@@ -21,6 +21,7 @@ import { NewProductsAsync as NewProducts } from "../pages/NewProducts/NewProduct
 import { BoughtBeforeAsync as BoughtBefore } from "../pages/BoughtBefore/BoughtBefore.async";
 import { ProductAsync as Product } from "../pages/Product/Product.async";
 import { fetcher } from "../api/fetcher";
+import { SearchAsync as Search } from "../pages/Search/Search.async";
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -89,9 +90,12 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              loader: async ({ params }) => fetcher(["/categories", params.category]),
+              loader: async ({ params }) =>
+                await fetcher({
+                  url: `${process.env.REACT_APP_CATEGORIES_BY_SLUG}/${params.category}`,
+                }),
               handle: {
-                crumb: (category) => <Link to={`/category/${category.id}`}>{category.name}</Link>,
+                crumb: (category) => <Link to={`/category/${category.slug}`}>{category.name}</Link>,
               },
               children: [
                 {
@@ -104,17 +108,24 @@ export const App = () => {
                 },
                 {
                   path: "/category/:category/:product",
-                  loader: async ({ params }) => fetcher(["/products", params.product]),
+                  loader: async ({ params }) => {
+                    const product = await fetcher({
+                      url: `${process.env.REACT_APP_PRODUCTS_BY_SLUG}/${params.product}`,
+                    });
+                    if (params.category) return { product, categorySlug: params.category };
+                    const categorySlug = await fetcher({
+                      url: `${process.env.REACT_APP_CATEGORIES_BY_ID}/${product.categoryId}`,
+                    }).slug;
+                    return { product, categorySlug };
+                  },
                   element: (
                     <React.Suspense>
                       <Product />
                     </React.Suspense>
                   ),
                   handle: {
-                    crumb: (product) => (
-                      <Link to={`/category/${product.categoryId}/${product.id}`}>
-                        {product.name}
-                      </Link>
+                    crumb: ({ product, categorySlug }) => (
+                      <Link to={`/category/${categorySlug}/${product.slug}`}>{product.name}</Link>
                     ),
                   },
                 },
@@ -208,6 +219,17 @@ export const App = () => {
           ),
           handle: {
             crumb: () => <Link to="/bought_before">Покупали раньше</Link>,
+          },
+        },
+        {
+          path: "/search",
+          element: (
+            <React.Suspense>
+              <Search />
+            </React.Suspense>
+          ),
+          handle: {
+            crumb: () => <Link to="/search">Результаты поиска</Link>,
           },
         },
         {
