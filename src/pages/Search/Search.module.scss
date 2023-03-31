@@ -1,0 +1,21 @@
+.search_wrapper {
+  flex-direction: column;
+  row-gap: 24px;
+  align-items: start;
+}
+
+.text {
+  font-size: 24px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.search_result {
+  color: #ff6633;
+}
+
+@media (max-width: 1068px) {
+  .text {
+    font-size: 16px;
+  }
+}

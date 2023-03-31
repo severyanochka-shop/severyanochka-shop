@@ -8,45 +8,43 @@ import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTit
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
 import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 import { OurShops } from "../../components/OurShops/OurShops";
-import axios from "axios";
-import useSWR from "swr";
+import { useCategories } from "../../api/hooks/useCategories";
+import { useCategory } from "../../api/hooks/useCategory";
 
 export const Main = () => {
-  // const fetcher = (url) => axios({ url }).then((res) => res.data.data);
-  // const { data, error, isLoading } = useSWR(
-  //   "http://codeine.tech:3000/api/categories/id/213493a0-c190-4690-95b9-1a8720fd83f2",
-  //   fetcher,
-  // );
+  const { categories, errorCategories, isLoadingCategories } = useCategories();
+  const { category, errorCategory, isLoadingCategory } = useCategory("moloko-syry-yajco");
+
   return (
     <>
       <BannerPromo />
-      {/* {!!data && (
+      {!!category && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Акции</SectionTitle>
             <SectionLink to="/stocks">Все акции</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(0, 4)} />
+          <FlexWrapper data={category.products.slice(0, 4)} />
         </Section>
       )}
-      {!!data && (
+      {!!category && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Новинки</SectionTitle>
             <SectionLink to="/new_products">Все новинки</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(10, 14)} />
+          <FlexWrapper data={category.products.slice(8, 12)} />
         </Section>
       )}
-      {!!data && (
+      {!!category && (
         <Section>
           <SectionTitleWrapper>
             <SectionTitle>Покупали раньше</SectionTitle>
             <SectionLink to="/bought_before">Все покупки</SectionLink>
           </SectionTitleWrapper>
-          <FlexWrapper data={data.products.slice(20, 24)} />
+          <FlexWrapper data={category.products.slice(14, 18)} />
         </Section>
-      )} */}
+      )}
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Специальные предложения</SectionTitle>

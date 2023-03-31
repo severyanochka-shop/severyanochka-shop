@@ -39,14 +39,13 @@ export const Reviews = (props) => {
             </div>
             <p className={s.total_score__num}>{totalScore ? totalScore : 0} из 5</p>
           </div>
-          {/* Блок со всеми оценками */}
           <div className={s.allstars}>
             {[5, 4, 3, 2, 1].map((el) => (
-              <>
+              <React.Fragment key={el}>
                 <span className={s.span}>{el}</span>
                 <Stars rating={el} />
                 <span id="point">{repet(el)}</span>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
