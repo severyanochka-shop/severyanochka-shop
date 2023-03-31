@@ -107,10 +107,10 @@ export const App = () => {
                   loader: async ({ params }) => {
                     console.log(`${process.env.REACT_APP_PRODUCTS_ENDPOINT}/${params.product}`);
                     const resProduct = fetcher({
-                      url: `${process.env.REACT_APP_PRODUCTS_ENDPOINT}/${params.product}`,
+                      url: `${process.env.REACT_APP_PRODUCTS_BY_SLUG}/${params.product}`,
                     });
                     const resCategory = fetcher({
-                      url: `${process.env.REACT_APP_CATEGORIES_BY_ID}/${params.category}`,
+                      url: `${process.env.REACT_APP_CATEGORIES_BY_SLUG}/${params.category}`,
                     });
                     console.log(resProduct, resCategory);
                     return resProduct;
