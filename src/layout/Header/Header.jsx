@@ -105,22 +105,30 @@ export const Header = () => {
   // };
 
   const searchSymbols = (array, inputValue) => {
-    if (inputValue.length < 3) return
+    setStart("");
+    setEnd("");
+    setFindValue("");
+
+    if (inputValue.length < 3) return;
     array.forEach((element) => {
       for (let key in element) {
-        if (!element[key].toLowerCase().includes(inputValue.toLowerCase().trim())) return
+        if (!element[key].toLowerCase().includes(inputValue.toLowerCase().trim())) return;
         else {
-          const str = element[key]
+          const str = element[key];
           const subStr = inputValue;
           setStart(str.slice(0, str.toLowerCase().indexOf(subStr.toLowerCase())));
           let tempStart = str.slice(0, str.toLowerCase().indexOf(subStr.toLowerCase()));
-          tempStart.length === 0 ? setFindValue(str.slice(0, subStr.length)) : setFindValue(subStr.toLowerCase());
-          setEnd(str.slice(str.toLowerCase().indexOf(subStr.toLowerCase()) + subStr.length), str.length);
+          tempStart.length === 0
+            ? setFindValue(str.slice(0, subStr.length))
+            : setFindValue(subStr.toLowerCase());
+          setEnd(
+            str.slice(str.toLowerCase().indexOf(subStr.toLowerCase()) + subStr.length),
+            str.length,
+          );
         }
       }
     });
   };
-
 
   // передача value в из окна в инпут
   // const itemSearchHandler = (e) => {
@@ -195,7 +203,7 @@ export const Header = () => {
                 onClick={inputClickHandler}
               />
 
-              {inputValue.length > 2 && isOpen && findValue &&
+              {inputValue.length > 2 && isOpen && findValue && (
                 <ul className={s.list}>
                   <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
                     <span className={s.startWord}>{start}</span>
@@ -203,7 +211,7 @@ export const Header = () => {
                     <span className={s.endWord}>{end}</span>
                   </li>
                 </ul>
-              }
+              )}
             </div>
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
