@@ -21,17 +21,37 @@ import { Modal } from "../Modal/Modal";
 import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
 import axios from "axios";
 import useSWR from "swr";
+import { useCategories } from "../../api/hooks/useCategories";
 
 export const Header = () => {
+  // const fetcher = (url) => axios({ url }).then((res) => res.data.data);
+  // const { info, error, isLoading } = useSWR(
+  //   "http://codeine.tech:3000/api/categories/3ed82cc0-9d71-46ec-97d0-365121844a40",
+  //   fetcher,
+  // );
+  // console.log(info)
 
-  const fetcher = (url) => axios({ url }).then((res) => res.data.data);
-  const { info, error, isLoading } = useSWR(
-    "http://codeine.tech:3000/api/categories/3ed82cc0-9d71-46ec-97d0-365121844a40",
-    fetcher,
-  );
+  const { categories, error, isLoading } = useCategories();
+  console.log(categories);
 
-    // console.log(info )
+  // let arr = categories.map((el) => el.name);
+  // console.log(arr);
 
+  let array = [
+    { 0: "Молоко, сыры, яйцо" },
+    { 1: "Хлеб и выпечка" },
+    { 2: "Фрукты и овощи" },
+    { 3: "Замороженные продукты" },
+    { 4: "Вода и напитки" },
+    { 5: "Кондитерские изделия и сладости" },
+    { 6: "Чай, кофе, какао" },
+    { 7: "Бакалея" },
+    { 8: "Здоровое питание" },
+    { 9: "Зоотовары" },
+    { 10: "Детское питание" },
+    { 11: "Мясо, птица, колбасы" },
+    { 12: "Непродовольственные товары" },
+  ];
   const data = {
     categories: [
       {
@@ -108,46 +128,85 @@ export const Header = () => {
     el.toLowerCase().includes(inputValue.toLowerCase().trim()),
   );
 
-  //поиск символов
-  const [symbol, setSymbol] = useState("");
-  console.log("символ", symbol);
-  const [leftFilter, setLeftFilter] = useState(newListCategories);
-  console.log(leftFilter);
-
+  // const [start, setStart] = useState(categories[0].name);
+  // const [end, setEnd] = useState(categories[0].name);
+  // const [findValue, setFindValue] = useState("");
   //
-
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [findValue, setFindValue] = useState("");
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
-    searchSymbols(newListCategories, e.target.value);
+    searchSymbols(array, e.target.value);
+    // searchSymbols(e.target.value);
   };
+
+  // const searchSymbols = (filter, inputValue) => {
+  //   // if (!filter) return;
+  //   const regexp = new RegExp(inputValue, "ig");
+  //   if (filter[0] === undefined) return ;
+  //   const matchValue = filter[0].match(regexp);
+  //   if (matchValue === null || matchValue.join('').length < 3) return
+  //   else {
+  //     console.log('ыффавыа',matchValue.join(""));
+  //     let a = newListCategories[0];
+
+  //     setStart(a.slice(0, a.indexOf(matchValue)));
+  //     setFindValue(matchValue);
+  //     setEnd(a.slice((a.indexOf(matchValue)+ matchValue.join("").length), a.length));
+  //   }
+  // };
 
   const searchSymbols = (filter, inputValue) => {
-    if (!filter) return;
+    // if (!filter) return;
     const regexp = new RegExp(inputValue, "ig");
-    console.log(regexp);
-    console.log("inputvalue", inputValue);
-    if (filter[0] === undefined) return ;
-    const matchValue = filter[0].match(inputValue);
-    console.log("filter", filter[0]);
-    console.log("matchValue", matchValue);
-    if (matchValue === null) return setSymbol("");
-    else {
-      console.log(matchValue.join(""));
-      let a = newListCategories[0];
-      console.log(a.slice(matchValue.length, a.length));
-      setSymbol(matchValue.join(""));
-      console.log(symbol);
-      setLeftFilter(a.slice(symbol.length, a.length))
-    }
+    filter.forEach((element) => {
+      for (let key in element) {
+        console.log(element[key]);
+        const matchValue = element[key].match(regexp);
+        if (matchValue === null || matchValue.join("").length < 3) return;
+        else {
+          console.log("ыффавыа", matchValue.join(""));
+          console.log("ыффавыа", element[key]);
+          let a = element[key];
+          setStart(a.slice(0, a.indexOf(matchValue)));
+          setFindValue(matchValue);
+          setEnd(a.slice(a.indexOf(matchValue) + matchValue.join("").length, a.length));
+        }
+      }
+    });
+    // if (filter[0] === undefined) return ;
+    // const matchValue = filter[0].match(regexp);
+    // if (matchValue === null || matchValue.join('').length < 3) return
+    // else {
+    //   console.log('ыффавыа',matchValue.join(""));
+    //   let a = newListCategories[0];
+
+    //   setStart(a.slice(0, a.indexOf(matchValue)));
+    //   setFindValue(matchValue);
+    //   setEnd(a.slice((a.indexOf(matchValue)+ matchValue.join("").length), a.length));
+    // }
   };
 
-  useEffect(() => {
-    if (newListCategories[0] === undefined) return;
-    let a = newListCategories[0];
-    setLeftFilter(a.slice(symbol.length, a.length));
-    console.log("leftFilter", leftFilter);
-  }, [symbol]);
+  // const searchSymbols = (inputValue) => {
+  //   categories.forEach(el => {
+  //     console.log(el.name)
+  //   });
+  //   const regexp = new RegExp(inputValue, "ig");
+  //   // if (filter[0] === undefined) return ;
+  //   for (let i = 0; i<categories.length; i++) {
+  //   }
+
+  //   const matchValue = categories[0].match(regexp);
+  //   if (matchValue === null || matchValue.join('').length < 3) return
+  //   else {
+  //     let a = categories[0]
+  //     setStart(a.slice(0, a.indexOf(matchValue)));
+  //     setFindValue(matchValue);
+  //     setEnd(a.slice((a.indexOf(matchValue)+ matchValue.join("").length), a.length));
+  //   }
+  // };
 
   // передача value в из окна в инпут
   const itemSearchHandler = (e) => {
@@ -175,11 +234,6 @@ export const Header = () => {
       document.removeEventListener("click", handleClick);
     };
   }, [isOpen]);
-
-  //выделение текста
-  const highlight = (e) => {
-    console.log(e.target.value);
-  };
 
   return (
     <>
@@ -221,7 +275,7 @@ export const Header = () => {
                 onClick={inputClickHandler}
               />
 
-              {inputValue && isOpen ? (
+              {inputValue.length > 2 && isOpen ? (
                 <ul className={s.list}>
                   {/* {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
@@ -232,8 +286,9 @@ export const Header = () => {
 
                   {newListCategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
-                      <span className={s.symbol}>{`${symbol}`}</span>
-                      <span className={s.leftFilter}>{`${leftFilter}`}</span>
+                      <span className={s.leftFilter}>{start}</span>
+                      <span className={s.symbol}>{findValue}</span>
+                      <span className={s.leftFilter}>{end}</span>
                     </li>
                   ))}
 
