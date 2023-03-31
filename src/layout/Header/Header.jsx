@@ -31,8 +31,8 @@ export const Header = () => {
   // );
   // console.log(info)
 
-  const { categories, error, isLoading } = useCategories();
-  console.log(categories);
+  // const { categories, error, isLoading } = useCategories();
+  // console.log(categories);
 
   // let arr = categories.map((el) => el.name);
   // console.log(arr);
@@ -52,6 +52,7 @@ export const Header = () => {
     { 11: "Мясо, птица, колбасы" },
     { 12: "Непродовольственные товары" },
   ];
+  
   const data = {
     categories: [
       {
@@ -181,8 +182,14 @@ export const Header = () => {
   };
 
   // передача value в из окна в инпут
+  // const itemSearchHandler = (e) => {
+  //   setInputValue(e.target.textContent);
+  //   setIsOpen(!isOpen);
+  // };
+
   const itemSearchHandler = (e) => {
-    setInputValue(e.target.textContent);
+    // setInputValue(e.target.textContent);
+    setInputValue(start+findValue+end)
     setIsOpen(!isOpen);
   };
 
@@ -263,11 +270,11 @@ export const Header = () => {
                       <span className={s.leftFilter}>{end}</span>
                     </li>
                   ))} */}
-
-                  <span className={s.leftFilter}>{start}</span>
-                  <span className={s.symbol}>{findValue}</span>
-                  <span className={s.leftFilter}>{end}</span>
-
+                  <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                    <span className={s.leftFilter}>{start}</span>
+                    <span className={s.symbol}>{findValue}</span>
+                    <span className={s.leftFilter}>{end}</span>
+                  </li>
                   {/* {newListSubcategories.map((el) => (
                     <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
                       {newListSubcategories}
