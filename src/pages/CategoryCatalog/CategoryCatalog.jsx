@@ -11,12 +11,12 @@ export const CategoryCatalog = () => {
 
   const { category, errorCategory, isLoadingCategory } = useCategory(params.category);
 
+  console.log(category);
+
   return (
     <Section>
-
-      {!!category && <Burger data={category}/>}
+      {/* {!!category && <Burger data={category}/>} */}
       {!!category && (
-
         <>
           <Title>{category.name}</Title>
           <CategoryPage category={category} />

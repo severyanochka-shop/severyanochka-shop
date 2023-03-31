@@ -89,9 +89,9 @@ export const App = () => {
             },
             {
               path: "/category/:category",
-              loader: async ({ params }) => fetcher(["/categories", params.category]),
+              loader: async ({ params }) => fetcher({ url: `/categories/slug/${params.category}` }),
               handle: {
-                crumb: (category) => <Link to={`/category/${category.id}`}>{category.name}</Link>,
+                crumb: (category) => <Link to={`/category/${category.slug}`}>{category.name}</Link>,
               },
               children: [
                 {
@@ -104,7 +104,18 @@ export const App = () => {
                 },
                 {
                   path: "/category/:category/:product",
-                  loader: async ({ params }) => fetcher(["/products", params.product]),
+                  loader: async ({ params }) => {
+                    console.log(`${process.env.REACT_APP_PRODUCTS_ENDPOINT}/${params.product}`);
+                    const resProduct = fetcher({
+                      url: `${process.env.REACT_APP_PRODUCTS_ENDPOINT}/${params.product}`,
+                    });
+                    const resCategory = fetcher({
+                      url: `${process.env.REACT_APP_CATEGORIES_BY_ID}/${params.category}`,
+                    });
+                    console.log(resProduct, resCategory);
+                    return resProduct;
+                    // return { productSlug: resCategory.slug, categorySlug: resCategory.slug };
+                  },
                   element: (
                     <React.Suspense>
                       <Product />
@@ -112,7 +123,7 @@ export const App = () => {
                   ),
                   handle: {
                     crumb: (product) => (
-                      <Link to={`/category/${product.categoryId}/${product.id}`}>
+                      <Link to={`/category/${product.categorySlug}/${product.productSlug}`}>
                         {product.name}
                       </Link>
                     ),
