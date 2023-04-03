@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Link, useHref } from "react-router-dom";
 import s from "./Header.module.scss";
@@ -21,15 +21,35 @@ import { Modal } from "../Modal/Modal";
 import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
 
 export const Header = () => {
+  let array = [
+    { 0: "Молоко, сыры, яйцо" },
+    { 1: "Хлеб и выпечка" },
+    { 2: "Фрукты и овощи" },
+    { 3: "Замороженные продукты" },
+    { 4: "Вода и напитки" },
+    { 5: "Кондитерские изделия и сладости" },
+    { 6: "Чай, кофе, какао" },
+    { 7: "Бакалея" },
+    { 8: "Здоровое питание" },
+    { 9: "Зоотовары" },
+    { 10: "Детское питание" },
+    { 11: "Мясо, птица, колбасы" },
+    { 12: "Непродовольственные товары" },
+  ];
+
+  // const newListCategories = listCategories.filter((el) =>
+  //   el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  // );
+  // const newListSubcategories = listSubcategories.filter((el) =>
+  //   el.toLowerCase().includes(inputValue.toLowerCase().trim()),
+  // );
+
   const href = useHref();
   const [isButtonHover, setButtonHover] = useState(false);
   const [isMenuHover, setMenuHover] = useState(false);
-
   const [isModal, setIsModal] = useState(false);
-  const handleClose = () => {
-    setIsModal(!isModal);
-  };
 
+  const handleClose = () => setIsModal(!isModal);
   const onButtonEnterHandler = () => setButtonHover(true);
 
   const onButtonLeaveHandler = () =>
@@ -47,6 +67,101 @@ export const Header = () => {
     setMenuHover(false);
     setButtonHover(false);
   };
+
+  const [inputValue, setInputValue] = useState("");
+
+  //
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [findValue, setFindValue] = useState("");
+
+  const inputHandler = (e) => {
+    setInputValue(e.target.value);
+    searchSymbols(array, e.target.value);
+  };
+
+  // const searchSymbols = (filter, inputValue) => {
+  //   const regexp = new RegExp(inputValue, "ig");
+  //   filter.forEach((element) => {
+  //     for (let key in element) {
+  //       const matchValue = element[key].match(regexp);
+  //       if (matchValue === null || matchValue.join("").length < 3) {
+  //         console.log("true", matchValue);
+  //         console.log(!!start);
+  //         // setStart("");
+  //         // setFindValue("");
+  //         // setEnd("");
+  //         return;
+  //       } else {
+  //         console.log("matchValue", matchValue.join(""));
+  //         console.log("element", element[key]);
+  //         let temp = element[key];
+  //         setStart(temp.slice(0, temp.indexOf(matchValue)));
+  //         setFindValue(matchValue);
+  //         setEnd(temp.slice(temp.indexOf(matchValue) + matchValue.join("").length, temp.length));
+  //       }
+  //     }
+  //   });
+  // };
+
+  const searchSymbols = (array, inputValue) => {
+    setStart("");
+    setEnd("");
+    setFindValue("");
+
+    if (inputValue.length < 3) return;
+    array.forEach((element) => {
+      for (let key in element) {
+        if (!element[key].toLowerCase().includes(inputValue.toLowerCase().trim())) return;
+        else {
+          const str = element[key];
+          const subStr = inputValue;
+          setStart(str.slice(0, str.toLowerCase().indexOf(subStr.toLowerCase())));
+          let tempStart = str.slice(0, str.toLowerCase().indexOf(subStr.toLowerCase()));
+          tempStart.length === 0
+            ? setFindValue(str.slice(0, subStr.length))
+            : setFindValue(subStr.toLowerCase());
+          setEnd(
+            str.slice(str.toLowerCase().indexOf(subStr.toLowerCase()) + subStr.length),
+            str.length,
+          );
+        }
+      }
+    });
+  };
+
+  // передача value в из окна в инпут
+  // const itemSearchHandler = (e) => {
+  //   setInputValue(e.target.textContent);
+  //   setIsOpen(!isOpen);
+  // };
+
+  const itemSearchHandler = (e) => {
+    // setInputValue(e.target.textContent);
+    setInputValue(start + findValue + end);
+    setIsOpen(!isOpen);
+  };
+
+  //скрытие выпадающего списка при автокомплите
+  const [isOpen, setIsOpen] = useState(true);
+  const inputClickHandler = () => setIsOpen(true);
+
+  //скрытие выпадающего списка при клике вне поля
+  const dropDownRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen === false) return;
+    const handleClick = (e) => {
+      if (!dropDownRef.current) return;
+      if (!dropDownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -78,7 +193,26 @@ export const Header = () => {
                 </div>
               </HeaderButton>
             </Link>
-            <TextField placeholder={"Найти товар"} header />
+            <div className={s.inputWrapper} ref={dropDownRef}>
+              <TextField
+                placeholder={"Найти товар"}
+                header
+                header_search
+                handler={(e) => inputHandler(e)}
+                value={inputValue}
+                onClick={inputClickHandler}
+              />
+
+              {inputValue.length > 2 && isOpen && findValue && (
+                <ul className={s.list}>
+                  <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                    <span className={s.startWord}>{start}</span>
+                    <span className={s.findWord}>{findValue}</span>
+                    <span className={s.endWord}>{end}</span>
+                  </li>
+                </ul>
+              )}
+            </div>
             <Link to="/favourites">
               <PictoButton text={"Избранное"} img={favorites} img_hover={favorites_hover} />
             </Link>

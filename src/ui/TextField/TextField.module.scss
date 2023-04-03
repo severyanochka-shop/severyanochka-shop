@@ -2,6 +2,7 @@
   margin-bottom: 1rem;
   box-sizing: border-box;
 
+
   &__header {
     margin: 0 27px 11px 17px;
   }
@@ -26,7 +27,7 @@
       display: inline-block;
       line-height: 150%;
       position: relative;
-      width: 100%;
+      width: 111%;
     }
   }
 
@@ -73,6 +74,17 @@
     // background-color: red;
   }
 
+  &__input_header_search {
+    padding: 8px 8px 8px 16px;
+    width: 436px;
+    min-width: 100%;
+    height: 40px;
+    border: 1px solid #70c05b;
+    font-size: 16px;
+    line-height: 150%;
+    color: #8f8f8f;
+  }
+
   &__input_mobile {
     padding: 8px;
     width: 100%;
@@ -99,7 +111,7 @@
 
   &__input:focus {
     background: #ffffff;
-    border: 1px solid #70c05b;
+    // border: 1px solid #70c05b;
     box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
     border-radius: 4px;
     outline: 0;
