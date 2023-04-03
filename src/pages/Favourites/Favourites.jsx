@@ -4,7 +4,7 @@ import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 import { Section } from "../../layout/Section/Section";
 import { Title } from "../../layout/Title/Title";
 
-export const Favourites = () => {
+const Favourites = () => {
   const { data } = useSelector((state) => state.dataReducer);
 
   return (

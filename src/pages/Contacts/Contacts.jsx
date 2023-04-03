@@ -4,7 +4,7 @@ import { Section } from "../../layout/Section/Section";
 import { Title } from "../../layout/Title/Title";
 import s from "./Contacts.module.scss";
 
-export const Contacts = () => {
+const Contacts = () => {
   return (
     <Section>
       <Title className={s.title__contact}>Контакты</Title>

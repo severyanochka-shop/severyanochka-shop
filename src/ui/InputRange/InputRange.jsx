@@ -1,41 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./InputRange.module.scss";
 import { filterCategorySlice } from "../../store/reducers/FilterCategorySlice";
 
 export const InputRange = ({ min, max }) => {
   const dispatch = useDispatch();
-  const { setPrice, setMinPrice, setMaxPrice } = filterCategorySlice.actions;
+  const { setMinPrice, setMaxPrice } = filterCategorySlice.actions;
   const filterCategory = useSelector((state) => state.filterCategoryReducer);
 
   const step = Math.floor(100 / (max - min));
 
   const handleClick = () => {
-    dispatch(setPrice({ min: min, max: max }));
+    dispatch(setMinPrice(min));
+    dispatch(setMaxPrice(max));
   };
+
+  useEffect(() => {
+    dispatch(setMinPrice(min));
+    dispatch(setMaxPrice(max));
+  }, []);
 
   const getBackgroundSizeMin = () => {
     return {
-      backgroundSize: `${((filterCategory.maxPrice - min) * 100) / (max - min)}% 100%`,
+      backgroundSize: `${((filterCategory.productsMaxPrice - min) * 100) / (max - min)}% 100%`,
     };
   };
 
   const getBackgroundSizeMax = () => {
     return {
-      backgroundSize: `${((filterCategory.minPrice - min) * 100) / (max - min)}% 100%`,
+      backgroundSize: `${((filterCategory.productsMinPrice - min) * 100) / (max - min)}% 100%`,
     };
   };
 
   const handlerRangeMin = (e) => {
     const temp = +e.target.value;
-    if (temp > filterCategory.maxPrice) dispatch(setMinPrice(filterCategory.maxPrice));
+    if (temp > filterCategory.productsMaxPrice)
+      dispatch(setMinPrice(filterCategory.productsMaxPrice));
     else if (temp < min) dispatch(setMinPrice(min));
     else dispatch(setMinPrice(temp));
   };
 
   const handlerRangeMax = (e) => {
     const temp = +e.target.value;
-    if (temp < filterCategory.minPrice) dispatch(setMaxPrice(filterCategory.minPrice));
+    if (temp < filterCategory.productsMinPrice)
+      dispatch(setMaxPrice(filterCategory.productsMinPrice));
     else if (temp > max) dispatch(setMaxPrice(max));
     else dispatch(setMaxPrice(temp));
   };
@@ -52,14 +60,14 @@ export const InputRange = ({ min, max }) => {
         <input
           type="number"
           className={s.range__price__cell}
-          value={filterCategory.minPrice}
+          value={filterCategory.productsMinPrice}
           onChange={handlerRangeMin}
         />
         <div className={s.range__price__dach}></div>
         <input
           type="number"
           className={s.range__price__cell}
-          value={filterCategory.maxPrice}
+          value={filterCategory.productsMaxPrice}
           onChange={handlerRangeMax}
         />
       </div>
@@ -67,7 +75,7 @@ export const InputRange = ({ min, max }) => {
         <input
           id="min"
           onChange={handlerRangeMin}
-          value={filterCategory.minPrice}
+          value={filterCategory.productsMinPrice}
           type="range"
           className={s.range__input_min}
           min={min}
@@ -78,7 +86,7 @@ export const InputRange = ({ min, max }) => {
         <input
           id="max"
           onChange={handlerRangeMax}
-          value={filterCategory.maxPrice}
+          value={filterCategory.productsMaxPrice}
           type="range"
           className={s.range__input_max}
           min={min}

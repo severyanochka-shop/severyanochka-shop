@@ -10,6 +10,6 @@ export const useProduct = (slug) => {
   return {
     product: data,
     errorProduct: error,
-    isLoadingProducts: isLoading,
+    isLoadingProduct: isLoading,
   };
 };

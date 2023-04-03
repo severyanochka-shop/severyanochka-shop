@@ -2,6 +2,7 @@
   &__control {
     text-align: left !important;
     min-height: 40px !important;
+    height: 41px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
     outline: 0 !important;
@@ -16,6 +17,7 @@
 
     &--menu-is-open {
       border: 1px solid #70c05b !important;
+      height: 41px !important;
       box-shadow: 4px 8px 16px rgb(112 192 91 / 20%) !important;
       border-bottom: none !important;
       border-radius: 4px 4px 0 0 !important;

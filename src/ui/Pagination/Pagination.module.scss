@@ -18,7 +18,9 @@
     font-family: "Rubik";
     line-height: 150%;
     color: #606060;
-
+    &_active {
+      color: #ff6633;
+    }
     &:hover {
       color: #ff6633;
     }

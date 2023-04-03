@@ -112,11 +112,7 @@ export const App = () => {
                     const product = await fetcher({
                       url: `${process.env.REACT_APP_PRODUCTS_BY_SLUG}/${params.product}`,
                     });
-                    if (params.category) return { product, categorySlug: params.category };
-                    const categorySlug = await fetcher({
-                      url: `${process.env.REACT_APP_CATEGORIES_BY_ID}/${product.categoryId}`,
-                    }).slug;
-                    return { product, categorySlug };
+                    return { product, categorySlug: product.category.slug };
                   },
                   element: (
                     <React.Suspense>

@@ -6,10 +6,16 @@ import { CategoryPage } from "../../components/CategoryPage/CategoryPage";
 import { Burger } from "../../components/Burger/Burger";
 import { useCategory } from "../../api/hooks/useCategory";
 
-export const CategoryCatalog = () => {
+const CategoryCatalog = () => {
   const params = useParams();
 
-  const { category, errorCategory, isLoadingCategory } = useCategory(params.category);
+  const args = {
+    productsLimit: 10000,
+  };
+
+  const { category, errorCategory, isLoadingCategory } = useCategory(params.category, args);
+
+  console.log(category);
 
   return (
     <Section>
@@ -17,7 +23,12 @@ export const CategoryCatalog = () => {
       {!!category && (
         <>
           <Title>{category.name}</Title>
-          <CategoryPage category={category} />
+          <CategoryPage
+            categorySlug={params.category}
+            subcategories={category.subcategories}
+            minPrice={category.productsMinPrice}
+            maxPrice={category.productsMaxPrice}
+          />
         </>
       )}
     </Section>
