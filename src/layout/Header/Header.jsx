@@ -22,6 +22,8 @@ import { AuthorizationForm } from "../../components/Form/AuthorizationForm/Autho
 import { useInputSearch } from "../../api/hooks/useInputSearch";
 
 export const Header = () => {
+  // to={`/category/${params.category ? params.category : el.category.slug}/${el.slug}`}
+
   // console.log(useInputSearch({...args, searchText: 'мол'}));
 
   // console.log(useInputSearch("мол"));
