@@ -57,9 +57,10 @@
   padding: 0px 8px 8px 16px;
   box-shadow: 2px 4px 8px rgb(0 0 0 / 10%);
   color: #8f8f8f;
-  &:hover {
-    color: #414141;
-  }
+  z-index: 1;
+  // &:hover {
+  //   color: #414141;
+  // }
 
   &_empty {
     display: none;
@@ -68,6 +69,9 @@
 
 .list__item {
   cursor: pointer;
+  &:hover {
+    color: #414141;
+  }
 }
 
 .findWord {

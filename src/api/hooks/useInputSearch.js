@@ -6,7 +6,6 @@ export const useInputSearch = (text) => {
     searchText: text,
   };
   const { data, error, isLoading } = useSWR(
-    // { url: `${process.env.REACT_APP_SEARCH_ENDPOINT}/?searchText=`, args },
     { url: `${process.env.REACT_APP_SEARCH_ENDPOINT}`, args },
     fetcher,
   );

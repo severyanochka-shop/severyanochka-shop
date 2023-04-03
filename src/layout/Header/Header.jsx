@@ -23,16 +23,17 @@ import { useInputSearch } from "../../api/hooks/useInputSearch";
 
 export const Header = () => {
   // console.log(useInputSearch({...args, searchText: 'мол'}));
-  console.log(useInputSearch('мол'));
 
-  const {data} = useInputSearch('мол')
-  console.log(data)
-  const categories = data.categories.map(el=>el.name)
-  const subCategories = data.subcategories.map(el=>el.name)
-  const products = data.products.map(el=>el.name)
-  console.log(categories)
-  console.log(subCategories)
-  console.log(products)
+  // console.log(useInputSearch("мол"));
+  // const { data } = useInputSearch("мол");
+
+  // console.log(data);
+  // const categories = data.categories.map((el) => el.name);
+  // const subCategories = data.subcategories.map((el) => el.name);
+  // const products = data.products.map((el) => el.name);
+  // console.log(categories);
+  // console.log(subCategories);
+  // console.log(products);
 
   let info = [];
 
@@ -42,7 +43,7 @@ export const Header = () => {
         return response.json();
       })
       .then((info) => {
-        console.log(info);
+        console.log("info", info);
         return info;
       });
     console.log(info);
@@ -103,9 +104,13 @@ export const Header = () => {
   const [findValue, setFindValue] = useState("");
 
   const inputHandler = (e) => {
+    // console.log(e.target.value)
     setInputValue(e.target.value);
     searchSymbols(array, e.target.value);
   };
+
+  const { data } = useInputSearch(inputValue);
+  console.log(useInputSearch(inputValue));
 
   // const searchSymbols = (filter, inputValue) => {
   //   const regexp = new RegExp(inputValue, "ig");
@@ -164,8 +169,8 @@ export const Header = () => {
   // };
 
   const itemSearchHandler = (e) => {
-    // setInputValue(e.target.textContent);
-    setInputValue(start + findValue + end);
+    setInputValue(e.target.textContent);
+    // setInputValue(start + findValue + end);
     setIsOpen(!isOpen);
   };
 
@@ -229,7 +234,7 @@ export const Header = () => {
                 value={inputValue}
                 onClick={inputClickHandler}
               />
-
+              {/* 
               {inputValue.length > 2 && isOpen && findValue && (
                 <ul className={s.list}>
                   <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
@@ -237,6 +242,56 @@ export const Header = () => {
                     <span className={s.findWord}>{findValue}</span>
                     <span className={s.endWord}>{end}</span>
                   </li>
+                </ul>
+              )} */}
+              {/* {!!data && (
+                <ul className={s.list}>
+                  {data.categories.map(
+                    (el, i) => i < 3 && <li className={s.list__item}>{el.name}</li>,
+                  )}
+                </ul>
+              )}
+              {!!data && (
+                <ul className={s.list}>
+                  {data.subcategories.map(
+                    (el, i) => i < 3 && <li className={s.list__item}>{el.name}</li>,
+                  )}
+                </ul>
+              )}
+              {!!data && (
+                <ul className={s.list}>
+                  {data.products.map(
+                    (el, i) => i < 5 && <li className={s.list__item}>{el.name}</li>,
+                  )}
+                </ul>
+              )} */}
+
+              {!!data && isOpen && (
+                <ul className={s.list}>
+                  {data.categories.map(
+                    (el, i) =>
+                      i < 3 && (
+                        <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                          {el.name}
+                        </li>
+                      ),
+                  )}
+                  {data.subcategories.map(
+                    (el, i) =>
+                      i < 3 && (
+                        <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                          {el.name}
+                        </li>
+                      ),
+                  )}
+                  {data.products.map(
+                    (el, i) =>
+                      i < 5 && (
+                        <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                          {el.name}
+                        </li>
+                      ),
+                  )}
                 </ul>
               )}
             </div>
