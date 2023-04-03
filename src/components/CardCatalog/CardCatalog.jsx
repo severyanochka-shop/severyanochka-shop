@@ -6,7 +6,6 @@ import { Link, useParams } from "react-router-dom";
 import { Discount } from "../../ui/Discount/Discount";
 import heart from "./assets/heart.svg";
 import clsx from "clsx";
-import { fetcher } from "../../api/fetcher";
 
 export const CardCatalog = ({ el }) => {
   const params = useParams();

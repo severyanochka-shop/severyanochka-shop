@@ -19,7 +19,7 @@ export const Main = () => {
     isLoadingProducts: isLoadingStocks,
   } = useProducts({
     limit: 4,
-    withDiscount: true,
+    discountIsActive: true,
   });
 
   const {
@@ -27,7 +27,7 @@ export const Main = () => {
     errorProducts: errorNewProducts,
     isLoadingProducts: isLoadingNewProducts,
   } = useProducts({
-    limit: 4,
+    limit: 8,
     isNew: true,
   });
 
@@ -50,7 +50,7 @@ export const Main = () => {
         </SectionTitleWrapper>
         {!!isLoadingNewProducts && <Spinners type="circle" />}
         {!!errorNewProducts && <Error />}
-        {!!newProducts && <FlexWrapper data={newProducts.products} />}
+        {!!newProducts && <FlexWrapper data={newProducts.products.slice(0, 4)} />}
       </Section>
       <Section>
         <SectionTitleWrapper>
@@ -59,7 +59,7 @@ export const Main = () => {
         </SectionTitleWrapper>
         {!!isLoadingNewProducts && <Spinners type="circle" />}
         {!!errorNewProducts && <Error />}
-        {!!newProducts && <FlexWrapper data={newProducts.products} />}
+        {!!newProducts && <FlexWrapper data={newProducts.products.slice(4, 8)} />}
       </Section>
       <Section>
         <SectionTitleWrapper>
