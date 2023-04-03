@@ -64,7 +64,9 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 80px 496px 424px 152px;
+  grid-template-columns: 80px 504px 424px 152px;
+  grid-template-rows: 496px;
+
   column-gap: 16px;
   row-gap: 20px;
   &__slider {
@@ -76,8 +78,8 @@
   &__product {
     position: relative;
     overflow: hidden;
-    width: 496px;
-    height: 504px;
+    width: 504px;
+    height: 496px;
     box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
     border-radius: 4px;
     background: #ffffff;
@@ -87,9 +89,16 @@
   }
   &__similar {
     display: flex;
+    overflow: scroll;
     width: 152px;
     flex-direction: column;
     row-gap: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -290,6 +299,11 @@
     flex-direction: column;
     gap: 16px;
   }
+}
+
+.link {
+  text-decoration: none;
+  color: #414141;
 }
 
 @media (max-width: 1240px) {

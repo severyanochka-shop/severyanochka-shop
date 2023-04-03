@@ -5,8 +5,11 @@ import clsx from "clsx";
 import info from "./assets/info.svg";
 import { SimilarProduct } from "../SimilarProduct/SimilarProduct";
 import { Discount } from "../../ui/Discount/Discount";
+import { useCategory } from "../../api/hooks/useCategory";
+import { Link, useParams } from "react-router-dom";
 
 export const ProductCard = ({ product }) => {
+  const params = useParams();
   let end = "ов";
   // редактирует окончание в зависимости от кол-ва отзывов
   if (product.reviewsCount) {
@@ -21,7 +24,14 @@ export const ProductCard = ({ product }) => {
     }
   }
 
-  console.log(product);
+  const {
+    category: subcategory,
+    errorCategory: errorSubcategory,
+    isLoadingCategory: isLoadingSubcategory,
+  } = useCategory(product.category.slug, {
+    productsLimit: 6,
+    subcategoryId: product.subcategoryId,
+  });
 
   return (
     <div className={s.product}>
@@ -38,7 +48,13 @@ export const ProductCard = ({ product }) => {
       </div>
       <div className={s.wrapper}>
         <div className={s.wrapper__slider}>
-          {product.images.map((el, i) => {
+          {[
+            ...product.images,
+            ...product.images,
+            ...product.images,
+            ...product.images,
+            ...product.images,
+          ].map((el, i) => {
             return (
               <div key={i} className={s.slider__wrapper}>
                 <img className={s.slider__image} key={el.id} src={el.thumb} alt={`Product ${i}`} />
@@ -48,19 +64,21 @@ export const ProductCard = ({ product }) => {
         </div>
         <div className={s.wrapper__product}>
           <img className={s.product__image} src={product.images[0].full} alt="Product" />
-          <Discount
-            orange
-            large
-            className={s.product__discount}
-            text={`-${product.discountPercent}%`}
-          />
+          {!!product.discountIsActive && (
+            <Discount
+              orange
+              large
+              className={s.product__discount}
+              text={`-${product.discountPercent}%`}
+            />
+          )}
         </div>
         <div className={s.wrapper__description}>
           <div className={s.description__price_wrapper}>
             <div className={s.price__wrapper}>
               <p className={s.price__price_old}>{product.priceRegular} ₽</p>
               <p className={s.price__price_new}>
-                {product.discountIsActive ? product.discountedPrice : product.priceRegular} ₽
+                {product.discountIsActive ? product.discountedPrice : product.priceWithCard} ₽
               </p>
             </div>
 
@@ -103,17 +121,18 @@ export const ProductCard = ({ product }) => {
         <div className={s.wrapper__similar}>
           <p className={s.similar__title}>Похожие</p>
           <div className={s.similar__wrapper}>
-            {product.images.map((el, i) => {
-              return (
-                <SimilarProduct
-                  key={i}
-                  img={el.small}
-                  price={
-                    product.promo ? product.promo.discountedPriceWithCard : product.priceWithCard
-                  }
-                />
-              );
-            })}
+            {!!subcategory &&
+              subcategory.products.map((el, i) => {
+                return (
+                  <Link className={s.link} to={`/category/${params.category}/${el.slug}`}>
+                    <SimilarProduct
+                      key={i}
+                      img={el.images[0].small}
+                      price={el.discountIsActive ? el.discountedPrice : el.priceWithCard}
+                    />
+                  </Link>
+                );
+              })}
           </div>
         </div>
       </div>
