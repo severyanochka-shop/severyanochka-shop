@@ -4,6 +4,7 @@ import { Stars } from "../Reviews/Starts/Stars";
 import clsx from "clsx";
 import info from "./assets/info.svg";
 import { SimilarProduct } from "../SimilarProduct/SimilarProduct";
+import { Discount } from "../../ui/Discount/Discount";
 
 export const ProductCard = ({ product }) => {
   let end = "ов";
@@ -19,6 +20,8 @@ export const ProductCard = ({ product }) => {
       if (num > 5) end = "ов";
     }
   }
+
+  console.log(product);
 
   return (
     <div className={s.product}>
@@ -45,15 +48,19 @@ export const ProductCard = ({ product }) => {
         </div>
         <div className={s.wrapper__product}>
           <img className={s.product__image} src={product.images[0].full} alt="Product" />
+          <Discount
+            orange
+            large
+            className={s.product__discount}
+            text={`-${product.discountPercent}%`}
+          />
         </div>
         <div className={s.wrapper__description}>
           <div className={s.description__price_wrapper}>
             <div className={s.price__wrapper}>
-              <p className={s.price__price_old}>
-                {product.promo ? product.promo.discountedPriceRegular : product.priceRegular} ₽
-              </p>
+              <p className={s.price__price_old}>{product.priceRegular} ₽</p>
               <p className={s.price__price_new}>
-                {product.promo ? product.promo.discountedPriceWithCard : product.priceWithCard} ₽
+                {product.discountIsActive ? product.discountedPrice : product.priceRegular} ₽
               </p>
             </div>
 

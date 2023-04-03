@@ -4,7 +4,7 @@ import { Section } from "../../layout/Section/Section";
 import { Title } from "../../layout/Title/Title";
 import s from "./About.module.scss";
 
-export const About = () => {
+const About = () => {
   return (
     <Section>
       <Title className={s.title}>О компании</Title>

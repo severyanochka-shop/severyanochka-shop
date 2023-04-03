@@ -13,11 +13,26 @@
   height: 100%;
 }
 
+.filter_wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.filter_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
 .deletebtn_block {
   display: flex;
   height: 32px;
   gap: 24px;
-  margin-bottom: 40px;
+}
+
+.select_wrapper {
+  margin-left: auto;
+  width: 200px;
 }
 
 .button_filter {
@@ -33,12 +48,6 @@
   &_media {
     display: none;
   }
-}
-
-.text_filter {
-  font-weight: 700;
-  color: black;
-  text-align: start;
 }
 
 .list_block {
@@ -97,7 +106,6 @@
     display: none;
     &_media {
       display: block;
-      background-color: #70c05b;
       width: 128px;
       margin-bottom: 32px;
     }

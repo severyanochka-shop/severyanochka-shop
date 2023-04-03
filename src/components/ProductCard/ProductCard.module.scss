@@ -74,6 +74,7 @@
     width: 64px;
   }
   &__product {
+    position: relative;
     overflow: hidden;
     width: 496px;
     height: 504px;
@@ -120,6 +121,11 @@
     height: 100%;
     padding: 10px;
     object-fit: contain;
+  }
+  &__discount {
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 }
 

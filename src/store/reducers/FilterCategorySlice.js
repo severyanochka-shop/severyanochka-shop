@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  countFilter: 0,
-  minPrice: 0,
-  maxPrice: Number.MAX_SAFE_INTEGER,
-  availability: false,
-  subcategory: false,
+  productsMinPrice: null,
+  productsMaxPrice: null,
+  availability: null,
+  subcategoryId: null,
 };
 
 export const filterCategorySlice = createSlice({
@@ -13,28 +12,24 @@ export const filterCategorySlice = createSlice({
   initialState,
 
   reducers: {
-    setInitialState: (state, action) => {
-      state.countFilter = 0;
-      state.maxPrice = action.payload.max;
-      state.minPrice = action.payload.min;
-      state.availability = action.payload.availability;
-      state.subcategory = action.payload.subcategory;
-    },
     setMinPrice: (state, action) => {
-      state.minPrice = action.payload;
+      state.productsMinPrice = action.payload;
     },
     setMaxPrice: (state, action) => {
-      state.maxPrice = action.payload;
-    },
-    setCountFilter: (state, action) => {
-      state.countFilter = action.payload;
+      state.productsMaxPrice = action.payload;
     },
     setAvailability: (state, action) => {
       if (!action.payload) state.availability = !state.availability;
       else state.availability = action.payload;
     },
-    setSubcategory: (state, action) => {
-      state.subcategory = action.payload;
+    setSubcategoryId: (state, action) => {
+      state.subcategoryId = action.payload;
+    },
+    deleteFilterCategory: (state) => {
+      state.productsMinPrice = null;
+      state.productsMaxPrice = null;
+      state.availability = null;
+      state.subcategoryId = null;
     },
   },
 });

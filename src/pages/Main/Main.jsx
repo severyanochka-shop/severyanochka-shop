@@ -8,43 +8,59 @@ import { SectionTitleWrapper } from "../../layout/SectionTitleWrapper/SectionTit
 import { BannerSpecialOffer } from "../../components/BannerSpecialOffer/BannerSpecialOffer";
 import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 import { OurShops } from "../../components/OurShops/OurShops";
-import { useCategories } from "../../api/hooks/useCategories";
-import { useCategory } from "../../api/hooks/useCategory";
+import { useProducts } from "../../api/hooks/useProducts";
+import { Spinners } from "../../ui/Spinners/Spinners";
+import { Error } from "../../layout/Error/Error";
 
 export const Main = () => {
-  const { categories, errorCategories, isLoadingCategories } = useCategories();
-  const { category, errorCategory, isLoadingCategory } = useCategory("moloko-syry-yajco");
+  const {
+    products: stocks,
+    errorProducts: errorStocks,
+    isLoadingProducts: isLoadingStocks,
+  } = useProducts({
+    limit: 4,
+    withDiscount: true,
+  });
+
+  const {
+    products: newProducts,
+    errorProducts: errorNewProducts,
+    isLoadingProducts: isLoadingNewProducts,
+  } = useProducts({
+    limit: 4,
+    isNew: true,
+  });
 
   return (
     <>
       <BannerPromo />
-      {!!category && (
-        <Section>
-          <SectionTitleWrapper>
-            <SectionTitle>Акции</SectionTitle>
-            <SectionLink to="/stocks">Все акции</SectionLink>
-          </SectionTitleWrapper>
-          <FlexWrapper data={category.products.slice(0, 4)} />
-        </Section>
-      )}
-      {!!category && (
-        <Section>
-          <SectionTitleWrapper>
-            <SectionTitle>Новинки</SectionTitle>
-            <SectionLink to="/new_products">Все новинки</SectionLink>
-          </SectionTitleWrapper>
-          <FlexWrapper data={category.products.slice(8, 12)} />
-        </Section>
-      )}
-      {!!category && (
-        <Section>
-          <SectionTitleWrapper>
-            <SectionTitle>Покупали раньше</SectionTitle>
-            <SectionLink to="/bought_before">Все покупки</SectionLink>
-          </SectionTitleWrapper>
-          <FlexWrapper data={category.products.slice(14, 18)} />
-        </Section>
-      )}
+      <Section>
+        <SectionTitleWrapper>
+          <SectionTitle>Акции</SectionTitle>
+          <SectionLink to="/stocks">Все акции</SectionLink>
+        </SectionTitleWrapper>
+        {!!isLoadingStocks && <Spinners type="circle" />}
+        {!!errorStocks && <Error />}
+        {!!stocks && <FlexWrapper data={stocks.products} />}
+      </Section>
+      <Section>
+        <SectionTitleWrapper>
+          <SectionTitle>Новинки</SectionTitle>
+          <SectionLink to="/new_products">Все новинки</SectionLink>
+        </SectionTitleWrapper>
+        {!!isLoadingNewProducts && <Spinners type="circle" />}
+        {!!errorNewProducts && <Error />}
+        {!!newProducts && <FlexWrapper data={newProducts.products} />}
+      </Section>
+      <Section>
+        <SectionTitleWrapper>
+          <SectionTitle>Покупали раньше</SectionTitle>
+          <SectionLink to="/bought_before">Все покупки</SectionLink>
+        </SectionTitleWrapper>
+        {!!isLoadingNewProducts && <Spinners type="circle" />}
+        {!!errorNewProducts && <Error />}
+        {!!newProducts && <FlexWrapper data={newProducts.products} />}
+      </Section>
       <Section>
         <SectionTitleWrapper>
           <SectionTitle>Специальные предложения</SectionTitle>

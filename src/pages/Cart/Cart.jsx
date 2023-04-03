@@ -6,7 +6,7 @@ import { Discount } from "../../ui/Discount/Discount";
 import s from "./Cart.module.scss";
 import { useSelector } from "react-redux";
 
-export const Cart = () => {
+const Cart = () => {
   const { data } = useSelector((state) => state.dataReducer);
   let text = data.reduce((sum) => {
     return sum + 1;

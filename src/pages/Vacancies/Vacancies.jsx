@@ -3,7 +3,7 @@ import { Vacancies as VacanciesComponent } from "../../components/Vacancies/Vaca
 import { Section } from "../../layout/Section/Section";
 import { Title } from "../../layout/Title/Title";
 
-export const Vacancies = () => {
+const Vacancies = () => {
   return (
     <Section>
       <Title>Вакансии</Title>

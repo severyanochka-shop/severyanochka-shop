@@ -1,16 +1,26 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useProducts } from "../../api/hooks/useProducts";
+import { Error } from "../../layout/Error/Error";
 import { GridWrapper } from "../../layout/GridWrapper/GridWrapper";
 import { Section } from "../../layout/Section/Section";
 import { Title } from "../../layout/Title/Title";
+import { Spinners } from "../../ui/Spinners/Spinners";
 
-export const NewProducts = () => {
-  const { data } = useSelector((state) => state.dataReducer);
+const NewProducts = () => {
+  const {
+    products: newProducts,
+    errorProducts: errorNewProducts,
+    isLoadingProducts: isLoadingNewProducts,
+  } = useProducts({
+    isNew: true,
+  });
 
   return (
     <Section>
       <Title>Новинки</Title>
-      <GridWrapper data={data} />
+      {!!isLoadingNewProducts && <Spinners type="circle" />}
+      {!!errorNewProducts && <Error />}
+      {!!newProducts && <GridWrapper data={newProducts.products} />}
     </Section>
   );
 };
