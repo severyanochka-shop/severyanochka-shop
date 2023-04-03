@@ -19,8 +19,35 @@ import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { Modal } from "../Modal/Modal";
 import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
+import { useInputSearch } from "../../api/hooks/useInputSearch";
 
 export const Header = () => {
+  // console.log(useInputSearch({...args, searchText: 'мол'}));
+  console.log(useInputSearch('мол'));
+
+  const {data} = useInputSearch('мол')
+  console.log(data)
+  const categories = data.categories.map(el=>el.name)
+  const subCategories = data.subcategories.map(el=>el.name)
+  const products = data.products.map(el=>el.name)
+  console.log(categories)
+  console.log(subCategories)
+  console.log(products)
+
+  let info = [];
+
+  useEffect(() => {
+    fetch("http://codeine.tech:3000/api/search/?searchText=мол")
+      .then((response) => {
+        return response.json();
+      })
+      .then((info) => {
+        console.log(info);
+        return info;
+      });
+    console.log(info);
+  }, []);
+
   let array = [
     { 0: "Молоко, сыры, яйцо" },
     { 1: "Хлеб и выпечка" },
