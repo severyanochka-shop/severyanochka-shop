@@ -72,6 +72,13 @@
   &:hover {
     color: #414141;
   }
+  &__link {
+    color: #8f8f8f;
+    text-decoration: none;
+    &:hover {
+      color: #414141;
+    }
+  }
 }
 
 .findWord {
