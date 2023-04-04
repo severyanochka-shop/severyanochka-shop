@@ -12,7 +12,7 @@ const Stocks = () => {
     errorProducts: errorStocks,
     isLoadingProducts: isLoadingStocks,
   } = useProducts({
-    withDiscount: true,
+    discountIsActive: true,
   });
 
   return (
