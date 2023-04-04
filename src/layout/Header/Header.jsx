@@ -324,7 +324,7 @@ export const Header = () => {
                         <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}> 
                           {/* <Link to={`/category/${data.categories.slug}/${el.slug}`} className={s.list__item__link}>{el.name}</Link> */}
                           {/* <Link to={`/category/${el.category.slug}/${el.slug}`} className={s.list__item__link}>{el.name}</Link> */}
-                          <Link to={`/category/moloko-syry-yajco/${el.slug}`} className={s.list__item__link}>{data.categories.name}</Link>
+                          <Link to={`/category/moloko-syry-yajco/${el.slug}`} className={s.list__item__link}>{el.name}</Link>
                         </li>
                       ),
                   )}
