@@ -19,8 +19,28 @@ import { TextField } from "../../ui/TextField/TextField";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { Modal } from "../Modal/Modal";
 import { AuthorizationForm } from "../../components/Form/AuthorizationForm/AuthorizationForm";
+import { useInputSearch } from "../../api/hooks/useInputSearch";
 
 export const Header = () => {
+  // to={`/category/${params.category ? params.category : el.category.slug}/${el.slug}`}
+
+  // console.log(useInputSearch({...args, searchText: 'мол'}));
+
+  // console.log(useInputSearch("мол"));
+  // const { data } = useInputSearch("мол");
+
+  // console.log(data);
+  // const categories = data.categories.map((el) => el.name);
+  // const subCategories = data.subcategories.map((el) => el.name);
+  // const products = data.products.map((el) => el.name);
+  // console.log(categories);
+  // console.log(subCategories);
+  // console.log(products);
+
+  let info = [];
+
+
+
   let array = [
     { 0: "Молоко, сыры, яйцо" },
     { 1: "Хлеб и выпечка" },
@@ -76,9 +96,20 @@ export const Header = () => {
   const [findValue, setFindValue] = useState("");
 
   const inputHandler = (e) => {
+    // console.log(e.target.value)
     setInputValue(e.target.value);
     searchSymbols(array, e.target.value);
   };
+
+  const { data } = useInputSearch(inputValue);
+
+  console.log(useInputSearch(inputValue));
+
+  const [tempData, setTempData] = useState(data)
+  console.log(tempData, tempData)
+    // useEffect(() => {
+    //   console.log(tempData.categories.slug);
+    // }, [inputValue]);
 
   // const searchSymbols = (filter, inputValue) => {
   //   const regexp = new RegExp(inputValue, "ig");
@@ -137,14 +168,16 @@ export const Header = () => {
   // };
 
   const itemSearchHandler = (e) => {
-    // setInputValue(e.target.textContent);
-    setInputValue(start + findValue + end);
+    setInputValue(e.target.textContent);
+    // setInputValue(start + findValue + end);
+    
+    // to={`/category/${params.category ? params.category : el.category.slug}/${el.slug}`}
     setIsOpen(!isOpen);
   };
 
   //скрытие выпадающего списка при автокомплите
   const [isOpen, setIsOpen] = useState(true);
-  const inputClickHandler = () => setIsOpen(true);
+  const inputClickHandler = () =>  setIsOpen(true);
 
   //скрытие выпадающего списка при клике вне поля
   const dropDownRef = useRef(null);
@@ -162,6 +195,30 @@ export const Header = () => {
       document.removeEventListener("click", handleClick);
     };
   }, [isOpen]);
+
+  const [category, setCategory] = useState('')
+
+  // useEffect(() => {
+  //   fetch("http://codeine.tech:3000/api/search/?searchText=мол")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((info) => {
+  //       console.log("info", info);
+  //       return info;
+  //     });
+  //   console.log(info);
+  //   if (info.categories === undefined) {
+  //     console.log(false)
+  //     // console.log(info.categories[0])
+  //     return
+  //   } else {
+  //   setCategory(info.categories[0].name)
+  //       console.log("category", category)
+  //   }
+  //   // console.log("category", category)
+  // }, [inputValue]);
+  
 
   return (
     <>
@@ -202,7 +259,7 @@ export const Header = () => {
                 value={inputValue}
                 onClick={inputClickHandler}
               />
-
+              {/* 
               {inputValue.length > 2 && isOpen && findValue && (
                 <ul className={s.list}>
                   <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
@@ -210,6 +267,67 @@ export const Header = () => {
                     <span className={s.findWord}>{findValue}</span>
                     <span className={s.endWord}>{end}</span>
                   </li>
+                </ul>
+              )} */}
+              {/* {!!data && (
+                <ul className={s.list}>
+                  {data.categories.map(
+                    (el, i) => i < 3 && <li className={s.list__item}>{el.name}</li>,
+                  )}
+                </ul>
+              )}
+              {!!data && (
+                <ul className={s.list}>
+                  {data.subcategories.map(
+                    (el, i) => i < 3 && <li className={s.list__item}>{el.name}</li>,
+                  )}
+                </ul>
+              )}
+              {!!data && (
+                <ul className={s.list}>
+                  {data.products.map(
+                    (el, i) => i < 5 && <li className={s.list__item}>{el.name}</li>,
+                  )}
+                </ul>
+              )} */}
+
+              {!!data && isOpen && (
+                <ul className={s.list}>
+                  {data.categories.map(
+                    (el, i) =>
+                      i < 3 && (
+                        <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                          <Link to={`/category/${el.slug}`} className={s.list__item__link}>{el.name}</Link>
+                        </li>
+                      ),
+                    //   <Link
+                    //   to={`/category/${el.slug}`}
+                    //   className={s.list__link}
+                    //   onClick={onMenuLeaveHandler}
+                    // >
+                    //   {el.name}
+                    // </Link>
+                
+
+                  )}
+                  {/* {data.subcategories.map(
+                    (el, i) =>
+                      i < 3 && (
+                        <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}>
+                          <Link to={`/category/${el.slug}`} className={s.list__item__link}>{el.name}</Link> // страница с подкатегорией
+                        </li>
+                      ),
+                  )} */}
+                  {data.products.map(
+                    (el, i) =>
+                      i < 5 && (
+                        <li className={s.list__item} onClick={(e) => itemSearchHandler(e)}> 
+                          {/* <Link to={`/category/${data.categories.slug}/${el.slug}`} className={s.list__item__link}>{el.name}</Link> */}
+                          {/* <Link to={`/category/${el.category.slug}/${el.slug}`} className={s.list__item__link}>{el.name}</Link> */}
+                          <Link to={`/category/moloko-syry-yajco/${el.slug}`} className={s.list__item__link}>{data.categories.name}</Link>
+                        </li>
+                      ),
+                  )}
                 </ul>
               )}
             </div>
