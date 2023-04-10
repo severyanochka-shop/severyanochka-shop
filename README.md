@@ -9,6 +9,14 @@ JavaScript и SCSS.
 
 ## Скриншоты
 
+Главная страница: 
+
+https://github.com/severyanochka-shop/severyanochka-shop/issues/108#issue-1660970747
+
+Товары по категории:
+
+https://github.com/severyanochka-shop/severyanochka-shop/issues/109#issue-1660971154
+
 ## Установка и запуск
 
 Склонируйте этот репозиторий. Вам понадобятся `node` и `npm`, установленные глобально на вашем компьютере.
