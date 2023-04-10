@@ -11,11 +11,11 @@ JavaScript и SCSS.
 
 Главная страница: 
 
-https://github.com/severyanochka-shop/severyanochka-shop/issues/108#issue-1660970747
+![main](https://user-images.githubusercontent.com/111459105/230938208-4656680b-f694-48a4-aec8-4834d4470f77.png)
 
 Товары по категории:
 
-https://github.com/severyanochka-shop/severyanochka-shop/issues/109#issue-1660971154
+![category](https://user-images.githubusercontent.com/111459105/230938392-eb64630f-8b97-4736-94bf-980ce3bfbcac.png)
 
 ## Установка и запуск
 
