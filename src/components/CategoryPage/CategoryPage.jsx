@@ -39,7 +39,7 @@ export const CategoryPage = ({ categorySlug, subcategories, minPrice, maxPrice }
 
   const { category, errorCategory, isLoadingCategory } = useCategory(categorySlug, {
     ...args,
-    productsLimit: 22,
+    productsLimit: pagination.limit,
     productsOffset: pagination.page * pagination.limit,
   });
 
@@ -59,8 +59,6 @@ export const CategoryPage = ({ categorySlug, subcategories, minPrice, maxPrice }
       productsMaxPrice: category.productsTotalMaxPrice,
     });
   };
-
-  console.log(category);
 
   const handlerInStock = () => {
     dispatch(setAvailability());
@@ -199,6 +197,7 @@ export const CategoryPage = ({ categorySlug, subcategories, minPrice, maxPrice }
               </div>
             </div>
             {!!category && <GridWrapper data={category.products} />}
+
             <Button large background="gray" className={s.btn_show} handler={handlerOffset}>
               Показать ещё
             </Button>
