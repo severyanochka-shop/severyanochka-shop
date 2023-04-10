@@ -1,15 +1,26 @@
-# Getting Started with Create React App
+<h1 align="center">Интернет магазин Северяночка</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Приложение интернет магазина Северяночка. Создано с использованием React, Redux Toolkit,
+JavaScript и SCSS.
 
-## Available Scripts
+## Статус проекта
 
-In the project directory, you can run:
+В настоящее время этот проект находится в разработке. Пользователи могут просматривать товары по категориям, открывать конкретные товары, смотреть похожие, акционные и новые товары.
+
+## Скриншоты
+
+## Установка и запуск
+
+Склонируйте этот репозиторий. Вам понадобятся `node` и `npm`, установленные глобально на вашем компьютере.
+
+Установка:
+
+### `npm install`
+
+Запуск сервера (http://localhost:3000):
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Запуск Storybook (http://localhost:6006):
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run storybook`
